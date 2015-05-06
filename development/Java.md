@@ -8,6 +8,7 @@
 * [[Concepts intéressant en Java 7|Concepts interessant en Java 7]]
 * [[Configuration Log4j]]
 * [[Connexion LDAP Exchange]]
+* [[Convertir un date entre Timezone avec Jodatime]]
 * [[Installer Java Sun JDK sous Debian]]
 * [[Optimisation des statements Batch MySQL]]
 * [[Où télécharger les JDK ?|Ou-telecharger-les-JDK]]

@@ -53,6 +53,7 @@
 * [[Trouver les gros fichiers]]
 * [[Trouver les UUID de mes partitions]]
 * [[Unifier des PDFs]]
+* [[Web-server en une ligne de commande]]
 
 ## Divers
 * [[Cle USB en lecture seule]]

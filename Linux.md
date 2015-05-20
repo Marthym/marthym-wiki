@@ -56,6 +56,7 @@
 * [[Web-server en une ligne de commande]]
 
 ## Divers
+* [[Allow XHost to Docker]]
 * [[Cle USB en lecture seule]]
 * [[Comparaisons avec diff]]
 * [[Connexion VPN Rackspace depuis Linux]]

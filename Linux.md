@@ -18,9 +18,9 @@
 
 ## Gnome-Shell
 * [[Afficher la date du jour dans le bandeau]]
+* [[Documents récents dans gnome-shell|Documents recents dans gnome-shell]]
 * [[gnome-shell segfault at 84 ip libcogl.so.12.1.1]]
 * [[Screencast avec Gnome-Shell]]
-* [[Documents récents dans gnome-shell|Documents recents dans gnome-shell]]
 
 ## Network
 * [[Authentification SSH par certificat]]
@@ -36,11 +36,11 @@
 * [[WGET avec un proxy]]
 
 ## Shell
-* [[Lecture d'arguments en bash]]
 * [[Découper et rattacher un gros fichier|Decouper et rattacher un gros fichier]]
 * [[Effacer définitivement un disque dur|Effacer definitivement un disque dur]]
 * [[Envoyer POST avec cURL]]
 * [[Formater simplement un XML]]
+* [[Lecture d'arguments en bash]]
 * [[Lister les fichiers d'une arborescence|Lister les fichiers d-une arborescence]]
 * [[Mettre un processus en pause]]
 * [[Rechercher dans les fichiers]]

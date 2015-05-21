@@ -19,3 +19,4 @@ Autre point intéressant, il est facile de mettre cette ligne de commande dans u
 on peut alors utiliser l'identification par clé de ssh.
 
 <!-- --- tags: linux, tools -->
+<!-- --- words: rsync, synchronization -->

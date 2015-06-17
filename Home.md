@@ -14,8 +14,7 @@
 * [[MySQL]]
 * [[Oracle]]
 * [[teradata]]
-* [[Hotes virtuels SSL multiple]]
-* [[Mode debug Tomcat]]
+* [[HTTP]]
 
 ## Tools
  * [[Eclipse]]

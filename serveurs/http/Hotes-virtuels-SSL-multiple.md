@@ -1,9 +1,11 @@
-Alors on trouve sur internet une flopper de tuto pour configurer sous Apache des ~VirtualHost SSL multiple.
+<!-- --- title: Serveur Web / Hôtes virtuels SSL multiples -->
+
+Alors on trouve sur internet une flopper de tuto pour configurer sous Apache des VirtualHost SSL multiple.
 On a beau les lire et les re-lire, essayer des centaines de combinaisons pour chaque fichier de configuration, on en vient
 toujours au même résultat : C'est le premier vhost qui est retourné !
 
 ## Explication technique
-Ce que la plus part des tuto ne dit pas c'est déjà qu'il faut avoir des version d'Apache et de ~OpenSSL très récente
+Ce que la plus part des tuto ne dit pas c'est déjà qu'il faut avoir des version d'Apache et de OpenSSL très récente
 pour que ça ai une chance de fonctionné. Mais même avec ça, je n'ai pas réussi à le faire fonctionner.
 
 La raison technique a cette impossibilité est la suivante :

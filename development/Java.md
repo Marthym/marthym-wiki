@@ -21,5 +21,7 @@
 * [[Tester des membres private]]
 * [[Transformer une URL java en chemin complet]]
 
+## Maven
+* [[Maven: Exemple de settings.xml]]
 
 <!-- --- tags: java -->

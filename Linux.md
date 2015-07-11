@@ -7,6 +7,7 @@
 * [[Changer le nom d'une machine]]
 * [[Comment installer une alternative]]
 * [[Configuration Swappiness]]
+* [[Crypter tar.gz avec mot de passe]]
 * [[Démarrage de JBoss en service|Demarrage de JBoss en service]]
 * [[Désactiver l'interface graphique|Desactiver-l-interface-graphique]]
 * [[Installer une imprimante IPP]]
@@ -38,6 +39,7 @@
 * [[WGET avec un proxy]]
 
 ## Shell
+* [[Crypter tar.gz avec mot de passe]]
 * [[Découper et rattacher un gros fichier|Decouper et rattacher un gros fichier]]
 * [[Effacer définitivement un disque dur|Effacer definitivement un disque dur]]
 * [[Envoyer POST avec cURL]]

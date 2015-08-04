@@ -13,4 +13,4 @@
 * [[Utiliser DataPump en ligne de commande]]
 
 
-<!-- --- tags: oracle -->
+<!-- --- tags: server, oracle, bdd -->

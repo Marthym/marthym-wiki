@@ -11,6 +11,7 @@
 * [[Démarrage de JBoss en service|Demarrage de JBoss en service]]
 * [[Désactiver l'interface graphique|Desactiver-l-interface-graphique]]
 * [[Installer une imprimante IPP]]
+* [[Lister le matériel présent sur la machine|Lister le materiel present sur la machine]]
 * [[Missing LSB tags and overrides]]
 * [[Monter une image ISO]]
 * [[MTA est long à démarrer|MTA est long a demarrer]]

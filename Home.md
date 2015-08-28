@@ -20,6 +20,7 @@
 ## Tools
  * [[Eclipse]]
  * [[Git]]
+ * [[IntelliJ]]
  * [[VMWare]]
 
 ### Hors catégorie

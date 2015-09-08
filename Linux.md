@@ -4,6 +4,7 @@
 * [[Ajouter de la swap sans toucher au partition]]
 * [[Ajouter une police de caractere a Java]]
 * [[apt-get "Encountered a section with no Package: header"|apt-get--Encountered-a-section-with-no-Package--header]]
+* [[Backup distant via HubiC]]
 * [[Changer le nom d'une machine]]
 * [[Comment installer une alternative]]
 * [[Configuration Swappiness]]

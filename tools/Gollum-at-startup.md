@@ -5,9 +5,8 @@ systemd le nouveau gestionnaire de service donc voici un script systemd à place
 ~~~
 [Unit]
 Description=Gollum server
-After=syslog.target
-After=network.target
-After=named.service
+Wants=network-online.target
+Wants=systemd-resolved.service
 
 [Service]
 User=johndo

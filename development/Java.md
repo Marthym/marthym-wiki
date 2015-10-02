@@ -20,6 +20,7 @@
 * [[Télécharger Java en une ligne|Telecharger Java en une ligne]]
 * [[Tester des membres private]]
 * [[Transformer une URL java en chemin complet]]
+* [[Visitor VS instanceof]]
 
 ## Maven
 * [[Maven: Exemple de settings.xml]]

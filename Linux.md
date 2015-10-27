@@ -23,6 +23,7 @@
 * [[Documents récents dans gnome-shell|Documents recents dans gnome-shell]]
 * [[gnome-shell segfault at 84 ip libcogl.so.12.1.1]]
 * [[Screencast avec Gnome-Shell]]
+* [[Réunir correctement les icônes dans le dock|Join application icon in dock]]
 
 ## Network
 * [[Authentification SSH par certificat]]

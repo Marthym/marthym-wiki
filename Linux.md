@@ -59,6 +59,7 @@
 * [[Trouver les gros fichiers]]
 * [[Trouver les UUID de mes partitions]]
 * [[Unifier des PDFs]]
+* [[Utiliser MPC|Using MPC]]
 * [[Web-server en une ligne de commande]]
 
 ## Divers

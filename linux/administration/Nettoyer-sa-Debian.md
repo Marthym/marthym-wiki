@@ -85,7 +85,7 @@ apt-get purge linux-image-3.2.0-3-486 linux-headers-3.2.0-3*
 **ATTENTION Cette commande est a utiliser avec beaucoup de parcimonie, c'est irréversible et ça casse la VM ou le PC définitivement !**
 
 ### Trouver les gros fichiers
-[[include:Trouver les gros fichiers]]
+[[include:../shell/Trouver les gros fichiers]]
 
 ## Liens
   * http://www.crowd42.info/quelques-pistes-pour-nettoyer-se-debian-ou-ubuntu

@@ -88,7 +88,7 @@ apt-get purge linux-image-3.2.0-3-486 linux-headers-3.2.0-3*
 [[include:../shell/Trouver les gros fichiers]]
 
 ## Liens
-  * http://www.crowd42.info/quelques-pistes-pour-nettoyer-se-debian-ou-ubuntu
-  * http://forum.ovh.com/showthread.php?t=27814
+  * [[http://www.crowd42.info/quelques-pistes-pour-nettoyer-se-debian-ou-ubuntu]]
+  * [[http://forum.ovh.com/showthread.php?t=27814]]
 
 <!-- --- tags: linux -->

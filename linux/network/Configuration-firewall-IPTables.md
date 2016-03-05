@@ -1,4 +1,7 @@
-Voilà un configuration valable pour un firewall IPTables qui donne sur internet :
+Voilà une configuration valable pour un firewall IPTables qui donne sur internet à mettre dans un fichier `/etc/init.d/firewall`.
+
+Pour l'installer : `update-rc.d firewall defaults` <br/>
+Pour le désinstaller : `update-rc.d -f firewall remove`
 
 ~~~ bash
 #!/bin/sh

@@ -49,6 +49,7 @@
 * [[Lecture d'arguments en bash]]
 * [[Lister les fichiers d'une arborescence|Lister les fichiers d-une arborescence]]
 * [[Mettre un processus en pause]]
+* [[Modifier une fonction shell]]
 * [[Rechercher dans les fichiers]]
 * [[Récupérer le chemin d'un script bash|Recuperer le chemin d-un script bash]]
 * [[Rendre exécutable ce qui peut l'être dans une arborescence|Rendre executable ce qui peut l-etre dans une arborescence]]

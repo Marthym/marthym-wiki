@@ -77,6 +77,9 @@ le serveur et pointez la branche principale locale dessus comme ceci<br/>
 `git reset --hard origin/master`
 
 
+## Comptage des commits par utilisateur
+`git shortlog -s -n`
+
 ## Conseils utiles
 utiliser des couleurs dans la sortie de git<br/>
 `git config color.ui true`
@@ -88,10 +91,10 @@ utiliser l'ajout interactif
 `git add -i`
 
 ## Liens
-  * http://rogerdudler.github.io/git-guide/index.fr.html
-  * http://book.git-scm.com/
-  * http://progit.org/book/
-  * http://think-like-a-git.net/
-  * http://help.github.com/
+  * [[http://rogerdudler.github.io/git-guide/index.fr.html]]
+  * [[http://book.git-scm.com/]]
+  * [[http://progit.org/book/]]
+  * [[http://think-like-a-git.net/]]
+  * [[http://help.github.com/]]
   
 <!-- --- tags: git -->

@@ -57,6 +57,9 @@ iptables -t filter -A INPUT -p udp --dport 53 -j ACCEPT
 # NTP Out
 iptables -t filter -A OUTPUT -p udp --dport 123 -j ACCEPT
 
+# WOL Out
+iptables -t filter -A OUTPUT -p udp --dport 9 -j ACCEPT
+
 # HTTP + HTTPS Out
 iptables -t filter -A OUTPUT -p tcp --dport 80 -j ACCEPT
 iptables -t filter -A OUTPUT -p tcp --dport 443 -j ACCEPT

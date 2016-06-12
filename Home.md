@@ -23,6 +23,9 @@
  * [[IntelliJ]]
  * [[VMWare]]
 
+## Divers
+ * [[Resynchroniser des CPL Devolo]]
+
 ### Hors catégorie
  * [[Gollum at startup]]
  * [[Logstach config for Metrics]]

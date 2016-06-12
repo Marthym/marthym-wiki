@@ -24,6 +24,7 @@
  * [[VMWare]]
 
 ## Divers
+ * [[Mute et CEC sur OpenELEC]]
  * [[Resynchroniser des CPL Devolo]]
 
 ### Hors catégorie

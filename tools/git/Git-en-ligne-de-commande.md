@@ -41,6 +41,9 @@ et supprimer la branche<br/>
 une branche n'est pas disponible pour les autres tant que vous ne l'aurez pas envoyée vers votre dépôt distant<br/>
 `git push origin <branch>`
 
+Pour supprimer toutes les références distantes à des branches supprimées :
+`git remote prune origin`
+
 ## Mettre à jour & fusionner
 pour mettre à jour votre dépôt local vers les dernières validations, exécutez la commande<br/>
 `git pull`

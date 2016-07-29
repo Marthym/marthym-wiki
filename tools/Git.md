@@ -1,4 +1,5 @@
 * [[Convention de message de commit]]
+* [[Changelog depuis milestone gitlab]]
 * [[Git en ligne de commande]]
 * [[Git, un modèle de branches efficace|Git-un-modele-de-branches-efficace]]
 * [[Git rerere]]

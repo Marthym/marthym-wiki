@@ -17,6 +17,7 @@
 * [[Monter une image ISO]]
 * [[MTA est long à démarrer|MTA est long a demarrer]]
 * [[Nettoyer sa Debian]]
+* [[Nettoyer les fichiers de configuration]]
 * [[Problème de politique de sécurité X11|Probleme de politique de securite X11]]
 
 ## Gnome-Shell

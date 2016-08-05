@@ -13,7 +13,9 @@ localepurge
 Cette opération ne se fait qu'une fois, par la suite localepurge se lance automatiquement avec ''apt''.
 
 ## Le nettoyage régulier
+
 ### Les symptomes
+
 Si on lance la commande suivante
 ``` sh
 du -hs /var/cache/apt/archives
@@ -88,7 +90,6 @@ apt-get purge linux-image-3.2.0-3-486 linux-headers-3.2.0-3*
 [[include:../shell/Trouver les gros fichiers]]
 
 ## Liens
-  * [[http://www.crowd42.info/quelques-pistes-pour-nettoyer-se-debian-ou-ubuntu]]
   * [[http://forum.ovh.com/showthread.php?t=27814]]
 
 <!-- --- tags: linux -->

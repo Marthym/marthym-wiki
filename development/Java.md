@@ -14,12 +14,14 @@
 * [[Optimisation des statements Batch MySQL]]
 * [[Où télécharger les JDK ?|Ou-telecharger-les-JDK]]
 * [[Remote JMX Console]]
+* [[Répéter un test x fois avec jUnit|Repeat test with jUnit]]
 * [[Requête Oracle avec Variables Liées|Requete-Oracle-avec-Variables-Liees]]
 * [[Start Neo4j Impermanent Database + REST Server on random port for test]]
 * [[StringIndexOutOfBoundsException dans Ivy]]
 * [[Télécharger Java en une ligne|Telecharger Java en une ligne]]
 * [[Tester des membres private]]
 * [[Transformer une URL java en chemin complet]]
+* [[Valeur memoire java par defaut]]
 * [[Visitor VS instanceof]]
 
 ## Maven

@@ -24,9 +24,10 @@
  * [[VMWare]]
 
 ## Divers
+ * [[Mettre a jour un package LaTeX]]
  * [[Mute et CEC sur OpenELEC]]
  * [[Resynchroniser des CPL Devolo]]
-
+ 
 ### Hors catégorie
  * [[Gollum at startup]]
  * [[Logstach config for Metrics]]

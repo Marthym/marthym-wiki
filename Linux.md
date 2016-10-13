@@ -12,6 +12,7 @@
 * [[Démarrage de JBoss en service|Demarrage de JBoss en service]]
 * [[Désactiver l'interface graphique|Desactiver-l-interface-graphique]]
 * [[Installer une imprimante IPP]]
+* [[Installer backup sur jail BSD]]
 * [[Lister le matériel présent sur la machine|Lister le materiel present sur la machine]]
 * [[Missing LSB tags and overrides]]
 * [[Monter une image ISO]]

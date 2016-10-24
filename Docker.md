@@ -6,6 +6,7 @@
 * [[InetAddress doesnt resolve IP on Alpine docker container]]
 * [[Registry Docker derrière un Nginx|Registry Docker derriere un Nginx]]
 * [[Supprimer les images non taggé|Supprimer-les-images-non-tagge]]
+* [[Supprimer les images orphelines d'un registre|Remove ophans from docker registry]]
 * [[Supprimer les vieux conteneurs]]
 * [[System error on docker run]]
 * [[Update toutes les images]]

@@ -21,12 +21,11 @@
  * [[Eclipse]]
  * [[Git]]
  * [[IntelliJ]]
+ * [[LaTeX]]
  * [[VMWare]]
 
 ## Divers
- * [[Mettre a jour un package LaTeX]]
  * [[Mute et CEC sur OpenELEC]]
- * [[Optimizer la taille d'un PDF]]
  * [[Resynchroniser des CPL Devolo]]
  
 ### Hors catégorie

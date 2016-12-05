@@ -1,3 +1,4 @@
+* [[Commandes GitFlow vs. Git|gitflow-breakdown]]
 * [[Convention de message de commit]]
 * [[Changelog depuis milestone gitlab]]
 * [[Git en ligne de commande]]

@@ -22,5 +22,6 @@ Ajouter le fichier `~/.IntelliJIdea<version>/idea64.vmoptions`
 -Djava.net.preferIPv4Stack=true
 -Djsse.enableSNIExtension=false
 -Dawt.useSystemAAFontSettings=lcd
+-Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine
 -ea
 ```

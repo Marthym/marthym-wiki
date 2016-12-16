@@ -41,6 +41,7 @@
 * [[Scanner les ports sur une IP]]
 * [[SSH : Vérification de la clé host échoué|SSH--Verification de la cle host echoue]]
 * [[SSH: Reprendre la main sur un session perdue]]
+* [[SSH, control de tunnel via socket]]
 * [[WGET avec un proxy]]
 
 ## Shell

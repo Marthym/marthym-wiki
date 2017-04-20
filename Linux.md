@@ -11,6 +11,7 @@
 * [[Crypter tar.gz avec mot de passe]]
 * [[Démarrage de JBoss en service|Demarrage de JBoss en service]]
 * [[Désactiver l'interface graphique|Desactiver-l-interface-graphique]]
+* [[Firefox à jour sur testing|Last Firefox Version in testing]]
 * [[Installer une imprimante IPP]]
 * [[Installer backup sur jail BSD]]
 * [[Lister le matériel présent sur la machine|Lister le materiel present sur la machine]]

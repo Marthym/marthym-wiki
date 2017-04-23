@@ -27,6 +27,7 @@
 ## Divers
  * [[Mute et CEC sur OpenELEC]]
  * [[Resynchroniser des CPL Devolo]]
+ * [[Cuisine|cooking]]
  
 ### Hors catégorie
  * [[Gollum at startup]]

@@ -23,6 +23,7 @@
  * [[IntelliJ]]
  * [[LaTeX]]
  * [[VMWare]]
+ * [[Rafraichir un dépôt git dans Redmine|Refresh Redmine Repo]]
 
 ## Divers
  * [[Mute et CEC sur OpenELEC]]

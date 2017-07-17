@@ -78,6 +78,7 @@
 * [[Creer un conteneur chiffre]]
 * [[Créer une partition chiffré sur une clé USB|Creer une partition chiffre sur une cle USB]]
 * [[Créer une clé USB d'install Debian|Creer une cle USB dinstall Debian]]
+* [[Désactiver le fixup Mozilla|Desactiver le fixup Mozilla]]
 * [[Retrouver la cle OEM Windows]]
 * [[Squid refresh pattern]]
 * [[Squid StoreId rewrite]]

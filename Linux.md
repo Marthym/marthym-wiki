@@ -35,6 +35,7 @@
 * [[Configuration firewall IPTables]]
 * [[Configuration reseau sur VM Linux]]
 * [[Débloquer le wifi|Debloquer le wifi]]
+* [[Download fichier via SSH avec reprise]]
 * [[DNS Securisé|DNS Securise]]
 * [[Domaines de recherche pour NetworkManager]]
 * [[Lancer TCPDump en non root]]

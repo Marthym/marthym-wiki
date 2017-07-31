@@ -57,6 +57,7 @@
 * [[Mettre un processus en pause]]
 * [[Modifier une fonction shell]]
 * [[Multi-thread avec xargs]]
+* [[Raccourcis Terminal]]
 * [[Rechercher dans les fichiers]]
 * [[Récupérer le chemin d'un script bash|Recuperer le chemin d-un script bash]]
 * [[Rendre exécutable ce qui peut l'être dans une arborescence|Rendre executable ce qui peut l-etre dans une arborescence]]

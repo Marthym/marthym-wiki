@@ -15,4 +15,3 @@ Quelques commandes/raccourcis pour aller plus vite en mode terminal.
 * `CTRL + L`: Nettoyer la console
 * `CTRL + C`: Arrêter/tuer le “foreground process” courant
 * `CTRL + Z`: Suspendre/arrêter le “foreground process”
-* 

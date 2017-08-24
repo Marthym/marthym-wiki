@@ -21,6 +21,7 @@
  * [[Eclipse]]
  * [[Git]]
  * [[IntelliJ]]
+ * [[Jekyll]]
  * [[LaTeX]]
  * [[VMWare]]
  * [[Rafraichir un dépôt git dans Redmine|Refresh Redmine Repo]]

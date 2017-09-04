@@ -64,6 +64,7 @@
 * [[Renommer des fichiers sous Linux]]
 * [[Supprimer un type de fichier dans une arborescence]]
 * [[Suppression massive de fichiers|Massive file deletion]]
+* [[Supprimer un fichier par Inode|Remove file by Inode]]
 * [[Synchronisation Rsync]]
 * [[Télé-charger un répertoire entier via FTP|Tele-charger un repertoire entier via FTP]]
 * [[Trouver les gros fichiers]]

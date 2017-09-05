@@ -25,6 +25,8 @@
  * [[LaTeX]]
  * [[VMWare]]
  * [[Rafraichir un dépôt git dans Redmine|Refresh Redmine Repo]]
+ * Ansible
+   * [[template error while templating string]]
 
 ## Divers
  * [[Mute et CEC sur OpenELEC]]

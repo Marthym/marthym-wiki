@@ -64,17 +64,16 @@ Pour supprimer toutes les références distantes à des branches supprimées :
 `git remote prune origin`
 
 ## Mettre à jour & fusionner
-pour mettre à jour votre dépôt local vers les dernières validations, exécutez la commande<br/>
-`git pull`
-dans votre espace de travail pour récupérer et fusionner les changements distants. 
-Pour fusionner une autre branche avec la branche active (par exemple master), utilisez<br/>
-`git merge <branch>`<br/>
+pour mettre à jour votre dépôt local vers les dernières validations, exécutez la commande `git pull` dans votre espace de travail pour récupérer et fusionner les changements distants. 
+
+A noter que par défaut git fait un merge. Mais on peut lui demander de faire un rebase. A peine plus risqué en termes de conflicts, ça permet de garder un historique propre. A partir de la 2.9 il est possible d’utiliser en plus l’autostash <br/>
+`git pull --rebase --autostash`.
+
+Pour fusionner une autre branche avec la branche active (par exemple master), utilisez `git merge <branch>`
 dans les deux cas, git tente d'auto-fusionner les changements. Malheureusement, ça n’est pas toujours possible et 
 résulte par des conflits. Vous devez alors régler ces conflits manuellement en éditant les fichiers indiqués par git. 
-Après l'avoir fait, vous devez les marquer comme fusionnés avec<br/>
-`git add <filename>`<br/>
-après avoir fusionné les changements, vous pouvez en avoir un aperçu en utilisant<br/>
-`git diff <source_branch> <target_branch>`
+Après l'avoir fait, vous devez les marquer comme fusionnés avec `git add <filename>`
+après avoir fusionné les changements, vous pouvez en avoir un aperçu en utilisant `git diff <source_branch> <target_branch>`.
 
 ## tags
 il est recommandé de créer des tags pour les releases de programmes. C’est un concept connu, qui existe aussi dans SVN. 

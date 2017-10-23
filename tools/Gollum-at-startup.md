@@ -1,32 +1,32 @@
 Normalement ici gollum est installé, reste plus qu'a le faire démarrer en même temps que la machine. Sur Debian c'est
 systemd le nouveau gestionnaire de service donc voici un script systemd à placer dans :
-`/usr/lib/systemd/system/gollum.service`
+`~/.config/systemd/user/gollum.service`
 
-~~~
+``` service
 [Unit]
 Description=Gollum server
 After=syslog.target
-Requires=docker.service
-Requires=network.target
 Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=fcombes
-Environment="WIKI_DIR=/home/fcombes/docker-home/marthym-wiki"
-ExecStart=/usr/local/bin/gollum --no-edit --gollum-path ${WIKI_DIR}
-ExecStartPost=/bin/bash -c "/usr/bin/git --git-dir=${WIKI_DIR}/.git --work-tree=${WIKI_DIR} pull"
+Environment="WIKI_DIR=/home/${USER}/workspace/marthym-wiki"
+ExecStart=/usr/local/bin/gollum --no-edit --show-all ${WIKI_DIR}
+ExecStartPost=/usr/bin/git --git-dir=${WIKI_DIR}/.git --work-tree=${WIKI_DIR} pull
 
 # Give a reasonable amount of time for the server to start up/shut down
 TimeoutSec=10
 
 [Install]
 WantedBy=multi-user.target
-~~~
+```
 
-On note le `ExecStartPre` qui va permettre de synchroniser le wiki au démarrage. _Par contre impossible de faire
-fonctionner la commande StartPre à cause d'une erreur ssh. Il ne trouve pas le site github. La seule façon de la faire
-fonctionner est de mettre un deuxième StartPre avec le bash._
+``` shell
+systemctl --user daemon-reload
+systemctl --user start gollum
+```
+
+On note le `ExecStartPre` qui va permettre de synchroniser le wiki au démarrage. 
 
 Après on peut aussi mettre en place un chron pour l'actualiser régulièrement mais dans le cas d'un wiki perso c'est pas
 forcément nécessaire.

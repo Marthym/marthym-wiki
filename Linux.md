@@ -68,6 +68,7 @@
 * [[Supprimer un fichier par Inode|Remove file by Inode]]
 * [[Synchronisation Rsync]]
 * [[Télé-charger un répertoire entier via FTP|Tele-charger un repertoire entier via FTP]]
+* [[TMux Cheatcheet]]
 * [[Trouver les gros fichiers]]
 * [[Trouver les UUID de mes partitions]]
 * [[Unifier des PDFs]]

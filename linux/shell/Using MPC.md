@@ -40,4 +40,20 @@ mpc lsplaylists
 mpc load pl-soft.m3u
 ```
 
+## Interface ASCII
+
+Il existe aussi un interface ASCII qui donne un peu de visualisation à ce qu’il se passe dans MPC mais le nom de l’outil est pas évident à retenir :
+
+```sh
+ncmpcpp
+```
+
+## Streaming
+
+Il est possible de streamer des fichiers ou podcast :
+
+```sh
+mpc add http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-182.mp3
+```
+
 <!-- --- tags: shell, linux, musique, mpc, mpd -->

@@ -63,33 +63,54 @@ Souhait=inconnU/Installé/suppRimé/Purgé/H=à garder
 |/ Err?=(aucune)/besoin Réinstallation (État,Err: majuscule=mauvais)
 ||/ Nom                     Version          Architecture     Description
 +++-=======================-===========-=============-====================================================
-un  linux-image             <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-486     <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-686     <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-686-big <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-amd64   <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-k7      <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-openvz- <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-vserver <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-vserver <aucun>                   (aucune description n'est disponible)
-un  linux-image-2.6-xen-686 <aucun>                   (aucune description n'est disponible)
+un  linux-image             <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-486     <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-686     <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-686-big <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-amd64   <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-k7      <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-openvz- <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-vserver <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-vserver <aucun>                   (aucune description n’est disponible)
+un  linux-image-2.6-xen-686 <aucun>                   (aucune description n’est disponible)
 ii  linux-image-3.2.0-3-486 3.2.23-1    i386          Linux 3.2 for older PCs
 ii  linux-image-3.2.0-4-486 3.2.32-1    i386          Linux 3.2 for older PCs
 ii  linux-image-486         3.2+46      i386          Linux for older PCs (meta-package)
 ```
 
-Les "**ii**" sont les packages installé, pour supprimer ceux qui ne sont plus utilisé, dans l'exemple précédent c'est le **3.2.0-3-486** :
+Les "**ii**" sont les packages installé, pour supprimer ceux qui ne sont plus utilisé, dans l’exemple précédent c’est le **3.2.0-3-486** :
 
 ``` sh
 apt-get purge linux-image-3.2.0-3-486 linux-headers-3.2.0-3*
 ```
 
-**ATTENTION Cette commande est a utiliser avec beaucoup de parcimonie, c'est irréversible et ça casse la VM ou le PC définitivement !**
+**ATTENTION Cette commande est a utiliser avec beaucoup de parcimonie, c’est irréversible et ça casse la VM ou le PC définitivement !**
+
+### Nettoyer les paquets résiduels
+
+Afin de faire un véritable ménage sur le système, exécuter la commande suivante :
+
+``` sh
+apt purge $(dpkg --list |grep '^rc' |awk '{print $2}')
+```
+
+Et en prime la liste de paquest qui reste après une montée de version :
+
+```sh
+dpkg -l | grep deb8 
+```
+
+Explication de la commande :
+
+* **dpkg –list** : liste tous les paquets présent sur le système
+* **grep ‘^rc’** : cherche les paquets désinstallés mais pas purgés
+* **awk ‘{print $2}’** : filtre l’affichage de la sortie de la commande précédente
 
 ### Trouver les gros fichiers
 [[include:../shell/Trouver les gros fichiers]]
 
 ## Liens
   * [[http://forum.ovh.com/showthread.php?t=27814]]
+  * https://memo-linux.com/debian-nettoyer-les-paquets-residuels/
 
 <!-- --- tags: linux -->

@@ -1,6 +1,7 @@
 
 ## Administration
 * [[Activer SUDO sur Debian]]
+* [[Analyze systemd boot speed]]
 * [[Ajouter de la swap sans toucher au partition]]
 * [[Ajouter une police de caractere a Java]]
 * [[apt-get "Encountered a section with no Package: header"|apt-get--Encountered-a-section-with-no-Package--header]]

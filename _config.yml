@@ -48,10 +48,19 @@ defaults:
     seo:
       type: "WebPage"
 
+- scope:
+    path: _docs
+    type: category
+  values:
+    layout: category
+
 collections:
   docs:
     permalink: /:collection/:path/
     output: true
+  category:
+    output: true
+    permalink: /docs/:name/index.html
   posts:
     permalink: /blog/:year/:month/:day/:title/
     output: true

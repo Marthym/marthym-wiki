@@ -1,22 +1,26 @@
+{% assign by_categories = site.docs | group_by: 'category' | sort: 'name', 'first' %}
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-{% for section in site.data.docs %}
+{% for category in by_categories %}
+  {% assign by_subcats = category.items | group_by: 'subcategory' | sort: 'name', 'first' %}
+  {% assign psize = by_subcats | first %}
+  {% if psize.name != "" %} 
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{forloop.index}}" aria-expanded="false" aria-controls="collapse-{{forloop.index}}">
-          {{ section.title }}
+          {{ category.name }}
         </a>
       </h4>
     </div>
     <div id="collapse-{{forloop.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
-        {% for item in section.docs %}
-          {% assign item_url = item | prepend:"/docs/" | append:"/" %}
-          {% assign p = site.docs | where:"url", item_url | first %}
-          <a class="list-group-item {% if item_url == page.url %}active{% endif %}" href="{{ p.url  | prepend: site.baseurl }}">{{ p.title }}</a>
+        {% for subcategory in by_subcats %}
+          {% assign item_url = subcategory.name | prepend: "/" | prepend: category.name | prepend:"/docs/" | append:"/" | downcase %}
+          <a class="list-group-item {% if item_url == page.url %}active{% endif %}" href="{{ item_url  | prepend: site.baseurl }}">{{ subcategory.name }}</a>
         {% endfor %}
       </ul>
     </div>
   </div>
+  {% endif %}
 {% endfor %}
 </div>

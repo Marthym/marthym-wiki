@@ -1,4 +1,10 @@
-<!-- --- title: .Net / Accès au WS Sécurisé en .Net -->
+---
+title: "Accès au WS Sécurisé en .Net"
+category: Développement
+subcategory: DotNet
+tags: [devlopment, dotnet, .net, security, ws]
+---
+
 Depuis la version 8 (je sais plus quel fix), les services Cameleon sont sécurisé. La difficulté est donc maintenant de 
 les accéder en .Net, c'est moins facile qu'en Java !
 
@@ -10,7 +16,7 @@ genre de truc. C'est dans ce fichier qu'il faut configurer l'authentification du
    <transport clientCredentialType="Basic" proxyCredentialType="None" realm="Cameleon Ws"/>
    <message clientCredentialType="UserName" algorithmSuite="Default"/>
 </security>
-``` 
+```
 
 Il faudra ensuite bien sur, dans le code qui consomme le WS, ajouter les lignes de code pour passer le user et le 
 password :
@@ -18,6 +24,5 @@ password :
 ``` csharp
 cart.ClientCredentials.UserName.UserName = "cameleon";
 cart.ClientCredentials.UserName.Password = "leon";
-``` 
+```
 
-<!-- --- tags: dotnet -->

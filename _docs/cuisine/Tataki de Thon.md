@@ -1,3 +1,9 @@
+---
+title: "Tataki de thon"
+category: Cuisine
+tags: [cuisine, cook, thon, soja, poisson]
+---
+
 ## Marinade
 
 * Sauce soja

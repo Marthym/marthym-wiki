@@ -1,50 +1,15 @@
 {% assign by_categories = site.docs | group_by: 'category' | sort: 'name', 'first' %}
 {% for category in by_categories %}
   {% assign by_subcats = category.items | group_by: 'subcategory' | sort: 'name', 'first' %}
-  {% assign psize = by_subcats | first %}
 <div class="list-group">
   <a href="/docs/{{ category.name | downcase }}/" class="list-group-item list-group-item-action active">
     {{ category.name }}
   </a>
   {% for subcategory in by_subcats %}
-    {% assign item_url = subcategory.name | prepend: "/" | prepend: category.name | prepend:"/docs/" | append:"/" | downcase %}
-    {% if psize.name != "" %}
+    {% if subcategory.name != "" %}
+      {% assign item_url = subcategory.name | prepend: "/" | prepend: category.name | prepend:"/docs/" | append:"/" | downcase %}
   <a href="{{ item_url  | prepend: site.baseurl }}" class="list-group-item list-group-item-action">{{ subcategory.name }}</a>
     {% endif %}
   {% endfor %}
 </div>
 {% endfor %}
-{% comment %}
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-{% for category in by_categories %}
-  {% assign by_subcats = category.items | group_by: 'subcategory' | sort: 'name', 'first' %}
-  {% assign psize = by_subcats | first %}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a role="button" 
-          {% if psize.name != "" %}
-            data-toggle="collapse" 
-            data-parent="#accordion" 
-            aria-expanded="true" 
-            aria-controls="collapse-{{forloop.index}}" 
-            href="#collapse-{{forloop.index}}" 
-          {% else %}
-            href="/docs/{{ category.name | downcase }}/"
-          {% endif %} >
-          {{ category.name }}
-        </a>
-      </h4>
-    </div>
-    <div id="collapse-{{forloop.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-      <ul class="list-group">
-        {% for subcategory in by_subcats %}
-          {% assign item_url = subcategory.name | prepend: "/" | prepend: category.name | prepend:"/docs/" | append:"/" | downcase %}
-          <a class="list-group-item {% if item_url == page.url %}active{% endif %}" href="{{ item_url  | prepend: site.baseurl }}">{{ subcategory.name }}</a>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-{% endfor %}
-</div>
-{% endcomment %}

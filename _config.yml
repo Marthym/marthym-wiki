@@ -4,14 +4,22 @@ email: your-email@domain.com
 description: >
   Wiki perso de Marthym
 
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: https://wiki.ght1pc9kc.fr # the base hostname & protocol for your site
-git_address: https://github.com/aksakalli/jekyll-doc-theme
-git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
+baseurl:          "" # the subpath of your site, e.g. /blog/
+lang:             fr_FR
+timezone:         Europe/Paris
+url:              https://wiki.ght1pc9kc.fr # the base hostname & protocol for your site
+
+social:
+  name: Marthym
+  links:
+    - https://www.linkedin.com/in/combesfrederic/
+    - https://plus.google.com/+BenBalter
+    - https://plus.google.com/+Fr%C3%A9d%C3%A9ricCombes
+    - https://github.com/Marthym
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
-bootwatch: paper
+bootwatch: superhero
 
 # Build settings
 markdown: kramdown
@@ -29,7 +37,6 @@ exclude:
   - .gitignore
   - README.md
 
-timezone: Europe/Paris
 defaults:
 - scope:
     path: _docs

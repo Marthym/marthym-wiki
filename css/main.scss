@@ -5,8 +5,6 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 
-
-
 @import
   {% if site.bootwatch %}
     "bootswatch/{{site.bootwatch | downcase}}/variables",
@@ -83,4 +81,19 @@ body {
 }
 .navbar-form .has-feedback .form-control-feedback{
   top:10px
+}
+
+#markdown-toc {
+  *:before {
+    content: none;
+  }
+  @extend .nav; 
+  @extend .nav-stacked;
+  @extend .col-md-3;
+
+  float: right;
+}
+.center-image {
+    margin: 0 auto;
+    display: block;
 }

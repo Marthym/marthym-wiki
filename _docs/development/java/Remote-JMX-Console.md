@@ -1,4 +1,9 @@
-<!-- --- title: Java / Remote JMX Console -->
+---
+title: "Remote JMX Console"
+category: Développement
+subcategory: Java
+tags: [development, java, jmx, console, remote]
+---
 Pour passer une application Java en JMX Remote Console, il faut ajouter des paramètres :
 
 ~~~
@@ -7,5 +12,3 @@ Pour passer une application Java en JMX Remote Console, il faut ajouter des para
 -Dcom.sun.management.jmxremote.ssl=false 
 -Dcom.sun.management.jmxremote.authenticate=false
 ~~~
-
-<!-- --- tags: java -->

@@ -1,3 +1,9 @@
+---
+title: "MTA est long à démarrer"
+category: Linux
+subcategory: Administration
+tags: [linux, sysadmin, mta, startup]
+---
 Déjà c'est quoi le MTA ? C'est le **Mail Transfert Agent**, en gros le truc qui s'occupe part déjà de distribuer
 les mails au différents users. Quand il est long à démarrer ça peut venir de trois facteurs :
 
@@ -15,5 +21,3 @@ nameserver 127.0.0.1
 ~~~
 
 FIXME Si ça ne fonctionne toujours pas, dommage, je sais pas ce que c'est un "smarthost inexistant ou inaccessible" :p
-
-<!-- --- tags: linux -->

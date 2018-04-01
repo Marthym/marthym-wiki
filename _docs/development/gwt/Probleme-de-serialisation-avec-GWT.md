@@ -1,4 +1,9 @@
-<!-- --- title: GWT / Problème de sérialisation -->
+---
+title: "Problème de sérialisation"
+category: Développement
+subcategory: GWT
+tags: [development, gwt]
+---
 Voilà plusieurs fois que je me fais avoir !
 
 ## Symptômes
@@ -25,5 +30,3 @@ Et c'est très souvent la dernière raison qui explique le problème ...
 ## Liens
 * http://developerlife.com/tutorials/?p=131
 * http://stackoverflow.com/questions/4202964/serializationpolicy-error-when-performing-rpc-from-within-gwt-application
-
-<!-- --- tags: gwt -->

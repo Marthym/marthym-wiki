@@ -1,6 +1,12 @@
-<!-- --- title: Java / Ajouter un certificat pour les connexions SSL Java -->
+---
+title: "Ajouter un certificat pour les connexions SSL Java"
+category: Développement
+subcategory: Java
+tags: [development, java, ssl, crypto, security]
+---
+
 ## Symptôme
-Dans le cas par exemple d'une connexion en LDAPS (LDAP via SSL) on a de bonne chance de se prendre ce genre d'erreur :
+Dans le cas par exemple d'une connexion en LDAPS (LDAP via SSL) on a de bonne chance de se prendre ce genre d’erreur :
 
 ~~~
 javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -15,10 +21,10 @@ javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: 
     ...
 ~~~
 
-_Note que c'est la même pour les accès à des Web-Service en HTTPS via Axis_
+_Note que c’est la même pour les accès à des Web-Service en HTTPS via Axis_
 
 ## Explication
-Cette erreur vient du fait que le client n'accepte pas le certificat du serveur. Les histoires des certificats sont 
+Cette erreur vient du fait que le client n’accepte pas le certificat du serveur. Les histoires des certificats sont 
 manifestement un poil compliqué mais bon, grosso modo, il faut ajouter le certif du serveur à la politique sécurité 
 du client.
 
@@ -33,13 +39,13 @@ En tant que ''root'', exécuter la commande :
 
 ``` sh
 keytool -importcert -keystore "/usr/lib/jvm/java-6-sun/jre/lib/security/jssecacerts" -trustcacerts -alias "nom.dusitequipublielecertif.fr" -file mon-certificat.cer
-``` 
+```
 
 _Attention le chemin de le JRE est pas toujours le même ! Sous linux pour le connaître facilement taper:_
 
 ``` sh
 update-alternatives --list java</code>
-``` 
+```
 
 C'est évident mais on sait jamais, s'il y a plusieurs JRE sur le serveur, il faut exécuter sur celle qu'utilise JBoss !!
 
@@ -71,7 +77,7 @@ paramètre le serveur que vous voulez accéder en SSL :
 javac -g InstallCert.java
 java InstallCert your-ldap-server.somewhere.edu:636
 cp jssecacerts $JAVA_HOME/lib/security
-``` 
+```
 
 En gros, on compile et on execute. Ca va créer un ~KeyStore dans "jssecacerts" et y placer le certificat de votre 
 serveur. Après, pour que le client appelé depuis Cameleon soit capable de retrouver ce certificat, il faut le placer 

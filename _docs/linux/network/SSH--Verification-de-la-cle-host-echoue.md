@@ -1,6 +1,12 @@
+---
+title: "SSH Vérification de la clé hôte échoué"
+category: Linux
+subcategory: Réseau
+tags: [linux, network, ssh, security]
+---
 ## Symptome
 
-~~~
+```
 login@debian:~$ ssh server-ssh
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
@@ -15,7 +21,7 @@ Add correct host key in /home/login/.ssh/known_hosts to get rid of this message.
 Offending key in /home/login/.ssh/known_hosts:3
 RSA host key for server-ssh has changed and you have requested strict checking.
 Host key verification failed.
-~~~
+```
 
 On peut prendre cette erreur quand on se connecte a une nouvelle VM qui a pris l'IP d'une ancienne VM à laquelle on
 c'était connecté il y a longtemps. En gros, SSH dit que le serveur se présente plus avec la même clé et que c'est pas
@@ -31,5 +37,3 @@ Il faut supprimer l'ancienne référence à l’hôte 3 dans le fichier .ssh/kno
 ``` sh
 sed -i "3 d" .ssh/known_hosts
 ```
-
-<!-- --- tags: linux, security -->

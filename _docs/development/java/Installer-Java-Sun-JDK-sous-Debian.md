@@ -1,4 +1,9 @@
-<!-- --- title: Java / Installer Java Sun JDK sous Debian -->
+---
+title: "Installer Java Sun JDK sous Debian"
+category: Développement
+subcategory: Java
+tags: [development, java, debian]
+---
 C'est très simple mais faut avoir les bons dépôt activé.
 
 ## Vérifier la liste de ces dépôts
@@ -37,5 +42,3 @@ il n'est donc pas nécessaire d'installer les deux.
 
 ## Installer l'alternative
 [[include:../linux/Comment installer une alternative]]
-
-<!-- --- tags: linux, java -->

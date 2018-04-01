@@ -1,3 +1,9 @@
+---
+title: "Analyze systemd boot speed"
+category: Linux
+subcategory: Administration
+tags: [linux, sysadmin, systemd]
+---
 ## Quelques commandes permettant d’analyser les perfs de Systemd
 
 ```

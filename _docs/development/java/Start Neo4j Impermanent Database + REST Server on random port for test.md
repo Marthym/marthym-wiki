@@ -1,4 +1,9 @@
-<!-- --- title: Java / Lancer Neo4j Impermanent Database + REST Server sur un port aléatoire -->
+---
+title: "Lancer Neo4j Impermanent Database + REST Server sur un port aléatoire"
+category: Développement
+subcategory: Java
+tags: [development, java, neo4j, database, test]
+---
 Pour des tests par exemple, vu que la licence Neo4j ne permet que l'utilisation des API REST, on peut avoir besoin
 lors de test de lancer un server éphémaire sur lequel brancher les jeux de test. Cela se fait en deux étapes :
  * Lancement du serveur neo4j
@@ -31,8 +36,7 @@ while (start != 0) {
 this.graphFile = graphFile;
 this.client = new Neo4jRestClient(NEO4J_EMBEDDED_HOST, port, NEO4J_EMBEDDED_PROTOCOL);
 ```
+
 Il est a noter que les classes utilisées pour lancer le serveur REST sont dépréciés et sont sencés disparaitres 
 prochainement. Cela dit dans la derbière version testé (2.0.0) les classes sont toujours là et aucune solution 
 alternative n'existe...
-
-<!-- --- tags: java, neo4j -->

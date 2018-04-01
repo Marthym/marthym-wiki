@@ -1,3 +1,9 @@
+---
+title: "ssh, control de tunnel via socket"
+category: Linux
+subcategory: Réseau
+tags: [linux, network, ssh]
+---
 
 Il est possible de commander une session SSH via un socket.
 
@@ -8,3 +14,4 @@ Master running (pid=3517)
 ssh -S my-ctrl-socket -O exit jm@sampledomain.com
 Exit request sent.  
 ```
+

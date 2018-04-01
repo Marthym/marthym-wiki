@@ -1,4 +1,9 @@
-<!-- --- title: GWT / IllegalStateException: SimplePanel -->
+---
+title: "IllegalStateException: SimplePanel"
+category: Développement
+subcategory: GWT
+tags: [development, gwt]
+---
 Encore un truc qui m'a pris la tête !
 Après l'écriture d'une page uiBinder, je me retrouve avec cette error :
 
@@ -11,5 +16,3 @@ DecoratorPanel dérivent tout deux du SimplePanel qui n'accepte pas plus d'un se
 j'ai un FormPanel avec plusieurs widget dedans.
 
 Dommage que j'ai pas eu l'erreur à la compil ??
-
-<!-- --- tags: gwt -->

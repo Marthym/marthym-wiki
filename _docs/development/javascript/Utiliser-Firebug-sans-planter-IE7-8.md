@@ -1,4 +1,9 @@
-<!-- --- title: JS / Utiliser Firebug sans planter IE7&8 -->
+---
+title: "Utiliser Firebug sans planter IE7&8"
+category: Développement
+subcategory: JavaScript
+tags: [development, javascript, ie, firebug]
+---
 Firebug fournit justement un bout de code pour éviter de planter IE :
 
 ``` js
@@ -12,7 +17,6 @@ if (!window.console || !console.log || !console.debug) {
     		window.console[names[i]] = function() {};
     }
 }
-``` 
+```
 
  * http://code.google.com/p/fbug/source/browse/branches/firebug1.5/lite/firebugx.js
-<!-- --- tags: javascript -->

@@ -1,9 +1,15 @@
+---
+title: "Configuration firewall IPTables"
+category: Linux
+subcategory: Réseau
+tags: [linux, network, firewall, iptables]
+---
 Voilà une configuration valable pour un firewall IPTables qui donne sur internet à mettre dans un fichier `/etc/init.d/firewall`.
 
 Pour l'installer : `update-rc.d firewall defaults` <br/>
 Pour le désinstaller : `update-rc.d -f firewall remove`
 
-~~~ bash
+``` bash
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          custom firewall
@@ -68,6 +74,4 @@ iptables -t filter -A OUTPUT -p tcp --dport 443 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 8443 -j ACCEPT
-~~~
-
-<!-- --- tags: linux, network -->
+```

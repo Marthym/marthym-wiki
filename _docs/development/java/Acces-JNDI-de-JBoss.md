@@ -1,4 +1,9 @@
-<!-- --- title: Java / Accès JNDI de JBoss -->
+---
+title: "Accès JNDI de JBoss"
+category: Développement
+subcategory: Java
+tags: [development, java, jndi, jboss]
+---
 Pour accéder au composants EJB déployé sous JBoss, voici un exemple de code. Il récupère le ~CorbasManager mais ça 
 marche avec tout les EJB déployé.
 
@@ -21,9 +26,9 @@ cic.CICCorbaManagerEJB w_corbasManager = w_corbasHome.create("CORBAS");
 System.out.println("Cleanup Status : "+w_corbasManager.getCleanupStatus());			
 w_corbasManager.clearCache();
 System.out.println("Cleanup Status : "+w_corbasManager.getCleanupStatus());
-``` 
+```
 
-Pour lister les EJB de l'annuaire on peut faire comme ça :
+Pour lister les EJB de l’annuaire on peut faire comme ça :
 
 ``` java
 Enumeration<NameClassPair> w_list = ctx.list("");
@@ -31,8 +36,6 @@ while (w_list.hasMoreElements()) {
 	NameClassPair t_class = w_list.nextElement();
 	System.out.println(t_class.getName());
 }
-``` 
+```
 
-**ATTENTION Penser à faire un remove sur l'EJB à la fin pour ne pas générer un aspirateur de connexion, le Corbas étant limité !**
-
-<!-- --- tags: java, server, jboss -->
+**ATTENTION Penser à faire un remove sur l’EJB à la fin pour ne pas générer un aspirateur de connexion, le Corbas étant limité !**

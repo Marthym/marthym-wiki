@@ -1,3 +1,9 @@
+---
+title: "Nettoyer sa Debian"
+category: Linux
+subcategory: Administration
+tags: [linux, sysadmin, cleanup, debian, purge]
+---
 Même si ce n'est pas dans les proportion de Windows, un Linux a tendance à accumuler des reliquats de vieux paquets et du cache pas vraiment
 utile qui à la longue pèsent lourd sur l'espace disque (ça ne ralenti pas le système pour autant).
 
@@ -55,7 +61,7 @@ uname -r
 ```
 
 Celle pour les kernels installé :
-``` sh
+```
 dpkg --list 'linux-image*'
 
 Souhait=inconnU/Installé/suppRimé/Purgé/H=à garder
@@ -110,7 +116,5 @@ Explication de la commande :
 [[include:../shell/Trouver les gros fichiers]]
 
 ## Liens
-  * [[http://forum.ovh.com/showthread.php?t=27814]]
+  * http://forum.ovh.com/showthread.php?t=27814
   * https://memo-linux.com/debian-nettoyer-les-paquets-residuels/
-
-<!-- --- tags: linux -->

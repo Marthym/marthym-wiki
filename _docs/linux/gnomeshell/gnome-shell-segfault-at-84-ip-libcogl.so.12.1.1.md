@@ -1,3 +1,9 @@
+---
+title: "gnome-shell segfault at 84 ip libcogl.so.12.1.1"
+category: Linux
+subcategory: Gnomeshell
+tags: [linux, gnome, shell, debian, error, segfault, libcogl]
+---
 ## Symptome
 GnomeShell ne se lance pas, un message "Oh no! Something has gone wrong" à la place. Et dans les logs :
 
@@ -13,5 +19,3 @@ sudo apt-get install --reinstall libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-common
 
 ## Liens
 * http://forums.debian.net/viewtopic.php?f=5&t=78716&p=523535&hilit=libcogl#p523535
-
-<!-- --- tags: linux -->

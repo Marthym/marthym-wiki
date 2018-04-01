@@ -1,48 +1,54 @@
+---
+title: "Créer un conteneur chiffré"
+category: Linux
+subcategory: Divers
+tags: [linux, misc, security]
+---
 L'idée ici est de créer un fichier n'importe où sur le disque. Se fichier pourra être monté comme une partition et contiendra des données chiffrées.
 
 ## Création du fichier
 Attention, c'est ici que l'on détermine la taille du fichier et c'est pas facile à changer par la suite
 
-~~~ bash
+```
 dd if=/dev/urandom of=testfile bs=1M count=5000
-~~~
+```
 
 Ici on a un fichier de 5 Go.
 
 ## Création de la partition
 On va ensuite monter ce ficheir comme une partition grâce à losetup 
 
-~~~ bash
+``` bash
 # losetup -f
 /dev/loop0
 
 # losetup /dev/loop0 testfile
-~~~
+```
 
 Attention, la commande suivante efface tout ce qui se trouve dans le fichier :
 
-~~~ bash
+``` bash
 # cryptsetup luksFormat /dev/loop0
-~~~
+```
 
 Répondre YES puis saisir le mot de passe du volume.
 
-~~~ bash
+``` bash
 # cryptsetup luksOpen /dev/loop0 testfs
 # mkfs.ext4 /dev/mapper/testfs
-~~~
+```
 
 A ce stade, la partition est créée. Il ne reste plus qu'à la monter avec :
 
-~~~ bash
+``` bash
 # mount -o rw /dev/mapper/testfs /media/testfs
-~~~
+```
 
 ## Après le redémarrage
 Le conteneur ne reste monté que le temps d'un démarrage si vous ne le démontez pas entre temps. Après un redémarrage, pour monté/démonter un conteneur
 voici un script qui permet de le faire en automatique :
 
-~~~ bash
+``` bash
 #!/usr/bin/env bash
 ###################################
 # Montage de containeur chiffré
@@ -84,10 +90,9 @@ else
 
 	echo "Partition cryptfs démonté !"
 fi
-~~~
+```
 
 ## Trucs & Astuces
  * Une bonne idée est ensuite de cacher le fichier dans un répertoire ... caché, exemple ".trucmachinquiarienavoir"
  * Le fichier peut être renommé autant de fois que nécessaire
  
-<!-- --- tags: linux, security -->

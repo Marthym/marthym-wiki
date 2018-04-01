@@ -1,3 +1,9 @@
+---
+title: "Documents recents dans gnome-shell"
+category: Linux
+subcategory: Gnomeshell
+tags: [linux, gnome, shell, debian]
+---
 Pour les dernières versions de gnome, on peut retrouver le fichier d'historique à l'emplacement 
 suivant: `~/.local/share/recently-used.xbel`, pour les versions antérieures il se trouve à `~/.recently-used.xbel`.
 
@@ -53,5 +59,3 @@ fi
 
 exit
 ```
-
-<!-- --- tags: linux, gnome -->

@@ -1,8 +1,14 @@
+---
+title: "Last Firefox Version in testing"
+category: Linux
+subcategory: Administration
+tags: [linux, sysadmin, firefox, browser]
+---
 Depuis un moment iceweasel est remplacé par Firefox ESR sous Debian. Par contre, les depots Debian ont une dixaine de version de retard sur les versions release de Firefox. Du coup voici comment mettre à jour Firfox simplement et de façon fiable à la dernière version en cours :
 
 ## Récupération de la clé de dépôt
 
-```bash
+``` bash
 wget -q -O - http://mozilla.debian.net/archive.asc | \
   sudo apt-key add -
 ```

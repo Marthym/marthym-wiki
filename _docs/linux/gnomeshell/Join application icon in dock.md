@@ -1,3 +1,9 @@
+---
+title: "Fusionner les icones d’application dans le dock"
+category: Linux
+subcategory: Gnomeshell
+tags: [linux, gnome, shell, debian, dock]
+---
 Il y a un truc vraiment pénible avec GnomeShell et le Dock, c'est quand une application apparaît plusieurs fois. Pour
 une raison X ou Y, le raccourcis d'une application n'est plus regroupé avec ses instances dans le dock ce qui fait
 que l'on a rapidement tendance à ouvrir de nouvelle applications a chaque fois qu'on veut accédé à l'application.
@@ -9,7 +15,7 @@ comme exemple chromium.
 
 Pour ça:
 
-```bash
+``` bash
 xprop  | grep WM_CLASS
 ```
 

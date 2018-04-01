@@ -1,3 +1,9 @@
+---
+title: "Screencast avec gnome-shell"
+category: Linux
+subcategory: Gnomeshell
+tags: [linux, gnome, shell, debian]
+---
 Un truc très sympa, Gnome-Shell intégre un outils de screencast. En effet, il suffit de faire `Ctrl + Shift + Alt + R`
 pour démarrer et arréter l'enregistrement. A la fin de l'enregistrement, le fichier résultat est déposé dans le répertoire
 Vidéos de l'utilisateur. Le format d'enregistrement est WebM.
@@ -12,5 +18,3 @@ La nouvelle durée sera donc de 2mn. Pour vérifier la durée max :
 ``` sh
 gsettings get org.gnome.settings-daemon.plugins.media-keys max-screencast-length
 ```
-
-<!-- --- tags: linux, gnomeshell -->

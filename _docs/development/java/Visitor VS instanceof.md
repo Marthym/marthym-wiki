@@ -1,3 +1,9 @@
+---
+title: "Visitor vs. InstanceOf"
+category: Développement
+subcategory: Java
+tags: [development, java, code, visitor]
+---
 
 ```java
 public abstract class PartialKPIResolution {

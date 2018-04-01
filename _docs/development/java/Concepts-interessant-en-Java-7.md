@@ -1,4 +1,9 @@
-<!-- --- title: Java / Concepts intéressant en Java -->
+---
+title: "Concepts intéressants en Java"
+category: Développement
+subcategory: Java
+tags: [development, java, jigsaw, concepts, fork, join, string, try]
+---
 ## Java 9
 ### Jigsaw
 

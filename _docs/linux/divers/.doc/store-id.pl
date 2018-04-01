@@ -1,4 +1,3 @@
-``` perl
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -34,4 +33,3 @@ URL: while (<STDIN>) {
 	}
 	print "ERR\n";
 }
-```

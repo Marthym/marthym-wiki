@@ -1,3 +1,9 @@
+---
+title: "NFS au travers de SSH"
+category: Linux
+subcategory: Réseau
+tags: [linux, network, ssh, nsf]
+---
 Faire passer du NFS au travers du SSH n'est pas si simple que ça. Il faut :
 
 ## Pré-requis
@@ -68,5 +74,3 @@ mount.nfs: Either use '-o nolock' to keep locks local, or start statd.
 mount.nfs: an incorrect mount option was specified
 ```
 Plus facile tout est dans le message il suffit de rajouter l'option `nolock`
-
-<!-- --- tags: linux, network -->

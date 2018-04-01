@@ -1,4 +1,9 @@
-<!-- --- title: Java / Tester des membres private -->
+---
+title: "Tester des membres private"
+category: Développement
+subcategory: Java
+tags: [development, java, test, reflection]
+---
 Un des truc compliqué quand on fait des test unitaire c'est de tester les membres private. Un solution pour faire ça :
 
 ``` java
@@ -50,5 +55,5 @@ public void testLengthAndCalled() throws Exception
 		// THe method has now been called
 		assertTrue( wasCalled.booleanValue() );
 	}
-``` 
-<!-- --- tags: java -->
+```
+

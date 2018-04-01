@@ -1,3 +1,9 @@
+---
+title: "Probleme de politique de securite X11"
+category: Linux
+subcategory: Administration
+tags: [linux, sysadmin, x11, security, graphic]
+---
 ## Symptome
 Au lancement du vmware-toolbox en tant que root, on prend l'erreur :
 
@@ -22,5 +28,3 @@ Pour automatiser :
 ``` sh
 xauth list | while read x ; do sudo xauth add $x ; done
 ```
-
-<!-- --- tags: linux, security -->

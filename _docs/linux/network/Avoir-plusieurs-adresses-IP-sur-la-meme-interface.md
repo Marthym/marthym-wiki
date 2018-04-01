@@ -1,3 +1,9 @@
+---
+title: "Avoir plusieurs adresses IP sur la meme interface"
+category: Linux
+subcategory: Réseau
+tags: [linux, network, interface]
+---
 Avec Linux (je sais pas pour Windows) il est possible de configurer plusieurs adresse IP 
 pour une même carte réseau.
 
@@ -8,7 +14,7 @@ A quoi ça sert ? Le cas qui m'intéressait au moment de trouver ça c'est le ca
 ## Configuration
 Il faut éditer le fichier `/etc/network/interfaces` comme suit :
 
-~~~
+```
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
@@ -28,7 +34,7 @@ iface eth0 inet static
     down ip addr del 172.16.139.21/24 dev eth0 label eth0:0
     up   ip addr add 172.16.139.22/24 dev eth0 label eth0:1
     down ip addr del 172.16.139.22/24 dev eth0 label eth0:1
-~~~
+```
     
 Ici on se sert de l'outil ''ip'' (futur remplaçant du vieillissant ''ifconfig'') pour ajouter 
 des adresses à des label d'eth0 (l'interface par défaut).
@@ -37,7 +43,7 @@ _**Remarque :** Pour les VMs le gateway par défaut est x.x.x.2_
 
 Une fois le réseau redémarré, on obtiendra donc l'affichage suivant :
 
-~~~ bash
+``` bash
 root@ubuntu:~# ip addr show
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -51,10 +57,8 @@ root@ubuntu:~# ip addr show
     inet 172.16.139.22/24 scope global secondary eth0:1
     inet6 fe80::20c:29ff:fe3c:8509/64 scope link
        valid_lft forever preferred_lft forever
-~~~
+```
        
 ## Liens
   * http://www.cyberciti.biz/faq/bind-alias-range-of-ip-address-in-linux/
   * http://wiki.debian.org/NetworkConfiguration#Multiple_IP_addresses_on_One_Interface
-  
-<!-- --- tags: linux -->

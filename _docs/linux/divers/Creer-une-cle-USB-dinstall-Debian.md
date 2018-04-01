@@ -1,3 +1,9 @@
+---
+title: "Creer une clé USB d’install Debian"
+category: Linux
+subcategory: Divers
+tags: [linux, misc, usb, debian]
+---
 C'est pas bien compliqué mais on cherche longtemps la bonne méthode dans la multitude de conneries du web.
 
 Déjà, oublier l'idée de faire ça avec Windows, c'est de la merde et ça marche pas à moitié !
@@ -27,7 +33,7 @@ périphérique soient bien démonté, sinon la commande `cat` s'arrète sans le 
 
 Ensuite avec `fdisk` vous pouvez vérifier le résultat :
 
-``` sh
+```
 # fdisk -l /dev/sde
 
 Attention : identifiant de table de partitions GPT (GUID) détecté sur « /dev/sde » ! L'utilitaire sfdisk ne prend pas GPT en charge. Utilisez GNU Parted.
@@ -46,5 +52,3 @@ Périphérique Amorce  Début        Fin      Blocs     Id  Système
 ```
 
 Comme on peut le voir, ca a automatiquement créé la partition EFI ...
-
-<!-- --- tags: linux, debian -->

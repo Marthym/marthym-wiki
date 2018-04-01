@@ -1,4 +1,9 @@
-<!-- --- title: Java / Connexion LDAP Exchange -->
+---
+title: "Connexion LDAP Exchange"
+category: Développement
+subcategory: Java
+tags: [development, java, ldap, exchange]
+---
 L'idée est d'expliquer comment, depuis Java, se connecter à un serveur LDAP. Mais pas n'importe lequel, un serveur
 LDAP Exchange. Ben oui, Microsoft à beau se standardisé un minimum, de là à faire tout comme les autres, faudrait pas
 pousser !
@@ -118,8 +123,6 @@ qu'il peut y avoir besoin de quelques ré-ajustement pour un autre serveur LDAP.
 Quelques liens qui m'ont bien aidé, surtout le premier qui se trouve être le seul bout de code que j'ai trouvé qui
 fonctionne sur un serveur Exchange !
 
-  * [[http://www.myhomepageindia.com/index.php/2009/09/24/retrieve-basic-user-attributes-from-active-directory-using-ldap-in-java.html]]
-  * [[http://download.oracle.com/javase/tutorial/jndi/ldap/index.html]]
-  * [[http://www.javaworld.com/javaworld/jw-03-2000/jw-0324-ldap.html]]
-
-<!-- --- tags: java -->
+  * http://www.myhomepageindia.com/index.php/2009/09/24/retrieve-basic-user-attributes-from-active-directory-using-ldap-in-java.html
+  * http://download.oracle.com/javase/tutorial/jndi/ldap/index.html
+  * http://www.javaworld.com/javaworld/jw-03-2000/jw-0324-ldap.html

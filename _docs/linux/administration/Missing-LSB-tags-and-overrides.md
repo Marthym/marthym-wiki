@@ -1,3 +1,9 @@
+---
+title: "Missing LSB tags and overrides"
+category: Linux
+subcategory: Administration
+tags: [linux, sysadmin, startup, service, vmware]
+---
 ## Symptômes
 On a ce genre de chose après une installation de paquets et les paquets ne sont pas configuré correctement :
 ~~~
@@ -50,5 +56,3 @@ Remarque 2 : On le fait pour vmware-USBArbitrator mais je suppose que ça doit �
 
 ## Liens
    * http://communities.vmware.com/message/1875412#1875412
-
-<!-- --- tags: linux, vmware -->

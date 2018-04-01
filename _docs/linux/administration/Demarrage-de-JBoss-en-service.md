@@ -1,3 +1,9 @@
+---
+title: "Demarrage de JBoss en service"
+category: Linux
+subcategory: Administration
+tags: [linux, sysadmin, jboss, service, server]
+---
 Ce qui est pas si évident que ça a faire sous Linux. C'est utile si on n'a pas accès à la console de la 
 machine ou pour que le JBoss se lance tout seul au démarrage.
 
@@ -31,7 +37,7 @@ update-rc.d -f  cameleon remove
 ## Utilisation
 Une fois le script installé, pour l'utiliser :
 
-``` sh
+``` 
 sudo -i
 [sudo] password for administrateur: 
 service cameleon start
@@ -59,5 +65,3 @@ service cameleon restart
 
 ## Files
 [[include:.doc/init-d-jboss.sh]]
-
-<!-- --- tags: linux, server, jboss -->

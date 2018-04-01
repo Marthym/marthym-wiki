@@ -1,3 +1,9 @@
+---
+title: "Autoriser XHost à Docker"
+category: Linux
+subcategory: Divers
+tags: [linux, misc, docker, x11]
+---
 Pour une raison que j'ignore, une mise à jour récente de Debian bloque l'accès Xhost au container Docker locaux. Pour
 authoriser à nouveau il faut un `xhost +`. Pour éviter le mode open bar, on utilise la commande suivante :
 
@@ -16,5 +22,3 @@ Pour l'activer au boot de la machine j'ai modifié `/etc/rc.local` et rajouter :
 exit 0
 ...
 ```
-
-<!-- --- tags: linux, docker, x11 -->

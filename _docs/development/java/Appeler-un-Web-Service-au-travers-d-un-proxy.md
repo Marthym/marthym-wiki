@@ -1,4 +1,9 @@
-<!-- --- title: Java / Appeler un Web-Service au travers d'un proxy -->
+---
+title: "Appeler un Web-Service au travers d’un proxy"
+category: Développement
+subcategory: Java
+tags: [development, java, ws]
+---
 Pour l'instant je n'ai pas eu le cas avec Axis 1 donc on verra comment ça marche pour Axis 1, là c'est une solution Axis 2.
 
 Donc depuis le Stub généré par Axis 2, voilà le code :
@@ -10,8 +15,6 @@ HttpTransportProperties.ProxyProperties pp =
 pp.setProxyName("proxy.tl.internal");
 pp.setProxyPort(3128);
 options.setProperty(HTTPConstants.PROXY,pp);
-``` 
+```
 
 `service` étant l'instance de la classe Stub.
-
-<!-- --- tags: java -->

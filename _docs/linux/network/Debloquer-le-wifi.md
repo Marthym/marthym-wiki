@@ -1,3 +1,9 @@
+---
+title: "Débloquer le wifi"
+category: Linux
+subcategory: Réseau
+tags: [linux, network, dns, security]
+---
 Après une dés-activation du wifi dans network manager de ~GnomeShell, il est impossible de le ré-activer. Pour pouvoir le ré-activer voilà la manœuvre :
 
 ``` sh

@@ -2,7 +2,7 @@
 title: "Web service erreur CS0029, CS0030"
 category: Développement
 subcategory: DotNet
-tags: [devlopment, dotnet, .net, error, ws]
+tags: [development, dotnet, .net, error, ws]
 ---
 
 Lors de la création de client ou de serveur WSCart en .Net, on rencontre l'erreur CS0029, CS0030. C'est du à un 

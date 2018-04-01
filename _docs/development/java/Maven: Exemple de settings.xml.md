@@ -1,3 +1,9 @@
+---
+title: "Maven: Exemple de settings.xml"
+category: Développement
+subcategory: Java
+tags: [development, java, maven]
+---
 A placer dans `~/.m2/settings.xml`
  
 ``` xml
@@ -54,5 +60,3 @@ A placer dans `~/.m2/settings.xml`
     </activeProfiles>
 </settings>
 ```
-
-<!-- --- tags: maven, java, dev -->

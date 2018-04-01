@@ -1,4 +1,9 @@
-<!-- --- title: Java / Requête Oracle avec Variables Liées -->
+---
+title: "Requête Oracle avec Variables Liées"
+category: Développement
+subcategory: Java
+tags: [development, java, oracle, sql, database, mysql]
+---
 C'est un info qui date mais c'est toujours juste.
 
 ## C'est quoi des Bind Variable déjà ?
@@ -15,7 +20,7 @@ partage ou non les même infos de parsing. Par exemple :
 ``` sql
 select colonne from table_toto where autre_colonne = 'valeur';
 select colonne from table_toto where autre_colonne = 'autre valeur';
-``` 
+```
 
 Ces deux requête, si elles sont envoyées à Oracle de cette façon sont considérées comme des requêtes différente et le 
 parsing sera refait pour chaque requête alors qu'au final, le plan d'exécution est bien le même.
@@ -24,7 +29,7 @@ Si par contre, on avant la requête avec des BV au lieux des valeurs en dur :
 
 ``` sql
 select colonne from table_toto where autre_colonne = :b1;
-``` 
+```
 
 Là on peut exécuter la requête pour
 
@@ -53,5 +58,4 @@ ResultSet result = statement.executeQuery();
 // ...
 statement.setString(1, "autre valeur");
 ResultSet result = statement.executeQuery();
-``` 
-<!-- --- tags: java, oracle, mysql -->
+```

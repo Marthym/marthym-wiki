@@ -1,3 +1,9 @@
+---
+title: "Firefox CommandLine Options"
+category: Linux
+subcategory: Réseau
+tags: [linux, network, firefox]
+---
 
 Voici les Paramètres concernant la gestion des profils :
 

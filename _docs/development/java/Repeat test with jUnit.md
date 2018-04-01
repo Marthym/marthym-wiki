@@ -1,4 +1,9 @@
-<!-- --- title: jUnit / Répéter un test x fois avec jUnit -->
+---
+title: "Répéter un test x fois avec jUnit"
+category: Développement
+subcategory: Java
+tags: [development, java, junit, test]
+---
 
 Ajouter la Rule `RepeatRule` :
 

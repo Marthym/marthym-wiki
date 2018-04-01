@@ -1,7 +1,12 @@
-<!-- --- title: Java / Configuration Log4j -->
+---
+title: "Configuration Log4j"
+category: Développement
+subcategory: Java
+tags: [development, java, logs, log4j]
+---
 Voilà un log4j.properties qui va bien :
 
-~~~
+``` properties
 log4j.rootLogger = INFO, console
 log4j.logger.com.livingobjects.pmin = DEBUG
 
@@ -15,6 +20,4 @@ log4j.appender.METRICS.layout.conversionPattern=%d{yyyy-MM-dd HH:mm:ss} %p - %m%
 
 log4j.logger.com.livingobjects.pmin.cdr.metrics = INFO, METRICS
 log4j.additivity.com.livingobjects.pmin.cdr.metrics = false
-~~~
-
-<!-- --- tags: java -->
+```

@@ -1,4 +1,9 @@
-<!-- --- title: JS / Classes Javascript propres -->
+---
+title: "Classes Javascript propres"
+category: Développement
+subcategory: JavaScript
+tags: [development, javascript, class]
+---
 Il existe de nombreuses façons de coder en Javascript. La plus fréquente est malheureusement la plus crade : lister ses 
 fonctions les une après les autres...
 
@@ -75,5 +80,4 @@ var unObjet = new monProjet.maClasse("youpi");
 unObjet.toString(); // retourne "maClasse Object"  
 monProjet.maClasse.getByVar1("youpi"); // retourne l'objet "unObjet"  
 monProjet.maClasse.getByVar1("youpi").autreMethode(); // Crée une alerte  
-``` 
-<!-- --- tags: javascript -->
+```

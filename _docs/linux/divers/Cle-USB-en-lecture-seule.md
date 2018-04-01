@@ -1,3 +1,9 @@
+---
+title: "Clé USB en lecture seule"
+category: Linux
+subcategory: Divers
+tags: [linux, misc, usb]
+---
 Pour diverses raisons, une clé USB (notamment celles en FAT32) peuvent se retrouver 
 monté en lecture seule. Il y a une multitude de cas et de solutions :
 
@@ -12,5 +18,3 @@ qu'il n'y ai pas les lignes suivantes :
 ~~~
 
 Mieux vaut pas de configuration par défaut qu'une mauvaise conf.
-
-<!-- --- tags: linux -->

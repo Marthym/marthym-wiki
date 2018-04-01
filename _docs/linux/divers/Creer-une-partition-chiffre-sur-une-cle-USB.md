@@ -1,4 +1,13 @@
-[[_TOC_]]
+---
+title: "Créer une partition chiffré sur une clé USB"
+category: Linux
+subcategory: Divers
+tags: [linux, misc, usb, security]
+---
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 L'idée est de créer sur une clé USB une partition chiffré. Mais pas seulement, afin de rendre cette partition lisible sur Windows comme sur 
 Linux et de pas avoir un clé vide sous Windows, ce qui semblerait louche, il faut avoir deux partition, une en clair et une en crypté. 
 C'est pas si simple que ça en a l'air.
@@ -28,7 +37,8 @@ NOTE: Toutes les manip sont effectuée en super-utilisateur. Vérifiez toutes le
 si vous vous trompé de partition c'est mort !
 
 ## Partitionnement d'une clé USB
-[[.img/luks-01.png|align=center]]
+![Luks]({{ "/assets/img/luks-01.png" | absolute_url }}){: .center-image }
+
 
 Commençons par savoir sur quel périphérique est votre clé :
 
@@ -72,7 +82,7 @@ La commande suivante ''dd'' peut être utilisé pour écrire ces données à vot
 générée par votre système.<br/>
 Dans notre cas, on voit que la partition qui va être chiffré est la `/dev/sde5` :
 
-``` bash
+```
 dd bs=4K if=/dev/urandom of=/dev/sde5
 ```
 
@@ -158,5 +168,3 @@ Faite quand même attention que le mot de passe ne traîne pas sur la partition 
 ## Liens
   * en &rarr; [[http://www.linuxconfig.org/usb-stick-encryption-using-linux]]
   * fr &rarr; [[http://monblog.system-linux.net/blog/2011/03/19/chiffrement-du-systeme-de-fichiers-dune-cle-usb/]]
-  
-<!-- --- tags: linux, security -->

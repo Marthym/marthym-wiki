@@ -1,8 +1,14 @@
+---
+title: "Nettoyer les fichiers de configuration"
+category: Linux
+subcategory: Administration
+tags: [linux, sysadmin, cleanup, debian]
+---
 Au fil des mises à jours d'une Debian, il arrive que des fichiers de configuration ne soient pas bien nettoyé. Il est parfois difficile dans les deb de supprimer des fichiers. Voilà comment trouver ces fichiers obsolète et les supprimer.
 
 ## Procédure standard
 
-```bash
+``` bash
 dpkg-query -W -f='${Conffiles}\n' | grep 'obsolete$'
 
  /etc/apparmor.d/abstractions/evince ae2a1e8cf5a7577239e89435a6ceb469 obsolete
@@ -17,7 +23,7 @@ dpkg-query -W -f='${Conffiles}\n' | grep 'obsolete$'
 
 L'idée est ensuite de trouver à quel package appatiennent ces fichiers puis de supprimer le fichier et demander une reconfiguration du package en question :
 
-```bash
+``` bash
 dpkg -S /etc/bash_completion.d/initramfs-tools
 initramfs-tools: /etc/bash_completion.d/initramfs-tools
 dpkg -S /etc/bash_completion.d/insserv
@@ -38,7 +44,7 @@ Malheureusement, ça ne fonctionne pas pour tous les types de fichier, ça serai
 ## Les fichiers dbus-1
 Pour je ne sais quelle raison, ça ne fonctionne pas avec les fichiers présent dans `/etc/dbus-1/system.d/`, il faut alors ré-installer les packages correspondant.
 
-```bash 
+``` bash 
 dpkg -S /etc/dbus-1/system.d/com.redhat.NewPrinterNotification.conf
   system-config-printer-common: /etc/dbus-1/system.d/com.redhat.NewPrinterNotification.conf
 dpkg -S /etc/dbus-1/system.d/com.redhat.PrinterDriversInstaller.conf
@@ -53,7 +59,7 @@ Inutile de les supprimer à la main.
 ## Les fichiers Apparmor
 Et biensûr les fichiers apparmor pausent aussi des problèmes. Purger le package qui les installe ne change rien du tout. Il semble qu'il faille aussi purger les profils apparmor.
 
-```bash
+``` bash
 apt purge apparmor-profiles apparmor-profiles-extra evince ntp
 apt install apparmor-profiles apparmor-profiles-extra evince ntp
 ```
@@ -62,5 +68,5 @@ Rq: Pourquoi `evince` et `ntp` sont de la partie. Je sais pas, François Marier 
 
 ## Liens
 
-  * [[https://feeding.cloud.geek.nz/posts/cleaning-up-obsolete-config-files-debian-ubuntu/]]
+  * https://feeding.cloud.geek.nz/posts/cleaning-up-obsolete-config-files-debian-ubuntu/
 

@@ -97,3 +97,16 @@ body {
     margin: 0 auto;
     display: block;
 }
+
+.right-image {
+  float: right;
+  margin-left: 15px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.highlighter-rouge {
+  display: flow-root;
+}

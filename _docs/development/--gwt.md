@@ -2,6 +2,6 @@
 title: GWT
 category: Développement
 subcategory: GWT
-permalink: /docs/développement/gwt/
+permalink: /docs/developpement/gwt/
 layout: category
 ---

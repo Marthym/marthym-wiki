@@ -3,12 +3,14 @@
   {% assign by_subcats = category.items | group_by: 'subcategory' | sort: 'name', 'first' %}
   {% if category.name != "" %}
 <div class="list-group">
-  <a href="/docs/{{ category.name | downcase }}/" class="list-group-item list-group-item-action active">
+  <a href="/docs/{{ category.name | slugify: 'latin' }}/" class="list-group-item list-group-item-action active">
     {{ category.name }}
   </a>
   {% for subcategory in by_subcats %}
     {% if subcategory.name != "" %}
-      {% assign item_url = subcategory.name | prepend: "/" | prepend: category.name | prepend:"/docs/" | append:"/" | downcase %}
+      {% assign caturl = category.name | slugify: 'latin' %}
+      {% assign subcaturl = subcategory.name | slugify: 'latin' %}
+      {% assign item_url = subcaturl | prepend: "/" | prepend: caturl | prepend:"/docs/" | append:"/" %}
   <a href="{{ item_url  | prepend: site.baseurl }}" class="list-group-item list-group-item-action">{{ subcategory.name }}</a>
     {% endif %}
   {% endfor %}

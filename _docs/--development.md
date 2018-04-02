@@ -1,6 +1,6 @@
 ---
 title: Développement
 category: Développement
-permalink: /docs/développement/
+permalink: /docs/developpement/
 layout: category
 ---

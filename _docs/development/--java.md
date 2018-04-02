@@ -2,6 +2,6 @@
 title: Java
 category: Développement
 subcategory: Java
-permalink: /docs/développement/java/
+permalink: /docs/developpement/java/
 layout: category
 ---

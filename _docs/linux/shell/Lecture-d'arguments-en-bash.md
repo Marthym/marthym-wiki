@@ -1,3 +1,9 @@
+---
+title: "Lecture d’arguments en bash"
+category: Linux
+subcategory: Shell
+tags: [linux, shell, bash]
+---
 Pour parser les arguments d'une commande bash voici un exemple de traitement.
 
 ```sh
@@ -32,5 +38,3 @@ Pour parser les arguments d'une commande bash voici un exemple de traitement.
 	if [ -z "$REPOSITORY" ]; then REPOSITORY="releases";fi
 	if [ -z "$SCRIPT" ]; then SCRIPT="deploy.yml";fi
 ```
-
-<!-- --- tags:linus, bash -->

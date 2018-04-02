@@ -1,3 +1,9 @@
+---
+title: "Using MPC"
+category: Linux
+subcategory: Shell
+tags: [linux, shell, mpc, music]
+---
 Je cherchais un lecteur de zik hyper léger avec un minimum de fonctionnalités :
 
 * Shuffle
@@ -5,11 +11,11 @@ Je cherchais un lecteur de zik hyper léger avec un minimum de fonctionnalités 
 * Intégré à Gnome-shell
 * Commandable du clavier
 
-Résultat de la recherche, [Music Player Daemon](http://www.musicpd.org/). Bon ya de la config à faire pour l'afficher
+Résultat de la recherche, [Music Player Daemon]. Bon ya de la config à faire pour l’afficher
 dans gnome et pour le clavier mais au final ça fonctionne super. Il existe un panel de logicels pour le commander mais
-dans un soucis de légèreté, [MPC](http://www.musicpd.org/clients/mpc/) est ce qu'il se fait de mieux.
+dans un soucis de légèreté, [MPC] est ce qu'il se fait de mieux.
 
-Voici quelques commandes pratique avec MPC pour utiliser MPD à son plein potentiel :
+Voici quelques commandes pratique avec [MPC] pour utiliser [Music Player Daemon] à son plein potentiel :
 
 ## Ajouter toutes les chansons dans la liste courante
 
@@ -56,4 +62,5 @@ Il est possible de streamer des fichiers ou podcast :
 mpc add http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-182.mp3
 ```
 
-<!-- --- tags: shell, linux, musique, mpc, mpd -->
+[Music Player Daemon]: http://www.musicpd.org/
+[MPC]: http://www.musicpd.org/clients/mpc/

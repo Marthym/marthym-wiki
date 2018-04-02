@@ -1,3 +1,9 @@
+---
+title: "Web-server en une ligne de commande"
+category: Linux
+subcategory: Shell
+tags: [linux, shell, server]
+---
 Comment lancer un serveur web en une ligne de commande bash :
 
 ``` bash
@@ -8,6 +14,4 @@ L'intéret c'est que l'on peut voir facilement ce qui est envoyé comme entête 
 
 
 ## liens
-* https://razvantudorica.com/08/web-server-in-one-line--bash/
-
-<!-- --- tags: bash, linux, server -->
+* <https://razvantudorica.com/08/web-server-in-one-line--bash/>

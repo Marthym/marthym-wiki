@@ -1,3 +1,9 @@
+---
+title: "gitflow-breakdown"
+category: Outils
+subcategory: Git
+tags: [outils, git]
+---
 ## Initialize
 
 gitflow | git
@@ -137,6 +143,5 @@ _N/A_ | `git push origin master`
 
 ## References
 
- - http://nvie.com/posts/a-successful-git-branching-model/
- - https://help.github.com/articles/using-pull-requests#shared-repository-model
- - Personal experience
+ - <http://nvie.com/posts/a-successful-git-branching-model/>
+ - <https://help.github.com/articles/using-pull-requests#shared-repository-model>

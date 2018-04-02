@@ -1,4 +1,3 @@
-``` sql
 rem -----------------------------------------------------------------------
 rem Filename:   lock.sql
 rem Purpose:    Display database locks and latches (with tables names, etc)
@@ -93,4 +92,3 @@ where  latchwait is not null
   and  p.addr      = s.paddr
   and  p.latchwait = l.addr
 /
-```

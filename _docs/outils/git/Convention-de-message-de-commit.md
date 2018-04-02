@@ -1,3 +1,10 @@
+---
+title: "Convention de message de commit"
+category: Outils
+subcategory: Git
+tags: [outils, git, convention, naming]
+---
+
 >The contens of this page are partly based on the [angular commit messages document](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit?pli=1).
 
 
@@ -19,13 +26,13 @@ Cela s'applique __à tout les type de projet__.
 
 ### Forme courte (uniquement la ligne de sujet)
 
-~~~
+```
 <type>(<scope>): <subject>
-~~~
+```
 
 ### Forme longue (avec le corps)
 
-~~~
+```
 <type>(<scope>): <subject>
 
 <BLANK LINE>
@@ -35,7 +42,7 @@ Cela s'applique __à tout les type de projet__.
 <BLANK LINE>
 
 <footer>
-~~~
+```
 
 La première ligne de doit pas dépasser les __70 caractères__. La ligne suivante est toujours une ligne blanche et les 
 lignes suivante doivent se limiter à __80 caractères__! Cela rend le message plus facile à lire sur github comme sur la 
@@ -96,8 +103,8 @@ or in case of multiple issues:
 
 ## Plus sur les bonnes pratiques de commit
 
- * http://365git.tumblr.com/post/3308646748/writing-git-commit-messages 
- * http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+ * <http://365git.tumblr.com/post/3308646748/writing-git-commit-messages> 
+ * <http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>
 
 ## FAQ pour les Geeks
 **Pourquoi utiliser l'impératif présent dans les messages ?**<br/>
@@ -118,5 +125,3 @@ regarder la prochaine question si vous commiter un travail en cours.
 Ne le faite pas ou faite le sur une branche non publique (pas sur develop ni sur master).
 
 Quand vous avez finir le travail committer avec un message cohérent et poussez sur la branche publique.
-
-<!-- --- tags: git -->

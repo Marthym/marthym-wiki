@@ -1,4 +1,10 @@
-<!-- --- title: Oracle / Tracer une requête Oracle -->
+---
+title: "Tracer une requête Oracle"
+category: Serveurs
+subcategory: Oracle
+tags: [server, oracle, database, tunning, sql]
+---
+
 Il arrive qu'une partie de l'appli (voire toute l'appli) rame particulièrement. Selon la version d'Oracle, il est plus 
 ou moins facile de tracer une requête. Dans tout les cas, il peut arrivé qu'on est besoin d'un maximum d'info.
 
@@ -16,7 +22,7 @@ Déjà, faut trouver la session qui va bien :
 
 ``` sql
 SQL> select sid, serial# from v$session where username = 'CCS43';
-``` 
+```
 
 S'il y en a plusieurs, on peut filtrer sur des champs comme PROGRAM ou MACHINE.
 
@@ -26,7 +32,7 @@ Puis on démarre la trace sur la session :
 
 ``` sql
 SQL> exec DBMS_SYSTEM.SET_SQL_TRACE_IN_SESSION (sid=>507, serial#=>4957,sql_trace=>TRUE);
-``` 
+```
 
 On lance les requêtes que l'on veut tracer ou on va dans la partie de l'appli qui rame.
 
@@ -36,7 +42,7 @@ On arrête la trace :
 
 ``` sql
 SQL> exec DBMS_SYSTEM.SET_SQL_TRACE_IN_SESSION (sid=>507, serial#=>4957,sql_trace=>FALSE);</code>
-``` 
+```
 
 On tkprof le fichier TRC pour avoir un truc lisible.
 
@@ -44,13 +50,11 @@ PS : On peut aussi exécuter un
 
 ``` sql
 SQL> alter system set timed_statistics = TRUE;
-``` 
+```
 
 Cela va permettre de connaitre les temps de réponse d'oracle, le temps de parsing ou d'exécution de chaque requête. Ca 
 permet lors du tkprof de trier par temps d'exécution pour avoir les plus grosse requêtes en haut du fichier.
 
 ## Liens
-  * http://alexzeng.wordpress.com/2008/08/01/how-to-trace-oracle-sessions/
-  * http://www.oradev.com/create_statistics.jsp
-
-<!-- --- tags: server, oracle -->
+  * <http://alexzeng.wordpress.com/2008/08/01/how-to-trace-oracle-sessions/>
+  * <http://www.oradev.com/create_statistics.jsp>

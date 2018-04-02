@@ -1,3 +1,12 @@
+---
+title: "Tmux cheatcheet"
+category: Linux
+subcategory: Shell
+tags: [linux, shell, tmux]
+---
+* Do not remove
+{:toc}
+
 ## Sessions
 
 ### New Session

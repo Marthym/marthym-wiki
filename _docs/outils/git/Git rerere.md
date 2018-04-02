@@ -1,3 +1,9 @@
+---
+title: "Git rerere"
+category: Outils
+subcategory: Git
+tags: [outils, git]
+---
 Avec git, un des truc simpa c'est le `rebase`, seulement voilà, avec des rebases
 on se retrouve souvent avec des conflits et on en vient vite à passer plus de temps
 à résoudre les conflits qu'a coder.
@@ -11,50 +17,51 @@ git config --global rerere.enabled true
 ```
 
 Une fois activé, Git va se souvenir de la façon dont vous résolvez les conflits, sans votre intervention. Par exemple, avec un fichier nommé bonjour contenant sur master :
-~~~
+```
 hello ninjas
-~~~
+```
 Une branche french est créée pour la version française :
-~~~
+```
 bonjour ninjas
-~~~
+```
 Alors que sur master, une modification est appliquée
-~~~
+```
 hello ninjas!
-~~~
+```
 Si la branche french est mergée, alors un conflit survient :
 
-~~~
+```
 Auto-merging bonjour
 CONFLICT (content): Merge conflict in bonjour
 Recorded preimage for 'bonjour'
 Automatic merge failed; fix conflicts and then commit the result.
-~~~
+```
 
 Si l’on édite le fichier, on a bien un conflit :
 
-~~~
+``` diff
 <<<<<<< HEAD
 hello ninjas!
 =======
 bonjour ninjas
 >>>>>>> french
-~~~
+```
 Vous pouvez voir les fichiers en conflit surveillés par rerere :
 ```sh
 $ git rerere status
 bonjour
 ```
 Vous corrigez le conflit, pour conserver :
-~~~
+```
 bonjour ninjas!
-~~~
+```
 Vous pouvez voir ce que rerere retient de votre résolution avec :
 
 ```sh
 $ git rerere diff
 ```
-~~~
+
+``` diff
 --- a/bonjour
 +++ b/bonjour
 @@ -1,5 +1 @@
@@ -64,7 +71,7 @@ $ git rerere diff
 -hello ninjas!
 ->>>>>>>
 +bonjour ninjas!
-~~~
+```
 Une fois terminée la résolution du conflit (add et commit), vous pouvez voir la
 présence d’un nouveau répertoire dans le dossier .git, nommé rr-cache, qui contient
 maintenant un dossier correspondant à notre résolution dans lequel un fichier
@@ -106,17 +113,17 @@ $ git checkout --conflict=merge bonjour
 ```
 Le fichier est alors à nouveau en conflit :
 
-~~~
+``` diff
 <<<<<<< HEAD
 hello ninjas!
 =======
 bonjour ninjas
 >>>>>>> french
-~~~
+```
 Vous pouvez re-résoudre automatiquement le conflit avec :
 ```sh
 $ git rerere
 ```
 
 ## Liens
-* https://hypedrivendev.wordpress.com/2013/08/30/git-rerere-ma-commande-preferee/
+* <https://hypedrivendev.wordpress.com/2013/08/30/git-rerere-ma-commande-preferee/>

@@ -1,10 +1,15 @@
-<!-- --- title: Oracle / Démarrage/Arrêt automatique d'Oracle sous Linux -->
+---
+title: "Démarrage/Arrêt automatique d’Oracle sous Linux"
+category: Serveurs
+subcategory: Oracle
+tags: [server, oracle, database, linux, service, script]
+---
 Modifier le fichier /etc/oratab (ou /var/opt/oracle selon install)
 Ajouter `<SID>:<ORACLE_HOME>:Y` le "Y" indiquant si la base doit être ou non démarré par "dbstart" et "dbshut".
 
 Créer le script ''/etc/init.d/dboracle'' contenant :
 
-``` sh
+``` bash
 #!/bin/bash
   #
   # chkconfig: 35 99 10
@@ -88,6 +93,5 @@ _Cette action enregistre le services dans les mécanisme de démarrage de Linux.
 2.1 ça crée des lien symbolique dans le répertoire rc`<runlevel>`.d vers /etc/init.d/dbora script._
 
 ## Liens
-  * http://www.togaware.com/linux/survivor/Starting_Stopping.html
+  * <http://www.togaware.com/linux/survivor/Starting_Stopping.html>
   
-<!-- --- tags: linux, oracle -->

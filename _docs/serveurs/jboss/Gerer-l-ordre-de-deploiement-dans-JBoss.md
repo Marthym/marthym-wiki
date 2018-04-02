@@ -1,4 +1,9 @@
-<!-- --- title: jBoss / Gérer l'ordre de déploiement dans JBoss -->
+---
+title: "Gérer l’ordre de déploiement dans JBoss"
+category: Serveurs
+subcategory: JBoss
+tags: [server, jboss, sql, database]
+---
 C'est un question qui peut paraître inutile mais dans au moins un cas c'est crucial :p
 
 Dans le cas de la création d'un WS Axis2, on utilise une classe AxisServlet qui se trouve être déployé dans l'EAR de 
@@ -18,15 +23,13 @@ modifiant le fichier `jboss-4.2.0.GA\server\cameleon\conf\xmdesc\org.jboss.deplo
 suit :
 ``` xml
 <value value="250:.rar,300:-ds.xml,400:.jar,450:cameleon.ear,500:.war,550:.jse,650:.ear,800:.bsh"/>
-``` 
+```
 
 au lieu de
 ``` xml
 <value value="250:.rar,300:-ds.xml,400:.jar,500:.war,550:.jse,650:.ear,800:.bsh"/>
-``` 
+```
 
 C'est pas la meilleure solution, toucher à la configuration de JBoss peut entraîner des problèmes si plus tard la R&D 
 décide de changer l'ordre de déploiement ou de se servir de cet ordre par défaut pour je ne sais qu'elle fonctionnalité 
 magique ...
-
-<!-- --- tags: server, jboss -->

@@ -1,3 +1,9 @@
+---
+title: "Git un modèle de branches efficace"
+category: Outils
+subcategory: Git
+tags: [outils, git, branching]
+---
 La gestion des branches dans Subversion ou CVS n’est pas suffisamment simple et rapide pour encourager les développeurs 
 à s’y frotter, voire les en dissuade
 
@@ -15,10 +21,10 @@ C’est là que Git intervient en proposant une gestion des branches simple et r
 ## Git, peux-tu faire quelque chose pour nous ?
 
 Oui, il le peut, en nous permettant de respecter ce schéma facilement:
-[[.img/brancheGit01.png|align=center]]
+![Branching 01]({{ "/assets/img/brancheGit01.png" | absolute_url }}){: .center-image}
 
 ## Le master
-[[.img/brancheGit02.png|align=center]]
+![Branching 02]({{ "/assets/img/brancheGit02.png" | absolute_url }}){: .right-image}
 
 Le master correspond à la version de production : Personne ne travaille directement sur la production mais il est 
 possible, en permanence, de créer une branche à partir du master (pour des corrections de bug urgents par exemple).
@@ -47,7 +53,7 @@ Cette branche restera ouverte tant que la fonctionnalité ne sera pas terminée.
 ``` sh
 git checkout -b nom_fonctionnalite develop
 Switched to a new branch "nom_fonctionnalite"
-``` 
+```
 
 Si l’on souhaite que la branche soit connue de tous (qu’elle soit présente sur le dépôt d’origine), il est possible de le faire.
 
@@ -55,7 +61,7 @@ Si l’on souhaite que la branche soit connue de tous (qu’elle soit présente 
 
 ``` sh
 git push origin nom_fonctionnalite
-``` 
+```
 
 Lorsque la fonctionnalité est terminée, nous pouvons l’inclure dans la branche develop.
 
@@ -73,7 +79,7 @@ git branch -d nom_fonctionnalite
  
 #On demande l'envois des modifications sur le dépôt d'origine
 git push origin develop
-``` 
+```
 
 ## Créer une nouvelle version (release)
 
@@ -98,7 +104,7 @@ git checkout -b release-x.y develop
 #mettez à jour votre README avec le numéro de version
 git add README
 git commit -m "Version x.y"
-``` 
+```
 
 Une fois la recette validée par les utilisateurs et tous les correctifs mineurs intégrés, réintégrez la branche dans le master
 
@@ -118,7 +124,7 @@ git tag -a x.y
 # L'option --tags indique à git que l'on souhaite
 # envoyer l'information de tag
 git push --tags
-``` 
+```
 
 Bien sûr, il ne faut pas oublier de réintégrer dans la version develop les changements intervenus lors de la recette.
 
@@ -127,18 +133,18 @@ Bien sûr, il ne faut pas oublier de réintégrer dans la version develop les ch
 ``` sh
 git checkout develop
 git merge --no-ff release-x.y
-``` 
+```
 
 La branche de version n’a plus lieu d’être
 
 ### Supression de la branche de version
 ``` sh
 git branch -d release-x.y
-``` 
+```
 
 ## Corrections de bugs en production
 
-[[.img/brancheGit03.png|align=center]]
+![Branching 03]({{ "/assets/img/brancheGit03.png" | absolute_url }}){: .right-image}
 
 _Branche réalisée à partir de : master
 La branche sera réintroduite dans : master et develop_
@@ -152,6 +158,7 @@ Cette branche permet d’isoler le correctif de production du cycle de développ
 branche develop).
 
 Une fois le correctif appliqué, il sera intégré au master et à la branche develop.
+<br/>{: .clearfix}
 
 ## Création de la branche correctif (hotfix)
 
@@ -165,14 +172,14 @@ git checkout -b hotfix-x.y.z master
  
 # Validation de la mise à jour de version
 git commit -a -m "Correctif x.y.z"
-``` 
+```
 
 Le travail de correction est effectué…
 ### Envois des modifications
 
 ``` sh
 git commit -m "Correctif du problème blabla signalé par Bob"
-``` 
+```
 
 Et le travail d’introduction classique aux branches commence :
 ### Intégration du Hotfix en production
@@ -182,32 +189,31 @@ git checkout master
 git merge --no-ff hotfix-x.y.z
 git tag -a x.y.z
 git push --tags
-``` 
+```
 
 ### Intégration du Hotfix dans la branche develop
 
 ``` sh
 git checkout develop
 git merge --no-ff hotfix-x.y.z
-``` 
+```
 
 ### Supression de la branche hotfix devenue inutile
 
 ``` sh
 git branch -d hotfix-1.2.1
-``` 
+```
 
 ## Conclusions
 
-La puissance de [[Git|git]] réside dans les nouvelles possibilités qui nous sont offertes.
+La puissance de Git réside dans les nouvelles possibilités qui nous sont offertes.
 Migrer vers Git implique de changer ses méthodes de travail pour en bénéficier.
 
 ### Git Flow
-[[Git flow|https://danielkummer.github.io/git-flow-cheatsheet/]] est un outil qui permet de simplifier les commandes 
+[Git flow](https://danielkummer.github.io/git-flow-cheatsheet/) est un outil qui permet de simplifier les commandes 
 git pour utiliser ce modèle de branches.
 
 ## Liens
- * http://www.croes.org/gerald/blog/git-modele-de-branche-efficace/649/
- * http://nvie.com/posts/a-successful-git-branching-model/
+ * <http://www.croes.org/gerald/blog/git-modele-de-branche-efficace/649/>
+ * <http://nvie.com/posts/a-successful-git-branching-model/>
  
-<!-- --- tags: git -->

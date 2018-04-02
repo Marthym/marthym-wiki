@@ -1,4 +1,9 @@
-<!-- --- title: Oracle / Utiliser DataPump en ligne de commande -->
+---
+title: "Utiliser DataPump en ligne de commande"
+category: Serveurs
+subcategory: Oracle
+tags: [server, oracle, database, datapump, dump, backup]
+---
 Depuis la 10g, il y a deux méthodes pour exporter/importer un schéma :
 
 * Import / Export normaux (exp)
@@ -8,10 +13,12 @@ La méthode ~DataPump est plus rapide et plus souple. Préférez donc celle là 
 ## DataPump
 ``` sh
 c:\> expdp system/manager directory=DATA_PUMP_DIR dumpfile=EDGE_SP3_FIX016_AXA.dmp schemas=edge
-``` 
+```
+
 ``` sh
 c:\> impdp system/manager directory=DATA_PUMP_DIR dumpfile=EDGE_SP3_FIX016_AXA.dmp schemas=edge
-``` 
+```
+
 L'intérêt du ~DataPump est qu'il crée les schémas s'ils n'existent pas, qu'il permet de re-mapper les schémas et les 
 tablespaces très facilement et qu'il va 3x plus vite que l'export normal.
 
@@ -30,13 +37,14 @@ SQL> select * from dba_directories;
 OWNER   DIRECTORY_NAME   DIRECTORY_PATH  
 ------- ---------------- -------------------------------------------- 
 SYS     DATA_PUMP_DIR    D:\oracle\product\10.2.0\admin\campj\dpdump\  
-``` 
+```
 
 Il est aussi possible d'en créer un avec la commande :
 
 ``` sql
-SQL> create directory TEMP_DATAPUMP_DIR as 'c:\temp\';
-``` 
+SQL> create directory TEMP_DATAPUMP_DIR as 'c:\\temp\\';
+```
+
 Attention ! Oracle ne vérifie l'existence ni les permissions du répertoire ! S'il y a un soucis de ce genre c'est au 
 moment du dump qu'une erreur sera levé !
 
@@ -50,14 +58,14 @@ edge_prod. Les paramètres ~REMAP_SCHEMA et ~REMAP_TABLESPACE s'utilisent de la 
 
 ``` sh
 c:\> impdp system/manager directory=DATA_PUMP_DIR dumpfile=EDGE_SP3_FIX016_AXA.dmp remap_schema=edge:cameleon remap_tablespace=users:tbs_cameleon
-``` 
+```
 
 ## Page d'aide
 Pour obtenir la liste des options : 
 
 ``` sh
 expdp help=y
-``` 
+```
 
 ~~~
 Copyright (c) 2003, 2005, Oracle.  All rights reserved.
@@ -137,4 +145,3 @@ STOP_JOB              Orderly shutdown of job execution and exits the client.
                       STOP_JOB=IMMEDIATE performs an immediate shutdown of the
                       Data Pump job.
 ~~~
-<!-- --- tags: server, oracle -->

@@ -1,3 +1,8 @@
+---
+title: "Resynchroniser des CPL Devolo"
+category: Divers
+tags: [misc, cpl]
+---
 ## Symptômes
 Premier vrai sympte, les chaines HD de la box sont noire, impossible de les afficher. Seules les chaines LD fonctionnent. A force d'insiter la box me dit qu'il n'y a pas assez de débit pour afficher en HD.
 
@@ -27,5 +32,3 @@ La solution c'est de resynchroniser les CPL pour qu'ils se remettent à discuter
  - On rebranche tout les cable
 
 Le débit passe maintenant à +50M/s
-
-<!-- tags: cpl, débit, devolo, hd -->

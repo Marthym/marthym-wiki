@@ -1,3 +1,9 @@
+---
+title: "Suppression de fichiers en masse"
+category: Linux
+subcategory: Shell
+tags: [linux, shell, bash]
+---
 Supprimer des milliers de fichiers en même temps est assez compliqué. Plusieurs solutions :
 
 * `rm -rf /mon/repertoire`

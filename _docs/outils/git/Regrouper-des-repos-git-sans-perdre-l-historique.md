@@ -1,4 +1,10 @@
-J'ai eu le cas pour rassembler plusieurs modules dans un même projet et les mettre en tant que sous-modules :
+---
+title: "Regrouper des repos git sans perdre l’historique"
+category: Outils
+subcategory: Git
+tags: [outils, git]
+---
+J’ai eu le cas pour rassembler plusieurs modules dans un même projet et les mettre en tant que sous-modules :
 
 ``` sh
 git remote add other /path/to/XXX
@@ -13,6 +19,4 @@ git commit
 git remote rm other
 git branch -d ZZZ                  # to get rid of the extra branch before pushing
 git push                           # if you have a remote, that is
-``` 
-
-<!-- --- tags: git -->
+```

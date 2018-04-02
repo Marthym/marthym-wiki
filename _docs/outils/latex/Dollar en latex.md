@@ -1,9 +1,16 @@
+---
+title: "Dollar en latex"
+category: Outils
+subcategory: LaTeX
+tags: [outils, latex]
+---
 
-Problème de `$` en LaTeX, le caractère ne prend pas la police qu'on lui donne.
+Problème de `$` en LaTeX, le caractère ne prend pas la police qu’on lui donne.
 
 Apparement en LaTeX le dollar est codé en dur dans le code de Latex et du coup ne ressort pas toujours correctement.
 
-https://tug.org/pipermail/xetex/2007-October/007560.html
+<https://tug.org/pipermail/xetex/2007-October/007560.html>
+
 ```
 You'll at least need to load the xunicode package for this to work.
 Hopefully that's the only problem with your example, although you seen

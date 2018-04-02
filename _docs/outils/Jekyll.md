@@ -1,3 +1,8 @@
+---
+title: "Jekyll"
+category: Outils
+tags: [outils, jekyll]
+---
 Quelques trucs en vrac sur Jekyll
 
 ## You have already activated package version, but your Gemfile requires package oldversion.

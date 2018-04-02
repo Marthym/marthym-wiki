@@ -1,4 +1,9 @@
-<!-- --- title: Oracle / Désinstaller Oracle XE sous Linux -->
+---
+title: "Désinstaller Oracle XE sous Linux"
+category: Serveurs
+subcategory: Oracle
+tags: [server, oracle, database, linux]
+---
 C'est pas bien compliqué mais pour le faire proprement ya quelques trucs à pas oublier.
 
 ## Désinstallation des packages
@@ -18,5 +23,3 @@ rm -Rf /etc/init.d/oracle-xe
 rm -Rf /etc/sysconfig/oracle-xe
 rm -Rf $(find . -name *oracle*)
 ```
-
-<!-- --- tags: linux, oracle -->

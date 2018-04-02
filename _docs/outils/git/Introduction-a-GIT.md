@@ -1,4 +1,10 @@
-Je retranscrit ici un article très intéressant trouvé sur internet à propos de [[GIT|git]].
+---
+title: "Introduction à GIT"
+category: Outils
+subcategory: Git
+tags: [outils, git]
+---
+Je retranscrit ici un article très intéressant trouvé sur internet à propos de GIT.
 
 ----
 
@@ -15,8 +21,7 @@ Git connait un succès grandissant pour de nombreuses raisons, dont :
 * Surtout les trois derniers points
 
 Après quelques rappels indispensables, nous allons nous concentrer sur le système de branches et proposer un modèle 
-« prêt à l’emploi », largement inspiré 
-de [[A successul Git branch model|http://nvie.com/posts/a-successful-git-branching-model/]].
+« prêt à l’emploi », largement inspiré de [A successul Git branch model](http://nvie.com/posts/a-successful-git-branching-model/).
 
 ## Quelques rappels
 ### Récupérer un dépôt Git (équivalent de svn checkout)
@@ -32,7 +37,7 @@ Exemple de clone du dépôt du projet « hello-world »
 git clone git://github.com/geraldcroes/hello-world.git
 #Nous pouvons maintenant consulter, hors ligne,
 # l'intégralité de l'historique et des branches du dépôt
-``` 
+```
 
 ### Modfication, Ajout puis Commit
 
@@ -71,7 +76,7 @@ git commit -m "Fonction 1 terminée"
 #on en profite pour envoyer la micro modification sur le titre
 git add fichier2.php
 git commit -m "Changement de couleur du titre"
-``` 
+```
 
 Note : L’envoi des fichiers (commit) à ce stade est local => Aucun envois vers le dépôt d’origine n’est effectué. Le 
 commit est donc une opération instantanée.
@@ -89,7 +94,7 @@ Pour envoyer vos modifications locales vers le dépôt d’origine, il vous faut
 git push
 # les commits sont maintenant envoyés
 # vers le dépôt d'origine
-``` 
+```
 
 ### Récupérer les modifications effectuées par d’autres depuis le dépôt d’origine
 
@@ -99,6 +104,4 @@ Ici, aucune surprise, on retrouve un équivalent au « update » de Subversion :
 git pull
 # les modifications présentes sur le dépôt distant
 # sont récupérées 
-``` 
-
-<!-- --- tags: git -->
+```

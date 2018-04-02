@@ -1,6 +1,11 @@
+---
+title: "Logstach config for Metrics"
+category: Outils
+tags: [outils, logstach]
+---
 Un exemple de configuration qui marche avec Metrics
 
-~~~
+```
 input {
   file {
     path => "/var/log/lo_docker/*/monitoring.log"
@@ -54,12 +59,10 @@ output {
     index => "pmin-%{+YYYY.MM.dd}"
   }
 }
-~~~
+```
 
 Attention cependant, metrics fait déjà des agrégations temporelles comme Kibana ce qui fait que les informations 
 exploitable par Kibana ne sont pas forcément pertinentes.
 
 Le mieux étant, plutôt que d'utiliser des Metrics, faire plutôt ses propres log avec les temps d'exécution at tout ce 
 qui sera bien exploité par Kibana par la suite.
-
-<!-- --- tags: tools, logstash -->

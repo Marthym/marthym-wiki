@@ -1,3 +1,9 @@
+---
+title: "InetAddress does’nt resolve ip on alpine docker container"
+category: Outils
+subcategory: Docker
+tags: [development, docker, error]
+---
 C'est un problème qu'on a rencontré quand on a voulu réduire la taille des docker en utilisant l'image Alpine
 comme image de base.
 

@@ -1,3 +1,9 @@
+---
+title: "Erreur de read-only status avec JDBC"
+category: Serveurs
+subcategory: MySQL
+tags: [server, mysql, database, jdbc, java]
+---
 ## Symptômes
 
 J'ai rencontré l'erreur suivante :
@@ -64,7 +70,7 @@ Le résultat c'est qu'il n'y a plus d'erreurs visible mais l'exécution est bloq
 
 La source réelle du problème est une option de performance dans le driver JDBC :
 
-```java
+``` java
 config.addDataSourceProperty("cachePrepStmts", "true");
 config.addDataSourceProperty("prepStmtCacheSize", "250");
 config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
@@ -74,5 +80,3 @@ config.addDataSourceProperty("useServerPrepStmts", "true");
 J'utilise HikariCP mais c'est valable pour tout les gestionnaires de pool. L'option `useServerPrepStmts` est sencé
 améliorer les performance en cachant les PrepareStatement coté serveur. Mais MySQL 5.6 réagit mal a cette option . Les
 statement se ferment mal. Du coup supprimer cette option résoud le problème.
-
-<!-- --- tags: mysql, jdbc, java -->

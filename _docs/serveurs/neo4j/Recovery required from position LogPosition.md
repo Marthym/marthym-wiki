@@ -1,4 +1,9 @@
-<!-- --- title: Neo4j / Recovery required from position LogPosition -->
+---
+title: "Recovery required from position LogPosition"
+category: Serveurs
+subcategory: Neo4J
+tags: [server, neo4j, database, recovery]
+---
 
 Après un arrêt intenpestif ou une tentative de backup à l'arrache de la base neo4j, on a eu un soucis pour la relancer !
 

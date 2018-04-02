@@ -1,3 +1,9 @@
+---
+title: "Remove ophans from docker registry"
+category: Outils
+subcategory: Docker
+tags: [development, docker, cleanup, registry]
+---
 Il est compliqué de nettoyer un registry Docker (avant sa version 2.0 en tout cas). Voici un script qui supprime les images orpheline dans le registry.
 
 ```bash
@@ -81,5 +87,3 @@ echo -e "\nRemoving images"
 cat $unused_images | xargs -I{} rm -rf $image_dir/{}
 
 ```
-
-<!-- - tags: docker, registry, clean -->

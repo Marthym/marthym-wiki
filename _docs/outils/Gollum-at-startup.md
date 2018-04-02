@@ -1,3 +1,8 @@
+---
+title: "Gollum at startup"
+category: Outils
+tags: [outils, gollum]
+---
 Normalement ici gollum est installé, reste plus qu'a le faire démarrer en même temps que la machine. Sur Debian c'est
 systemd le nouveau gestionnaire de service donc voici un script systemd à placer dans :
 `~/.config/systemd/user/gollum.service`
@@ -32,5 +37,3 @@ Après on peut aussi mettre en place un chron pour l'actualiser régulièrement 
 forcément nécessaire.
 
 On lance gollum avec `--no-edit` pour éviter que les personnes sur le même réseau ne modifient le wiki.
-
-<!-- --- tags: tools, gollum -->

@@ -1,3 +1,9 @@
+---
+title: "Crypter tar.gz avec mot de passe"
+category: Linux
+subcategory: Shell
+tags: [linux, shell, security, crypting]
+---
 Il est très simple de crypter un fichier tar.gz et de lui assigner un mot de passe pour par exemple
 l'envoyer sur un cloud public :
 

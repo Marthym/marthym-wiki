@@ -1,4 +1,9 @@
-<!-- --- title: jBoss / Connexion JBoss SQL-Server -->
+---
+title: "Connexion JBoss SQL-Server"
+category: Serveurs
+subcategory: JBoss
+tags: [server, jboss, sql, database]
+---
 La configuration se fait dans les fichiers `*-ds.xml` présent dans le répertoire deploy du JBoss. Le but de cette page 
 est surtout de donner la configuration pour les driver SQL-Server 2005 qui présentent des performence et une stabilité 
 meilleure sur les versions récentes de SQL-Server.
@@ -22,7 +27,7 @@ C'est la configuration par défaut à l'installation de CCS.
 		
     </local-tx-datasource>
 </datasources>
-``` 
+```
 
 Les librairies de ce driver se composent de trois fichiers jar dans le répertoire deploy :
   * msbase.jar
@@ -50,8 +55,6 @@ SQL-Server 2005.
 
     </local-tx-datasource>
 </datasources>
-``` 
+```
 
 Cette version n'est constituée que d'un seul fichier à mettre dans le répertoire deploy, sqljdbc.jar.
-
-<!-- --- tags: server, jboss -->

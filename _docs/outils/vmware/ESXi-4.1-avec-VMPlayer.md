@@ -1,3 +1,9 @@
+---
+title: "ESXi 4.1 avec VMPlayer"
+category: Outils
+subcategory: VMWare
+tags: [outils, vmware, vmplayer, esxi]
+---
 Le serveur ESXi ne dispose pas d'accès HTML pour administrer les VMs, donc plus d'accès depuis un navigateur. L'utilisation des VMs se fait par un
 client lourd ou en accès console via VMPlayer ou VMRC.
 
@@ -34,6 +40,4 @@ vmplayer -h atlantis.tl.internal -u <loggin> -p <password> -M <idVM>
 Sous Linux, si vous prenez un message d'erreur de transfert de données, essayez de lancer la commande avec ''root''.
 
 ## Liens
-  * http://planetvm.net/blog/?p=1316
-
-<!-- --- tags: linux, vmware -->
+  * <http://planetvm.net/blog/?p=1316>

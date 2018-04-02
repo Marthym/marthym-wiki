@@ -1,4 +1,9 @@
-<!-- --- title: Serveur Web / HTTPS Securisé avec Nginx -->
+---
+title: "HTTPS Securisé avec Nginx"
+category: Serveurs
+subcategory: HTTP
+tags: [server, http, nginx, security]
+---
 
 Générer des certificats SSL correctement configuré n'est pas aussi facile qu'il n'y parait !
 
@@ -55,7 +60,7 @@ Déplacer les fichier de certificats et de clé dans le répertoire `/etc/nginx/
 
 Dans `/etc/nginx/conf.d` ajouter un fichier ssl.conf avec le contenu suivant :
 
-``` config
+``` nginx
 ssl_certificate /etc/nginx/ssl/dumydomain.fr.crt;
 ssl_certificate_key /etc/nginx/ssl/dumydomain.fr.key;
 

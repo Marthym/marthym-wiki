@@ -1,4 +1,9 @@
-<!-- --- title: Serveur Web / Hôtes virtuels SSL multiples -->
+---
+title: "Hôtes virtuels SSL multiples"
+category: Serveurs
+subcategory: HTTP
+tags: [server, http, apache, security, ssl]
+---
 
 Alors on trouve sur internet une flopper de tuto pour configurer sous Apache des VirtualHost SSL multiple.
 On a beau les lire et les re-lire, essayer des centaines de combinaisons pour chaque fichier de configuration, on en vient
@@ -10,13 +15,13 @@ pour que ça ai une chance de fonctionné. Mais même avec ça, je n'ai pas réu
 
 La raison technique a cette impossibilité est la suivante :
 
-~~~
+```
 The reason is that the SSL protocol is a separate layer which encapsulates the HTTP protocol. So the SSL session is a
 separate transaction, that takes place before the HTTP session has begun. The server receives an SSL request on IP
 address X and port Y (usually 443). Since the SSL request did not contain any Host: field, the server had no way to
 decide which SSL virtual host to use. Usually, it just used the first one it found which matched the port and IP
 address specified.
-~~~
+```
 
 Du coup, quand ça ne fonctionne pas, deux choix reste possible pour contourner le problème :
 
@@ -39,7 +44,7 @@ Suivre le tuto pour [[Avoir plusieurs adresses IP sur la même interface|Avoir-p
 #### Fichier d'écoute
 Ensuite, une fois que l'on a plusieurs adresse IP, il faut demander à Apache d'écouter sur ces adresse. Dans `/etc/apache2/port.conf`
 
-~~~
+``` apache
 <IfModule mod_ssl.c>
     # If you add NameVirtualHost *:443 here, you will also have to change
     # the VirtualHost statement in /etc/apache2/sites-available/default-ssl
@@ -51,7 +56,7 @@ Ensuite, une fois que l'on a plusieurs adresse IP, il faut demander à Apache d'
     NameVirtualHost 172.16.139.22:443
     Listen 443
 </IfModule>
-~~~
+```
 
 On n'utilise pas la notation `*:443` car il nous demanderait lors du démarrage un vhost par défaut pour `*:443` et ce
 n'est pas ce que l'on veut faire.
@@ -59,7 +64,7 @@ n'est pas ce que l'on veut faire.
 #### Fichiers des hôtes virtuel
 Ensuite dans `/etc/apache2/sites-available/` on va créer un premier fichier pour le premier serveur virtuel :
 
-~~~
+``` apache
 <IfModule mod_ssl.c>
 <VirtualHost 172.16.139.21:443>
         ServerAdmin webmaster@dev.local
@@ -75,11 +80,11 @@ Ensuite dans `/etc/apache2/sites-available/` on va créer un premier fichier pou
 
 </VirtualHost>
 </IfModule>
-~~~
+```
 
 Et un fichier deuxième fichier pour le deuxième hôte :
 
-~~~
+``` apache
 <IfModule mod_ssl.c>
 <VirtualHost 172.16.139.22:443>
         ServerAdmin webmaster@dev.local
@@ -96,7 +101,7 @@ Et un fichier deuxième fichier pour le deuxième hôte :
 
 </VirtualHost>
 </IfModule>
-~~~
+```
 
 Je ne m'attarde pas sur les différentes options pour le SSL ou les droits des répertoires, le sujet du tuto n'est pas là.
 Le point d’intérêt se trouve dans les premières lignes de chaque fichier. On remarque que l'on utilise les adresse IP
@@ -119,6 +124,4 @@ service apache2 reload
 ```
 
 ## Liens
- * https://httpd.apache.org/docs/2.2/ssl/ssl_faq.html#vhosts2
-
-<!-- --- tags: server, apache -->
+ * <https://httpd.apache.org/docs/2.2/ssl/ssl_faq.html#vhosts2>

@@ -1,3 +1,9 @@
+---
+title: "Modifier une fonction shell"
+category: Linux
+subcategory: Shell
+tags: [linux, shell]
+---
 
 Dans le cas d'une fonction dont on ne possède pas la paternité, on veux pouvoir profiter des mises à jour de la fonction
 mais sont état ne nous convient pas totalement. Par exemple la fonction suivante est pratique mais elle rejoue des tests

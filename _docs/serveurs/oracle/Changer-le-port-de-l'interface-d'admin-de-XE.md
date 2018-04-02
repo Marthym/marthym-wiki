@@ -1,4 +1,9 @@
-<!-- --- title: Oracle / Changer le port de l'interface d'admin de XE -->
+---
+title: "Changer le port de l’interface d’admin de XE"
+category: Serveurs
+subcategory: Oracle
+tags: [server, oracle, database]
+---
 Si vous utilisez CCM avec une base Oracle XE, vous allez devoir changer le port de l'interface d'administration de votre base Oracle XE.
 En effet, si l'interface d'Oracle XE est déjà installé sur le port 8080 et que vous installez ensuite CCM, CCM va quand même choisir le port 8080.
 
@@ -12,6 +17,4 @@ Il faut donc exécuter la manipulation suivante :
 
 ``` sql
 EXEC DBMS_XDB.SETHTTPPORT('8082');
-``` 
-
-<!-- --- tags: server, oracle -->
+```

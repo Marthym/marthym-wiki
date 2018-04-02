@@ -1,8 +1,14 @@
+---
+title: "Registry Docker derrière un Nginx"
+category: Outils
+subcategory: Docker
+tags: [development, docker]
+---
 L'idée est de placer un registry Docker derrière un frontal Nginx afin de faire du HTTPS voire de l'authentification.
 
 Le premier truc c'est la conf Nginx :
 
-~~~ conf
+``` conf
 server {
     listen      80;
     listen      443 ssl;
@@ -32,7 +38,7 @@ server {
         proxy_pass http://docker-registry:5000;
     }
 }
-~~~
+```
 
 J'ai passé un moment à la faire fonctionné ...
 
@@ -43,5 +49,3 @@ certificat de l'autorité sur le client Docker. Pour ça :
  * Lancer la commande `update-ca-certificates`
 
 Et voilà.
-
-<!-- --- tags: docker -->

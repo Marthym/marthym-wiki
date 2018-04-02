@@ -1,6 +1,11 @@
-<!-- title: NginX / 1s de cache contre le downtime -->
+---
+title: "1s de cache contre le downtime"
+category: Serveurs
+subcategory: HTTP
+tags: [server, http, nginx, cache]
+---
 
-*Copie depuis https://lord.re/posts/60-cache-proxy-nginx/ de lord@lord.re*
+*Copie depuis <https://lord.re/posts/60-cache-proxy-nginx/> de lord@lord.re*
 
 Depuis que mon serveur ne me sert plus de routeur il m’arrive de le couper de temps à autres. Et pourtant mon site reste accessible. J’ai en fait, sur mon routeur, installé un container avec un nginx qui tourne et qui proxy. Les connexions se font donc via le nginx du routeur qui sert de cache quand le vrai serveur ne répond pas. Mais histoire de ne pas avoir de contenu pas à jour mais toujours d’une fraîcheur exemplaire je me contente d’un cache de maximum 1seconde.
 
@@ -14,7 +19,7 @@ Bon on va définir le_cache qui va être l’endroit où seront stockées nos do
 
 Bon sur la machine qui va vous servir de proxy vous allez dans la conf du bel nginx /etc/conf/nginx/nginx.conf vous ajoutez la conf du vhost:
 
-```
+``` nginx
 server {
         listen 80;
         listen 443 ssl http2;
@@ -45,5 +50,3 @@ La magie se trouve dans le `proxy_cache_use_stale` qui fait en sorte d’envoyer
 Désormais je peux couper le serveur sans que ça ne se voit. Ça peut permettre de mettre à jour l’esprit libre. Sur un site dynamique ça peut énormément booster les perfs sans trop de détriments (surtout avec juste 1s de cache).
 
 Le `proxy_buffering off;` n’est peut-être pas adapté à votre cas mais si je ne le met pas, lorsqu’un bienveillant internaute tente de récupérer un fichier un poil gros (plus de quelques Mo) bha ça déconne de partout car la machine a peu de ram, donc ça rentre pas en ram, donc nginx tente de fouttre ça dans le cache, mais comme j’ai restreint le cache à 20Mo… bha si ça rentre pas dedans ça merdoie et ça n’envoi plus les données. Voilà voilà. Donc là je l’ai mis en commentaire car cet exemple n’est qu’un morceau de ma conf complète mais je voulais quand même vous présenter cette option.
-
-<!-- tags: nginx, http, conf, cache -->

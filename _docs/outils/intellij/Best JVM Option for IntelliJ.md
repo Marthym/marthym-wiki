@@ -1,4 +1,9 @@
-<!-- --- title: IntelliJ / Meilleures options de JVM pour IntelliJ -->
+---
+title: "Meilleures options de JVM pour IntelliJ"
+category: Outils
+subcategory: IntelliJ
+tags: [outils, intellij]
+---
 
 Ajouter le fichier `~/.IntelliJIdea<version>/idea64.vmoptions`
 

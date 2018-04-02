@@ -1,3 +1,9 @@
+---
+title: "Installer VMWare Tools sur un guest Debian"
+category: Outils
+subcategory: VMWare
+tags: [outils, vmware, debian]
+---
 Les VMWare Tools ne sont pas obligatoire sur les guests mais ils permettent de faire pas mal de truc comme gérer proprement la sourie si vous avez une
 interface graphique, activer les répertoires partagés avec l'hôte ou réduire le vmdk de votre VM après y avoir fait le ménage.
 
@@ -67,15 +73,13 @@ shutdown -r now
 
 ## En cas d'erreur
 Normalement les endroits où ça peut merder c'est là :
-``` sh
+``` 
 Searching for GCC...
 ```
 
 ou là :
-``` sh
+``` 
 Searching for a valid kernel header path...
 ```
 
 C'est en général que vous avez mal fait les étapes d'installation des pré-requis ! Il vous manque des paquets, refaite ces étapes.
-
-<!-- --- tags: linux, vmware -->

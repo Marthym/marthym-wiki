@@ -1,3 +1,9 @@
+---
+title: "Raccourcis Terminal"
+category: Linux
+subcategory: Shell
+tags: [linux, shell, shortcut]
+---
 Quelques commandes/raccourcis pour aller plus vite en mode terminal.
 
 * `CTRL + A`: Aller au début de la ligne

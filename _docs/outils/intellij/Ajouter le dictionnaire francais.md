@@ -1,6 +1,11 @@
-<!-- --- title: IntelliJ / Ajouter le dictionnaire français -->
+---
+title: "Ajouter le dictionnaire français"
+category: Outils
+subcategory: IntelliJ
+tags: [outils, intellij]
+---
 
-Oui les commentaire dans le code ça devrait toujours être en anglais... Mais
+Oui les commentaires dans le code ça devrait toujours être en anglais... Mais
 parfois, on fait aussi de la documentation ou des choses du genre qui peuvent
 être traduite et dans ce cas on aimerait bien ne pas avoir tout les mots
 souligné et pourquoi pas un peu de correction.<br/>

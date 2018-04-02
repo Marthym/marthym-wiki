@@ -1,4 +1,11 @@
-<!-- title: NginX / Optimiser les performances -->
+---
+title: "Optimiser les performances"
+category: Serveurs
+subcategory: HTTP
+tags: [server, http, nginx]
+---
+* Do not remove
+{:toc}
 
 Recopie d’un article de *Quentin Busuttil* sur [Optimiser NGINX]
 
@@ -45,7 +52,7 @@ La taille maximum des requêtes envoyées par le client. Si vous autorisez des u
 Taille et nombre maximum que peuvent atteindre les buffers pour les en-têtes. Au delà, une erreur est retournée.
 
 
-``` conf
+``` nginx
 client_body_buffer_size 16K;
 client_header_buffer_size 1k;
 client_max_body_size 20m;
@@ -67,7 +74,7 @@ Définie la taille du buffer pour les en-têtes de la réponse. 8k par défaut s
 **proxy_buffers**
 Détermine la taille et le nombre des buffers pour le corps de la réponse. Une fois n’est pas coutume, la valeur dépendra grandement de votre application. La valeur par défaut (toujours pour les systèmes 64 bits) est de 8 buffers de 8k. Il s’agit de paramètres s’appliquant par requête. Ainsi, le réglage par défaut permettra de stocker dans les buffers des réponses jusqu’à 64kb. À vous de voir si votre application retourne des résultats plus importants (sachant qu’ensuite les fichiers sont écrits sur le disque).
 
-``` conf
+``` nginx
 proxy_buffering on;
 proxy_buffer_size 1k;
 proxy_buffers 12 4k;
@@ -95,7 +102,7 @@ C’est en quelque sorte le pendant inverse des body et header timeouts. Ici, le
 **keepalive_requests**
 Cette directive détermine le nombre de requêtes au bout duquel le connexion sera fermée. La valeur par défaut est à 100, ce qui est assez confortable et il n’est souvent pas nécessaire de modifier cette valeur. Néanmoins, si votre application nécessite le chargement de très nombreuses ressources (> 100), il peut être intéressant d’augmenter cette valeur pour qu’elle soit légèrement supérieur au nombre de ressources à charger.
 
-``` conf
+``` nginx
 client_body_timeout 30;
 client_header_timeout 10;
 keepalive_timeout 30;
@@ -105,7 +112,7 @@ keepalive_requests 100;
 
 ## La compression
 
-``` conf
+``` nginx
 gzip on;
 gzip_comp_level 5;
 gzip_min_length 1000;
@@ -145,7 +152,7 @@ Enfin, sachez aussi qu’il est possible, avec le module [gzip static], de pré-
 
 ## Le cache statique
 
-``` conf
+``` nginx
 location ~* .(jpg|jpeg|png|gif|ico|css|js)$ {
   expires 60d;
 }
@@ -155,7 +162,7 @@ location ~* .(jpg|jpeg|png|gif|ico|css|js)$ {
 
 Ce type de cache permet de conserver les métadonnées en mémoire, et donc de limiter l’I/O. Voici un exemple de configuration :
 
-``` conf
+``` nginx
 open_file_cache max=2000 inactive=5m;
 open_file_cache_valid 2m;
 open_file_cache_min_uses 2;
@@ -179,7 +186,7 @@ Précise la durée au bout de laquelle la session est invalidée.
 **ssl_buffer_size**
 Permet de déterminer pour l’envoie des données. Gros débat sur la question de la taille de ce dernier, une fois de plus, tout dépend du type de contenus que vous servez.
 
-``` conf
+``` nginx
 ssl_session_cache shared:SSL:10m;
 ssl_session_timeout 24h;
 ssl_buffer_size 1400;
@@ -187,7 +194,7 @@ ssl_buffer_size 1400;
 
 En plus des caches, il y a une dernière optimisation qu’il est possible de réaliser, elle a pour doux nom l’OSCP stapling. Lorsqu’un serveur fourni un certificat, le client en vérifie la validité en interrogeant l’autorité émettrice du certificat. Évidemment, cela demande une requête supplémentaire au client. On peut éviter cela en demandant au serveur de joindre directement l’autorité émettrice et d’ainsi « agraffer » (d’où le stampling) la réponse signée et horodatée de l’autorité afin de prouver la validité du certificat.
 
-``` conf
+``` nginx
 ssl_stapling on;
 ssl_stapling_verify on;
 resolver 8.8.8.8 8.8.4.4 216.146.35.35 216.146.36.36 valid=60s;
@@ -204,7 +211,7 @@ On arrive là dans le domaine de l’optimisation de pointe ! Il est possible de
 
 Pour comprendre tout cela dans les détails, vous pouvez vous référer à l’article [Optimisations Nginx : bien comprendre sendfile, tcp_nodelay et tcp_nopush] ou à [TCP TIME-WAIT & les serveurs Linux à fort trafic]
 
-``` conf
+``` nginx
 sendfile on;
 tcp_nodelay on;
 tcp_nopush on;
@@ -216,7 +223,7 @@ En dernier lieu, nous allons nous pencher sur quelques optimisations qui s’eff
 
 Dans un autre registre, ce n’est pas tout à fait lié à TCP, mais j’en parle ici quand même, activer le [HTTP/2] peut avoir un impact significatif sur les performances.
 
-``` conf
+``` nginx
 server {
     # on active deferred 
     # pour ipv6 sur le port 80 (http) 
@@ -248,7 +255,7 @@ Il s’agit de placer cette requête dans une « file d’attente » et de trait
 
 Un article sur le blog de Nginx détaille le fonctionnement de la [Thread Pools] et présente un benchmark où les performances en charge sont multipliées par 9 ! Il faut pour cela utiliser l’option `aio` :
 
-``` conf
+``` nginx
 location / {
   root /var/www;
   aio threads;

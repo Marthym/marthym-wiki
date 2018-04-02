@@ -1,5 +1,11 @@
+---
+title: "Mettre à jour un package LaTeX"
+category: Outils
+subcategory: LaTeX
+tags: [outils, latex, textlive]
+---
 
-J'avais un problème avec un package latex apparemment trop vieux (tcolorbox) :
+J’avais un problème avec un package latex apparemment trop vieux (tcolorbox) :
 
 ```
 ! Package pgfkeys Error: I do not know the key '/tcb/before skip' and I am goin
@@ -21,5 +27,3 @@ tlmgr install tcolorbox
 ```
 
 Après tout ça et un peu de retry en sudo et tout mon document compile.
-
-<!-- - tags: latex, tex, textlive -->

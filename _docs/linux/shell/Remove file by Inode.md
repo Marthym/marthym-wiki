@@ -1,4 +1,9 @@
-<!-- --- title: Suppression de fichiers par Inode -->
+---
+title: "Suppression de fichiers par Inode"
+category: Linux
+subcategory: Shell
+tags: [linux, shell, inode]
+---
 
 Il m’est arrivé l’autre jour de créer par accident un fichier '`-I`' et là, c’est le drame !
 

@@ -1,3 +1,9 @@
+---
+title: "Timezoner MySQL"
+category: Serveurs
+subcategory: MySQL
+tags: [server, mysql, database, jdbc, java]
+---
 Dans le cas d'un MySQL sous docker, le server MySQL n'est pas Timezoné correctement. Par exemple, quand on lance la requête suivante :
 
 ``` sql

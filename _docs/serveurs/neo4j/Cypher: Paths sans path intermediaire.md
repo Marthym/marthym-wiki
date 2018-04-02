@@ -1,4 +1,9 @@
-<!-- --- title: Neo4j / Cypher: Paths sans path intermédiaire -->
+---
+title: "Cypher: Paths sans path intermédiaire"
+category: Serveurs
+subcategory: Neo4J
+tags: [server, neo4j, database]
+---
 
 Quand on demande un path a Neo4j il va nous donner avec les paths intermédiaire. Par exemple :
 

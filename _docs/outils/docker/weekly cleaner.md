@@ -1,3 +1,9 @@
+---
+title: "Weekly cleaner"
+category: Outils
+subcategory: Docker
+tags: [development, docker, cleanup]
+---
 
 A placer dans `/etc/cron.weekly/clean-docker` + `chmod +x ...`
 
@@ -8,5 +14,3 @@ docker rmi $(docker images | grep 'months ago' | awk '{print $3}')
 ```
 
 Ca ve supprimer les images vieilles de plusieurs mois et celle non tagés ainsi que les conteneur associés.
-
-<!-- - tags: docker, clean, bash -->

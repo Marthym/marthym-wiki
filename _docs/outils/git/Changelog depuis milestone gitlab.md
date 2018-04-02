@@ -1,3 +1,9 @@
+---
+title: "Changelog depuis milestone gitlab"
+category: Outils
+subcategory: Git
+tags: [outils, git, script, gitlab]
+---
 En utilisant les Milestones dans gitlab il est possible de générer des fichiers de change log pour une version donnée.
 
 ```bash
@@ -18,5 +24,3 @@ function changelog {
 ```
 
 `GITLAB_PRIVATE_TOKEN` contient le token privé d'accès a gitlab.
-
-<!-- tags: git, gitlab -->

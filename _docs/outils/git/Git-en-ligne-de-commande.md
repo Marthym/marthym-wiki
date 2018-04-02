@@ -1,4 +1,12 @@
-[[_TOC_]]
+---
+title: "Git en ligne de commande"
+category: Outils
+subcategory: Git
+tags: [outils, git]
+---
+* Do not remove
+{:toc}
+
 Voici un glossaire des lignes de commandes utile sous GIT :
 
 ## Création d’un dépôt
@@ -112,10 +120,9 @@ utiliser l'ajout interactif
 `git add -i`
 
 ## Liens
-  * [[http://rogerdudler.github.io/git-guide/index.fr.html]]
-  * [[http://book.git-scm.com/]]
-  * [[http://progit.org/book/]]
-  * [[http://think-like-a-git.net/]]
-  * [[http://help.github.com/]]
+  * <http://rogerdudler.github.io/git-guide/index.fr.html>
+  * <http://book.git-scm.com/>
+  * <http://progit.org/book/>
+  * <http://think-like-a-git.net/>
+  * <http://help.github.com/>
   
-<!-- --- tags: git -->

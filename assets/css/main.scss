@@ -93,6 +93,7 @@ body {
 
   float: right;
 }
+
 .center-image {
     margin: 0 auto;
     display: block;
@@ -115,5 +116,11 @@ div.highlighter-rouge {
   .search-term {
     @extend .bg-primary;
     font-weight: bold;
+  }
+}
+
+.docs-header {
+  .tags {
+    float: right;
   }
 }

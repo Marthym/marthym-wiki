@@ -51,4 +51,6 @@ collections:
   docs:
     permalink: /:collection/:path:output_ext
     output: true
-
+  tags:
+    permalink: /:collection/:path:output_ext
+    output: true

@@ -5,9 +5,9 @@ permalink: /assets/js/search.json
   {% for post in site.docs %}
     "{{ post.url | slugify }}": {
       "title": "{{ post.title | xml_escape }}",
-      "author": "{{ post.author | xml_escape }}",
+      "tags": "{{ post.tags | join: ' ' }}",
       "category": "{{ post.category | xml_escape }}",
-      "content": {{ post.content | newline_to_br | replace: "<br />"," " | strip_html | strip_newlines | jsonify }},
+      "content": {{ post.content | newline_to_br | replace: "<br />"," " | strip_html | strip_newlines | jsonify | split: ' ' | join: ' ' }},
       "url": "{{ post.url | xml_escape }}"
     }
     {% unless forloop.last %},{% endunless %}

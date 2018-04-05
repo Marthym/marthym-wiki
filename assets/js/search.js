@@ -84,6 +84,7 @@
         var idx = lunr(function () {
             this.field('id');
             this.field('title', {boost: 10});
+            this.field('tags');
             this.field('category');
             this.field('content');
 
@@ -93,6 +94,7 @@
                         'id': key,
                         'title': jsonIndex[key].title,
                         'category': jsonIndex[key].category,
+                        'tags': jsonIndex[key].tags,
                         'content': jsonIndex[key].content
                     });
                 }

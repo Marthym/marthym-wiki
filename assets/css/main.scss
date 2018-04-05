@@ -110,3 +110,10 @@ body {
 div.highlighter-rouge {
   display: flow-root;
 }
+
+#search-results {
+  .search-term {
+    @extend .bg-primary;
+    font-weight: bold;
+  }
+}

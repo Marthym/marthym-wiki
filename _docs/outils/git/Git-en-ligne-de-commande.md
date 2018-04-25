@@ -71,6 +71,16 @@ une branche n'est pas disponible pour les autres tant que vous ne l'aurez pas en
 Pour supprimer toutes les références distantes à des branches supprimées :
 `git remote prune origin`
 
+### Renomer une branche
+```shell
+git branch --move old_name new_name
+git checkout new_name
+git branch --unset-upstream
+git push origin :new_name
+git push --set-upstream origin new_name
+```
+
+
 ## Mettre à jour & fusionner
 pour mettre à jour votre dépôt local vers les dernières validations, exécutez la commande `git pull` dans votre espace de travail pour récupérer et fusionner les changements distants. 
 

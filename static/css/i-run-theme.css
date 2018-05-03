@@ -1,0 +1,191 @@
+/* *************** Header **************** */
+
+header {
+    background-color: #435157; 
+    position: relative;
+    /*z-index: 10;*/
+    height: 0.35trm;
+}
+
+header::after {
+    background: none;
+    background-color: #c4e039;
+}
+
+/* *************** Article container ********* */
+
+article {
+    overflow: hidden;
+    height: 100vh;
+    margin-top: -0.35rem;
+    padding-top: 0.35rem;
+    position: relative;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
+
+/* *************** Menu **************** */
+
+article > aside {
+    color: #435157; 
+    overflow: auto;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    position: static;
+    padding: 1rem 0 1rem 0;
+}
+
+article > aside .menu .dd-item.active > div * {    
+    border-bottom: 1px solid #c4e039;
+}
+
+/* **************** Table Of Contents ************** */
+
+article > aside.toc {
+    width: 20rem;
+}
+
+article > aside.toc > nav > ul > li > a {
+    font-weight: bold; 
+}
+
+article > aside.toc li {
+    font-size: 13px;
+    padding-left: 1rem;
+    list-style: none;
+    border-left: 1px solid #eee;
+}
+
+article > aside.toc li a:hover {
+    background-color: #eee;
+}
+
+
+/* ************** Main section page ************** */
+
+article section.page {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: auto;
+    height: auto;
+    padding: 2rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: normal; 
+}
+
+
+
+/* *************** Code **************** */
+
+article section.page pre {
+    padding: 1rem;
+}
+
+article section.page p > code, 
+article section.page li code, 
+article section.page table code {
+    color: #455d05;
+    background-color: #ddecb2;
+    border-radius: 3px;
+    padding: 0 0.5rem;
+}
+
+article section.page code[class*="language-"], 
+article section.page pre[class*="language-"] {
+    background: none;
+}
+
+/* *************** Blockquote **************** */
+
+blockquote {
+    border-left: 5px solid #99c229;
+    padding: 1rem 1.2rem;
+    margin-left: 0;
+    background-color: #f5f9ea;
+    border-color: #99c229;
+}
+
+
+blockquote p {
+    margin: 0.5rem;
+}
+
+/* *************** Lists **************** */
+
+article section.page li {
+    padding: 0.2rem 0;
+}
+
+/* *************** Cards **************** */
+
+ul.children.children-card > span {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 0;
+}
+
+ul.children.children-card > span card {
+    background-color: #435157; 
+    font-size: 130%;
+    padding: 0;
+}
+
+ul.children.children-card > span card:hover {
+    background-color: rgb(67,81,87, 0.95); 
+}
+
+ul.children.children-card > span card a {
+    color: #c4e039;  
+    display: block;
+    padding: 1rem;
+}
+
+/* ************** Children list ***************** */
+
+ul.children.children-li p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+
+/* ************* Search Results ***************** */
+
+ul#search-results {
+    list-style-type: none;
+    padding: 0;
+}
+
+#search-results li {
+    margin-top: 1rem;
+}
+
+
+#search-results h5 {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+#search-results p {
+    margin: 0;
+    padding: 0;
+}
+
+#search-results .result-content {
+    margin-left: 2rem;
+    margin-top: 4px;
+}
+
+
+#search-results .result-breadcrumb {
+    color: #666;
+}

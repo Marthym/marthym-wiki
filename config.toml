@@ -1,0 +1,13 @@
+languageCode = "fr-fr"
+title = "wiki.ght1pc9kc.fr"
+theme = "docdock"
+
+pygmentsCodefences=true
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+disableHomeIcon = true
+
+

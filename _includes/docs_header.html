@@ -1,9 +1,0 @@
-<div class="docs-header">
-    <span class="tags">
-    {% for tag in page.tags %}
-    	<a href="/search.html?query=tags%3A{{ tag }}"><span class="label label-default">{{ tag }}</span></a>
-    {% endfor %}
-    </span>
-    <span class="category"><a href="/docs/{{ page.category | slugify: 'latin' }}/">{{ page.category }}</a>
-    	{% if page.subcategory %} / <a href="/docs/{{ page.category | slugify: 'latin' }}/{{ page.subcategory | slugify: 'latin' }}/">{{ page.subcategory }}</a>{% endif %}</span>
-</div>

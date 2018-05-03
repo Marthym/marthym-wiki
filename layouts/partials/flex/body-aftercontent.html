@@ -1,0 +1,16 @@
+  <div class="chevrons">
+    {{ partial "next-prev-page.html" . }}
+  </div>
+
+  </section>
+
+  {{ if or (not (isset .Params "toc")) (.Params.toc) }}
+      <aside class="toc">
+        {{ .TableOfContents }}
+      </aside>
+  {{ end }}
+
+</article>
+
+
+{{ partial "flex/scripts.html" . }}

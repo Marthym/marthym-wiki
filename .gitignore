@@ -5,3 +5,5 @@ _site
 .bundle
 vendor/bundle
 _config_local.yml
+**/node_modules
+themes/ght1pc9kc/static/css/style.css

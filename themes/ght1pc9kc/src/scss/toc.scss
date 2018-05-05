@@ -1,0 +1,20 @@
+article > aside.toc {
+    width: $toc-width;
+    left: auto;
+	right: 0;
+
+    & > nav > ul > li > a {
+    	font-weight: bold; 
+    }
+
+    li {
+        font-size: 13px;
+	    padding-left: 1rem;
+	    list-style: none;
+	    border-left: 1px solid #eee;
+
+	    a:hover {
+	    	background-color: #eee;
+	    }
+    }
+}

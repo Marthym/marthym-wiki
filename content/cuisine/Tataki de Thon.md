@@ -2,6 +2,7 @@
 title: "Tataki de thon"
 category: Cuisine
 tags: [cuisine, cook, thon, soja, poisson]
+toc: false
 ---
 
 ## Marinade

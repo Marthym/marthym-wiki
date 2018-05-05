@@ -14,16 +14,15 @@ article section.page {
     -ms-flex: 1;
     flex: 1;
     box-sizing: border-box;
-    margin: 0 $toc-width 0 $menu-width;
+    margin: 0 $toc-width 0 0;
     overflow-y: auto;
-    padding: 2rem 4rem;
+    padding: 2rem;
 
     h1:first-of-type {
-        margin: 3rem 0rem;
-        font-family: "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+        margin: 0 0 3rem 0rem;
+        font-family: "Novecento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
         text-align: center;
         text-transform: uppercase;
-        color: #060606;
         font-weight: 200;
         font-size: 3.25rem;
         line-height: 2.7rem;
@@ -34,7 +33,8 @@ article section.page {
     }
     h2 {
         margin-top: 3rem;
-    } // TABLE
+    } 
+
     table {
         width: 100%;
         margin-bottom: 2em;
@@ -132,9 +132,6 @@ article section.page {
         }
     }
 
-
-
-
     pre[class*="language-"] {
         background-color: #333;
         color: #eee;
@@ -165,6 +162,16 @@ article section.page {
         -o-tab-size: 4;
         tab-size: 4;
         white-space: pre
+    }
+
+    p {margin: 0 0 12.5px;}
+    ul {
+        margin-top: 0;
+        margin-bottom: 12.5px;
+    }
+
+    .children li a:hover {
+        color: $color-secondary;
     }
 }
 

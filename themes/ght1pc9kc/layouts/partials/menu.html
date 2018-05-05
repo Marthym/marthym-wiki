@@ -12,34 +12,19 @@
 {{- end}}
 
 <!-- templates -->
+
 {{- define "section-tree-nav" }}
 {{- $showvisitedlinks := .showvisitedlinks }}
 {{- $currentNode := .currentnode }}
- {{- with .sect}}
+{{- with .sect}}
   {{- if and .IsSection (or (not .Params.hidden) $.showhidden)}}
     {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
     {{- safeHTML .Params.head}}
-    <li data-nav-id="{{.URL}}" class="dd-item
-        {{- if .IsAncestor $currentNode}} parent{{end}}
-        {{- if eq .URL $currentNode.URL}} active{{end}}
-        {{- if .Params.alwaysopen}} alwaysopen{{end -}}
-        {{- if ne $numberOfPages 0 }} haschildren{{end}}
-        ">
-      <div>
-      <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
-        
-        {{- if ne $numberOfPages 0 }}
-          {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
-          {{- else -}}
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
-          {{- end}}
-        {{- end}}
-
-        {{- if $showvisitedlinks}}<i class="fa fa-circle-thin read-icon"></i>{{end}}
-      </div>
+    {{- if .Parent.IsHome }}
+    <div class="list-group">
+    {{- end}}
+        <a href="{{ .RelPermalink}}" class="list-group-item list-group-item-action {{if .Parent.IsHome }}active{{end}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
       {{- if ne $numberOfPages 0 }}
-        <ul>
           {{- .Scratch.Set "pages" .Pages }}
           {{- if .Sections}}
           {{- .Scratch.Set "pages" (.Pages | union .Sections) }}
@@ -61,22 +46,10 @@
             {{- end}}
           {{- end}}
         {{- end}}
-        </ul>
       {{- end}}
-    </li>
-  {{- else}}
-    {{- if not .Params.Hidden }}
-      <li data-nav-id="{{.URL}}" class="dd-item
-     {{- if eq .URL $currentNode.URL}} active{{end -}}
-      ">
-        <div>
-          <a href="{{ .RelPermalink}}">
-            {{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}
-          </a>
-          {{- if $showvisitedlinks}}<i class="fa fa-circle-thin read-icon"></i>{{end}}
-        </div>
-    </li>
-     {{- end}}
+    {{- if .Parent.IsHome }}
+    </div>
+    {{- end}}
   {{- end}}
- {{- end}}
+{{- end}}
 {{- end}}

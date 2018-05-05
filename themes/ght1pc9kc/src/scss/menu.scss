@@ -1,4 +1,4 @@
-article>aside {
+article>aside.menu {
     background-color: $color-primary;
     bottom: 0;
     box-sizing: border-box;
@@ -11,116 +11,33 @@ article>aside {
     flex-direction: column;
     left: 0;
     padding: 2rem 0rem 1rem 0rem;
-    position: fixed;
     top: 3.5rem;
     width: $menu-width;
     overflow-y: auto;
+    padding: 20px;
 
-    .menu {
-        line-height: 2rem;
-        list-style-type: none;
+    .list-group {
+        margin-bottom: 20px;
 
-        >label {
+        .list-group-item {
+            position: relative;
             display: block;
-            font-family: 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
-            font-weight: 100;
-            font-size: 130%;
-            margin-left: 1rem;
-        }
-
-        ul {
-            display: none;
-        } // first menu level
-        >.dd-item {
-            margin: 0.5rem 0px 0.5rem 20px;
-        } // menu items
-        .dd-item {
-            padding-left: 1rem;
-            list-style: none;
-            font-size: $font-size;
-
-            &.alwaysopen>ul {
-                display: block
-            }
-
-
-            &.parent>ul {
-                display: block
-            }
-
-            &.active {
-
-                >ul {
-                    display: block;
-                }
-
-                >div {
-                    background-color: $color-secondary;
-                    * {
-                        font-weight: bold;
-                        border-bottom: dotted 1px red;
-                    }
-                }
-            }
-
-            &.haschildren>div {
-                margin-left: -20px;
-            }
-
-            div {
-                display: flex;
-                flex-direction: row;
-                
-                * {
-                    line-height: inherit;
-                }
-
-
-                i.read-icon {
-                    display: none;
-                }
-
-                i.category-icon {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    order: 1;
-                    width: 20px;
-                    cursor: pointer;
-                }
-
-                a {
-                    display: flex;
-                    flex: 1;
-                    order: 2;
-                    padding: 0 0rem;
-                    text-decoration: none;
-
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        background-color: $color-secondary;
-                        border-radius: .2rem;
-                        padding: 0 0rem;
-                    }
-                }
-
-                i.category-icon:active,
-                i.category-icon:focus,
-                i.category-icon:hover {
-                    background-color: $color-secondary;
-                    border-radius: .2rem;
-                    padding: 0 0rem;
-                }
-            }
-
-            li {
-                border-left: 1px solid #eee;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #4E5D6C;
+            border: 1px solid transparent;
+            &.active, &.active:hover, &.active:focus {
+                z-index: 2;
+                color: #fff;
+                background-color: #DF691A;
+                border-color: #DF691A;
             }
         }
-    }
-
-    section {
-        margin: 2rem 0rem;
+        
+        a.list-group-item:hover, a.list-group-item:focus {
+            text-decoration: none;
+            color: #EBEBEB;
+            background-color: #485563;
+        }
     }
 }

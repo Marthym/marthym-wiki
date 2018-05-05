@@ -2,6 +2,10 @@ article > aside.toc {
     width: $toc-width;
     left: auto;
 	right: 0;
+    position: fixed;
+    bottom: 0;
+    overflow: auto;
+    top: 3.5rem;
 
     & > nav > ul > li > a {
     	font-weight: bold; 
@@ -11,10 +15,9 @@ article > aside.toc {
         font-size: 13px;
 	    padding-left: 1rem;
 	    list-style: none;
-	    border-left: 1px solid #eee;
 
 	    a:hover {
-	    	background-color: #eee;
+	    	color: $color-secondary;
 	    }
     }
 }

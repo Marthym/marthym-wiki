@@ -1,6 +1,7 @@
 languageCode = "fr-fr"
 title = "wiki.ght1pc9kc.fr"
 theme = "ght1pc9kc"
+uglyurls = true
 
 pygmentsCodefences=true
 

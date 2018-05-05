@@ -1,4 +1,10 @@
 @font-face {
+    font-family: 'Novecento Sans Wide';
+    font-weight: 200;
+    src: local('Novecentosanswide UltraLight'), local('Novecentosanswide-UltraLight'), url('../fonts/Novecentosanswide-UltraLight.ttf') format('truetype')
+}
+
+@font-face {
     font-family: 'Cabin';
     font-weight: 400;
     src: local('Cabin Regular'), local('Cabin-Regular'), url('../fonts/Cabin-Regular.ttf') format('truetype')

@@ -32,6 +32,7 @@ header {
     }
 
     .logo {
+        flex: auto;
         font-size: 24px;
         *{
             vertical-align: middle;
@@ -83,6 +84,20 @@ header {
                     margin-bottom: 0rem;
                 }
             }
+        }
+    }
+
+    .navbar-right {
+        flex: auto;
+        margin-right: -15px;
+        text-align: right;
+
+        input {
+            border: 1px solid transparent;
+            border-radius: 0;
+            margin: 0;
+            height: 2.5rem;
+            width: 20rem;
         }
     }
 }

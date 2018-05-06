@@ -34,12 +34,12 @@ gulp.task('dev', function(){
 
 gulp.task('dev:nowatch', function(){
   confGlobal.isDevelop = true;
-  runSequence(['js','css','copy:assets'], 'hugo:server:nowatch');
+  runSequence(['js','css','copy:assets']);
 });
 
 gulp.task('prod', function(){
     confGlobal.isDevelop = false;
-	runSequence('clean', ['js','css','copy:assets:minify'], 'css:clean', 'hugo:build');
+	runSequence('clean', ['js','css','copy:assets:minify'], 'css:clean');
 });
 
 /* ****************************************************************************************************
@@ -55,14 +55,14 @@ gulp.task('js', function(){
     return gulp.src('./src/**/*.js')
       .pipe(plugins.plumber({ handleError: function(err) { console.log(err); this.emit('end'); } }))
       .pipe(sourcemaps.init())
-      .pipe(plugins.jshint(confPlugins.jshintOptions))
-      .pipe(plugins.jshint.reporter('jshint-stylish'))
-      .pipe(plugins.concat('app.js'))
+      //.pipe(plugins.jshint(confPlugins.jshintOptions))
+      //.pipe(plugins.jshint.reporter('jshint-stylish'))
+      //.pipe(plugins.concat('app.js'))
       .pipe(gulpif(!confGlobal.isDevelop, plugins.uglify({ mangle: true })))
       .pipe(gulpif(!confGlobal.isDevelop, plugins.stripDebug()))
       .pipe(gulpif(confGlobal.enableGZIP, plugins.gzip(confPlugins.gzipOptions)))
-      .pipe(sourcemaps.write('./static/js/', { includeContent: false }))
-      .pipe(gulp.dest('./static/js/'));
+      .pipe(sourcemaps.write('./', { includeContent: false }))
+      .pipe(gulp.dest('./static/'));
 });
 
 gulp.task('css', function(){	

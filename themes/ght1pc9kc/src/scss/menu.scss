@@ -24,20 +24,20 @@ article>aside.menu {
             display: block;
             padding: 10px 15px;
             margin-bottom: -1px;
-            background-color: #4E5D6C;
+            background-color: $color-primary-light;
             border: 1px solid transparent;
             &.active, &.active:hover, &.active:focus {
                 z-index: 2;
                 color: #fff;
-                background-color: #DF691A;
-                border-color: #DF691A;
+                background-color: $color-secondary;
+                border-color: $color-secondary;
             }
         }
         
         a.list-group-item:hover, a.list-group-item:focus {
             text-decoration: none;
-            color: #EBEBEB;
-            background-color: #485563;
+            color: $color-foreground;
+            background-color: $color-primary-hover;
         }
     }
 }

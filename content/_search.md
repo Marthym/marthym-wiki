@@ -1,7 +1,9 @@
 ---
-title : Recherche 
+title : Résultats de recherche 
 toc : false
-layout: search.html
+url: search.html
 ---
 
-{{% search-result %}}
+<div id="search-results" class="list-group">
+  <div class="text-center"><div class="loader">Loading...</div></div>
+</div>

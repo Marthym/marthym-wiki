@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Git un modèle de branches efficace - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Git un modèle de branches efficace :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/outils/git/git-un-modele-de-branches-efficace.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Git un modèle de branches efficace</h1>
+    
+    
+
+    
+
+<p>La gestion des branches dans Subversion ou CVS n’est pas suffisamment simple et rapide pour encourager les développeurs
+à s’y frotter, voire les en dissuade</p>
+
+<p>Partant de ce constat, tous les développeurs restent dans « le trunk », avec tous les inconvénients que cela peut avoir :</p>
+
+<ul>
+<li>Mr X commit en deux parties son code, rendant l’espace de quelques instants l’intégralité du projet instable</li>
+<li>Mr X commit une fonctionnalité en cours de développement, rendant le projet impossible à livrer tant qu’il n’aura pas terminé sa fonctionnalité</li>
+<li>Mr Y commit lui aussi une fonctionnalité en cours de développement, rendant le projet encore moins possible à livrer
+tant qu’il n’aura pas terminé sa fonctionnalité.</li>
+</ul>
+
+<p>Et nous nous retrouvons avec un trunk complètement instable ou un « hotfix » devient impossible à réaliser.</p>
+
+<p>C’est là que Git intervient en proposant une gestion des branches simple et rapide.</p>
+
+<h2 id="git-peux-tu-faire-quelque-chose-pour-nous">Git, peux-tu faire quelque chose pour nous ?</h2>
+
+<p>Oui, il le peut, en nous permettant de respecter ce schéma facilement:
+<img src="{{ &quot;/assets/img/brancheGit01.png&quot; | absolute_url }}" alt="Branching 01" />{: .center-image}</p>
+
+<h2 id="le-master">Le master</h2>
+
+<p><img src="{{ &quot;/assets/img/brancheGit02.png&quot; | absolute_url }}" alt="Branching 02" />{: .right-image}</p>
+
+<p>Le master correspond à la version de production : Personne ne travaille directement sur la production mais il est
+possible, en permanence, de créer une branche à partir du master (pour des corrections de bug urgents par exemple).</p>
+
+<h2 id="la-branche-develop">La branche develop</h2>
+
+<p>La branche develop correspond à la dernière version de développement stable. Develop est la branche d’intégration,
+c’est à partir de cette dernière que la prochaine version de production sera créée.</p>
+
+<p>Aucune fonctionnalité en cours de développement n’est envoyée directement à develop, seules les fonctionnalités
+terminées y sont envoyées.</p>
+
+<p>Tout le monde devrait pouvoir, à moindre risque, se reposer sur la branche develop.</p>
+
+<h2 id="branche-de-nouvelle-fonctionnalité-feature">Branche de nouvelle fonctionnalité (feature)</h2>
+
+<p><em>Branche réalisée à partir de : develop
+La branche sera réintroduite dans : develop</em></p>
+
+<p>Lorsque nous voulons créer une nouvelle fonctionnalité dans notre projet, nous allons créer une branche portant le nom
+de cette fonctionnalité en partant de la branche develop (qui est la branche la plus récente).</p>
+
+<p>Cette branche restera ouverte tant que la fonctionnalité ne sera pas terminée.</p>
+
+<h3 id="création-de-la-branche">Création de la branche</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout -b nom_fonctionnalite develop
+Switched to a new branch <span style="color:#e6db74">&#34;nom_fonctionnalite&#34;</span></code></pre></div>
+<p>Si l’on souhaite que la branche soit connue de tous (qu’elle soit présente sur le dépôt d’origine), il est possible de le faire.</p>
+
+<h3 id="envoi-de-la-branche-sur-l-origine">Envoi de la branche sur l’origine</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git push origin nom_fonctionnalite</code></pre></div>
+<p>Lorsque la fonctionnalité est terminée, nous pouvons l’inclure dans la branche develop.</p>
+
+<h3 id="incorporation-de-la-branche-dans-develop">Incorporation de la branche dans develop</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#on va sur la branche develop pour y effectuer l&#39;opération de merge
+</span><span style="color:#75715e"></span>git checkout develop
+ 
+<span style="color:#75715e">#On demande le merge de la fonctionnalite dans develop
+</span><span style="color:#75715e"></span>git merge nom_fonctionnalite
+ 
+<span style="color:#75715e">#On peut supprimer la branche nom_fonctionnalite devenue inutile
+</span><span style="color:#75715e"></span>git branch -d nom_fonctionnalite
+ 
+<span style="color:#75715e">#On demande l&#39;envois des modifications sur le dépôt d&#39;origine
+</span><span style="color:#75715e"></span>git push origin develop</code></pre></div>
+<h2 id="créer-une-nouvelle-version-release">Créer une nouvelle version (release)</h2>
+
+<p><em>Branche réalisée à partir de : develop
+La branche sera réintroduite dans : master et develop</em></p>
+
+<p>Lorsqu’un ensemble de fonctionnalité est terminé il est temps de livrer en production. La plus part du temps nous
+devons passer par une phase de recette (utilisateurs ou technique) : Cette recette sera réalisée sur cette branche.</p>
+
+<p>Nous pourrons lors de cette recette corriger des bugs mineurs, peaufiner quelques détails d’interface ou simplement
+mettre à jour les informations de version (fichiers README, numéro de version, &hellip;).</p>
+
+<p>Pendant cette recette, il sera possible aux autres développeurs de continuer de travailler sur les fonctionnalités pour
+les versions suivantes (dans les branches de fonctionnalités).</p>
+
+<h3 id="créer-la-branche-de-nouvelle-version">Créer la branche de nouvelle version</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#creation avec la convention release-numversion
+</span><span style="color:#75715e"></span>git checkout -b release-x.y develop
+ 
+<span style="color:#75715e">#mettez à jour votre README avec le numéro de version
+</span><span style="color:#75715e"></span>git add README
+git commit -m <span style="color:#e6db74">&#34;Version x.y&#34;</span></code></pre></div>
+<p>Une fois la recette validée par les utilisateurs et tous les correctifs mineurs intégrés, réintégrez la branche dans le master</p>
+
+<h3 id="intégration-de-la-version-dans-le-master">Intégration de la version dans le master</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#on se positionne sur le master pour y intégrer la branche
+</span><span style="color:#75715e"></span>git checkout master
+ 
+<span style="color:#75715e">#Intégration de la branche avec l&#39;option --no-ff pour tracer la fusion
+</span><span style="color:#75715e"></span>git merge --no-ff release-x.y
+ 
+<span style="color:#75715e">#On tag la version
+</span><span style="color:#75715e"></span>git tag -a x.y
+ 
+<span style="color:#75715e"># On envoie le contenu du master sur le dépôt d&#39;origine
+</span><span style="color:#75715e"># L&#39;option --tags indique à git que l&#39;on souhaite
+</span><span style="color:#75715e"># envoyer l&#39;information de tag
+</span><span style="color:#75715e"></span>git push --tags</code></pre></div>
+<p>Bien sûr, il ne faut pas oublier de réintégrer dans la version develop les changements intervenus lors de la recette.</p>
+
+<h3 id="intégration-de-la-version-dans-la-branche-develop">Intégration de la version dans la branche develop</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout develop
+git merge --no-ff release-x.y</code></pre></div>
+<p>La branche de version n’a plus lieu d’être</p>
+
+<h3 id="supression-de-la-branche-de-version">Supression de la branche de version</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git branch -d release-x.y</code></pre></div>
+<h2 id="corrections-de-bugs-en-production">Corrections de bugs en production</h2>
+
+<p><img src="{{ &quot;/assets/img/brancheGit03.png&quot; | absolute_url }}" alt="Branching 03" />{: .right-image}</p>
+
+<p><em>Branche réalisée à partir de : master
+La branche sera réintroduite dans : master et develop</em></p>
+
+<p>Lorsqu’un bug critique est détecté en production et que sa correction est urgente nous aurons recours à la branche de
+correction à chaud.</p>
+
+<p>Cette branche est réalisée à partir du master, qui rappelons le est la copie conforme de la production.</p>
+
+<p>Cette branche permet d’isoler le correctif de production du cycle de développement normal du produit (réalisé dans la
+branche develop).</p>
+
+<p>Une fois le correctif appliqué, il sera intégré au master et à la branche develop.
+<br/>{: .clearfix}</p>
+
+<h2 id="création-de-la-branche-correctif-hotfix">Création de la branche correctif (hotfix)</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#création de la branche hotfix à partir du master
+</span><span style="color:#75715e"></span>git checkout -b hotfix-x.y.z master
+ 
+<span style="color:#75715e">#Mise à jour du numéro de version
+</span><span style="color:#75715e"># ... édition du readme &amp; autres
+</span><span style="color:#75715e"># ... (processus identique à celui de la release)
+</span><span style="color:#75715e"></span> 
+<span style="color:#75715e"># Validation de la mise à jour de version
+</span><span style="color:#75715e"></span>git commit -a -m <span style="color:#e6db74">&#34;Correctif x.y.z&#34;</span></code></pre></div>
+<p>Le travail de correction est effectué…</p>
+
+<h3 id="envois-des-modifications">Envois des modifications</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git commit -m <span style="color:#e6db74">&#34;Correctif du problème blabla signalé par Bob&#34;</span></code></pre></div>
+<p>Et le travail d’introduction classique aux branches commence :</p>
+
+<h3 id="intégration-du-hotfix-en-production">Intégration du Hotfix en production</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout master
+git merge --no-ff hotfix-x.y.z
+git tag -a x.y.z
+git push --tags</code></pre></div>
+<h3 id="intégration-du-hotfix-dans-la-branche-develop">Intégration du Hotfix dans la branche develop</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout develop
+git merge --no-ff hotfix-x.y.z</code></pre></div>
+<h3 id="supression-de-la-branche-hotfix-devenue-inutile">Supression de la branche hotfix devenue inutile</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git branch -d hotfix-1.2.1</code></pre></div>
+<h2 id="conclusions">Conclusions</h2>
+
+<p>La puissance de Git réside dans les nouvelles possibilités qui nous sont offertes.
+Migrer vers Git implique de changer ses méthodes de travail pour en bénéficier.</p>
+
+<h3 id="git-flow">Git Flow</h3>
+
+<p><a href="https://danielkummer.github.io/git-flow-cheatsheet/">Git flow</a> est un outil qui permet de simplifier les commandes
+git pour utiliser ce modèle de branches.</p>
+
+<h2 id="liens">Liens</h2>
+
+<ul>
+<li><a href="http://www.croes.org/gerald/blog/git-modele-de-branche-efficace/649/">http://www.croes.org/gerald/blog/git-modele-de-branche-efficace/649/</a></li>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">http://nvie.com/posts/a-successful-git-branching-model/</a></li>
+</ul>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#git-peux-tu-faire-quelque-chose-pour-nous">Git, peux-tu faire quelque chose pour nous ?</a></li>
+<li><a href="#le-master">Le master</a></li>
+<li><a href="#la-branche-develop">La branche develop</a></li>
+<li><a href="#branche-de-nouvelle-fonctionnalité-feature">Branche de nouvelle fonctionnalité (feature)</a>
+<ul>
+<li><a href="#création-de-la-branche">Création de la branche</a></li>
+<li><a href="#envoi-de-la-branche-sur-l-origine">Envoi de la branche sur l’origine</a></li>
+<li><a href="#incorporation-de-la-branche-dans-develop">Incorporation de la branche dans develop</a></li>
+</ul></li>
+<li><a href="#créer-une-nouvelle-version-release">Créer une nouvelle version (release)</a>
+<ul>
+<li><a href="#créer-la-branche-de-nouvelle-version">Créer la branche de nouvelle version</a></li>
+<li><a href="#intégration-de-la-version-dans-le-master">Intégration de la version dans le master</a></li>
+<li><a href="#intégration-de-la-version-dans-la-branche-develop">Intégration de la version dans la branche develop</a></li>
+<li><a href="#supression-de-la-branche-de-version">Supression de la branche de version</a></li>
+</ul></li>
+<li><a href="#corrections-de-bugs-en-production">Corrections de bugs en production</a></li>
+<li><a href="#création-de-la-branche-correctif-hotfix">Création de la branche correctif (hotfix)</a>
+<ul>
+<li><a href="#envois-des-modifications">Envois des modifications</a></li>
+<li><a href="#intégration-du-hotfix-en-production">Intégration du Hotfix en production</a></li>
+<li><a href="#intégration-du-hotfix-dans-la-branche-develop">Intégration du Hotfix dans la branche develop</a></li>
+<li><a href="#supression-de-la-branche-hotfix-devenue-inutile">Supression de la branche hotfix devenue inutile</a></li>
+</ul></li>
+<li><a href="#conclusions">Conclusions</a>
+<ul>
+<li><a href="#git-flow">Git Flow</a></li>
+</ul></li>
+<li><a href="#liens">Liens</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jndi on wiki.ght1pc9kc.fr</title>
+    <link>/tags/jndi.html</link>
+    <description>Recent content in Jndi on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/jndi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accès JNDI de JBoss</title>
+      <link>/development/java/acces-jndi-de-jboss.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/acces-jndi-de-jboss.html</guid>
+      <description>Pour accéder au composants EJB déployé sous JBoss, voici un exemple de code. Il récupère le ~CorbasManager mais ça marche avec tout les EJB déployé.
+// Get initial context of JNDI tree Hashtable&amp;lt;String, String&amp;gt; w_param = new Hashtable&amp;lt;String, String&amp;gt;(); w_param.put(javax.naming.Context.INITIAL_CONTEXT_FACTORY,&amp;#34;org.jnp.interfaces.NamingContextFactory&amp;#34;); w_param.put(javax.naming.Context.PROVIDER_URL, &amp;#34;jnp://192.168.168.128:1099/&amp;#34;); javax.naming.Context ctx = new javax.naming.InitialContext(w_param); // Get advanced pricing EJB home Object obj = ctx.lookup(&amp;#34;cic.CICCorbaManagerEJBHome&amp;#34;); cic.CICCorbaManagerEJBHome w_corbasHome = (cic.CICCorbaManagerEJBHome)javax.rmi.PortableRemoteObject.narrow(obj,cic.CICCorbaManagerEJBHome.class); // Create a new advanced pricing session cic.CICCorbaManagerEJB w_corbasManager = w_corbasHome.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on wiki.ght1pc9kc.fr</title>
+    <link>/tags/linux.html</link>
+    <description>Recent content in Linux on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accès Docker non root</title>
+      <link>/outils/docker/acces-docker-non-root.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/acces-docker-non-root.html</guid>
+      <description>Normalement tous les accès docker se font en root avec sudo ou autre. Pour utiliser docker en non-root :
+sudo usermod -a -G docker netflow</description>
+    </item>
+    
+    <item>
+      <title>Activer SUDO sur Debian</title>
+      <link>/linux/administration/activer-sudo-sur-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/activer-sudo-sur-debian.html</guid>
+      <description>Pour des raisons pratique et de sécurité, il peut être intéressant d&amp;rsquo;activer SUDO. Sur les Ubuntu c&amp;rsquo;est le cas par défaut, pas sur les Debian. Voilà la marche à suivre pour le faire.
+Activation de SUDO Se connecter en administrateur $ su - Installer le paquet # apt-get install sudo Ajouter l&amp;rsquo;utilisateur administrateur aux sudoers Sudo autorise des utilisateurs normaux, comme celui qui est créé lors de l&amp;rsquo;installation, à se connecter en tant que super utilisateur.</description>
+    </item>
+    
+    <item>
+      <title>Afficher la date du jour dans le bandeau</title>
+      <link>/linux/gnomeshell/afficher-la-date-du-jour-dans-le-bandeau.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/afficher-la-date-du-jour-dans-le-bandeau.html</guid>
+      <description>gsettings set org.gnome.shell.clock show-date true</description>
+    </item>
+    
+    <item>
+      <title>Ajouter de la swap sans toucher au partition</title>
+      <link>/linux/administration/ajouter-de-la-swap-sans-toucher-au-partition.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/ajouter-de-la-swap-sans-toucher-au-partition.html</guid>
+      <description>Ouais, il faut un minimum de swap pour installer Oracle XE (ou autre chose) et on a pas toujours ce que l’installeur demande. Par exemple si on a pas choisi de partitionner à la main !
+Mais comme Linux c’est quand même super bien branlé, on va pouvoir créer un fichier de swap supplémentaire qui va permettre d’atteindre le minimum demandé sans avoir a retoucher les partoches.
+Déjà, pour savoir combien on a :</description>
+    </item>
+    
+    <item>
+      <title>Ajouter une Police de caractère à Java</title>
+      <link>/development/java/ajouter-une-police-de-caractere-a-java.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/ajouter-une-police-de-caractere-a-java.html</guid>
+      <description>La question se pose notement pour Jasper quand il faut lui rajouter des fonts.
+Sous Linux, il faut mettre le fichier TTF dans le répertoire : /usr/lib/jvm/java-6-sun/jre/lib/fonts ou créer un lien dans ce répertoire vers le TTF.</description>
+    </item>
+    
+    <item>
+      <title>Analyze systemd boot speed</title>
+      <link>/linux/administration/analyze-systemd-boot-speed.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/analyze-systemd-boot-speed.html</guid>
+      <description> Quelques commandes permettant d’analyser les perfs de Systemd systemd-analyze time systemd-analyze blame systemd-analyze critical-chain systemd-analyze plot &amp;gt; plot.svg  Links  http://blog.touret.info/blog/2018/01/20/ameliorer-le-boot-sous-debian-9/#utm_source=rss&amp;amp;utm_medium=rss  </description>
+    </item>
+    
+    <item>
+      <title>Authentification SSH par certificat</title>
+      <link>/linux/network/authentification-ssh-par-certificat.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/authentification-ssh-par-certificat.html</guid>
+      <description>L&amp;rsquo;objectif est de pouvoir se connecté via SSH à un serveur sans fournir de mot de passe. Cela ne sera bien-sur possible de depuis une machine ayant la clé privé d&amp;rsquo;installé !
+On commence par générer la paire de clés si c&amp;rsquo;est pas déjà fait :
+ssh-keygen -t rsa -C &amp;#34;your_email@example.com&amp;#34; Laisser les clés se générer dans l&amp;rsquo;emplacement par défaut et laisser la passphrase vide sinon il faudra à chaque fois renseigner la passphrase.</description>
+    </item>
+    
+    <item>
+      <title>Autoriser XHost à Docker</title>
+      <link>/linux/divers/allow-xhost-to-docker.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/allow-xhost-to-docker.html</guid>
+      <description>Pour une raison que j&amp;rsquo;ignore, une mise à jour récente de Debian bloque l&amp;rsquo;accès Xhost au container Docker locaux. Pour authoriser à nouveau il faut un xhost +. Pour éviter le mode open bar, on utilise la commande suivante :
+xhost +local:docker Pour l&amp;rsquo;activer au boot de la machine j&amp;rsquo;ai modifié /etc/rc.local et rajouter :
+... # By default this script does nothing.  /usr/bin/xhost +local:docker exit 0 .</description>
+    </item>
+    
+    <item>
+      <title>Avoir plusieurs adresses IP sur la meme interface</title>
+      <link>/linux/network/avoir-plusieurs-adresses-ip-sur-la-meme-interface.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/avoir-plusieurs-adresses-ip-sur-la-meme-interface.html</guid>
+      <description>Avec Linux (je sais pas pour Windows) il est possible de configurer plusieurs adresse IP pour une même carte réseau.
+Utilité A quoi ça sert ? Le cas qui m&amp;rsquo;intéressait au moment de trouver ça c&amp;rsquo;est le cas d&amp;rsquo;un serveur Apache publiant plusieurs serveurs virtuels en SSL. Dans ce cas Apache n&amp;rsquo;est pas capable pour des raisons technique de fournir cette fonctionnalité a partir d&amp;rsquo;un seul couple IP:PORT. Mais si notre serveur apache dispose de plusieurs IP il devient capable de faire ça.</description>
+    </item>
+    
+    <item>
+      <title>Change Active Directory password on Linux</title>
+      <link>/linux/administration/change-active-directory-password-on-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/change-active-directory-password-on-linux.html</guid>
+      <description>Pour changer son mot de passe ActiveDirectory sans passer par une machine Windows, il est possible de le faire en ligne de commande :
+apt-get install samba-common-bin smbpasswd -r &amp;lt;IP ActiveDirectory&amp;gt; -U &amp;lt;user&amp;gt; Si le DNS est configuré correctement, il est possible de trouver son IP avec la commande suivante :
+nslookup _ldap.</description>
+    </item>
+    
+    <item>
+      <title>Changer le nom d’une machine</title>
+      <link>/linux/administration/changer-le-nom-dune-machine.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/changer-le-nom-dune-machine.html</guid>
+      <description>En tant que root éditer les fichiers suivant pour remplacer l&amp;rsquo;ancien nom par le nouveau :
+ /etc/hostname /etc/hosts  Si base oracle installé -&amp;gt; Changer le nom d’une machine sans casser XE</description>
+    </item>
+    
+    <item>
+      <title>Clé USB en lecture seule</title>
+      <link>/linux/divers/cle-usb-en-lecture-seule.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/cle-usb-en-lecture-seule.html</guid>
+      <description>Pour diverses raisons, une clé USB (notamment celles en FAT32) peuvent se retrouver monté en lecture seule. Il y a une multitude de cas et de solutions :
+Montage auto &amp;ldquo;as root&amp;rdquo; C&amp;rsquo;est le montage automatique de Gnome ou autre qui se fait en tant que root et du coup impossible d&amp;rsquo;écrire autrement qu&amp;rsquo;en étant root. Dans ce cas vérifier dans /etc/fstab qu&amp;rsquo;il n&amp;rsquo;y ai pas les lignes suivantes :</description>
+    </item>
+    
+    <item>
+      <title>Comment installer une alternative</title>
+      <link>/linux/administration/comment-installer-une-alternative.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/comment-installer-une-alternative.html</guid>
+      <description>Sous Debian il y a un outil pas mal qui permet de switcher entre plusieurs versions d&amp;rsquo;un même exécutable, c&amp;rsquo;est update-alternatives. Pour installer une nouvelle alternative, de java par exemple :
+sudo update-alternatives --install /usr/bin/javac javac /opt/java/jdk1.7.0_51/bin/javac 100 Pour lister les alternatives de java :
+update-alternatives --list java Pour configurer une alternative à java :
+sudo update-alternatives --config java</description>
+    </item>
+    
+    <item>
+      <title>Comparaisons avec diff</title>
+      <link>/linux/divers/comparaisons-avec-diff.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/comparaisons-avec-diff.html</guid>
+      <description>Quelques commandes diff pour comparer des répertoires et des fichiers :
+Répertoires Comparaison de répertoire en récursif sans tenir compte des espaces :
+diff -rqwB rep-original rep-modifié | sort &amp;gt; modification-rep.diff Fichiers Comparaison des fichiers sans tenir compte des espaces et au format universel (patch):
+diff -wBu fichier-original.txt fichier-modifié.txt &amp;gt; fichier-diff.</description>
+    </item>
+    
+    <item>
+      <title>Configuration Swappiness</title>
+      <link>/linux/administration/configuration-swappiness.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/configuration-swappiness.html</guid>
+      <description>Sur Linux, il y a un paramètre qui indique au système d&amp;rsquo;aller écrire en SWAP même si la RAM est pas pleine. Par défaut, ce paramètre est à 60 ce qui signifie qu&amp;rsquo;a partir du moment où la RAM est pleine à 40%, le système se défoule sur les disques.
+Pour le modifier voilà comment faire :
+ Ouvrez le fichier /etc/sysctl.conf Modifiez ou ajoutez le paramètre  vm.swappiness=10 De cette façon, le système ne se mettra à swapper qu&amp;rsquo;à partir de 90% de remplissage.</description>
+    </item>
+    
+    <item>
+      <title>Configuration firewall IPTables</title>
+      <link>/linux/network/configuration-firewall-iptables.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/configuration-firewall-iptables.html</guid>
+      <description>Voilà une configuration valable pour un firewall IPTables qui donne sur internet à mettre dans un fichier /etc/init.d/firewall.
+Pour l&amp;rsquo;installer : update-rc.d firewall defaults  Pour le désinstaller : update-rc.d -f firewall remove
+#!/bin/sh ### BEGIN INIT INFO # Provides: custom firewall # Required-Start: $remote_fs $syslog $network # Required-Stop: $remote_fs $syslog $network # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: firewall initscript # Description: Custom Firewall ### END INIT INFO  # Vider les tables actuelles iptables -t filter -F # Vider les règles personnelles iptables -t filter -X # Interdire toute connexion entrante et sortante iptables -t filter -P INPUT DROP iptables -t filter -P FORWARD DROP iptables -t filter -P OUTPUT DROP # ---  # Ne pas casser les connexions etablies iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT # Autoriser loopback iptables -t filter -A INPUT -i lo -j ACCEPT iptables -t filter -A OUTPUT -o lo -j ACCEPT # ICMP (Ping) iptables -t filter -A INPUT -p icmp -j ACCEPT iptables -t filter -A OUTPUT -p icmp -j ACCEPT # ---  # SSH In iptables -t filter -A INPUT -p tcp --dport 2222 -j ACCEPT # SSH Out iptables -t filter -A OUTPUT -p tcp --dport 2222 -j ACCEPT # DNS In/Out iptables -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT iptables -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT iptables -t filter -A INPUT -p tcp --dport 53 -j ACCEPT iptables -t filter -A INPUT -p udp --dport 53 -j ACCEPT # NTP Out iptables -t filter -A OUTPUT -p udp --dport 123 -j ACCEPT # WOL Out iptables -t filter -A OUTPUT -p udp --dport 9 -j ACCEPT # HTTP + HTTPS Out iptables -t filter -A OUTPUT -p tcp --dport 80 -j ACCEPT iptables -t filter -A OUTPUT -p tcp --dport 443 -j ACCEPT # HTTP + HTTPS In iptables -t filter -A INPUT -p tcp --dport 80 -j ACCEPT iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT iptables -t filter -A INPUT -p tcp --dport 8443 -j ACCEPT</description>
+    </item>
+    
+    <item>
+      <title>Configuration réseau sur VM Linux</title>
+      <link>/linux/network/configuration-reseau-sur-vm-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/configuration-reseau-sur-vm-linux.html</guid>
+      <description>Lors de la manipulation de VM on peut avoir besoin de changer l&amp;rsquo;adresse IP ou de mettre la VM en DHCP, ce tuto explique comment faire.
+Toutes les commandes se tapent connecté root :
+$ sudo -i Interface réseau Les interfaces réseau se configurent dans le fichier /etc/network/interfaces, c&amp;rsquo;est là que l&amp;rsquo;on décide si le réseau est en DHCP ou en statique.
+La VM par défaut est configuré en mode DHCP, on va donc voir comment la mettre en statique.</description>
+    </item>
+    
+    <item>
+      <title>Connexion VPN Rackspace depuis Linux</title>
+      <link>/linux/divers/connexion-vpn-rackspace-depuis-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/connexion-vpn-rackspace-depuis-linux.html</guid>
+      <description>Sous Linux il n&amp;rsquo;existe pas de client VPN Cisco officiel mais Rackspace préconise l&amp;rsquo;utilisation de VPNC qui fonctionne très bien.
+Installation du package Sous Debian &amp;amp; Co c&amp;rsquo;est simple :
+$ sudo apt-get install vpnc Configuration Commencez par créer un fichier dans /etc/vpnc
+$ sudo vi /etc/vpnc/rackspace.conf Ajoutez y les lignes suivante :
+IPSec gateway 184.106.120.83 IPSec ID CameleonAdmins IPSec secret {password group ? voir avec RSE} Xauth username fcombes@cameleon-software.</description>
+    </item>
+    
+    <item>
+      <title>Creer une clé USB d’install Debian</title>
+      <link>/linux/divers/creer-une-cle-usb-dinstall-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/creer-une-cle-usb-dinstall-debian.html</guid>
+      <description>C&amp;rsquo;est pas bien compliqué mais on cherche longtemps la bonne méthode dans la multitude de conneries du web.
+Déjà, oublier l&amp;rsquo;idée de faire ça avec Windows, c&amp;rsquo;est de la merde et ça marche pas à moitié !
+Ensuite, et c&amp;rsquo;est d&amp;rsquo;autant plus valable avec les PC de dernière génération et leur boot UEFI, prendre un image Debian &amp;ldquo;testing&amp;rdquo; plutôt qu&amp;rsquo;une stable. La stable ne possède pas les fichier nécessaire pour l&amp;rsquo;EFI alors qu&amp;rsquo;avec l&amp;rsquo;ISO testing ça se fait tout seul.</description>
+    </item>
+    
+    <item>
+      <title>Crypter tar.gz avec mot de passe</title>
+      <link>/linux/shell/crypter-tar.gz-avec-mot-de-passe.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/crypter-tar.gz-avec-mot-de-passe.html</guid>
+      <description>Il est très simple de crypter un fichier tar.gz et de lui assigner un mot de passe pour par exemple l&amp;rsquo;envoyer sur un cloud public :
+tar cz folder_to_encrypt | \ 	openssl enc -aes-256-cbc -e &amp;gt; out.tar.gz.enc Le mot de passe est alors demandé.
+Pour decrypter/décompresser :
+openssl aes-256-cbc -d -in out.tar.gz.enc | tar xz Et voilà</description>
+    </item>
+    
+    <item>
+      <title>Créer un conteneur chiffré</title>
+      <link>/linux/divers/creer-un-conteneur-chiffre.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/creer-un-conteneur-chiffre.html</guid>
+      <description>L&amp;rsquo;idée ici est de créer un fichier n&amp;rsquo;importe où sur le disque. Se fichier pourra être monté comme une partition et contiendra des données chiffrées.
+Création du fichier Attention, c&amp;rsquo;est ici que l&amp;rsquo;on détermine la taille du fichier et c&amp;rsquo;est pas facile à changer par la suite
+dd if=/dev/urandom of=testfile bs=1M count=5000  Ici on a un fichier de 5 Go.
+Création de la partition On va ensuite monter ce ficheir comme une partition grâce à losetup</description>
+    </item>
+    
+    <item>
+      <title>Créer une partition chiffré sur une clé USB</title>
+      <link>/linux/divers/creer-une-partition-chiffre-sur-une-cle-usb.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/creer-une-partition-chiffre-sur-une-cle-usb.html</guid>
+      <description>Do not remove this line (it will not be displayed) {:toc}  L&amp;rsquo;idée est de créer sur une clé USB une partition chiffré. Mais pas seulement, afin de rendre cette partition lisible sur Windows comme sur Linux et de pas avoir un clé vide sous Windows, ce qui semblerait louche, il faut avoir deux partition, une en clair et une en crypté. C&amp;rsquo;est pas si simple que ça en a l&amp;rsquo;air.</description>
+    </item>
+    
+    <item>
+      <title>DNS Securise</title>
+      <link>/linux/network/dns-securise.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/dns-securise.html</guid>
+      <description>L&amp;rsquo;objectif est de sécuriser les requêtes DNS en les cryptant. Sachant que Tor par défaut ne le fait pas. Il est possible de le configurer de façon a ce que les requêtes DNS passent elles aussi par Tor mais cela demande à changer le resolv.conf et a paramétrer Tor correctement. C&amp;rsquo;est pas forcément pratique même si c&amp;rsquo;est plus anonymisant que le cryptage du DNS vu que le serveur DNS ne sait pas qui lui a fait la requête.</description>
+    </item>
+    
+    <item>
+      <title>Demarrage de JBoss en service</title>
+      <link>/linux/administration/demarrage-de-jboss-en-service.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/demarrage-de-jboss-en-service.html</guid>
+      <description>Ce qui est pas si évident que ça a faire sous Linux. C&amp;rsquo;est utile si on n&amp;rsquo;a pas accès à la console de la machine ou pour que le JBoss se lance tout seul au démarrage.
+Script init.d Il faut commencé par créer un script d&amp;rsquo;init. Pour cela on peut se servir de celui se trouvant à la fin de la page.
+Attention de bien penser à changer la variable &amp;ldquo;CAMELEON_DIR&amp;rdquo; avec le bon chemin d&amp;rsquo;installation de JBoss.</description>
+    </item>
+    
+    <item>
+      <title>Desactiver l’interface graphique</title>
+      <link>/linux/administration/desactiver-l-interface-graphique.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/desactiver-l-interface-graphique.html</guid>
+      <description>Pour qu&amp;rsquo;une machine Linux démarre plus vite et avec moins de RAM, si vous vous le sentez, il est possible de ne pas lancer l&amp;rsquo;interface graphique. Pour cela il faut modifier le fichier /etc/default/grub.
+Remplacer la valeur de GRUB_CMDLINE_LINUX par text
+GRUB_CMDLINE_LINUX=&amp;quot;text&amp;quot;  Puis dans une ligne de commande root :
+update-grub Redémarrer</description>
+    </item>
+    
+    <item>
+      <title>Documents recents dans gnome-shell</title>
+      <link>/linux/gnomeshell/documents-recents-dans-gnome-shell.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/documents-recents-dans-gnome-shell.html</guid>
+      <description>Pour les dernières versions de gnome, on peut retrouver le fichier d&amp;rsquo;historique à l&amp;rsquo;emplacement suivant: ~/.local/share/recently-used.xbel, pour les versions antérieures il se trouve à ~/.recently-used.xbel.
+Effacer l&amp;rsquo;intégralité du fichier Dans un terminal, taper :
+cat /dev/null &amp;gt; ~/.local/share/recently-used.xbel Puis relancer gnome-shell (Alt+F2, puis r)
+Passer en mode &amp;ldquo;privé&amp;rdquo; Pour désactiver l&amp;rsquo;enregistrement des documents récents: Dans un terminal, taper :
+sudo chattr +i ~/.local/share/recently-used.xbel Pour réactiver l&amp;rsquo;enregistrement des documents récents: Dans un terminal, taper :</description>
+    </item>
+    
+    <item>
+      <title>Domaines de recherche pour NetworkManager</title>
+      <link>/linux/network/domaines-de-recherche-pour-networkmanager.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/domaines-de-recherche-pour-networkmanager.html</guid>
+      <description>Dans les versions récentes de Gnome Shell, l&amp;rsquo;interface de NetworkManager ne donne plus la possibilité de saisir les domaines de rechercher pour les serveurs DNS. Il est possible de les mettre dans le resolv.conf mais le fichier est géré par NetworkManager et peut être écrasé n&amp;rsquo;importe quand. Un solution est donc de mettre manuellement la configuration de NetworkManager à jour dans le fichier /etc/NetworkManager/system-connections/Wired connection 1:
+[connection] id=Wired connection 1 uuid=86fe8169-0452-488e-8662-0cb1dc834333 type=ethernet timestamp=1423488595 [ipv6] method=auto ip6-privacy=2 [ipv4] method=auto dns=172.</description>
+    </item>
+    
+    <item>
+      <title>Download fichier via SSH avec reprise</title>
+      <link>/linux/network/download-fichier-via-ssh-avec-reprise.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/download-fichier-via-ssh-avec-reprise.html</guid>
+      <description>La plus part du temps on utilise SCP mais sur des fichiers de taille conséquente, il est pratique de pouvoir reprendre le téléchargement si la connexion a été rompue ou autres. RSync permet de faire ça.
+rsync --partial --progress --rsh=ssh user@1.1.1.1:/home/user/database.tar.gz database.</description>
+    </item>
+    
+    <item>
+      <title>Débloquer le wifi</title>
+      <link>/linux/network/debloquer-le-wifi.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/debloquer-le-wifi.html</guid>
+      <description>Après une dés-activation du wifi dans network manager de ~GnomeShell, il est impossible de le ré-activer. Pour pouvoir le ré-activer voilà la manœuvre :
+$ sudo rfkill list 0: sony-wifi: Wireless LAN Soft blocked: yes Hard blocked: no 1: sony-bluetooth: Bluetooth Soft blocked: no Hard blocked: no 3: phy0: Wireless LAN Soft blocked: yes Hard blocked: yes 5: hci0: Bluetooth Soft blocked: no Hard blocked: nosudo rfkill unblock 0 Il est maintenant possible de ré-activer le wifi dans l&amp;rsquo;interface.</description>
+    </item>
+    
+    <item>
+      <title>Découper et rattacher un gros fichier</title>
+      <link>/linux/shell/decouper-et-rattacher-un-gros-fichier.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/decouper-et-rattacher-un-gros-fichier.html</guid>
+      <description>split -b 4000m fichier.tar.gz newfichier.tar.gzcat newfichier.tar.gz.* &amp;gt; fichier.</description>
+    </item>
+    
+    <item>
+      <title>Démarrage/Arrêt automatique d’Oracle sous Linux</title>
+      <link>/serveurs/oracle/demarrage-arret-automatique-doracle-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/demarrage-arret-automatique-doracle-sous-linux.html</guid>
+      <description>Modifier le fichier /etc/oratab (ou /var/opt/oracle selon install) Ajouter &amp;lt;SID&amp;gt;:&amp;lt;ORACLE_HOME&amp;gt;:Y le &amp;ldquo;Y&amp;rdquo; indiquant si la base doit être ou non démarré par &amp;ldquo;dbstart&amp;rdquo; et &amp;ldquo;dbshut&amp;rdquo;.
+Créer le script &amp;ldquo;/etc/init.d/dboracle&amp;rdquo; contenant :
+#!/bin/bash  #  # chkconfig: 35 99 10  # description: Starts and stops Oracle processes  #  # Set ORA_HOME to be equivalent to the $ORACLE_HOME  # from which you wish to execute dbstart and dbshut;  #  # Set ORA_OWNER to the user id of the owner of the # Oracle database in ORA_HOME.</description>
+    </item>
+    
+    <item>
+      <title>Désinstaller Oracle XE sous Linux</title>
+      <link>/serveurs/oracle/desinstaller-oracle-xe-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/desinstaller-oracle-xe-sous-linux.html</guid>
+      <description> C&amp;rsquo;est pas bien compliqué mais pour le faire proprement ya quelques trucs à pas oublier.
+Désinstallation des packages Debian apt-get remove oracle-xe-universal apt-get purge oracle-xe-universal Suppression des fichiers restant rm -Rf /usr/lib/oracle/xe rm -Rf /etc/oratab rm -Rf /etc/init.d/oracle-xe rm -Rf /etc/sysconfig/oracle-xe rm -Rf $(find . -name *oracle*)</description>
+    </item>
+    
+    <item>
+      <title>Effacer définitivement un disque dur</title>
+      <link>/linux/shell/effacer-definitivement-un-disque-dur.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/effacer-definitivement-un-disque-dur.html</guid>
+      <description>L&amp;rsquo;objectif est de supprimer les données d&amp;rsquo;un disque dur de façon définitive pour se protéger d&amp;rsquo;une reconstruction de la table d&amp;rsquo;index
+L’utilitaire « dd » fourni avec tous les *nix et dérivés, permet de faire de nombreuses manipulations sur des fichiers ou des systèmes de fichiers comme (liste non exhaustive): Formatter une disquette à partir d’une image, découper un fichier en plusieurs morceaux, faire une image d’un DVD ou encore — et c’est ce qui nous intéresse ici — détruire les données d’un disque dur en le remplissant de zéros ou de données aléatoires.</description>
+    </item>
+    
+    <item>
+      <title>Envoyer POST avec cURL</title>
+      <link>/linux/shell/envoyer-post-avec-curl.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/envoyer-post-avec-curl.html</guid>
+      <description>Comment envoyer une requête POST avec le contenu d&amp;rsquo;un fichier dans le body. Le tout avec un header :
+curl -H &amp;#34;Content-Type: application/json&amp;#34; \  --data &amp;#34;@salut.txt&amp;#34; http://localhost:8082/export \  | python -m json.tool Le fichier salut.txt est dans le répertoire courant &amp;hellip;
+En bonus on notera la dernière ligne qui permet, si la requète retourne du JSON, de formater lisiblement le résultat.</description>
+    </item>
+    
+    <item>
+      <title>Firefox CommandLine Options</title>
+      <link>/linux/network/firefox-commandline-options.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/firefox-commandline-options.html</guid>
+      <description>Voici les Paramètres concernant la gestion des profils :
+ -CreateProfile nomduprofil - Vous permet de créer un nouveau profil, mais cela ne le lance pas. -CreateProfile &amp;ldquo;nomduprofil dossier&amp;rdquo; - Même chose, mais cette fois vous spécifiez l&amp;rsquo;emplacement du profil. -ProfileManager, ou -P - Lance Firefox en affichant le gestionnaire de profil. -P &amp;ldquo;nomduprofil&amp;rdquo; - Démarre Firefox directement avec le profil indiqué. -no-remote - Couplé au paramètre -P, celui-ci permet de lancer plusieurs instances du même navigateur avec des profils différents.</description>
+    </item>
+    
+    <item>
+      <title>Formater simplement un XML</title>
+      <link>/linux/shell/formater-simplement-un-xml.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/formater-simplement-un-xml.html</guid>
+      <description>Comme Linux c&amp;rsquo;est trop bien, ya un petite commande très simple qui permet de formater proprement un XML. C&amp;rsquo;est pratique par exemple pour pouvoir l&amp;rsquo;ouvrir dans Eclipse car si le XML est formaté sur une seule ligne Eclipse pète une durite quand on veut l&amp;rsquo;ouvrir &amp;hellip;
+xmllint -format -recover nonformater.xml &amp;gt; formater.</description>
+    </item>
+    
+    <item>
+      <title>Fusionner les icones d’application dans le dock</title>
+      <link>/linux/gnomeshell/join-application-icon-in-dock.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/join-application-icon-in-dock.html</guid>
+      <description>Il y a un truc vraiment pénible avec GnomeShell et le Dock, c&amp;rsquo;est quand une application apparaît plusieurs fois. Pour une raison X ou Y, le raccourcis d&amp;rsquo;une application n&amp;rsquo;est plus regroupé avec ses instances dans le dock ce qui fait que l&amp;rsquo;on a rapidement tendance à ouvrir de nouvelle applications a chaque fois qu&amp;rsquo;on veut accédé à l&amp;rsquo;application.
+C&amp;rsquo;est du à la WM_CLASS de l&amp;rsquo;application qui n&amp;rsquo;est pas configuré correctement dans le raccourcis bureau.</description>
+    </item>
+    
+    <item>
+      <title>Installer backup sur jail BSD</title>
+      <link>/linux/administration/installer-backup-sur-jail-bsd.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/installer-backup-sur-jail-bsd.html</guid>
+      <description>Une fois la jail créée, pour que les scripts de backup fonctionnent il faut install bash et hubic.py. C&amp;rsquo;est pas toujours intuitif alors voilà ce que j&amp;rsquo;ai fais la dernière fois :
+pkg install bash python2.7 -m ensurepip pip install --upgrade pip wget https://raw.githubusercontent.com/puzzle1536/hubic-wrapper-to-swift/master/requirements.txt pip install -r requirements.txt wget https://raw.githubusercontent.com/puzzle1536/hubic-wrapper-to-swift/master/hubic.py chmod +x hubic.py ln -s /usr/local/bin/python2.7 /usr/bin/python pkg install gnupg En plus de ça, comme expliqué lors de l&amp;rsquo;installation de bash, il faut ajouter un script postinit à FreeNAS pour qu&amp;rsquo;il monte la partition fdescfs avec la commande mount -t fdescfs null /mnt/storage/jails/&amp;lt;nom de la jail&amp;gt;/dev/fd</description>
+    </item>
+    
+    <item>
+      <title>Installer une imprimante IPP</title>
+      <link>/linux/administration/installer-une-imprimante-ipp.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/installer-une-imprimante-ipp.html</guid>
+      <description> Il s&amp;rsquo;agit des imprimantes IP comme par exemple la Canon IR6570. Par défaut, dans l&amp;rsquo;interface d&amp;rsquo;ajout cette possibilité n&amp;rsquo;est pas offerte (pour l&amp;rsquo;instant). Il faudra donc passer par l&amp;rsquo;interface web de CUPS.
+Normalement CUPS est installé par défaut sur les distrib Linux.
+Ajouter l&amp;rsquo;imprimante  Via le navigateur, se rendre à l&amp;rsquo;adresse http://localhost:631/ Allez dans l&amp;rsquo;onglet administration. Si il vous est demandé un login/password, ajoutez votre utilisateur au groupe lpadmin :  usermod -a -G lpadmin monuser  Cliquez sur &amp;ldquo;Ajouter une imprimante&amp;rdquo; Dans la liste choisir &amp;ldquo;Internet Printing Protocol (ipp)&amp;rdquo; Pour Connexion, renseignez  socket://ip-imprimante  puis Continuer Renseignez les information sur l&amp;rsquo;imprimante  Sélectionnez le driver de l&amp;rsquo;imprimante, dans le cas de l&amp;rsquo;IR6570, la marque est &amp;ldquo;Canon&amp;rdquo; et le driver &amp;ldquo;Canon imageRunner 6570 Foomatic/pxlmono (recommended) (en)&amp;rdquo; Afin cliquez sur &amp;ldquo;Ajouter une imprimante&amp;rdquo;   </description>
+    </item>
+    
+    <item>
+      <title>Lancer TCPDump en non root</title>
+      <link>/linux/network/lancer-tcpdump-en-non-root.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/lancer-tcpdump-en-non-root.html</guid>
+      <description>groupadd tcpdump addgroup &amp;lt;username&amp;gt; tcpdump chown root.tcpdump /usr/sbin/tcpdump chmod 0750 /usr/sbin/tcpdump setcap &amp;#34;CAP_NET_RAW+eip&amp;#34; /usr/sbin/tcpdump</description>
+    </item>
+    
+    <item>
+      <title>Last Firefox Version in testing</title>
+      <link>/linux/administration/last-firefox-version-in-testing.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/last-firefox-version-in-testing.html</guid>
+      <description>Depuis un moment iceweasel est remplacé par Firefox ESR sous Debian. Par contre, les depots Debian ont une dixaine de version de retard sur les versions release de Firefox. Du coup voici comment mettre à jour Firfox simplement et de façon fiable à la dernière version en cours :
+Récupération de la clé de dépôt wget -q -O - http://mozilla.debian.net/archive.asc | \  sudo apt-key add - Ajout de mozilla.</description>
+    </item>
+    
+    <item>
+      <title>Lecture d’arguments en bash</title>
+      <link>/linux/shell/lecture-darguments-en-bash.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/lecture-darguments-en-bash.html</guid>
+      <description>Pour parser les arguments d&amp;rsquo;une commande bash voici un exemple de traitement.
+TEMP=`getopt -o e:m:v:r:s: --long env:,module:,version:repository:,script: \ 	-n &amp;#39;deploy.sh&amp;#39; -- &amp;#34;$@&amp;#34;` if [ $? != 0 ] ; then echo &amp;#34;Terminating...&amp;#34; &amp;gt;&amp;amp;2 ; exit 1 ; fi eval set -- &amp;#34;$TEMP&amp;#34; while true ; do case &amp;#34;$1&amp;#34; in -e|--env) ENVIRONMENT=$2 ; shift 2 ;; -m|--module) MODULE=$2 ; shift 2 ;; -v|--version) VERSION=$2 ; shift 2 ;; -r|--repository) REPOSITORY=$2 ; shift 2 ;; -s|--script) SCRIPT=$2 ; shift 2 ;; --) shift ; break ;; *) echo &amp;#34;Error with[$1:$2]&amp;#34; ; exit 1 ;; esac done if [ -z &amp;#34;$ENVIRONMENT&amp;#34; ]; then echo &amp;#34;ENVIRONMENT variable is not set&amp;#34;;fi if [ -z &amp;#34;$MODULE&amp;#34; ]; then echo &amp;#34;MODULE variable is not set&amp;#34;;fi if [ -z &amp;#34;$VERSION&amp;#34; ]; then echo &amp;#34;VERSION variable is not set&amp;#34;;fi if [ -z &amp;#34;$REPOSITORY&amp;#34; ]; then REPOSITORY=&amp;#34;releases&amp;#34;;fi if [ -z &amp;#34;$SCRIPT&amp;#34; ]; then SCRIPT=&amp;#34;deploy.</description>
+    </item>
+    
+    <item>
+      <title>Lister le materiel présent sur la machine</title>
+      <link>/linux/administration/lister-le-materiel-present-sur-la-machine.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/lister-le-materiel-present-sur-la-machine.html</guid>
+      <description>Pour lister tout le matos présent sur un machine Linux:
+sudo lshw -short La commande a besoin d&amp;rsquo;être installé via apt-get install lshw</description>
+    </item>
+    
+    <item>
+      <title>Lister les fichiers d’une arborescence</title>
+      <link>/linux/shell/lister-les-fichiers-d-une-arborescence.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/lister-les-fichiers-d-une-arborescence.html</guid>
+      <description>Très pratique quand on fait un fix pour mettre dans la première partie
+find -type f A exécuter depuis le répertoire du fix.</description>
+    </item>
+    
+    <item>
+      <title>MTA est long à démarrer</title>
+      <link>/linux/administration/mta-est-long-a-demarrer.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/mta-est-long-a-demarrer.html</guid>
+      <description>Déjà c&amp;rsquo;est quoi le MTA ? C&amp;rsquo;est le Mail Transfert Agent, en gros le truc qui s&amp;rsquo;occupe part déjà de distribuer les mails au différents users. Quand il est long à démarrer ça peut venir de trois facteurs :
+ le réseau est mal configuré, à savoir qu&amp;rsquo;il y a une route par défaut mais qu&amp;rsquo;elle ne fonctionne pas le DNS est mal configuré ; le MTA essaye de se connecter à un smarthost inexistant ou inaccessible.</description>
+    </item>
+    
+    <item>
+      <title>Mettre un processus en pause</title>
+      <link>/linux/shell/mettre-un-processus-en-pause.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/mettre-un-processus-en-pause.html</guid>
+      <description>On est en train de compresser un film depuis 45mn et merde on a besoin de compresser un gros fichier pour l&amp;rsquo;envoyer rapidos. Pas de bol si on lance juste la compression du fichier, ça va prendre 20mn au lieu de 10s que ça prendrait normalement. On pourrait stopper la compression du film pour zipper le fichier mais on veut pas perdre les 45mn déjà effectuées &amp;hellip;
+killall -STOP avidemux pour mettre le processus en pause et</description>
+    </item>
+    
+    <item>
+      <title>Missing LSB tags and overrides</title>
+      <link>/linux/administration/missing-lsb-tags-and-overrides.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/missing-lsb-tags-and-overrides.html</guid>
+      <description>Symptômes On a ce genre de chose après une installation de paquets et les paquets ne sont pas configuré correctement :
+Paramétrage de kerneloops-daemon (0.12+git20090217-3) ... insserv: warning: script &#39;K01vmware&#39; missing LSB tags and overrides insserv: warning: script &#39;S50vmware-USBArbitrator&#39; missing LSB tags and overrides insserv: warning: script &#39;vmware&#39; missing LSB tags and overrides insserv: warning: script &#39;vmware-USBArbitrator&#39; missing LSB tags and overrides insserv: There is a loop at service minissdpd if started insserv: Starting vmware-USBArbitrator depends on minissdpd and therefore on system facility `$all&#39; which can not be true!</description>
+    </item>
+    
+    <item>
+      <title>Modifier une fonction shell</title>
+      <link>/linux/shell/modifier-une-fonction-shell.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/modifier-une-fonction-shell.html</guid>
+      <description>Dans le cas d&amp;rsquo;une fonction dont on ne possède pas la paternité, on veux pouvoir profiter des mises à jour de la fonction mais sont état ne nous convient pas totalement. Par exemple la fonction suivante est pratique mais elle rejoue des tests qui, pour mon cas à moi, sont vraiment long et que je veux pouvoir skiper.
+mvnwatch () { if [ &amp;#34;$#&amp;#34; -eq 0 ] then WISDOM_DEV_SERVER=/home/lo/workspace/longback/wisdom-dev-server ASSDIR=${WISDOM_DEV_SERVER}/target/wisdom/application/${PWD##*/} else local ASSDIR=$1 fi echo $ASSDIR wisdom-dev-update ${PWD##*/} ~/applications/maven/bin/mvn io.</description>
+    </item>
+    
+    <item>
+      <title>Monter une image ISO</title>
+      <link>/linux/administration/monter-une-image-iso.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/monter-une-image-iso.html</guid>
+      <description>mount -o loop -t iso9660 fichier.iso /mnt/iso</description>
+    </item>
+    
+    <item>
+      <title>Multi-thread avec xargs</title>
+      <link>/linux/shell/multi-thread-avec-xargs.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/multi-thread-avec-xargs.html</guid>
+      <description>Un truc que je ne savais pas c&amp;rsquo;est qu&amp;rsquo;il est possible de faire du multi-thread avec xargs. C&amp;rsquo;est plutôt simple et ça fonctionne très bien.
+Par exemple dans un script qui met à jour tous les repositories git de ma machine je peux faire ça :
+find -L ~ -maxdepth 5 -path &amp;#34;*.git&amp;#34; -not -path &amp;#34;*zprezto*&amp;#34; -type d 2&amp;gt; /dev/null | \  xargs --max-proc=4 -n 1 -I {} bash -c &amp;#34;update_git_repo {}&amp;#34; Et xargs me crée un pool de 4 thread pour paralléliser ma mise à jour.</description>
+    </item>
+    
+    <item>
+      <title>NFS au travers de SSH</title>
+      <link>/linux/network/nfs-au-travers-de-ssh.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/nfs-au-travers-de-ssh.html</guid>
+      <description>Faire passer du NFS au travers du SSH n&amp;rsquo;est pas si simple que ça. Il faut :
+Pré-requis Vérifier que le server SSH autorise l&amp;rsquo;IP Forwarding
+Configuration du client SSH Il faut faire une redirection de port. Pour ça, soit la ligne de commande :
+ssh login@server-ssh -p 2222 -L 3049:server-nfs:2049 -L 3045:server-nfs:627 -N -f Le -N permet de ne pas proposer l&amp;rsquo;invite de commande, le -f lance le process SSH en background.</description>
+    </item>
+    
+    <item>
+      <title>Nettoyer les fichiers de configuration</title>
+      <link>/linux/administration/nettoyer-les-fichiers-de-configuration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/nettoyer-les-fichiers-de-configuration.html</guid>
+      <description>Au fil des mises à jours d&amp;rsquo;une Debian, il arrive que des fichiers de configuration ne soient pas bien nettoyé. Il est parfois difficile dans les deb de supprimer des fichiers. Voilà comment trouver ces fichiers obsolète et les supprimer.
+Procédure standard dpkg-query -W -f=&amp;#39;${Conffiles}\n&amp;#39; | grep &amp;#39;obsolete$&amp;#39; /etc/apparmor.d/abstractions/evince ae2a1e8cf5a7577239e89435a6ceb469 obsolete /etc/apparmor.d/tunables/ntpd 5519e4c01535818cb26f2ef9e527f191 obsolete /etc/apparmor.d/usr.bin.evince 08a12a7e468e1a70a86555e0070a7167 obsolete /etc/apparmor.d/usr.sbin.ntpd a00aa055d1a5feff414bacc89b8c9f6e obsolete /etc/bash_completion.d/initramfs-tools 7eeb7184772f3658e7cf446945c096b1 obsolete /etc/bash_completion.d/insserv 32975fe14795d6fce1408d5fd22747fd obsolete /etc/dbus-1/system.d/com.redhat.NewPrinterNotification.conf 8df3896101328880517f530c11fff877 obsolete /etc/dbus-1/system.</description>
+    </item>
+    
+    <item>
+      <title>Nettoyer sa Debian</title>
+      <link>/linux/administration/nettoyer-sa-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/nettoyer-sa-debian.html</guid>
+      <description>Même si ce n&amp;rsquo;est pas dans les proportion de Windows, un Linux a tendance à accumuler des reliquats de vieux paquets et du cache pas vraiment utile qui à la longue pèsent lourd sur l&amp;rsquo;espace disque (ça ne ralenti pas le système pour autant).
+Localepurge C&amp;rsquo;est la première chose à faire, &amp;ldquo;localepurge&amp;rdquo; est un outil qui à chaque install de paquet ou de mise à jour, va faire le ménage dans les langues installé.</description>
+    </item>
+    
+    <item>
+      <title>Probleme de politique de securite X11</title>
+      <link>/linux/administration/probleme-de-politique-de-securite-x11.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/probleme-de-politique-de-securite-x11.html</guid>
+      <description> Symptome Au lancement du vmware-toolbox en tant que root, on prend l&amp;rsquo;erreur :
+PuTTY X11 proxy: wrong authorisation protocol attempted  Solution Créer un fichier /root/.Xauthority
+administrateur@ubuntu:~$ xauth list ubuntu/unix:10 MIT-MAGIC-COOKIE-1 c76ff33554b56b2a749019c13a1b71c5 administrateur@ubuntu:~$ sudo -i root@ubuntu:~# xauth add ubuntu/unix:10 MIT-MAGIC-COOKIE-1 c76ff33554b56b2a749019c13a1b71c5 xauth: file /root/.Xauthority does not exist Truc &amp;amp; Astuuuuuce Pour automatiser :
+xauth list | while read x ; do sudo xauth add $x ; done</description>
+    </item>
+    
+    <item>
+      <title>Raccourcis Terminal</title>
+      <link>/linux/shell/raccourcis-terminal.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/raccourcis-terminal.html</guid>
+      <description>Quelques commandes/raccourcis pour aller plus vite en mode terminal.
+ CTRL + A: Aller au début de la ligne CTRL + E: Aller à la fin de la ligne CTRL + [left arrow]: Avancer d&amp;rsquo;un mot CTRL + [right arrow]: Reculer d&amp;rsquo;un mot CTRL + U: Supprimer toute la ligne CTRL + K; Supprimer tout ce qui est à la droite du curseur ESC + [backspace]: Supprimer le mot qui se trouve à la gauche du curseur CTRL + W: même effet que ESC + [backspace] ALT + D: Delete the word after the cursor CTRL + R: Rechercher dans l’historique des commandes utilisées CTRL + G: Sortir du mode “recherche dans l’historique” CTRL + _: Annuler la dernière commande utilisée CTRL + L: Nettoyer la console CTRL + C: Arrêter/tuer le “foreground process” courant CTRL + Z: Suspendre/arrêter le “foreground process”  </description>
+    </item>
+    
+    <item>
+      <title>Rafraichir un repo git dans Redmine</title>
+      <link>/outils/refresh-redmine-repo.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/refresh-redmine-repo.html</guid>
+      <description>En fait, il n&amp;rsquo;y a rien d&amp;rsquo;automatique.
+Il faut commencer par cloner le repo sur le serveur remine. Ensuite on active la fonctionnalité Dépôt pour le projet et on ajoute le repo (en précisant le chemin physique). Attention c’est le chemin du répertoire .git qu’il faut renseigner, Ex /var/lib/git/longback/cosmos/.git sinon ça fonctionne pas.
+Ce n’est pas fini, il car le repo ne se pull pas automatiquement. Pour cela, dans /etc/cron.d on ajoute le fichier suivant :</description>
+    </item>
+    
+    <item>
+      <title>Rechercher dans les fichiers</title>
+      <link>/linux/shell/rechercher-dans-les-fichiers.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/rechercher-dans-les-fichiers.html</guid>
+      <description>find . -iname &amp;#39;*.jsp&amp;#39; | xargs grep &amp;#39;string&amp;#39; -sl find . -iname &amp;#39;*.jsp&amp;#39; -mtime -1 | xargs grep &amp;#39;string&amp;#39; -sl La première recherche simplement dans les fichiers, la seconde recherche dans les fichiers récemment modifiés.</description>
+    </item>
+    
+    <item>
+      <title>Recompilation VMPlayer sous Linux</title>
+      <link>/outils/vmware/recompilation-vmplayer-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/recompilation-vmplayer-sous-linux.html</guid>
+      <description>Il est arrivé que l&amp;rsquo;outil de re-compilation automatique de VMPlayer ne fonctionne pas bien pour des raisons diverses. Dans ce cas, la seule solution pour savoir ce qui ne fonctionne pas est de lancer la compilation à la main depuis une console root :
+sudo -i cd /usr/bin vmware-modconfig --console --install-all --icon=vmware-player --appname=VMware</description>
+    </item>
+    
+    <item>
+      <title>Recuperer le chemin d’un script bash</title>
+      <link>/linux/shell/recuperer-le-chemin-d-un-script-bash.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/recuperer-le-chemin-d-un-script-bash.html</guid>
+      <description>getScriptPath () { echo ${0%/*}/ } currentPath=$(getScriptPath) cd $currentPath</description>
+    </item>
+    
+    <item>
+      <title>Rendre exécutable ce qui peut l’être dans une arborescence</title>
+      <link>/linux/shell/rendre-executable-ce-qui-peut-l-etre-dans-une-arborescence.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/rendre-executable-ce-qui-peut-l-etre-dans-une-arborescence.html</guid>
+      <description>Dans le cas où par exemple on décompresse un fichier .zip qui contient une appli (sqldevelopper, soapUI, &amp;hellip;) on se retrouve avec un répertoire en mode 700. Du coup, seul le user qui a décompressé le zip peut lancer l&amp;rsquo;appli. Il faut donc passer les répertoire et les fichiers exécutable en 644 et 744 avec chmod. Le plus rapide pour ça est la commande suivante :
+chmod a+rX -R repertoire_appli Le X permet de dire que tout les répertoire passe en exécutable et que les fichiers qui sont déjà exécutable le reste les autres ne changent pas.</description>
+    </item>
+    
+    <item>
+      <title>Renommer des fichiers sous Linux</title>
+      <link>/linux/shell/renommer-des-fichiers-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/renommer-des-fichiers-sous-linux.html</guid>
+      <description>La commande est pas compliqué mais les expression régulières c&amp;rsquo;est jamais la fête.
+rename s/&amp;#34;SEARCH&amp;#34;/&amp;#34;REPLACE&amp;#34;/g *</description>
+    </item>
+    
+    <item>
+      <title>Retrouver la cle OEM Windows</title>
+      <link>/linux/divers/retrouver-la-cle-oem-windows.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/retrouver-la-cle-oem-windows.html</guid>
+      <description>Les PC vendu avec Windows OEM ont un numéro de license associé au matériel dirrectement. La plus part du temps il est collé sur le PC mais pas toujours. Du coup si on enlève Windows pour installer Linux sans prendre le temps de noter la clé, il peut être compliqué de le retrouver plustard si on veut réinstaller Windows, pour revendre par exemple.
+Mais la clé OEM est souvent inscrite directement dans la carte mère et est récupérable depuis Linux via la commande suivante :</description>
+    </item>
+    
+    <item>
+      <title>SSH Vérification de la clé hôte échoué</title>
+      <link>/linux/network/ssh--verification-de-la-cle-host-echoue.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/ssh--verification-de-la-cle-host-echoue.html</guid>
+      <description>Symptome login@debian:~$ ssh server-ssh @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY! Someone could be eavesdropping on you right now (man-in-the-middle attack)! It is also possible that the RSA host key has just been changed. The fingerprint for the RSA key sent by the remote host is d7:16:94:8f:b9:e3:b0:16:3e:fc:e3:65:ba:d3:b4:1d. Please contact your system administrator. Add correct host key in /home/login/.</description>
+    </item>
+    
+    <item>
+      <title>SSH: Reprendre la main sur un session perdue</title>
+      <link>/linux/network/ssh-reprendre-la-main-sur-un-session-perdue.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/ssh-reprendre-la-main-sur-un-session-perdue.html</guid>
+      <description>Il arrive de perdre la main sur un session SSH pour différentes raisons. Dans ce cas il n&amp;rsquo;est plus possible de faire quoi que ce soir dans la console. Une manière simple de tuer la session sans tuer le terminal est de faire la suite de touche suivante :
+ENTER , &#39;~&#39; , &#39;.&#39;</description>
+    </item>
+    
+    <item>
+      <title>Scanner les ports sur une IP</title>
+      <link>/linux/network/scanner-les-ports-sur-une-ip.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/scanner-les-ports-sur-une-ip.html</guid>
+      <description>Une commande toute conne permet de scanner les ports ouvert sur une machine et donne des tas d&amp;rsquo;information sur ce qui se trouve de l&amp;rsquo;autre coté :
+nmap -sV ip-a-scanner -vvv Un truc qui peut servir pour lutter contre ça : http://portspoof.org/ ca va générer n&amp;rsquo;importe quoi sur tout les ports qu&amp;rsquo;ils soient ouvert ou fermé.</description>
+    </item>
+    
+    <item>
+      <title>Screencast avec gnome-shell</title>
+      <link>/linux/gnomeshell/screencast-avec-gnome-shell.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/screencast-avec-gnome-shell.html</guid>
+      <description>Un truc très sympa, Gnome-Shell intégre un outils de screencast. En effet, il suffit de faire Ctrl + Shift + Alt + R pour démarrer et arréter l&amp;rsquo;enregistrement. A la fin de l&amp;rsquo;enregistrement, le fichier résultat est déposé dans le répertoire Vidéos de l&amp;rsquo;utilisateur. Le format d&amp;rsquo;enregistrement est WebM.
+Par défaut, la durée maximum d&amp;rsquo;enregistrement est de 30s, au dela l&amp;rsquo;enregistrement s&amp;rsquo;arrête de lui même. Pour changer cette durée max, il est possible de mettre à jour les settings :</description>
+    </item>
+    
+    <item>
+      <title>Squid StoreId rewrite</title>
+      <link>/linux/divers/squid-storeid-rewrite.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/squid-storeid-rewrite.html</guid>
+      <description>Un truc que j&amp;rsquo;ai cherché à faire avec Squid est de mettre en cache les téléchargements que docker fait pour construire ses images afin qu&amp;rsquo;il ne re-télécharge pas systématiquement tout.
+Pas compliqué, il suffit d&amp;rsquo;augmenter la taille max des fichiers a cacher et du répertoire de cache :
+cache_dir ufs /var/spool/squid3 5000 16 256 maximum_object_size 400 MB Mais j&amp;rsquo;ai surtout eu un problème avec le téléchargement des JRE &amp;amp; JDK Oracle.</description>
+    </item>
+    
+    <item>
+      <title>Squid refresh pattern</title>
+      <link>/linux/divers/squid-refresh-pattern.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/squid-refresh-pattern.html</guid>
+      <description>Dans le cadre de mon serveur proxy pour fichier téléchargés, je suis tombé sur un problème avec neo4j dont les fichiers tar.gz n&amp;rsquo;étaient jamais mis en cache.
+Symptômes Le premier symptôme est que le fichier est systématiquement re-téléchargé.
+Deuxième symptôme, les logs store affichent que le fichier est immédiatement RELEASE et que sa date de péremption est passé.
+Explication En fait, dans l&amp;rsquo;entête de la requête HTTP, il y a une directive</description>
+    </item>
+    
+    <item>
+      <title>Suppression de fichiers en masse</title>
+      <link>/linux/shell/massive-file-deletion.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/massive-file-deletion.html</guid>
+      <description>Supprimer des milliers de fichiers en même temps est assez compliqué. Plusieurs solutions :
+ rm -rf /mon/repertoire find /mon/repertoire/* -type f -mtime +3 -delete rsync -a --delete /tmp/empty /mon/repertoire/  le plus rapide est clairement le rsync !</description>
+    </item>
+    
+    <item>
+      <title>Suppression de fichiers par Inode</title>
+      <link>/linux/shell/remove-file-by-inode.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/remove-file-by-inode.html</guid>
+      <description>Il m’est arrivé l’autre jour de créer par accident un fichier &amp;lsquo;-I&amp;rsquo; et là, c’est le drame !
+Impossible de supprimer ce fichier par les rm conventionnel.
+La solution c’est de supprimer le fichier par son inode :
+ls -il find . -inum 782263 -exec rm -i {} \; Et voilà.</description>
+    </item>
+    
+    <item>
+      <title>Supprimer un type de fichier dans une arborescence</title>
+      <link>/linux/shell/supprimer-un-type-de-fichier-dans-une-arborescence.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/supprimer-un-type-de-fichier-dans-une-arborescence.html</guid>
+      <description>Par exemple les fichiers générés par VSS :
+rm $(find . -name *.</description>
+    </item>
+    
+    <item>
+      <title>Synchronisation Rsync</title>
+      <link>/linux/shell/synchronisation-rsync.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/synchronisation-rsync.html</guid>
+      <description>Très pratique quand on change de PC par exemple et que l&amp;rsquo;on veux copier sa centaine de gigs du vieux PV au nouveau.
+Au travers d&amp;rsquo;une connexion directe RJ45 :
+rsync -az --size-only --delete /home/kevin/source/* kevin@server.example.com:/home/kevin/destination/  -a archive, conserve tout les attribut des fichiers en l&amp;rsquo;état (date, owner, &amp;hellip;) -z active la compression --size-only ne teste que la taille du fichier pour savoir s&amp;rsquo;il doit être mis à jour.</description>
+    </item>
+    
+    <item>
+      <title>Tmux cheatcheet</title>
+      <link>/linux/shell/tmux-cheatcheet.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/tmux-cheatcheet.html</guid>
+      <description>Do not remove {:toc}  Sessions New Session  tmux new [-s name] [cmd] (:new) - new session  Switch Session  tmux ls (:ls) - list sessions tmux switch [-t name] (:switch) - switches to an existing session tmux as [id] [-t name] (:attach) - attaches to an existing session &amp;lt;C-a&amp;gt;c (:detach) - detach the currently attached session  Session Management  &amp;lt;C-a&amp;gt;s - list sessions &amp;lt;C-a&amp;gt;$ - name session  Close Session  tmux kill-session [-t name] (:kill-session)  Windows New Window  &amp;lt;C-a&amp;gt;c (:neww [-n name] [cmd]) - new window  Cursor Movement  &amp;lt;C-a&amp;gt;[i] (:selectw -t [i]) - go to window [i] &amp;lt;C-a&amp;gt;l - go to last window &amp;lt;C-a&amp;gt;p - go to previous window &amp;lt;C-a&amp;gt;n - go to next window  Window Management  &amp;lt;C-a&amp;gt;T - rename window &amp;lt;C-a&amp;gt;, - rename window &amp;lt;C-a&amp;gt;w - list all windows &amp;lt;C-a&amp;gt;f - find window by name &amp;lt;C-a&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>Trouver les UUID de mes partitions</title>
+      <link>/linux/shell/trouver-les-uuid-de-mes-partitions.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/trouver-les-uuid-de-mes-partitions.html</guid>
+      <description>ls -l /dev/disk/by-uuid total 0 lrwxrwxrwx 1 root root 10 2009-11-05 14:10 4d7f0ae6-3945-41e2-9123-76a3858bc68a -&amp;gt; ../../sda1 lrwxrwxrwx 1 root root 10 2009-11-05 14:10 d9d24356-9c59-4888-9b00-6a316deb8aba -&amp;gt; .</description>
+    </item>
+    
+    <item>
+      <title>Trouver les gros fichiers</title>
+      <link>/linux/shell/trouver-les-gros-fichiers.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/trouver-les-gros-fichiers.html</guid>
+      <description>Un ligne de commande bien pratique pour ça :
+du -hms /* | sort -nr | head Ca ne donne que le premier niveau de hiérarchie, il faudra relancer la commande pour affiner le recherche par sous-dossier.</description>
+    </item>
+    
+    <item>
+      <title>Trucs et Astuce SoapUI</title>
+      <link>/outils/trucs-et-astuce-soapui.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/trucs-et-astuce-soapui.html</guid>
+      <description>SoapUI à 100% de CPU Sous Linux il peut arriver (souvent) que SoapUI monte à 100% de CPU et y reste &amp;hellip;
+En fouillant un peu sur internet, on trouve que ça vient de de JxBrowser et par chance il est possible de le désactiver en modifiant le fichier de lancement .sh :
+#uncomment to disable browser component  JAVA_OPTS=&amp;#34;$JAVA_OPTS-Dsoapui.</description>
+    </item>
+    
+    <item>
+      <title>Télécharger un répertoire entier via FTP</title>
+      <link>/linux/shell/tele-charger-un-repertoire-entier-via-ftp.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/tele-charger-un-repertoire-entier-via-ftp.html</guid>
+      <description>wget -r --restrict-file-names=nocontrol ftp://username:password4@www.</description>
+    </item>
+    
+    <item>
+      <title>Unifier des PDFs</title>
+      <link>/linux/shell/unifier-des-pdfs.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/unifier-des-pdfs.html</guid>
+      <description>pdfunite in-1.pdf in-2.pdf in-n.pdf out.</description>
+    </item>
+    
+    <item>
+      <title>Using MPC</title>
+      <link>/linux/shell/using-mpc.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/using-mpc.html</guid>
+      <description>Je cherchais un lecteur de zik hyper léger avec un minimum de fonctionnalités :
+ Shuffle Lecture en boucle Intégré à Gnome-shell Commandable du clavier  Résultat de la recherche, Music Player Daemon. Bon ya de la config à faire pour l’afficher dans gnome et pour le clavier mais au final ça fonctionne super. Il existe un panel de logicels pour le commander mais dans un soucis de légèreté, MPC est ce qu&amp;rsquo;il se fait de mieux.</description>
+    </item>
+    
+    <item>
+      <title>WGET avec un proxy</title>
+      <link>/linux/network/wget-avec-un-proxy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/wget-avec-un-proxy.html</guid>
+      <description>WGET est un programme en ligne de commande qui permet de télécharger des fichiers depuis le web. Pour une utilisation en entreprise, il se peut qu’un proxy filtre les accès au web.
+## Utiliser WGET avec un proxy simple
+Créer un fichier .wgetrc (n&amp;rsquo;oubliez pas le point devant le fichier) a la racine de votre répertoire personnel avec le contenu suivant :
+http_proxy = http://votre_proxy:port_proxy/ use_proxy = on wait = 15  Vérifiez que ca fonctionne en rapatriant un fichier test :</description>
+    </item>
+    
+    <item>
+      <title>Web-server en une ligne de commande</title>
+      <link>/linux/shell/web-server-en-une-ligne-de-commande.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/web-server-en-une-ligne-de-commande.html</guid>
+      <description> Comment lancer un serveur web en une ligne de commande bash :
+while true; do { echo -e &amp;#39;HTTP/1.1 200 OK\r\n&amp;#39;; cat index.html; } | nc -l 8080; done L&amp;rsquo;intéret c&amp;rsquo;est que l&amp;rsquo;on peut voir facilement ce qui est envoyé comme entête HTTP, c&amp;rsquo;est simple et rapide !
+liens  https://razvantudorica.com/08/web-server-in-one-line--bash/  </description>
+    </item>
+    
+    <item>
+      <title>apt-get Encountered a section with no Package header</title>
+      <link>/linux/administration/apt-get--encountered-a-section-with-no-package--header.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/apt-get--encountered-a-section-with-no-package--header.html</guid>
+      <description>Un beau matin alors que je veux mettre a jour ma debian, je me retrouve avec le message d&amp;rsquo;erreur suivant :
+W: Impossible de récupérer copy:/var/lib/apt/lists/partial/... Encountered a section with no Package: header  C&amp;rsquo;est un problème bien foireux dont j&amp;rsquo;ai eu du mal à me sortir ! En fait ya eu un bug un moment donné et du coup sur les machines qui n&amp;rsquo;ont pas été mise à jour régulièrement on trouve ce message.</description>
+    </item>
+    
+    <item>
+      <title>gnome-shell segfault at 84 ip libcogl.so.12.1.1</title>
+      <link>/linux/gnomeshell/gnome-shell-segfault-at-84-ip-libcogl.so.12.1.1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/gnome-shell-segfault-at-84-ip-libcogl.so.12.1.1.html</guid>
+      <description> Symptome GnomeShell ne se lance pas, un message &amp;ldquo;Oh no! Something has gone wrong&amp;rdquo; à la place. Et dans les logs :
+hp kernel: [34946.429046] gnome-shell[10202]: segfault at 84 ip 00007ffa2ae877b9 sp 00007fff2bc5c7d0 error 4 in libcogl.so.12.1.1[7ffa2ae3e000+97000]  Remède sudo apt-get install --reinstall libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-common Liens  http://forums.debian.net/viewtopic.php?f=5&amp;amp;t=78716&amp;amp;p=523535&amp;amp;hilit=libcogl#p523535  </description>
+    </item>
+    
+    <item>
+      <title>ssh, control de tunnel via socket</title>
+      <link>/linux/network/ssh-control-de-tunnel-via-socket.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/ssh-control-de-tunnel-via-socket.html</guid>
+      <description>Il est possible de commander une session SSH via un socket.
+ssh -M -S my-ctrl-socket -fnNT -L 50000:localhost:3306 jm@sampledomain.com ssh -S my-ctrl-socket -O check jm@sampledomain.com Master running (pid=3517) ssh -S my-ctrl-socket -O exit jm@sampledomain.com Exit request sent. </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Last Firefox Version in testing - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Last Firefox Version in testing :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/linux/administration/last-firefox-version-in-testing.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Last Firefox Version in testing</h1>
+    
+    
+
+    
+
+<p>Depuis un moment iceweasel est remplacé par Firefox ESR sous Debian. Par contre, les depots Debian ont une dixaine de version de retard sur les versions release de Firefox. Du coup voici comment mettre à jour Firfox simplement et de façon fiable à la dernière version en cours :</p>
+
+<h2 id="récupération-de-la-clé-de-dépôt">Récupération de la clé de dépôt</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget -q -O - http://mozilla.debian.net/archive.asc | <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  sudo apt-key add -</code></pre></div>
+<h2 id="ajout-de-mozilla-debian-net-dans-les-repos-apt">Ajout de mozilla.debian.net dans les repos apt</h2>
+
+<p>Pour la version RELEASE. On peut choisir BETA aussi</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; EOF | sudo tee /etc/apt/sources.list.d/mozilla-firefox.list
+</span><span style="color:#e6db74">deb http://mozilla.debian.net/ jessie-backports firefox-release
+</span><span style="color:#e6db74">EOF</span></code></pre></div>
+<h2 id="assigner-une-priorité-supérieur-à-ce-dépôt">Assigner une priorité supérieur à ce dépôt</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; EOF | sudo tee /etc/apt/preferences.d/mozilla-firefox
+</span><span style="color:#e6db74">Package: *
+</span><span style="color:#e6db74">Pin: origin mozilla.debian.net
+</span><span style="color:#e6db74">Pin-Priority: 501
+</span><span style="color:#e6db74">EOF</span></code></pre></div>
+<h2 id="mise-à-jour-apt">Mise à jour APT</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update</code></pre></div>
+<h2 id="vérification">Vérification</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ apt-cache policy firefox
+firefox:
+  Installed: <span style="color:#f92672">(</span>none<span style="color:#f92672">)</span>
+  Candidate: <span style="color:#ae81ff">45</span>.0.1-1~bpo80+1
+  Version table:
+     <span style="color:#ae81ff">45</span>.0.1-1~bpo80+1 <span style="color:#ae81ff">0</span>
+        <span style="color:#ae81ff">501</span> http://mozilla.debian.net/ jessie-backports/firefox-release amd64 Packages</code></pre></div>
+<h2 id="installation-de-la-dernière-version">Installation de la dernière version</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install firefox</code></pre></div>
+<h2 id="liens">Liens</h2>
+
+<ul>
+<li><a href="https://blog.sleeplessbeastie.eu/2016/03/21/how-to-use-recent-version-of-firefox-in-debian-jessie/">https://blog.sleeplessbeastie.eu/2016/03/21/how-to-use-recent-version-of-firefox-in-debian-jessie/</a></li>
+</ul>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#récupération-de-la-clé-de-dépôt">Récupération de la clé de dépôt</a></li>
+<li><a href="#ajout-de-mozilla-debian-net-dans-les-repos-apt">Ajout de mozilla.debian.net dans les repos apt</a></li>
+<li><a href="#assigner-une-priorité-supérieur-à-ce-dépôt">Assigner une priorité supérieur à ce dépôt</a></li>
+<li><a href="#mise-à-jour-apt">Mise à jour APT</a></li>
+<li><a href="#vérification">Vérification</a></li>
+<li><a href="#installation-de-la-dernière-version">Installation de la dernière version</a></li>
+<li><a href="#liens">Liens</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

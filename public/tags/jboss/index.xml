@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jboss on wiki.ght1pc9kc.fr</title>
+    <link>/tags/jboss.html</link>
+    <description>Recent content in Jboss on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/jboss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accès JNDI de JBoss</title>
+      <link>/development/java/acces-jndi-de-jboss.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/acces-jndi-de-jboss.html</guid>
+      <description>Pour accéder au composants EJB déployé sous JBoss, voici un exemple de code. Il récupère le ~CorbasManager mais ça marche avec tout les EJB déployé.
+// Get initial context of JNDI tree Hashtable&amp;lt;String, String&amp;gt; w_param = new Hashtable&amp;lt;String, String&amp;gt;(); w_param.put(javax.naming.Context.INITIAL_CONTEXT_FACTORY,&amp;#34;org.jnp.interfaces.NamingContextFactory&amp;#34;); w_param.put(javax.naming.Context.PROVIDER_URL, &amp;#34;jnp://192.168.168.128:1099/&amp;#34;); javax.naming.Context ctx = new javax.naming.InitialContext(w_param); // Get advanced pricing EJB home Object obj = ctx.lookup(&amp;#34;cic.CICCorbaManagerEJBHome&amp;#34;); cic.CICCorbaManagerEJBHome w_corbasHome = (cic.CICCorbaManagerEJBHome)javax.rmi.PortableRemoteObject.narrow(obj,cic.CICCorbaManagerEJBHome.class); // Create a new advanced pricing session cic.CICCorbaManagerEJB w_corbasManager = w_corbasHome.</description>
+    </item>
+    
+    <item>
+      <title>Connexion JBoss SQL-Server</title>
+      <link>/serveurs/jboss/connexion-jboss-sql-server.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/jboss/connexion-jboss-sql-server.html</guid>
+      <description>La configuration se fait dans les fichiers *-ds.xml présent dans le répertoire deploy du JBoss. Le but de cette page est surtout de donner la configuration pour les driver SQL-Server 2005 qui présentent des performence et une stabilité meilleure sur les versions récentes de SQL-Server.
+Driver SQL-Server 2000 C&amp;rsquo;est la configuration par défaut à l&amp;rsquo;installation de CCS.
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;datasources&amp;gt; &amp;lt;local-tx-datasource&amp;gt; &amp;lt;jndi-name&amp;gt;ccpDataSource&amp;lt;/jndi-name&amp;gt; &amp;lt;connection-url&amp;gt;jdbc:microsoft:sqlserver://127.0.0.1:1433;DatabaseName=CCS44Gb;SelectMethod=cursor&amp;lt;/connection-url&amp;gt; &amp;lt;driver-class&amp;gt;com.microsoft.jdbc.sqlserver.SQLServerDriver&amp;lt;/driver-class&amp;gt; &amp;lt;user-name&amp;gt;sa&amp;lt;/user-name&amp;gt; &amp;lt;password&amp;gt;sa&amp;lt;/password&amp;gt; &amp;lt;!-- sql to call on an existing pooled connection when it is obtained from pool --&amp;gt; &amp;lt;check-valid-connection-sql&amp;gt;select &amp;#39;x&amp;#39;&amp;lt;/check-valid-connection-sql&amp;gt; &amp;lt;/local-tx-datasource&amp;gt; &amp;lt;/datasources&amp;gt; Les librairies de ce driver se composent de trois fichiers jar dans le répertoire deploy : * msbase.</description>
+    </item>
+    
+    <item>
+      <title>Demarrage de JBoss en service</title>
+      <link>/linux/administration/demarrage-de-jboss-en-service.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/demarrage-de-jboss-en-service.html</guid>
+      <description>Ce qui est pas si évident que ça a faire sous Linux. C&amp;rsquo;est utile si on n&amp;rsquo;a pas accès à la console de la machine ou pour que le JBoss se lance tout seul au démarrage.
+Script init.d Il faut commencé par créer un script d&amp;rsquo;init. Pour cela on peut se servir de celui se trouvant à la fin de la page.
+Attention de bien penser à changer la variable &amp;ldquo;CAMELEON_DIR&amp;rdquo; avec le bon chemin d&amp;rsquo;installation de JBoss.</description>
+    </item>
+    
+    <item>
+      <title>Gérer l’ordre de déploiement dans JBoss</title>
+      <link>/serveurs/jboss/gerer-l-ordre-de-deploiement-dans-jboss.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/jboss/gerer-l-ordre-de-deploiement-dans-jboss.html</guid>
+      <description>C&amp;rsquo;est un question qui peut paraître inutile mais dans au moins un cas c&amp;rsquo;est crucial :p
+Dans le cas de la création d&amp;rsquo;un WS Axis2, on utilise une classe AxisServlet qui se trouve être déployé dans l&amp;rsquo;EAR de CameleonEdge ! Dans ce cas, il est important que la webapp que l&amp;rsquo;on crée avec le WS soit déployé après l&amp;rsquo;EAR de Cameleon. Or, par défaut dans JBoss, les WAR sont quoi qu&amp;rsquo;il arrivent déployer avant les EAR, donc problème &amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

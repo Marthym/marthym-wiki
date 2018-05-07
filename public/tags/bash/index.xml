@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on wiki.ght1pc9kc.fr</title>
+    <link>/tags/bash.html</link>
+    <description>Recent content in Bash on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Comparaisons avec diff</title>
+      <link>/linux/divers/comparaisons-avec-diff.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/comparaisons-avec-diff.html</guid>
+      <description>Quelques commandes diff pour comparer des répertoires et des fichiers :
+Répertoires Comparaison de répertoire en récursif sans tenir compte des espaces :
+diff -rqwB rep-original rep-modifié | sort &amp;gt; modification-rep.diff Fichiers Comparaison des fichiers sans tenir compte des espaces et au format universel (patch):
+diff -wBu fichier-original.txt fichier-modifié.txt &amp;gt; fichier-diff.</description>
+    </item>
+    
+    <item>
+      <title>Connexion VPN Rackspace depuis Linux</title>
+      <link>/linux/divers/connexion-vpn-rackspace-depuis-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/connexion-vpn-rackspace-depuis-linux.html</guid>
+      <description>Sous Linux il n&amp;rsquo;existe pas de client VPN Cisco officiel mais Rackspace préconise l&amp;rsquo;utilisation de VPNC qui fonctionne très bien.
+Installation du package Sous Debian &amp;amp; Co c&amp;rsquo;est simple :
+$ sudo apt-get install vpnc Configuration Commencez par créer un fichier dans /etc/vpnc
+$ sudo vi /etc/vpnc/rackspace.conf Ajoutez y les lignes suivante :
+IPSec gateway 184.106.120.83 IPSec ID CameleonAdmins IPSec secret {password group ? voir avec RSE} Xauth username fcombes@cameleon-software.</description>
+    </item>
+    
+    <item>
+      <title>Lecture d’arguments en bash</title>
+      <link>/linux/shell/lecture-darguments-en-bash.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/lecture-darguments-en-bash.html</guid>
+      <description>Pour parser les arguments d&amp;rsquo;une commande bash voici un exemple de traitement.
+TEMP=`getopt -o e:m:v:r:s: --long env:,module:,version:repository:,script: \ 	-n &amp;#39;deploy.sh&amp;#39; -- &amp;#34;$@&amp;#34;` if [ $? != 0 ] ; then echo &amp;#34;Terminating...&amp;#34; &amp;gt;&amp;amp;2 ; exit 1 ; fi eval set -- &amp;#34;$TEMP&amp;#34; while true ; do case &amp;#34;$1&amp;#34; in -e|--env) ENVIRONMENT=$2 ; shift 2 ;; -m|--module) MODULE=$2 ; shift 2 ;; -v|--version) VERSION=$2 ; shift 2 ;; -r|--repository) REPOSITORY=$2 ; shift 2 ;; -s|--script) SCRIPT=$2 ; shift 2 ;; --) shift ; break ;; *) echo &amp;#34;Error with[$1:$2]&amp;#34; ; exit 1 ;; esac done if [ -z &amp;#34;$ENVIRONMENT&amp;#34; ]; then echo &amp;#34;ENVIRONMENT variable is not set&amp;#34;;fi if [ -z &amp;#34;$MODULE&amp;#34; ]; then echo &amp;#34;MODULE variable is not set&amp;#34;;fi if [ -z &amp;#34;$VERSION&amp;#34; ]; then echo &amp;#34;VERSION variable is not set&amp;#34;;fi if [ -z &amp;#34;$REPOSITORY&amp;#34; ]; then REPOSITORY=&amp;#34;releases&amp;#34;;fi if [ -z &amp;#34;$SCRIPT&amp;#34; ]; then SCRIPT=&amp;#34;deploy.</description>
+    </item>
+    
+    <item>
+      <title>Lister les fichiers d’une arborescence</title>
+      <link>/linux/shell/lister-les-fichiers-d-une-arborescence.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/lister-les-fichiers-d-une-arborescence.html</guid>
+      <description>Très pratique quand on fait un fix pour mettre dans la première partie
+find -type f A exécuter depuis le répertoire du fix.</description>
+    </item>
+    
+    <item>
+      <title>Retrouver la cle OEM Windows</title>
+      <link>/linux/divers/retrouver-la-cle-oem-windows.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/retrouver-la-cle-oem-windows.html</guid>
+      <description>Les PC vendu avec Windows OEM ont un numéro de license associé au matériel dirrectement. La plus part du temps il est collé sur le PC mais pas toujours. Du coup si on enlève Windows pour installer Linux sans prendre le temps de noter la clé, il peut être compliqué de le retrouver plustard si on veut réinstaller Windows, pour revendre par exemple.
+Mais la clé OEM est souvent inscrite directement dans la carte mère et est récupérable depuis Linux via la commande suivante :</description>
+    </item>
+    
+    <item>
+      <title>Suppression de fichiers en masse</title>
+      <link>/linux/shell/massive-file-deletion.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/massive-file-deletion.html</guid>
+      <description>Supprimer des milliers de fichiers en même temps est assez compliqué. Plusieurs solutions :
+ rm -rf /mon/repertoire find /mon/repertoire/* -type f -mtime +3 -delete rsync -a --delete /tmp/empty /mon/repertoire/  le plus rapide est clairement le rsync !</description>
+    </item>
+    
+  </channel>
+</rss>

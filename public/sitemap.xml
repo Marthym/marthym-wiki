@@ -1,0 +1,1793 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/development/dotnet.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/ansible.html</loc>
+  </url>
+  
+  <url>
+    <loc>/cuisine.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/divers.html</loc>
+  </url>
+  
+  <url>
+    <loc>/misc.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/eclipse.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/gwt.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/git.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/gnomeshell.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/http.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/intellij.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/jboss.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/javascript.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/latex.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/mysql.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/neo4j.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/spring.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/teradata.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/teradata/logger-les-requetes-teradata.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/dotnet/505-http-version-not-supported-en-.net.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/.net.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/http/1s-de-cache-nginx.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/acces-docker-non-root.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/acces-jndi-de-jboss.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/dotnet/acces-au-ws-securise-en-.net.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/acceder-un-membre-classe-private.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/git/speedup-git-clone.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/activer-sudo-sur-debian.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/gnomeshell/afficher-la-date-du-jour-dans-le-bandeau.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/ajouter-de-la-swap-sans-toucher-au-partition.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/eclipse/ajouter-la-tache-scp-a-ant-sous-eclipse.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/intellij/ajouter-le-dictionnaire-francais.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/ajouter-un-certificat-pour-les-connexions-ssl-java.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/ajouter-une-police-de-caractere-a-java.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/analyze-systemd-boot-speed.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/ansible.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ant.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/apache.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/appeler-un-web-service-au-travers-d-un-proxy.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/apt.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/network/authentification-ssh-par-certificat.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/allow-xhost-to-docker.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/autoriser-lacces-au-display-pour-un-container-specifique.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/avoir-plusieurs-adresses-ip-sur-la-meme-interface.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/backup.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/bash.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/branching.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/browser.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/bsd.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cache.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cec.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/change-active-directory-password-on-linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/git/changelog-depuis-milestone-gitlab.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/changer-le-nom-dune-machine.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/changer-le-nom-d-une-machine-sans-casser-xe.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/changer-le-port-de-linterface-dadmin-de-xe.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/changer-le-repertoire-des-images-docker.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/charset.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/class.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/javascript/classes-javascript-propres.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/cleanup.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/cle-usb-en-lecture-seule.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/code.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/comment-installer-une-alternative.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/comparaisons-avec-diff.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/concepts.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/concepts-interessant-en-java-7.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/configuration.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/configuration-log4j.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/configuration-swappiness.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/configuration-firewall-iptables.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/configuration-reseau-sur-vm-linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/connaitre-lencodage-de-sa-base.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/spring/secure-connection-and-reverse-proxy.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/jboss/connexion-jboss-sql-server.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/connexion-ldap-exchange.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/connexion-vpn-rackspace-depuis-linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/console.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/convention.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/git/convention-de-message-de-commit.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/convertir-un-date-entre-timezone-avec-jodatime.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/cook.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cpl.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/crash.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/eclipse/crash-d-eclipse.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/creer-une-cle-usb-dinstall-debian.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/crypter-tar.gz-avec-mot-de-passe.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/crypting.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/crypto.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/creer-un-conteneur-chiffre.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/creer-une-partition-chiffre-sur-une-cle-usb.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/css.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cuisine.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/curl.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/neo4j/cypher-node-sans-label.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/neo4j/cypher-paths-sans-path-intermediaire.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/dns-securise.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/database.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/datapump.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/date.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/debian.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/debug.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/demarrage-de-jboss-en-service.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/desactiver-l-interface-graphique.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/development.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/diff.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/dns.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/dock.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/docker.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/docker--failed-to-create-image-rootfs.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/gnomeshell/documents-recents-dans-gnome-shell.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/latex/dollar-en-latex.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/domaines-de-recherche-pour-networkmanager.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/dotnet.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/download.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/network/download-fichier-via-ssh-avec-reprise.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/dump.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/network/debloquer-le-wifi.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/decouper-et-rattacher-un-gros-fichier.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/demarrage-arret-automatique-doracle-sous-linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/demarrer-arreter-une-base-en-ligne-de-commande-windows.html</loc>
+  </url>
+  
+  <url>
+    <loc>/misc/desactiver-le-fixup-mozilla.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/desinstaller-oracle-xe-sous-linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware/esxi-4.1-avec-vmplayer.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/eclipse.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/effacer-definitivement-un-disque-dur.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/envoyer-post-avec-curl.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/eclipse/erreur-cannot-connect-to-vm-lors-dun-debug.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/error.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/esxi.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/exchange.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/export-importer-une-image-docker.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/mysql/exporter-importer-une-base-d-un-dump.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/exporter-importer-un-schema-de-base.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/firebug.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/firefox.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/network/firefox-commandline-options.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/firewall.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/fork.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/formater-simplement-un-xml.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/front.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/fusionner-les-espaces-libre-contigus.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/gnomeshell/join-application-icon-in-dock.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware/geler-l-heure-d-une-vm.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/gestion-des-dates-oracle.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/ghostview.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/git.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/git/git-en-ligne-de-commande.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/git/git-rerere.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/git/git-un-modele-de-branches-efficace.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/gitlab.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gnome.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gollum.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/gollum-at-startup.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/graphic.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gs.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/gwt.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/jboss/gerer-l-ordre-de-deploiement-dans-jboss.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/http/https-securise-avec-nginx.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/hack.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/hacks-css.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/hardware.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hdd.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hdmi.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/http.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/https.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hubic.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/http/hotes-virtuels-ssl-multiple.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/ie.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/gwt/illegalstateexception-simplepanel.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/inetaddress-doesnt-resolve-ip-on-alpine-docker-container.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/inode.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/installer-java-sun-jdk-sous-debian.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware/installer-vmware-tools-sur-un-guest-debian.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/installer-backup-sur-jail-bsd.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/installer-une-imprimante-ipp.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/intellij.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/interface.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/git/introduction-a-git.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/iptables.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ivy.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jail.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/java.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/javascript.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jboss.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jdbc.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jdk.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jekyll.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/jekyll.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/jigsaw.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jinja.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jmx.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jndi.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/join.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/junit.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/kodi.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/start-neo4j-impermanent-database-&#43;-rest-server-on-random-port-for-test.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/lancer-tcpdump-en-non-root.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/last-firefox-version-in-testing.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/latex.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ldap.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/lecture-darguments-en-bash.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/libcogl.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/license.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/linux.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/lister-le-materiel-present-sur-la-machine.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/lister-les-fichiers-d-une-arborescence.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/lister-les-locks-sur-oracle.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/eclipse/locking-is-not-possible-in-the-directory-....html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/locks.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/log4j.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/logs.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/logstach.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/logstach-config-for-metrics.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/mta-est-long-a-demarrer.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/maven.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/maven-release-plugin.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/maven-exemple-de-settings.xml.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/intellij/best-jvm-option-for-intellij.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/memory.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/mettre-un-processus-en-pause.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/latex/mettre-a-jour-un-package-latex.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/misc.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/missing-lsb-tags-and-overrides.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/mode-debug-tomcat.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/modifier-une-fonction-shell.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/gwt/module-may-need-to-be-re-compiled.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/monter-une-image-iso.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/mpc.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/mta.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/multi-thread-avec-xargs.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/music.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/misc/mute-et-cec-sur-openelec.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/mysql.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/network/nfs-au-travers-de-ssh.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/naming.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/neo4j.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/nettoyer-les-fichiers-de-configuration.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/nettoyer-sa-debian.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/network.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/nexus.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/nginx.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/http/nginx-webdav-et-probleme-de-crochets.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/nsf.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/oem.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/openelec.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/optimisation-de-png.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/optimisation-des-statements-batch-mysql.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/optimise.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/http/optimize-nginx-performances.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/latex/optimizer-la-taille-dun-pdf.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/oracle.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/outils.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/ou-telecharger-les-jdk.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/pdf.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/png.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/poisson.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/printer.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/probleme-de-politique-de-securite-x11.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/gwt/probleme-de-serialisation-avec-gwt.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/process.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/proxy.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/purge.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/git/push-sur-plusieurs-repo-git.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/raccourcis-terminal.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/refresh-redmine-repo.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/rechercher-dans-les-fichiers.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware/recompilation-vmplayer-sous-linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/recovery.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/neo4j/recovery-required-from-position-logposition.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/recuperer-le-chemin-d-un-script-bash.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware/redirection-de-ports-avec-vmware-server.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/redmine.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/reflection.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/registry.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/registry-docker-derriere-un-nginx.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/git/regrouper-des-repos-git-sans-perdre-l-historique.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/remote.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/remote-jmx-console.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/remove-ophans-from-docker-registry.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/rendre-executable-ce-qui-peut-l-etre-dans-une-arborescence.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/renommer-des-fichiers-sous-linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/requete-oracle-avec-variables-liees.html</loc>
+  </url>
+  
+  <url>
+    <loc>/misc/resynchroniser-des-cpl-devolo.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/retrouver-la-cle-oem-windows.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware/retrouver-la-configuration-reseau-vmware.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/rsync.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/repeat-test-with-junit.html</loc>
+  </url>
+  
+  <url>
+    <loc>/search.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/ssh--verification-de-la-cle-host-echoue.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/ssh-reprendre-la-main-sur-un-session-perdue.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/scanner-les-ports-sur-une-ip.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/scp.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/gnomeshell/screencast-avec-gnome-shell.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/script.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/security.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/secutity.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/segfault.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/server.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/service.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/shell.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/shortcut.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/soapui.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/soja.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/spring.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sql.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/squid.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/squid-storeid-rewrite.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/divers/squid-refresh-pattern.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/ssh.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ssl.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/startup.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware/stopper-une-vm-sur-le-serveur-en-ligne-de-commande.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/string.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/stringindexoutofboundsexception-dans-ivy.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/sudo.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/massive-file-deletion.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/remove-file-by-inode.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/supprimer-les-images-non-tagge.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/supprimer-les-vieux-conteneurs.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/supprimer-un-type-de-fichier-dans-une-arborescence.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/swap.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/synchronisation-rsync.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/sysadmin.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sysadmin-ipp.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/system-error-on-docker-run.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/systemd.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/cuisine/tataki-de-thon.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/tcpdump.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/ansible/template-error-while-templating-string.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/teradata.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/test.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/tester-des-membres-private.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/javascript/tester-un-numerique-en-javascript.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/textlive.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/thon.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/timezone.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/mysql/timezoner-mysql.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/tmux.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/tmux-cheatcheet.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/tomcat.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tools.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/tracer-une-requete-oracle.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/java/transformer-une-url-java-en-chemin-complet.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/trouver-les-uuid-de-mes-partitions.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/trouver-les-gros-fichiers.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/trucs-et-astuce-soapui.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/try.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tunning.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/type.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/telecharger-java-en-une-ligne.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/tele-charger-un-repertoire-entier-via-ftp.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/mysql/uuid-most-significant-bits.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/unifier-des-pdfs.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/update-toutes-les-images.html</loc>
+  </url>
+  
+  <url>
+    <loc>/misc/upload-file-to-nexus-repository.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/url.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/usb.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/using-mpc.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/oracle/utiliser-datapump-en-ligne-de-commande.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/javascript/utiliser-firebug-lite-avec-ie.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/javascript/utiliser-firebug-sans-planter-ie7-8.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/uuid.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/vmware/vmtools-en-ligne-de-commande.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/visitor.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/visitor-vs-instanceof.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/latex/visualisation-instantane-de-modifications-latex.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/vmplayer.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vmware.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vpn.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/linux/network/wget-avec-un-proxy.html</loc>
+  </url>
+  
+  <url>
+    <loc>/development/dotnet/web-service-erreur-cs0029-cs0030.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/shell/web-server-en-une-ligne-de-commande.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/webdav.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/outils/docker/weekly-cleaner.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/wget.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/windows.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ws.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/x11.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/xargs.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/xml.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/development/java/valeur-memoire-java-par-defaut.html</loc>
+  </url>
+  
+  <url>
+    <loc>/serveurs/teradata/error-1178--sqlstate-hy000--the-teradata-database-did-not-provide-the-expected-response.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/administration/apt-get--encountered-a-section-with-no-package--header.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/git/gitflow-breakdown.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/gnomeshell/gnome-shell-segfault-at-84-ip-libcogl.so.12.1.1.html</loc>
+  </url>
+  
+  <url>
+    <loc>/outils/git/non-fast-forward-updates-were-rejected.html</loc>
+  </url>
+  
+  <url>
+    <loc>/linux/network/ssh-control-de-tunnel-via-socket.html</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+</urlset>

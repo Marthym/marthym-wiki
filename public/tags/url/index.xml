@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Url on wiki.ght1pc9kc.fr</title>
+    <link>/tags/url.html</link>
+    <description>Recent content in Url on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/url/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Transformer une URL java en chemin complet</title>
+      <link>/development/java/transformer-une-url-java-en-chemin-complet.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/transformer-une-url-java-en-chemin-complet.html</guid>
+      <description>// w_fileURL est l&amp;#39;URL d&amp;#39;un fichier sur le serveur String w_realPath = request.getSession().getServletContext().getRealPath(&amp;#34;/&amp;#34;); String w_filePath = w_fileURL.replaceFirst(getSettings(request).getCodeBase(), &amp;#34;&amp;#34;); w_filePath = w_realPath+w_filePath.replaceAll(&amp;#34;[/\\\\]+&amp;#34;, &amp;#34;\\&amp;#34; + File.separator); Bien-sur ça marche si l&amp;rsquo;URL est l&amp;rsquo;URL d&amp;rsquo;un fichier sur le serveur ou la servlet s&amp;rsquo;exécute. Dans le cas présent, c&amp;rsquo;est le fichier d&amp;rsquo;un OMM.</description>
+    </item>
+    
+  </channel>
+</rss>

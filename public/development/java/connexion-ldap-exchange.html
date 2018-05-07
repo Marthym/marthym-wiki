@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Connexion LDAP Exchange - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Connexion LDAP Exchange :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/development/java/connexion-ldap-exchange.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Connexion LDAP Exchange</h1>
+    
+    
+
+    
+
+<p>L&rsquo;idée est d&rsquo;expliquer comment, depuis Java, se connecter à un serveur LDAP. Mais pas n&rsquo;importe lequel, un serveur
+LDAP Exchange. Ben oui, Microsoft à beau se standardisé un minimum, de là à faire tout comme les autres, faudrait pas
+pousser !</p>
+
+<h2 id="implémentation-via-jndi">Implémentation via JNDI</h2>
+
+<p>Plusieurs type d&rsquo;implémentation existent pour se connecter à un serveur LDAP. La plus utilisé et la plus &ldquo;standard&rdquo; est
+de se connecter en utilisant les interfaces JNDI. C&rsquo;est donc là dessus qu&rsquo;on va se pencher.</p>
+
+<h2 id="création-du-tableau-de-paramètres">Création du tableau de paramètres</h2>
+
+<p>La première chose à faire c&rsquo;est donc, comme pour un accès JNDI normal, de créer le table de paramètres. Mais dans notre
+cas, on va avoir quelques nouveau paramètres concernant le LDAP.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Hashtable<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> env <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Hashtable<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;();</span>
+env<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">INITIAL_CONTEXT_FACTORY</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;com.sun.jndi.ldap.LdapCtxFactory&#34;</span><span style="color:#f92672">);</span>
+env<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">PROVIDER_URL</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;ldap://centrale.springfield.com:389&#34;</span><span style="color:#f92672">);</span>
+
+<span style="color:#75715e">// Authenticate as user@ldapDomain and password password
+</span><span style="color:#75715e"></span>env<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">SECURITY_AUTHENTICATION</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;simple&#34;</span><span style="color:#f92672">);</span>
+env<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">SECURITY_PRINCIPAL</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;hsimpson@springfield&#34;</span><span style="color:#f92672">);</span>
+env<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">SECURITY_CREDENTIALS</span><span style="color:#f92672">,</span> password<span style="color:#f92672">);</span></code></pre></div>
+<p><strong>SECURITY_AUTHENTICATION</strong> : Il s&rsquo;agit de spécifier le mécanisme d&rsquo;authentification. Trois sont possible (none, simple,
+sasl_mech). None est pour une authentification anonyme et sasl est pour une authentification par certificat (si j&rsquo;ai
+bien compris). Dans notre cas, c&rsquo;est simple qui nous intéresse puisqu&rsquo;il s&rsquo;agit de s&rsquo;authentifier par utilisateur et
+mot de passe.</p>
+
+<p><strong>SECURITY_PRINCIPAL</strong> : C&rsquo;est ici que l&rsquo;on spécifie l&rsquo;utilisateur à connecter. Et c&rsquo;est là aussi que ça va varier
+entre Microsoft et le reste du monde.<br/>
+Pour un LDAP classique (type [[<a href="https://www.opends.org/]]">https://www.opends.org/]]</a>) le user ressemble un peu à ça : &ldquo;uid=hsimpson, ou=people, o=springfield&rdquo;.<br/>
+Mais chez Microsoft, le user DOIT être écrit sous la forme : &ldquo;hsimpson@springfield&rdquo; et pas autrement.</p>
+
+<p><strong>SECURITY_CREDENTIALS</strong> : C&rsquo;est le mot de passe de l&rsquo;utilisateur, rien de compliqué ici.</p>
+
+<h2 id="création-du-contexte-initial">Création du contexte initial</h2>
+
+<p>Donc une fois les paramètres renseigné, on va créer le contexte initial; C&rsquo;est cette création qui va permettre de
+déterminer si les le couple utilisateur/mot de passe est valide ou non.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Create the initial context
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+   ctx <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InitialDirContext<span style="color:#f92672">(</span>env<span style="color:#f92672">);</span>
+   LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">debug</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User &#34;</span><span style="color:#f92672">+</span>user<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; logged in LDAP ...&#34;</span><span style="color:#f92672">);</span>
+
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>AuthenticationException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+   LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">debug</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User and password for &#34;</span><span style="color:#f92672">+</span>user<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; invalid !&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>Si on passe cette étape, l&rsquo;utilisateur et le mot de passe sont valide. En cas d&rsquo;authentification incorrecte, une erreur
+AuthenticationException est levée.</p>
+
+<h2 id="récupération-des-informations-du-compte">Récupération des informations du compte</h2>
+
+<p>Voilà, maintenant qu&rsquo;on sait que l&rsquo;utilisateur est valable, on pourrait avoir envie de récupérer des informations sur
+cet utilisateur afin de pouvoir le créer dans l&rsquo;application que l&rsquo;on intègre (CCS pour ne pas la citer) ou pour
+synchroniser les données de cet utilisateur.</p>
+
+<p>Pour cela, on va utiliser la fonction find :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">SearchControls constraints <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SearchControls<span style="color:#f92672">();</span>
+constraints<span style="color:#f92672">.</span><span style="color:#a6e22e">setSearchScope</span><span style="color:#f92672">(</span>SearchControls<span style="color:#f92672">.</span><span style="color:#a6e22e">SUBTREE_SCOPE</span><span style="color:#f92672">);</span>
+String<span style="color:#f92672">[]</span> attrIDs <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;distinguishedName&#34;</span><span style="color:#f92672">,</span>
+      <span style="color:#e6db74">&#34;sn&#34;</span><span style="color:#f92672">,</span>
+      <span style="color:#e6db74">&#34;givenname&#34;</span><span style="color:#f92672">,</span>
+      <span style="color:#e6db74">&#34;mail&#34;</span><span style="color:#f92672">,</span>
+      <span style="color:#e6db74">&#34;telephonenumber&#34;</span>
+<span style="color:#f92672">};</span>
+constraints<span style="color:#f92672">.</span><span style="color:#a6e22e">setReturningAttributes</span><span style="color:#f92672">(</span>attrIDs<span style="color:#f92672">);</span>
+
+NamingEnumeration<span style="color:#f92672">&lt;</span>SearchResult<span style="color:#f92672">&gt;</span> answer <span style="color:#f92672">=</span> ctx<span style="color:#f92672">.</span><span style="color:#a6e22e">search</span><span style="color:#f92672">(</span>ldapRootContext<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;sAMAccountName=&#34;</span><span style="color:#f92672">+</span> user<span style="color:#f92672">,</span> constraints<span style="color:#f92672">);</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>answer<span style="color:#f92672">.</span><span style="color:#a6e22e">hasMore</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+   LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">warn</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No user informations found in LDAP for &#34;</span><span style="color:#f92672">+</span>user<span style="color:#f92672">);</span>
+   <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>userExist<span style="color:#f92672">)</span>
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> LdapLoginException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Cannot create user in CCS whitout LDAP informations !&#34;</span><span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+
+   Attributes attrs <span style="color:#f92672">=</span> <span style="color:#f92672">((</span>SearchResult<span style="color:#f92672">)</span> answer<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">getAttributes</span><span style="color:#f92672">();</span>
+   <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">isDebugEnabled</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+      LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">debug</span><span style="color:#f92672">(</span>attrs<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;distinguishedName&#34;</span><span style="color:#f92672">));</span>
+      LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">debug</span><span style="color:#f92672">(</span>attrs<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;givenname&#34;</span><span style="color:#f92672">));</span>
+      LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">debug</span><span style="color:#f92672">(</span>attrs<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sn&#34;</span><span style="color:#f92672">));</span>
+      LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">debug</span><span style="color:#f92672">(</span>attrs<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mail&#34;</span><span style="color:#f92672">));</span>
+      LOGGER<span style="color:#f92672">.</span><span style="color:#a6e22e">debug</span><span style="color:#f92672">(</span>attrs<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;telephonenumber&#34;</span><span style="color:#f92672">));</span>
+   <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>C&rsquo;est encore une particularité de Microsoft, sur un serveur LDAP normal, la recherche ne se fait pas avec ces paramètres
+là. sAMAccountName représente l&rsquo;uid chez Microsoft en fait.</p>
+
+<p>Après, de ce que j&rsquo;ai peu lire, chaque LDAP est différent et on peut y mettre un peu tout et n&rsquo;importe quoi !
+Donc faut toujours plus ou moins s&rsquo;adapter au LDAP que l&rsquo;on utilise. Voici un liste non exhaustive des attributs
+standard que l&rsquo;on retrouve en général dans un LDAP :
+<table>
+<tr><th>o</th><td>Organization (Société)</td></tr>
+<tr><th>ou</th><td>Organizational unit (Service)</td></tr>
+<tr><th>cn</th><td>Common name (Nom courant genre &ldquo;John Smith)</td></tr>
+<tr><th>sn</th><td>Surname (Nom de famille)</td></tr>
+<tr><th>givenname</th><td>First name (Prénom)</td></tr>
+<tr><th>uid</th><td>Userid (Chez Microsoft c&rsquo;est un numéro)</td></tr>
+<tr><th>dn</th><td>Distinguished name (Nom LDAP avec tout les groupes)</td></tr>
+<tr><th>mail</th><td>Email address (Adresse mail)</td></tr>
+</table></p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Voilà, arrivé ici, c&rsquo;est plus trop compliqué, à partir de ces infos on peut créer ou mettre à jour un utilisateur de
+notre appli.</p>
+
+<p>Gardez quand même en tête que le code ci-dessus permet de se connecter au serveur Exchange de Cameleon Software mais
+qu&rsquo;il peut y avoir besoin de quelques ré-ajustement pour un autre serveur LDAP.</p>
+
+<h2 id="liens">Liens</h2>
+
+<p>Quelques liens qui m&rsquo;ont bien aidé, surtout le premier qui se trouve être le seul bout de code que j&rsquo;ai trouvé qui
+fonctionne sur un serveur Exchange !</p>
+
+<ul>
+<li><a href="http://www.myhomepageindia.com/index.php/2009/09/24/retrieve-basic-user-attributes-from-active-directory-using-ldap-in-java.html">http://www.myhomepageindia.com/index.php/2009/09/24/retrieve-basic-user-attributes-from-active-directory-using-ldap-in-java.html</a></li>
+<li><a href="http://download.oracle.com/javase/tutorial/jndi/ldap/index.html">http://download.oracle.com/javase/tutorial/jndi/ldap/index.html</a></li>
+<li><a href="http://www.javaworld.com/javaworld/jw-03-2000/jw-0324-ldap.html">http://www.javaworld.com/javaworld/jw-03-2000/jw-0324-ldap.html</a></li>
+</ul>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#implémentation-via-jndi">Implémentation via JNDI</a></li>
+<li><a href="#création-du-tableau-de-paramètres">Création du tableau de paramètres</a></li>
+<li><a href="#création-du-contexte-initial">Création du contexte initial</a></li>
+<li><a href="#récupération-des-informations-du-compte">Récupération des informations du compte</a>
+<ul>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+<li><a href="#liens">Liens</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

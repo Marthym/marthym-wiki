@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visitor on wiki.ght1pc9kc.fr</title>
+    <link>/tags/visitor.html</link>
+    <description>Recent content in Visitor on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/visitor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visitor vs. InstanceOf</title>
+      <link>/development/java/visitor-vs-instanceof.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/visitor-vs-instanceof.html</guid>
+      <description>public abstract class PartialKPIResolution { public final String aggregation; public PartialKPIResolution(String aggregation) { this.aggregation = aggregation; } public static PartialFlatKPIResolution flat(String aggregation, ImmutableMap&amp;lt;RealmAttribute, PartialFlatRealmKPIResolution&amp;gt; byRealm) { return new PartialFlatKPIResolution(aggregation, byRealm); } public static PartialSyntheticKPIResolution synthetic(Formula syntheticFormula, ApplicationPhase applicationPhase, String aggregation, ImmutableMap&amp;lt;String, String&amp;gt; columnAggregations, ImmutableMap&amp;lt;String, PartialFlatRealmKPIResolution&amp;gt; columns) { return new PartialSyntheticKPIResolution(syntheticFormula, applicationPhase, aggregation, columnAggregations, columns); } public abstract &amp;lt;R&amp;gt; R visit(Visitor&amp;lt;R&amp;gt; visitor); public interface Visitor&amp;lt;R&amp;gt; { R visitFlat(PartialFlatKPIResolution resolution); R visitSynthetic(PartialSyntheticKPIResolution resolution); } }public class PartialFlatKPIResolution extends PartialKPIResolution { public final ImmutableMap&amp;lt;RealmAttribute, PartialFlatRealmKPIResolution&amp;gt; byRealm; public PartialFlatKPIResolution(String aggregation, ImmutableMap&amp;lt;RealmAttribute, PartialFlatRealmKPIResolution&amp;gt; byRealm) { super(aggregation); this.</description>
+    </item>
+    
+  </channel>
+</rss>

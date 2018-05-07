@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uuid on wiki.ght1pc9kc.fr</title>
+    <link>/tags/uuid.html</link>
+    <description>Recent content in Uuid on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/uuid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouver les UUID de mes partitions</title>
+      <link>/linux/shell/trouver-les-uuid-de-mes-partitions.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/trouver-les-uuid-de-mes-partitions.html</guid>
+      <description>ls -l /dev/disk/by-uuid total 0 lrwxrwxrwx 1 root root 10 2009-11-05 14:10 4d7f0ae6-3945-41e2-9123-76a3858bc68a -&amp;gt; ../../sda1 lrwxrwxrwx 1 root root 10 2009-11-05 14:10 d9d24356-9c59-4888-9b00-6a316deb8aba -&amp;gt; .</description>
+    </item>
+    
+    <item>
+      <title>UUID Most Significant Bits</title>
+      <link>/serveurs/mysql/uuid-most-significant-bits.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/uuid-most-significant-bits.html</guid>
+      <description>Comment dans une requête MySQL peut on extraire les bits les plus significatif d&amp;rsquo;un UUID. En gros ça correspond en Java à UUID.randomUUID().getMostSignificantBits().
+SELECT -conv(substring_index(uuid(), &amp;#39;-&amp;#39;, 1), 16, 10) Ce qui donne un long !</description>
+    </item>
+    
+  </channel>
+</rss>

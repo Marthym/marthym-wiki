@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Maven Release Plugin - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Maven Release Plugin :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/development/java/maven-release-plugin.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Maven Release Plugin</h1>
+    
+    
+
+    
+
+<p>Quelques explications sur le fonctionnement du <a href="http://maven.apache.org/maven-release/maven-release-plugin/">Maven Release Plugin</a> utilisé pour l’automatisation des releases.</p>
+
+<h2 id="parent">parent</h2>
+
+<p>Déjà la première chose est de configurer les différents plugins de release dans le parent.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;plugin&gt;</span>
+  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-release-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+  <span style="color:#f92672">&lt;version&gt;</span>2.5.3<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/plugin&gt;</span>
+<span style="color:#f92672">&lt;plugin&gt;</span>
+  <span style="color:#f92672">&lt;groupId&gt;</span>org.codehaus.mojo<span style="color:#f92672">&lt;/groupId&gt;</span>
+  <span style="color:#f92672">&lt;artifactId&gt;</span>versions-maven-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+  <span style="color:#f92672">&lt;version&gt;</span>2.5<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/plugin&gt;</span>
+<span style="color:#f92672">&lt;plugin&gt;</span>
+  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+  <span style="color:#f92672">&lt;artifactId&gt;</span>maven-javadoc-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+  <span style="color:#f92672">&lt;version&gt;</span>3.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;configuration&gt;</span>
+    <span style="color:#f92672">&lt;skip&gt;</span>true<span style="color:#f92672">&lt;/skip&gt;</span>
+  <span style="color:#f92672">&lt;/configuration&gt;</span>
+<span style="color:#f92672">&lt;/plugin&gt;</span> </code></pre></div>
+<h3 id="maven-release-plugin">Maven Release Plugin</h3>
+
+<p>Le <a href="http://maven.apache.org/maven-release/maven-release-plugin/">Maven Release Plugin</a> est le plugin qui va faire le gros du travail, Mettre à jour le pom avec les bons numéros de version, faire les commit et poser les tags.</p>
+
+<h3 id="versions-maven-plugin">Versions Maven Plugin</h3>
+
+<p>Le <a href="https://www.mojohaus.org/versions-maven-plugin/">Versions Maven Plugin</a> va permettre de mettre à jour les dépendances SNAPSHOT avant la release.</p>
+
+<h3 id="maven-javadoc-plugin">Maven Javadoc Plugin</h3>
+
+<p>Le <a href="https://maven.apache.org/plugins/maven-javadoc-plugin/">Maven Javadoc Plugin</a> C’est le plugin chargé de générer la JavaDoc, il est utilisé par le <a href="http://maven.apache.org/maven-release/maven-release-plugin/">Maven Release Plugin</a>. Comme aujourd’hui la Javadoc des composants n’est pas conforme, il est nécessaire de la désactiver.</p>
+
+<h2 id="dans-nos-projets">Dans nos projets</h2>
+
+<p>Dans les poms de nos projets il est nécessaire d’avoir correctement configuré l’accès Git, sans quoi les tags ne pourront pas être posé correctement.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;scm&gt;</span>
+    <span style="color:#f92672">&lt;connection&gt;</span>scm:git:git://github.com/Marthym/hello-osgi-world.git<span style="color:#f92672">&lt;/connection&gt;</span>
+    <span style="color:#f92672">&lt;developerConnection&gt;</span>scm:git:git@github.com:Marthym/hello-osgi-world.git<span style="color:#f92672">&lt;/developerConnection&gt;</span>
+    <span style="color:#f92672">&lt;url&gt;</span>https://github.com/Marthym/hello-osgi-world<span style="color:#f92672">&lt;/url&gt;</span>
+<span style="color:#f92672">&lt;/scm&gt;</span></code></pre></div>
+<p>Pensez aussi à déclarer les plugins dans la partie <code>&lt;build&gt;</code>.</p>
+
+<h2 id="renseignement-des-versions">Renseignement des versions</h2>
+
+<p>Pour pouvoir fonctionner en mode silencieux, l’étape de préparation de la release à besoin d’un fichier de configuration, à placer à la racine du projet, contenant les numéros de versions des artefacts du projet, pour la release et pour la prochaine SNAPSHOT.</p>
+
+<p>Le fichier a cette forme :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-properties" data-lang="properties">scm.tag=1.5.0
+project.rel.fr.ght1pc9kc\:hello-osgi-world=1.5.0
+project.dev.fr.ght1pc9kc\:hello-osgi-world=1.6.0-SNAPSHOT
+scm.commentPrefix=rel(main):</code></pre></div>
+<p>On peut aussi lui préciser le préfixe de commit, par défaut <code>[maven-release-plugin]</code>, selon nos conventions on choisira plutôt <code>rel(main):</code>.</p>
+
+<h2 id="les-commandes">Les commandes</h2>
+
+<p>Suppression des snapshots dans les dépendances:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mvn versions:use-releases -DprocessParent<span style="color:#f92672">=</span>true -DfailIfNotReplaced<span style="color:#f92672">=</span>true</code></pre></div>
+<p>Le principe du plugin consiste en la suppression des chaînes <code>-SNAPSHOT</code> dans le fichier mais le plugin vérifie quand même que la version à mettre existe bien, ait bien été releasé. Si ce n’est pas le cas, il plante.</p>
+
+<p>Deux paramètres :
+* <code>processParent</code>: Précise qu’il faut traiter aussi le bloc <code>parent</code>
+* <code>failIfNotReplaced</code>: Demande au plugin de sortir en erreur si une version d’une dépendance n’existe pas</p>
+
+<p>Phase de release:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mvn release:prepare -DtagNameFormat<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@{version}&#34;</span> release:perform</code></pre></div>
+<p>En fait le plugin agit en deux étapes qui peuvent être exécuté en une ligne.</p>
+
+<ul>
+<li><code>prepare</code>:
+
+<ul>
+<li>Rassemble les informations</li>
+<li>Joue les test</li>
+<li>Pose les tags</li>
+<li>Modifie les poms avec les bonnes versions</li>
+</ul></li>
+<li><code>perform</code>:
+
+<ul>
+<li>Compile le code sous le tag</li>
+<li>Pousse le jar sur le Nexus</li>
+</ul></li>
+</ul>
+
+<p>Attention, il est nécessaire de push les modif</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push <span style="color:#f92672">&amp;&amp;</span> git push --tags</code></pre></div>
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#parent">parent</a>
+<ul>
+<li><a href="#maven-release-plugin">Maven Release Plugin</a></li>
+<li><a href="#versions-maven-plugin">Versions Maven Plugin</a></li>
+<li><a href="#maven-javadoc-plugin">Maven Javadoc Plugin</a></li>
+</ul></li>
+<li><a href="#dans-nos-projets">Dans nos projets</a></li>
+<li><a href="#renseignement-des-versions">Renseignement des versions</a></li>
+<li><a href="#les-commandes">Les commandes</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

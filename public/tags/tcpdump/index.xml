@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tcpdump on wiki.ght1pc9kc.fr</title>
+    <link>/tags/tcpdump.html</link>
+    <description>Recent content in Tcpdump on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/tcpdump/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lancer TCPDump en non root</title>
+      <link>/linux/network/lancer-tcpdump-en-non-root.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/lancer-tcpdump-en-non-root.html</guid>
+      <description>groupadd tcpdump addgroup &amp;lt;username&amp;gt; tcpdump chown root.tcpdump /usr/sbin/tcpdump chmod 0750 /usr/sbin/tcpdump setcap &amp;#34;CAP_NET_RAW+eip&amp;#34; /usr/sbin/tcpdump</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Documents recents dans gnome-shell - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Documents recents dans gnome-shell :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/linux/gnomeshell/documents-recents-dans-gnome-shell.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Documents recents dans gnome-shell</h1>
+    
+    
+
+    
+
+<p>Pour les dernières versions de gnome, on peut retrouver le fichier d&rsquo;historique à l&rsquo;emplacement
+suivant: <code>~/.local/share/recently-used.xbel</code>, pour les versions antérieures il se trouve à <code>~/.recently-used.xbel</code>.</p>
+
+<h2 id="effacer-l-intégralité-du-fichier">Effacer l&rsquo;intégralité du fichier</h2>
+
+<p>Dans un terminal, taper :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat /dev/null &gt; ~/.local/share/recently-used.xbel</code></pre></div>
+<p>Puis relancer gnome-shell (<code>Alt+F2</code>, puis r)</p>
+
+<h2 id="passer-en-mode-privé">Passer en mode &ldquo;privé&rdquo;</h2>
+
+<p>Pour désactiver l&rsquo;enregistrement des documents récents:
+Dans un terminal, taper :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo chattr +i ~/.local/share/recently-used.xbel</code></pre></div>
+<p>Pour réactiver l&rsquo;enregistrement des documents récents:
+Dans un terminal, taper :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo chattr -i ~/.local/share/recently-used.xbel</code></pre></div>
+<p>Le script suivant vous permettra de basculer dans un mode ou dans l&rsquo;autre:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># Bloquer les écritures dans .recently-used.xbel (documents récents du gnome-shell)
+</span><span style="color:#75715e"># Attention au répertoire : version ancienne de gnome : ~/.recently-used.xbel
+</span><span style="color:#75715e"># A adapter selon le chemin au fichier
+</span><span style="color:#75715e"></span>fichier<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&lt;chemin&gt;/&lt;d&#39;accès&gt;/&lt;au&gt;/.local/share/recently-used.xbel&#34;</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $USER <span style="color:#f92672">=</span> root <span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;Vous êtes root&#34;</span>
+<span style="color:#66d9ef">else</span>
+    echo <span style="color:#e6db74">&#34;Vous n&#39;êtes pas root, execution du script en sudo&#34;</span>
+    gksu $0
+    exit
+<span style="color:#66d9ef">fi</span>
+
+attribut<span style="color:#f92672">=</span><span style="color:#e6db74">`</span> sudo lsattr <span style="color:#e6db74">&#34;</span>$fichier<span style="color:#e6db74">&#34;</span>| cut -d<span style="color:#e6db74">&#39;-&#39;</span> -f5 <span style="color:#e6db74">`</span> <span style="color:#f92672">&amp;&amp;</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$attribut<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#f92672">]</span> ; <span style="color:#66d9ef">then</span>
+zenity --question --text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Gnome est en mode  confidentiel, voulez-vous quitter ce mode ?&#34;</span> <span style="color:#f92672">&amp;&amp;</span> sudo chattr -i <span style="color:#e6db74">&#34;</span>$fichier<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> zenity --info --text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34; &lt;b&gt;&lt;span color=\&#34;red\&#34;&gt; Gnome n&#39;est plus en mode confidentiel &lt;/span&gt;&lt;/b&gt; &#34;</span> <span style="color:#f92672">||</span> exit
+
+<span style="color:#66d9ef">else</span>
+zenity --question --text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;b&gt;&lt;span color=\&#34;red\&#34;&gt; Gnome n&#39;est pas en mode confidentiel &lt;/span&gt;&lt;/b&gt;, voulez-vous l&#39;activer ?&#34;</span> <span style="color:#f92672">&amp;&amp;</span> sudo chattr +i <span style="color:#e6db74">&#34;</span>$fichier<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> zenity --info --text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Gnome est maintenant en mode &lt;b&gt;&lt;span color=\&#34;red\&#34;&gt; confidentiel &lt;/span&gt;&lt;/b&gt;&#34;</span> <span style="color:#f92672">||</span> exit
+<span style="color:#66d9ef">fi</span>
+
+exit</code></pre></div>
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#effacer-l-intégralité-du-fichier">Effacer l&rsquo;intégralité du fichier</a></li>
+<li><a href="#passer-en-mode-privé">Passer en mode &ldquo;privé&rdquo;</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

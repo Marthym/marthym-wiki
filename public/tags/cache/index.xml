@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cache on wiki.ght1pc9kc.fr</title>
+    <link>/tags/cache.html</link>
+    <description>Recent content in Cache on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/cache/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1s de cache contre le downtime</title>
+      <link>/serveurs/http/1s-de-cache-nginx.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/http/1s-de-cache-nginx.html</guid>
+      <description>Copie depuis https://lord.re/posts/60-cache-proxy-nginx/ de lord@lord.re
+Depuis que mon serveur ne me sert plus de routeur il m’arrive de le couper de temps à autres. Et pourtant mon site reste accessible. J’ai en fait, sur mon routeur, installé un container avec un nginx qui tourne et qui proxy. Les connexions se font donc via le nginx du routeur qui sert de cache quand le vrai serveur ne répond pas. Mais histoire de ne pas avoir de contenu pas à jour mais toujours d’une fraîcheur exemplaire je me contente d’un cache de maximum 1seconde.</description>
+    </item>
+    
+  </channel>
+</rss>

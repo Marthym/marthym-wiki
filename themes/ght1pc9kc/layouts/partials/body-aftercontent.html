@@ -1,0 +1,12 @@
+
+  </section>
+
+  {{ if or (not (isset .Params "toc")) (.Params.toc) }}
+      <aside class="toc">
+        {{ .TableOfContents }}
+      </aside>
+  {{ end }}
+
+</article>
+
+{{ partial "scripts.html" . }}

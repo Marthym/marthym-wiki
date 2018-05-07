@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sql on wiki.ght1pc9kc.fr</title>
+    <link>/tags/sql.html</link>
+    <description>Recent content in Sql on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Connexion JBoss SQL-Server</title>
+      <link>/serveurs/jboss/connexion-jboss-sql-server.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/jboss/connexion-jboss-sql-server.html</guid>
+      <description>La configuration se fait dans les fichiers *-ds.xml présent dans le répertoire deploy du JBoss. Le but de cette page est surtout de donner la configuration pour les driver SQL-Server 2005 qui présentent des performence et une stabilité meilleure sur les versions récentes de SQL-Server.
+Driver SQL-Server 2000 C&amp;rsquo;est la configuration par défaut à l&amp;rsquo;installation de CCS.
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;datasources&amp;gt; &amp;lt;local-tx-datasource&amp;gt; &amp;lt;jndi-name&amp;gt;ccpDataSource&amp;lt;/jndi-name&amp;gt; &amp;lt;connection-url&amp;gt;jdbc:microsoft:sqlserver://127.0.0.1:1433;DatabaseName=CCS44Gb;SelectMethod=cursor&amp;lt;/connection-url&amp;gt; &amp;lt;driver-class&amp;gt;com.microsoft.jdbc.sqlserver.SQLServerDriver&amp;lt;/driver-class&amp;gt; &amp;lt;user-name&amp;gt;sa&amp;lt;/user-name&amp;gt; &amp;lt;password&amp;gt;sa&amp;lt;/password&amp;gt; &amp;lt;!-- sql to call on an existing pooled connection when it is obtained from pool --&amp;gt; &amp;lt;check-valid-connection-sql&amp;gt;select &amp;#39;x&amp;#39;&amp;lt;/check-valid-connection-sql&amp;gt; &amp;lt;/local-tx-datasource&amp;gt; &amp;lt;/datasources&amp;gt; Les librairies de ce driver se composent de trois fichiers jar dans le répertoire deploy : * msbase.</description>
+    </item>
+    
+    <item>
+      <title>Fusionner les espaces libre contigus</title>
+      <link>/serveurs/oracle/fusionner-les-espaces-libre-contigus.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/fusionner-les-espaces-libre-contigus.html</guid>
+      <description>Très pratique surtout pour les anciennes version:
+ALTER TABLESPACE toto COALESCE</description>
+    </item>
+    
+    <item>
+      <title>Gestion des dates Oracle</title>
+      <link>/serveurs/oracle/gestion-des-dates-oracle.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/gestion-des-dates-oracle.html</guid>
+      <description>La pseudo colonne SYSDATE affiche la date et l&amp;rsquo;heure courante. Ajouter 1 à SYSDATE avance la date d&amp;rsquo;un jour. On peut alors utiliser des fractions pour ajouter des heures/minutes/secondes. Voilà un exemple :
+SQL&amp;gt; select sysdate, sysdate+1/24, sysdate +1/1440, sysdate + 1/86400 from dual; SYSDATE SYSDATE+1/24 SYSDATE+1/1440 SYSDATE+1/86400 -------------------- -------------------- -------------------- -------------------- 03-Jul-2002 08:32:12 03-Jul-2002 09:32:12 03-Jul-2002 08:33:12 03-Jul-2002 08:32:13 Et quelques exemples possible :
+   Description Date Expression     Maintenant SYSDATE   Lendemain SYSDATE + 1   Dans 7 jours SYSDATE + 7   Dans 1 heure SYSDATE + 1&amp;frasl;24   Dans 3 heures SYSDATE + 3&amp;frasl;24   Dans une demi-heure SYSDATE + 1&amp;frasl;48   Dans 10mn SYSDATE + 10&amp;frasl;1440   Dans 30s SYSDATE + 30&amp;frasl;86400   Demain à minuit TRUNC(SYSDATE + 1)   Demain à 8h TRUNC(SYSDATE + 1) + 8&amp;frasl;24   Prochain Lundi midi NEXT_DAY(TRUNC(SYSDATE), &amp;lsquo;MONDAY&amp;rsquo;) + 12&amp;frasl;24   Premier jour du moi à minuit TRUNC(LAST_DAY(SYSDATE ) + 1)   Prochain Lundi, Mercredi et Vendredy à 9h TRUNC(LEAST(NEXT_DAY(sysdate,&amp;ldquo;MONDAY&amp;rsquo; &amp;lsquo; ),NEXT_DAY(sysdate,&amp;ldquo;WEDNESDAY&amp;rdquo;), NEXT_DAY(sysdate,&amp;ldquo;FRIDAY&amp;rdquo; ))) + (9&amp;frasl;24)    </description>
+    </item>
+    
+    <item>
+      <title>Gérer l’ordre de déploiement dans JBoss</title>
+      <link>/serveurs/jboss/gerer-l-ordre-de-deploiement-dans-jboss.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/jboss/gerer-l-ordre-de-deploiement-dans-jboss.html</guid>
+      <description>C&amp;rsquo;est un question qui peut paraître inutile mais dans au moins un cas c&amp;rsquo;est crucial :p
+Dans le cas de la création d&amp;rsquo;un WS Axis2, on utilise une classe AxisServlet qui se trouve être déployé dans l&amp;rsquo;EAR de CameleonEdge ! Dans ce cas, il est important que la webapp que l&amp;rsquo;on crée avec le WS soit déployé après l&amp;rsquo;EAR de Cameleon. Or, par défaut dans JBoss, les WAR sont quoi qu&amp;rsquo;il arrivent déployer avant les EAR, donc problème &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Optimisation des statements Batch MySQL</title>
+      <link>/development/java/optimisation-des-statements-batch-mysql.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/optimisation-des-statements-batch-mysql.html</guid>
+      <description>Par défaut le mode batch du driver JDBC de MySQL n&amp;rsquo;est pas correctement optimisé. Il effectue un aller/retour serveur pour chaque requête au lieu de le faire en une seule fois.
+Pour le rendre plainement opérationnel il faut ajouté l&amp;rsquo;option rewriteBatchedStatements à la connexion JDBC.</description>
+    </item>
+    
+    <item>
+      <title>Requête Oracle avec Variables Liées</title>
+      <link>/development/java/requete-oracle-avec-variables-liees.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/requete-oracle-avec-variables-liees.html</guid>
+      <description>C&amp;rsquo;est un info qui date mais c&amp;rsquo;est toujours juste.
+C&amp;rsquo;est quoi des Bind Variable déjà ? Dans le processus d&amp;rsquo;exécution d&amp;rsquo;une requête, Oracle effectue plusieurs étapes. Parmi ces étapes, on retrouve le parsing. Durant cette étape, oracle décortique l&amp;rsquo;ordre SQL et choisit quel est le plan d&amp;rsquo;exécution le plus court pour récupérer les données ramenées par la requête.
+Si une requête est exécuté 20 fois de suite, Oracle fait le parsing pour la première requête seulement.</description>
+    </item>
+    
+    <item>
+      <title>Tracer une requête Oracle</title>
+      <link>/serveurs/oracle/tracer-une-requete-oracle.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/tracer-une-requete-oracle.html</guid>
+      <description>Il arrive qu&amp;rsquo;une partie de l&amp;rsquo;appli (voire toute l&amp;rsquo;appli) rame particulièrement. Selon la version d&amp;rsquo;Oracle, il est plus ou moins facile de tracer une requête. Dans tout les cas, il peut arrivé qu&amp;rsquo;on est besoin d&amp;rsquo;un maximum d&amp;rsquo;info.
+Oracle 10g et Entreprise Manager Sur un serveur 10g, le plus simple est d&amp;rsquo;ouvrir l&amp;rsquo;entreprise manager et de cliquer sur l&amp;rsquo;onglet performances. De là, sous le graphique, un lien &amp;ldquo;Sessions les plus consommatrices&amp;hellip;&amp;rdquo; qui permet de visualiser les requêtes et les sessions les plus gourmandes.</description>
+    </item>
+    
+  </channel>
+</rss>

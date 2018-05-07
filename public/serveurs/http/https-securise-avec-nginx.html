@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    HTTPS Securisé avec Nginx - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>HTTPS Securisé avec Nginx :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/serveurs/http/https-securise-avec-nginx.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>HTTPS Securisé avec Nginx</h1>
+    
+    
+
+    
+
+<p>Générer des certificats SSL correctement configuré n&rsquo;est pas aussi facile qu&rsquo;il n&rsquo;y parait !</p>
+
+<h2 id="génération-des-certificats">Génération des certificats</h2>
+
+<h3 id="creation-de-l-autorité-de-certification-ca">Creation de l&rsquo;autorité de certification (CA)</h3>
+
+<p>On commence par créer la clé, en 2048 sinon c&rsquo;est pas suffisamment sécurisé :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl genrsa -des3 -out dumydomain-ca.key <span style="color:#ae81ff">2048</span></code></pre></div>
+<p>Puis on crée le certificat de la CA :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -new -x509 -days <span style="color:#ae81ff">3650</span> -key dumydomain-ca.key -out dumydomain-ca.crt</code></pre></div>
+<p>Valable 10 ans.</p>
+
+<h3 id="création-du-certificat-pour-notre-serveur">Création du certificat pour notre serveur</h3>
+
+<p>Dans cette procédure, le FDQN doit être exactement le même que le nom de domaine du serveur. Il est possible d&rsquo;utiliser
+des wildcard pour avoir un certificat multi-domaine : <code>*.dumydomain.fr</code></p>
+
+<p>Comme pour la CA on commence par créer la clé :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl genrsa -des3 -out dumydomain.fr.key <span style="color:#ae81ff">1024</span></code></pre></div>
+<p>Ensuite on crée la demande ce certificat :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -new -nodes -newkey rsa:2048 -keyout dumydomain.fr.key -out dumydomain.fr.csr -days <span style="color:#ae81ff">3650</span></code></pre></div>
+<p>Enfin on crée le certificat grace à l&rsquo;autorité et la demande précédemment généré :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl x509 -req -in dumydomain.fr.csr -out dumydomain.fr.crt -sha256 -CA dumydomain-ca.crt -CAkey dumydomain-ca.key -CAcreateserial -days <span style="color:#ae81ff">365</span></code></pre></div>
+<p>Il est important d&rsquo;utiliser SHA256 et non SHA1 car l&rsquo;algo SHA1 n&rsquo;est pas considéré comme suffisamment sur.</p>
+
+<h2 id="configuration-nginx">Configuration Nginx</h2>
+
+<h3 id="diffie-hellman-parameters">Diffie Hellman Parameters</h3>
+
+<p>Il est nécessaire, pour éviter certaines failles de redéfinir les paramètres DH sur 2048 (cf. <a href="https://weakdh.org/sysadmin.html">https://weakdh.org/sysadmin.html</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl dhparam -out dhparams.pem <span style="color:#ae81ff">2048</span></code></pre></div>
+<p>Déplacer le fichier obtenu dans <code>/etc/nginx/ssl</code>.</p>
+
+<h3 id="configuration-ssl">Configuration SSL</h3>
+
+<p>Déplacer les fichier de certificats et de clé dans le répertoire <code>/etc/nginx/ssl</code>.</p>
+
+<p>Dans <code>/etc/nginx/conf.d</code> ajouter un fichier ssl.conf avec le contenu suivant :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">ssl_certificate</span> <span style="color:#e6db74">/etc/nginx/ssl/dumydomain.fr.crt</span>;
+<span style="color:#66d9ef">ssl_certificate_key</span> <span style="color:#e6db74">/etc/nginx/ssl/dumydomain.fr.key</span>;
+
+<span style="color:#66d9ef">ssl_session_timeout</span> <span style="color:#ae81ff">5m</span>;
+<span style="color:#66d9ef">ssl_session_cache</span> <span style="color:#e6db74">shared:SSL:10m</span>;
+
+<span style="color:#66d9ef">ssl_protocols</span> <span style="color:#e6db74">SSLv3</span> <span style="color:#e6db74">TLSv1</span> <span style="color:#e6db74">TLSv1.1</span> <span style="color:#e6db74">TLSv1.2</span>;
+
+<span style="color:#66d9ef">ssl_ciphers</span> <span style="color:#e6db74">&#39;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA&#39;</span>;
+
+<span style="color:#66d9ef">ssl_dhparam</span> <span style="color:#e6db74">/etc/nginx/ssl/dhparams.pem</span>;</code></pre></div>
+<p>Il ne reste plus qu&rsquo;a activer SSL dans la configuration du server et de tester via <a href="https://www.ssllabs.com/ssltest/analyze.html?d=www.dumydomain.fr">SSLabs</a></p>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#génération-des-certificats">Génération des certificats</a>
+<ul>
+<li><a href="#creation-de-l-autorité-de-certification-ca">Creation de l&rsquo;autorité de certification (CA)</a></li>
+<li><a href="#création-du-certificat-pour-notre-serveur">Création du certificat pour notre serveur</a></li>
+</ul></li>
+<li><a href="#configuration-nginx">Configuration Nginx</a>
+<ul>
+<li><a href="#diffie-hellman-parameters">Diffie Hellman Parameters</a></li>
+<li><a href="#configuration-ssl">Configuration SSL</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

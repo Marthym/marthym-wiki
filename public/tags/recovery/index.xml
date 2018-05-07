@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recovery on wiki.ght1pc9kc.fr</title>
+    <link>/tags/recovery.html</link>
+    <description>Recent content in Recovery on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/recovery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recovery required from position LogPosition</title>
+      <link>/serveurs/neo4j/recovery-required-from-position-logposition.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/neo4j/recovery-required-from-position-logposition.html</guid>
+      <description>Après un arrêt intenpestif ou une tentative de backup à l&amp;rsquo;arrache de la base neo4j, on a eu un soucis pour la relancer !
+Symptomes Pas de message nulle part mais base non démarré !
+Le seul truc visible était dans neo4j/data/graph.db/messages.log
+[NeoStoreDataSource] Recovery required from position LogPosition  Un truc comme ça !
+Solution Deux chose :
+ Supprimer le store_lock dans graph.db Supprimer les log de transactions dans graph.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Nettoyer sa Debian - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Nettoyer sa Debian :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/linux/administration/nettoyer-sa-debian.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Nettoyer sa Debian</h1>
+    
+    
+
+    
+
+<p>Même si ce n&rsquo;est pas dans les proportion de Windows, un Linux a tendance à accumuler des reliquats de vieux paquets et du cache pas vraiment
+utile qui à la longue pèsent lourd sur l&rsquo;espace disque (ça ne ralenti pas le système pour autant).</p>
+
+<h2 id="localepurge">Localepurge</h2>
+
+<p>C&rsquo;est la première chose à faire, &ldquo;localepurge&rdquo; est un outil qui à chaque install de paquet ou de mise à jour, va faire le ménage dans les langues installé.
+Sa première utilisation va potentiellement faire gagner pas mal de place.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt-get install localepurge
+localepurge</code></pre></div>
+<p>Cette opération ne se fait qu&rsquo;une fois, par la suite localepurge se lance automatiquement avec &ldquo;apt&rdquo;.</p>
+
+<h2 id="le-nettoyage-régulier">Le nettoyage régulier</h2>
+
+<h3 id="les-symptomes">Les symptomes</h3>
+
+<p>Si on lance la commande suivante</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">du -hs /var/cache/apt/archives
+728M /var/cache/apt/archives</code></pre></div>
+<p>On constate que le cache des paquets prend une place significative au sein du système pour une utilité très réduite.</p>
+
+<h3 id="la-solution">La solution</h3>
+
+<p>Cette suite de commande va permettre d&rsquo;effectuer un nettoyage rapide des caches d&rsquo;apt sans risque d&rsquo;endommager le système :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt-get autoclean
+apt-get clean
+apt-get autoremove</code></pre></div>
+<p>La première commande supprimera tous les paquets .deb présent dans le cache dont une version plus récente est installé, la deuxième supprime tous les paquets
+du cache, et non pas seulement ceux obsolètes comme la commande précédente, enfin la troisième commande supprime les dépendances qui ne sont plus nécessaires.</p>
+
+<p>Si vous faite un <code>du</code> par la suite vous verrez le gain de place.</p>
+
+<h2 id="gagner-encore-de-la-place">Gagner encore de la place</h2>
+
+<p>Si cela n&rsquo;a pas suffit, voici encore quelques façons de gratter un peu de place.</p>
+
+<ul>
+<li><strong>Nettoyer /var/tmp</strong> ce dernier contient des fichier &hellip; temporaires non effacé</li>
+<li><strong>Nettoyer /var/log</strong> qui contient les log du système</li>
+</ul>
+
+<h3 id="nettoyer-les-kernels">Nettoyer les kernels</h3>
+
+<p>Lors des mise à jour de kernel, les anciens kernel sont conservé afin de pouvoir y revenir en cas de problème.
+Il est possible de dés-installer les anciens kernel ainsi que tout ce qui leur est associé (header, src, &hellip;) via apt-get.</p>
+
+<p>La commande suivante vous permet de connaître le kernel actuellement utilisé</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">uname -r
+<span style="color:#ae81ff">3</span>.2.0-3-amd64</code></pre></div>
+<p>Celle pour les kernels installé :</p>
+
+<pre><code>dpkg --list 'linux-image*'
+
+Souhait=inconnU/Installé/suppRimé/Purgé/H=à garder
+| État=Non/Installé/fichier-Config/dépaqUeté/échec-conFig/H=semi-installé/W=attend-traitement-déclenchements
+|/ Err?=(aucune)/besoin Réinstallation (État,Err: majuscule=mauvais)
+||/ Nom                     Version          Architecture     Description
++++-=======================-===========-=============-====================================================
+un  linux-image             &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-486     &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-686     &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-686-big &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-amd64   &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-k7      &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-openvz- &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-vserver &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-vserver &lt;aucun&gt;                   (aucune description n’est disponible)
+un  linux-image-2.6-xen-686 &lt;aucun&gt;                   (aucune description n’est disponible)
+ii  linux-image-3.2.0-3-486 3.2.23-1    i386          Linux 3.2 for older PCs
+ii  linux-image-3.2.0-4-486 3.2.32-1    i386          Linux 3.2 for older PCs
+ii  linux-image-486         3.2+46      i386          Linux for older PCs (meta-package)
+</code></pre>
+
+<p>Les &ldquo;<strong>ii</strong>&rdquo; sont les packages installé, pour supprimer ceux qui ne sont plus utilisé, dans l’exemple précédent c’est le <strong>3.2.0-3-486</strong> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt-get purge linux-image-3.2.0-3-486 linux-headers-3.2.0-3*</code></pre></div>
+<p><strong>ATTENTION Cette commande est a utiliser avec beaucoup de parcimonie, c’est irréversible et ça casse la VM ou le PC définitivement !</strong></p>
+
+<h3 id="nettoyer-les-paquets-résiduels">Nettoyer les paquets résiduels</h3>
+
+<p>Afin de faire un véritable ménage sur le système, exécuter la commande suivante :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt purge <span style="color:#66d9ef">$(</span>dpkg --list |grep <span style="color:#e6db74">&#39;^rc&#39;</span> |awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span></code></pre></div>
+<p>Et en prime la liste de paquest qui reste après une montée de version :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dpkg -l | grep deb8 </code></pre></div>
+<p>Explication de la commande :</p>
+
+<ul>
+<li><strong>dpkg –list</strong> : liste tous les paquets présent sur le système</li>
+<li><strong>grep ‘^rc’</strong> : cherche les paquets désinstallés mais pas purgés</li>
+<li><strong>awk ‘{print $2}’</strong> : filtre l’affichage de la sortie de la commande précédente</li>
+</ul>
+
+<h3 id="trouver-les-gros-fichiers">Trouver les gros fichiers</h3>
+
+<p>[[include:../shell/Trouver les gros fichiers]]</p>
+
+<h2 id="liens">Liens</h2>
+
+<ul>
+<li><a href="http://forum.ovh.com/showthread.php?t=27814">http://forum.ovh.com/showthread.php?t=27814</a></li>
+<li><a href="https://memo-linux.com/debian-nettoyer-les-paquets-residuels/">https://memo-linux.com/debian-nettoyer-les-paquets-residuels/</a></li>
+</ul>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#localepurge">Localepurge</a></li>
+<li><a href="#le-nettoyage-régulier">Le nettoyage régulier</a>
+<ul>
+<li><a href="#les-symptomes">Les symptomes</a></li>
+<li><a href="#la-solution">La solution</a></li>
+</ul></li>
+<li><a href="#gagner-encore-de-la-place">Gagner encore de la place</a>
+<ul>
+<li><a href="#nettoyer-les-kernels">Nettoyer les kernels</a></li>
+<li><a href="#nettoyer-les-paquets-résiduels">Nettoyer les paquets résiduels</a></li>
+<li><a href="#trouver-les-gros-fichiers">Trouver les gros fichiers</a></li>
+</ul></li>
+<li><a href="#liens">Liens</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

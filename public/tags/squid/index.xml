@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Squid on wiki.ght1pc9kc.fr</title>
+    <link>/tags/squid.html</link>
+    <description>Recent content in Squid on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/squid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Squid StoreId rewrite</title>
+      <link>/linux/divers/squid-storeid-rewrite.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/squid-storeid-rewrite.html</guid>
+      <description>Un truc que j&amp;rsquo;ai cherché à faire avec Squid est de mettre en cache les téléchargements que docker fait pour construire ses images afin qu&amp;rsquo;il ne re-télécharge pas systématiquement tout.
+Pas compliqué, il suffit d&amp;rsquo;augmenter la taille max des fichiers a cacher et du répertoire de cache :
+cache_dir ufs /var/spool/squid3 5000 16 256 maximum_object_size 400 MB Mais j&amp;rsquo;ai surtout eu un problème avec le téléchargement des JRE &amp;amp; JDK Oracle.</description>
+    </item>
+    
+    <item>
+      <title>Squid refresh pattern</title>
+      <link>/linux/divers/squid-refresh-pattern.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/squid-refresh-pattern.html</guid>
+      <description>Dans le cadre de mon serveur proxy pour fichier téléchargés, je suis tombé sur un problème avec neo4j dont les fichiers tar.gz n&amp;rsquo;étaient jamais mis en cache.
+Symptômes Le premier symptôme est que le fichier est systématiquement re-téléchargé.
+Deuxième symptôme, les logs store affichent que le fichier est immédiatement RELEASE et que sa date de péremption est passé.
+Explication En fait, dans l&amp;rsquo;entête de la requête HTTP, il y a une directive</description>
+    </item>
+    
+  </channel>
+</rss>

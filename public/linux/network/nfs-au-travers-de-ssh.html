@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    NFS au travers de SSH - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>NFS au travers de SSH :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/linux/network/nfs-au-travers-de-ssh.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>NFS au travers de SSH</h1>
+    
+    
+
+    
+
+<p>Faire passer du NFS au travers du SSH n&rsquo;est pas si simple que ça. Il faut :</p>
+
+<h2 id="pré-requis">Pré-requis</h2>
+
+<p>Vérifier que le server SSH autorise l&rsquo;IP Forwarding</p>
+
+<h2 id="configuration-du-client-ssh">Configuration du client SSH</h2>
+
+<p>Il faut faire une redirection de port. Pour ça, soit la ligne de commande :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh login@server-ssh -p <span style="color:#ae81ff">2222</span> -L <span style="color:#ae81ff">3049</span>:server-nfs:2049 -L <span style="color:#ae81ff">3045</span>:server-nfs:627 -N -f</code></pre></div>
+<p>Le <strong>-N</strong> permet de ne pas proposer l&rsquo;invite de commande, le <strong>-f</strong> lance le process SSH en background.</p>
+
+<p>soit on le fait par ssh_config :</p>
+
+<pre><code>Host SSH-SERVER-MAISON
+        HostName server-ssh
+        User login
+        Port 2222
+        LocalForward 3049 server-nfs:2049
+        LocalForward 3045 server-nfs:627
+</code></pre>
+
+<h2 id="configuration-server-ssh">Configuration server SSH</h2>
+
+<p>Coté du SSH, il faut vérifier que les ports soient correctement ouvert. Pour ouvrir un port coté SSH :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">iptables -A OUTPUT -p tcp --dport <span style="color:#ae81ff">627</span> -j ACCEPT
+iptables -A INPUT -p tcp --dport <span style="color:#ae81ff">627</span> -j ACCEPT
+iptables -A OUTPUT -p tcp --dport <span style="color:#ae81ff">2049</span> -j ACCEPT
+iptables -A INPUT -p tcp --dport <span style="color:#ae81ff">2049</span> -j ACCEPT</code></pre></div>
+<h2 id="ouverture-du-partage">Ouverture du partage</h2>
+
+<p>Une fois que tout est fait, il suffit d&rsquo;ouvrir la connexion SSH. Puis de monter le partage NFS avec la commande suivante:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mount -t nfs -o tcp,mountport<span style="color:#f92672">=</span><span style="color:#ae81ff">3045</span>,port<span style="color:#f92672">=</span><span style="color:#ae81ff">3049</span> localhost:/mnt/videos /mnt/nfs-videos</code></pre></div>
+<p>Et normalement un <code>ll /mnt/nfs-videos</code> vous donne le contenu de votre partage.</p>
+
+<h2 id="les-problèmes">Les problèmes</h2>
+
+<h3 id="channel-5-open-failed-connect-failed-connection-refused">channel 5: open failed: connect failed: Connection refused</h3>
+
+<p>Par ce qu&rsquo;il y en a toujours &hellip; Le cas que j&rsquo;ai eu c&rsquo;est un message d&rsquo;erreur dans la console SSH :</p>
+
+<pre><code>channel 5: open failed: connect failed: Connection refused
+</code></pre>
+
+<p>Le tout se répétant à l&rsquo;infinie. Ce message vient très probalement d&rsquo;un port qui n&rsquo;est pas ouvert sur le firewall. Le ports nécessaire pour le NFS sont
+2049 et 627. Mais ça dépend du serveur NFS parfois c&rsquo;est le 802 à la place du 627, &hellip; bref ! Pour connaître le bon port il faut faire un <code>rcpinfo -d</code>
+mais dans mon cas (sur un serveur FreeNAS, j&rsquo;ai pas trouvé la commande. Du coup un solution est d&rsquo;aller sur le serveur SSH et de faire le montage avec
+l&rsquo;option <code>-vvv</code> en plus. On voit dessuite le port qui ne parviens pas a franchir firewall :</p>
+
+<pre><code>root@server-ssh:/mnt# mount -t nfs -vvv -o nolock,tcp server-nfs:/mnt/videos videos/
+mount.nfs: timeout set for Sat Apr  4 22:29:55 2015
+mount.nfs: trying text-based options 'nolock,tcp,vers=4,addr=server-nfs,clientaddr=server-ssh'
+mount.nfs: mount(2): Protocol not supported
+mount.nfs: trying text-based options 'nolock,tcp,addr=server-nfs'
+mount.nfs: prog 100003, trying vers=3, prot=6
+mount.nfs: trying server-nfs prog 100003 vers 3 prot TCP port 2049
+mount.nfs: prog 100005, trying vers=3, prot=6
+mount.nfs: trying server-nfs prog 100005 vers 3 prot TCP port 627
+</code></pre>
+
+<p>Une fois le bon port identifié, il suffit de faire les ajustement sur la redirection et sur le firewall.</p>
+
+<h3 id="rpc-statd-is-not-running">rpc.statd is not running</h3>
+
+<p>Ici on a le message suivant :</p>
+
+<pre><code>mount.nfs: rpc.statd is not running but is required for remote locking.
+mount.nfs: Either use '-o nolock' to keep locks local, or start statd.
+mount.nfs: an incorrect mount option was specified
+</code></pre>
+
+<p>Plus facile tout est dans le message il suffit de rajouter l&rsquo;option <code>nolock</code></p>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#pré-requis">Pré-requis</a></li>
+<li><a href="#configuration-du-client-ssh">Configuration du client SSH</a></li>
+<li><a href="#configuration-server-ssh">Configuration server SSH</a></li>
+<li><a href="#ouverture-du-partage">Ouverture du partage</a></li>
+<li><a href="#les-problèmes">Les problèmes</a>
+<ul>
+<li><a href="#channel-5-open-failed-connect-failed-connection-refused">channel 5: open failed: connect failed: Connection refused</a></li>
+<li><a href="#rpc-statd-is-not-running">rpc.statd is not running</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

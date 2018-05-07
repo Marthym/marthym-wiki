@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Configuration firewall IPTables - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Configuration firewall IPTables :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/linux/network/configuration-firewall-iptables.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Configuration firewall IPTables</h1>
+    
+    
+
+    <p>Voilà une configuration valable pour un firewall IPTables qui donne sur internet à mettre dans un fichier <code>/etc/init.d/firewall</code>.</p>
+
+<p>Pour l&rsquo;installer : <code>update-rc.d firewall defaults</code> <br/>
+Pour le désinstaller : <code>update-rc.d -f firewall remove</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span><span style="color:#75715e">### BEGIN INIT INFO
+</span><span style="color:#75715e"># Provides:          custom firewall
+</span><span style="color:#75715e"># Required-Start:    $remote_fs $syslog $network
+</span><span style="color:#75715e"># Required-Stop:     $remote_fs $syslog $network
+</span><span style="color:#75715e"># Default-Start:     2 3 4 5
+</span><span style="color:#75715e"># Default-Stop:      0 1 6
+</span><span style="color:#75715e"># Short-Description: firewall initscript
+</span><span style="color:#75715e"># Description:       Custom Firewall
+</span><span style="color:#75715e">### END INIT INFO
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Vider les tables actuelles
+</span><span style="color:#75715e"></span>iptables -t filter -F
+
+<span style="color:#75715e"># Vider les règles personnelles
+</span><span style="color:#75715e"></span>iptables -t filter -X
+
+<span style="color:#75715e"># Interdire toute connexion entrante et sortante
+</span><span style="color:#75715e"></span>iptables -t filter -P INPUT DROP
+iptables -t filter -P FORWARD DROP
+iptables -t filter -P OUTPUT DROP
+
+<span style="color:#75715e"># ---
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Ne pas casser les connexions etablies
+</span><span style="color:#75715e"></span>iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+<span style="color:#75715e"># Autoriser loopback
+</span><span style="color:#75715e"></span>iptables -t filter -A INPUT -i lo -j ACCEPT
+iptables -t filter -A OUTPUT -o lo -j ACCEPT
+
+<span style="color:#75715e"># ICMP (Ping)
+</span><span style="color:#75715e"></span>iptables -t filter -A INPUT -p icmp -j ACCEPT
+iptables -t filter -A OUTPUT -p icmp -j ACCEPT
+
+<span style="color:#75715e"># ---
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># SSH In
+</span><span style="color:#75715e"></span>iptables -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">2222</span> -j ACCEPT
+
+<span style="color:#75715e"># SSH Out
+</span><span style="color:#75715e"></span>iptables -t filter -A OUTPUT -p tcp --dport <span style="color:#ae81ff">2222</span> -j ACCEPT
+
+<span style="color:#75715e"># DNS In/Out
+</span><span style="color:#75715e"></span>iptables -t filter -A OUTPUT -p tcp --dport <span style="color:#ae81ff">53</span> -j ACCEPT
+iptables -t filter -A OUTPUT -p udp --dport <span style="color:#ae81ff">53</span> -j ACCEPT
+iptables -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">53</span> -j ACCEPT
+iptables -t filter -A INPUT -p udp --dport <span style="color:#ae81ff">53</span> -j ACCEPT
+
+<span style="color:#75715e"># NTP Out
+</span><span style="color:#75715e"></span>iptables -t filter -A OUTPUT -p udp --dport <span style="color:#ae81ff">123</span> -j ACCEPT
+
+<span style="color:#75715e"># WOL Out
+</span><span style="color:#75715e"></span>iptables -t filter -A OUTPUT -p udp --dport <span style="color:#ae81ff">9</span> -j ACCEPT
+
+<span style="color:#75715e"># HTTP + HTTPS Out
+</span><span style="color:#75715e"></span>iptables -t filter -A OUTPUT -p tcp --dport <span style="color:#ae81ff">80</span> -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport <span style="color:#ae81ff">443</span> -j ACCEPT
+
+<span style="color:#75715e"># HTTP + HTTPS In
+</span><span style="color:#75715e"></span>iptables -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">80</span> -j ACCEPT
+iptables -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">443</span> -j ACCEPT
+iptables -t filter -A INPUT -p tcp --dport <span style="color:#ae81ff">8443</span> -j ACCEPT</code></pre></div>
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

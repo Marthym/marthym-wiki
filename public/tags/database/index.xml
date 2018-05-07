@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on wiki.ght1pc9kc.fr</title>
+    <link>/tags/database.html</link>
+    <description>Recent content in Database on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Changer le nom d’une machine sans péter XE</title>
+      <link>/serveurs/oracle/changer-le-nom-d-une-machine-sans-casser-xe.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/changer-le-nom-d-une-machine-sans-casser-xe.html</guid>
+      <description>Changer le nom d’une machine   Puis chercher les fichiers de configuration réseau (par défaut dans : /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin ) * listener.ora * tnsnames.ora
+Remplacer l&amp;rsquo;ancien par le nouveau nom.
+Attention, faut remplacer le NOM de la machine par le nouveau NOM, pas par l&amp;rsquo;IP ni par localhost ni un truc du genre sinon ça fonctionne pas !</description>
+    </item>
+    
+    <item>
+      <title>Changer le port de l’interface d’admin de XE</title>
+      <link>/serveurs/oracle/changer-le-port-de-linterface-dadmin-de-xe.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/changer-le-port-de-linterface-dadmin-de-xe.html</guid>
+      <description>Si vous utilisez CCM avec une base Oracle XE, vous allez devoir changer le port de l&amp;rsquo;interface d&amp;rsquo;administration de votre base Oracle XE. En effet, si l&amp;rsquo;interface d&amp;rsquo;Oracle XE est déjà installé sur le port 8080 et que vous installez ensuite CCM, CCM va quand même choisir le port 8080.
+Il faut donc exécuter la manipulation suivante :
+ Veiller à ce que votre base tourne Ouvrir une invite de commande Lancer sqlplus Se logguer en tant qu&amp;rsquo;utilisateur système Exécuter la commande suivante (exemple : on change le port 8080 pour le port 8280):  EXEC DBMS_XDB.</description>
+    </item>
+    
+    <item>
+      <title>Connaître l’encodage de sa base</title>
+      <link>/serveurs/oracle/connaitre-lencodage-de-sa-base.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/connaitre-lencodage-de-sa-base.html</guid>
+      <description>Il peut être utile de vérifier l&amp;rsquo;encodage de sa base Oracle, notamment en cas de problèmes de montage d&amp;rsquo;un dump. Pour cela, il existe un moyen très simple de le faire, à l&amp;rsquo;aide de la requête SQL suivante :
+SELECT value$ FROM sys.props$ WHERE name = &amp;#39;NLS_CHARACTERSET&amp;#39;; On peut également exécuter cette autre requête SQL, qui remonte tous les paramètres de la base :
+SELECT * FROM NLS_DATABASE_PARAMETERS;</description>
+    </item>
+    
+    <item>
+      <title>Connexion JBoss SQL-Server</title>
+      <link>/serveurs/jboss/connexion-jboss-sql-server.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/jboss/connexion-jboss-sql-server.html</guid>
+      <description>La configuration se fait dans les fichiers *-ds.xml présent dans le répertoire deploy du JBoss. Le but de cette page est surtout de donner la configuration pour les driver SQL-Server 2005 qui présentent des performence et une stabilité meilleure sur les versions récentes de SQL-Server.
+Driver SQL-Server 2000 C&amp;rsquo;est la configuration par défaut à l&amp;rsquo;installation de CCS.
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;datasources&amp;gt; &amp;lt;local-tx-datasource&amp;gt; &amp;lt;jndi-name&amp;gt;ccpDataSource&amp;lt;/jndi-name&amp;gt; &amp;lt;connection-url&amp;gt;jdbc:microsoft:sqlserver://127.0.0.1:1433;DatabaseName=CCS44Gb;SelectMethod=cursor&amp;lt;/connection-url&amp;gt; &amp;lt;driver-class&amp;gt;com.microsoft.jdbc.sqlserver.SQLServerDriver&amp;lt;/driver-class&amp;gt; &amp;lt;user-name&amp;gt;sa&amp;lt;/user-name&amp;gt; &amp;lt;password&amp;gt;sa&amp;lt;/password&amp;gt; &amp;lt;!-- sql to call on an existing pooled connection when it is obtained from pool --&amp;gt; &amp;lt;check-valid-connection-sql&amp;gt;select &amp;#39;x&amp;#39;&amp;lt;/check-valid-connection-sql&amp;gt; &amp;lt;/local-tx-datasource&amp;gt; &amp;lt;/datasources&amp;gt; Les librairies de ce driver se composent de trois fichiers jar dans le répertoire deploy : * msbase.</description>
+    </item>
+    
+    <item>
+      <title>Cypher: Nodes sans Label</title>
+      <link>/serveurs/neo4j/cypher-node-sans-label.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/neo4j/cypher-node-sans-label.html</guid>
+      <description>Pour lister (et supprimer) les Nodes n&amp;rsquo;aillant aucun label :
+MATCH (n) WHERE SIZE(LABELS(n)) = 0 DETACH DELETE n;</description>
+    </item>
+    
+    <item>
+      <title>Cypher: Paths sans path intermédiaire</title>
+      <link>/serveurs/neo4j/cypher-paths-sans-path-intermediaire.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/neo4j/cypher-paths-sans-path-intermediaire.html</guid>
+      <description>Quand on demande un path a Neo4j il va nous donner avec les paths intermédiaire. Par exemple :
+MATCH (:Attribute {_type:&amp;#39;realm&amp;#39;,name:&amp;#39;iwan&amp;#39;})&amp;lt;-[:Attribute]-(s:Planet), path = (s)-[:MdxPath*0..10]-&amp;gt;(:Planet) RETURN nodes(path) va retourner :
+ interface interface / application interface / application / cos cpe  Alors que ce qui m&amp;rsquo;intéresse c&amp;rsquo;est juste les deux derniers. Je ne veux pas les chemins intermédiaires.
+Pour n&amp;rsquo;avoir que les paths complet, la solution est de demander les paths pour lesquels le dernier node n&amp;rsquo;a pas de lien vers une Planet (dans le cas de l&amp;rsquo;exemple).</description>
+    </item>
+    
+    <item>
+      <title>Démarrage/Arrêt automatique d’Oracle sous Linux</title>
+      <link>/serveurs/oracle/demarrage-arret-automatique-doracle-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/demarrage-arret-automatique-doracle-sous-linux.html</guid>
+      <description>Modifier le fichier /etc/oratab (ou /var/opt/oracle selon install) Ajouter &amp;lt;SID&amp;gt;:&amp;lt;ORACLE_HOME&amp;gt;:Y le &amp;ldquo;Y&amp;rdquo; indiquant si la base doit être ou non démarré par &amp;ldquo;dbstart&amp;rdquo; et &amp;ldquo;dbshut&amp;rdquo;.
+Créer le script &amp;ldquo;/etc/init.d/dboracle&amp;rdquo; contenant :
+#!/bin/bash  #  # chkconfig: 35 99 10  # description: Starts and stops Oracle processes  #  # Set ORA_HOME to be equivalent to the $ORACLE_HOME  # from which you wish to execute dbstart and dbshut;  #  # Set ORA_OWNER to the user id of the owner of the # Oracle database in ORA_HOME.</description>
+    </item>
+    
+    <item>
+      <title>Démarrer/Arrêter une base en ligne de commande Windows</title>
+      <link>/serveurs/oracle/demarrer-arreter-une-base-en-ligne-de-commande-windows.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/demarrer-arreter-une-base-en-ligne-de-commande-windows.html</guid>
+      <description>Pour démarrer :
+C:\&amp;gt; %ORACLE_HOME%\bin\oradim -startup -sid ORCL92 -usrpwd manager -starttype SRVC,INST -pfile C:\oracle9i\admin\ORCL92\pfile\init.ora  Pour arrêter :
+C:\&amp;gt; %ORACLE_HOME%\bin\oradim -shutdown -sid ORCL92 -shutttype SRVC,INST -shutmode A  </description>
+    </item>
+    
+    <item>
+      <title>Désinstaller Oracle XE sous Linux</title>
+      <link>/serveurs/oracle/desinstaller-oracle-xe-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/desinstaller-oracle-xe-sous-linux.html</guid>
+      <description> C&amp;rsquo;est pas bien compliqué mais pour le faire proprement ya quelques trucs à pas oublier.
+Désinstallation des packages Debian apt-get remove oracle-xe-universal apt-get purge oracle-xe-universal Suppression des fichiers restant rm -Rf /usr/lib/oracle/xe rm -Rf /etc/oratab rm -Rf /etc/init.d/oracle-xe rm -Rf /etc/sysconfig/oracle-xe rm -Rf $(find . -name *oracle*)</description>
+    </item>
+    
+    <item>
+      <title>Erreur de read-only status avec JDBC</title>
+      <link>/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html</guid>
+      <description>Symptômes J&amp;rsquo;ai rencontré l&amp;rsquo;erreur suivante :
+java.io.IOException: java.sql.SQLException: Could not retrieve transation read-only status server Caused by: java.sql.SQLException: Could not retrieve transation read-only status server Caused by: java.sql.SQLException: REPLACE INTO `db`.`test_table` (`timestamp`,`database`,`table`,`columns`,`lines`,`before`,`write`,`wait`) VALUES (?,?,?,?,?,?,?,?) ... 4 common frames omitted Caused by: java.sql.SQLException: Could not retrieve transation read-only status server at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:975) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:920) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:951) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:941) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.ConnectionImpl.isReadOnly(ConnectionImpl.java:3955) ~[mysql-connector-java-5.</description>
+    </item>
+    
+    <item>
+      <title>Exporter/Importer une base d’un dump</title>
+      <link>/serveurs/mysql/exporter-importer-une-base-d-un-dump.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/exporter-importer-une-base-d-un-dump.html</guid>
+      <description>Pour exporter en gzip
+mysqldump -u user -p database | gzip &amp;gt; database.sql.gz Pour importer une seule base à partir d&amp;rsquo;un dump complet, il faut entrer la commande suivante :
+mysql -u USERNAME -p --one-database BASE_A_RESTAURER &amp;lt; dumpcomplet.sql Remplacez BASE_A_RESTAURER par le nom de la base de votre choix qui est contenue dans le fichier dumpcomplet.sql.
+La même chose avec un fichier d&amp;rsquo;export compressé en tar.gz
+zcat your_db_dump.sql.tar.gz | mysql -u USERNAME -p BASE_A_RESTAURER</description>
+    </item>
+    
+    <item>
+      <title>Exporter/importer un schéma de base</title>
+      <link>/serveurs/oracle/exporter-importer-un-schema-de-base.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/exporter-importer-un-schema-de-base.html</guid>
+      <description>c:\&amp;gt; exp edge/leon file=c:\temp\EDGE_SP3_FIX016_AXA.dmp direct=y  SQL&amp;gt; create user edge identified by leon; SQL&amp;gt; grant connect,resource to edgec:\&amp;gt; imp system/manager file=c:\temp\EDGE_SP3_FIX016_AXA.dmp ignore=y fromuser=edge touser=edge Voir aussi &amp;rarr; Utiliser DataPump en ligne de commande</description>
+    </item>
+    
+    <item>
+      <title>Fusionner les espaces libre contigus</title>
+      <link>/serveurs/oracle/fusionner-les-espaces-libre-contigus.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/fusionner-les-espaces-libre-contigus.html</guid>
+      <description>Très pratique surtout pour les anciennes version:
+ALTER TABLESPACE toto COALESCE</description>
+    </item>
+    
+    <item>
+      <title>Gestion des dates Oracle</title>
+      <link>/serveurs/oracle/gestion-des-dates-oracle.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/gestion-des-dates-oracle.html</guid>
+      <description>La pseudo colonne SYSDATE affiche la date et l&amp;rsquo;heure courante. Ajouter 1 à SYSDATE avance la date d&amp;rsquo;un jour. On peut alors utiliser des fractions pour ajouter des heures/minutes/secondes. Voilà un exemple :
+SQL&amp;gt; select sysdate, sysdate+1/24, sysdate +1/1440, sysdate + 1/86400 from dual; SYSDATE SYSDATE+1/24 SYSDATE+1/1440 SYSDATE+1/86400 -------------------- -------------------- -------------------- -------------------- 03-Jul-2002 08:32:12 03-Jul-2002 09:32:12 03-Jul-2002 08:33:12 03-Jul-2002 08:32:13 Et quelques exemples possible :
+   Description Date Expression     Maintenant SYSDATE   Lendemain SYSDATE + 1   Dans 7 jours SYSDATE + 7   Dans 1 heure SYSDATE + 1&amp;frasl;24   Dans 3 heures SYSDATE + 3&amp;frasl;24   Dans une demi-heure SYSDATE + 1&amp;frasl;48   Dans 10mn SYSDATE + 10&amp;frasl;1440   Dans 30s SYSDATE + 30&amp;frasl;86400   Demain à minuit TRUNC(SYSDATE + 1)   Demain à 8h TRUNC(SYSDATE + 1) + 8&amp;frasl;24   Prochain Lundi midi NEXT_DAY(TRUNC(SYSDATE), &amp;lsquo;MONDAY&amp;rsquo;) + 12&amp;frasl;24   Premier jour du moi à minuit TRUNC(LAST_DAY(SYSDATE ) + 1)   Prochain Lundi, Mercredi et Vendredy à 9h TRUNC(LEAST(NEXT_DAY(sysdate,&amp;ldquo;MONDAY&amp;rsquo; &amp;lsquo; ),NEXT_DAY(sysdate,&amp;ldquo;WEDNESDAY&amp;rdquo;), NEXT_DAY(sysdate,&amp;ldquo;FRIDAY&amp;rdquo; ))) + (9&amp;frasl;24)    </description>
+    </item>
+    
+    <item>
+      <title>Gérer l’ordre de déploiement dans JBoss</title>
+      <link>/serveurs/jboss/gerer-l-ordre-de-deploiement-dans-jboss.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/jboss/gerer-l-ordre-de-deploiement-dans-jboss.html</guid>
+      <description>C&amp;rsquo;est un question qui peut paraître inutile mais dans au moins un cas c&amp;rsquo;est crucial :p
+Dans le cas de la création d&amp;rsquo;un WS Axis2, on utilise une classe AxisServlet qui se trouve être déployé dans l&amp;rsquo;EAR de CameleonEdge ! Dans ce cas, il est important que la webapp que l&amp;rsquo;on crée avec le WS soit déployé après l&amp;rsquo;EAR de Cameleon. Or, par défaut dans JBoss, les WAR sont quoi qu&amp;rsquo;il arrivent déployer avant les EAR, donc problème &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Lancer Neo4j Impermanent Database &#43; REST Server sur un port aléatoire</title>
+      <link>/development/java/start-neo4j-impermanent-database-&#43;-rest-server-on-random-port-for-test.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/start-neo4j-impermanent-database-&#43;-rest-server-on-random-port-for-test.html</guid>
+      <description>Pour des tests par exemple, vu que la licence Neo4j ne permet que l&amp;rsquo;utilisation des API REST, on peut avoir besoin lors de test de lancer un server éphémaire sur lequel brancher les jeux de test. Cela se fait en deux étapes : * Lancement du serveur neo4j * Lancement de la surcouche REST
+db = new TestGraphDatabaseFactory().newImpermanentDatabase(); boolean available = db.isAvailable(5000); assert available; int start = -1; Random random = new Random(); while (start !</description>
+    </item>
+    
+    <item>
+      <title>Lister les locks sur Oracle</title>
+      <link>/serveurs/oracle/lister-les-locks-sur-oracle.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/lister-les-locks-sur-oracle.html</guid>
+      <description>prompt liste des utilisateurs qui lockent des tables select distinct username,sql_text from v$sqlarea,v$session,v$lock where user#=parsing_user_id and v$lock.sid=v$session.sid and username is not null and users_executing &amp;gt; 0 ;prompt liste des executions sql en cours select distinct username,disk_reads,rows_processed,sql_text from v$sqlarea,v$session where user#=parsing_user_id and username is not null and username not in (&amp;#39;SYS&amp;#39;,&amp;#39;SYSTEM&amp;#39;) and users_executing &amp;gt; 0 ; Plus un script sql pour lister les locks: lock.sql
+{% include_relative .doc/lock.sql %}</description>
+    </item>
+    
+    <item>
+      <title>Optimisation des statements Batch MySQL</title>
+      <link>/development/java/optimisation-des-statements-batch-mysql.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/optimisation-des-statements-batch-mysql.html</guid>
+      <description>Par défaut le mode batch du driver JDBC de MySQL n&amp;rsquo;est pas correctement optimisé. Il effectue un aller/retour serveur pour chaque requête au lieu de le faire en une seule fois.
+Pour le rendre plainement opérationnel il faut ajouté l&amp;rsquo;option rewriteBatchedStatements à la connexion JDBC.</description>
+    </item>
+    
+    <item>
+      <title>Recovery required from position LogPosition</title>
+      <link>/serveurs/neo4j/recovery-required-from-position-logposition.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/neo4j/recovery-required-from-position-logposition.html</guid>
+      <description>Après un arrêt intenpestif ou une tentative de backup à l&amp;rsquo;arrache de la base neo4j, on a eu un soucis pour la relancer !
+Symptomes Pas de message nulle part mais base non démarré !
+Le seul truc visible était dans neo4j/data/graph.db/messages.log
+[NeoStoreDataSource] Recovery required from position LogPosition  Un truc comme ça !
+Solution Deux chose :
+ Supprimer le store_lock dans graph.db Supprimer les log de transactions dans graph.</description>
+    </item>
+    
+    <item>
+      <title>Requête Oracle avec Variables Liées</title>
+      <link>/development/java/requete-oracle-avec-variables-liees.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/requete-oracle-avec-variables-liees.html</guid>
+      <description>C&amp;rsquo;est un info qui date mais c&amp;rsquo;est toujours juste.
+C&amp;rsquo;est quoi des Bind Variable déjà ? Dans le processus d&amp;rsquo;exécution d&amp;rsquo;une requête, Oracle effectue plusieurs étapes. Parmi ces étapes, on retrouve le parsing. Durant cette étape, oracle décortique l&amp;rsquo;ordre SQL et choisit quel est le plan d&amp;rsquo;exécution le plus court pour récupérer les données ramenées par la requête.
+Si une requête est exécuté 20 fois de suite, Oracle fait le parsing pour la première requête seulement.</description>
+    </item>
+    
+    <item>
+      <title>Timezoner MySQL</title>
+      <link>/serveurs/mysql/timezoner-mysql.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/timezoner-mysql.html</guid>
+      <description>Dans le cas d&amp;rsquo;un MySQL sous docker, le server MySQL n&amp;rsquo;est pas Timezoné correctement. Par exemple, quand on lance la requête suivante :
+mysql&amp;gt; SELECT @@global.time_zone, @@session.time_zone; +--------------------+---------------------+ | @@global.time_zone | @@session.time_zone | +--------------------+---------------------+ | SYSTEM | SYSTEM | +--------------------+---------------------+ 1 row in set (0.00 sec) Ce qui signifie que c&amp;rsquo;est la Timezone du système qui est utilisé. Un
+date +%Z CEST nous confirme que nous sommes bien sur Europe/Paris.</description>
+    </item>
+    
+    <item>
+      <title>Tracer une requête Oracle</title>
+      <link>/serveurs/oracle/tracer-une-requete-oracle.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/tracer-une-requete-oracle.html</guid>
+      <description>Il arrive qu&amp;rsquo;une partie de l&amp;rsquo;appli (voire toute l&amp;rsquo;appli) rame particulièrement. Selon la version d&amp;rsquo;Oracle, il est plus ou moins facile de tracer une requête. Dans tout les cas, il peut arrivé qu&amp;rsquo;on est besoin d&amp;rsquo;un maximum d&amp;rsquo;info.
+Oracle 10g et Entreprise Manager Sur un serveur 10g, le plus simple est d&amp;rsquo;ouvrir l&amp;rsquo;entreprise manager et de cliquer sur l&amp;rsquo;onglet performances. De là, sous le graphique, un lien &amp;ldquo;Sessions les plus consommatrices&amp;hellip;&amp;rdquo; qui permet de visualiser les requêtes et les sessions les plus gourmandes.</description>
+    </item>
+    
+    <item>
+      <title>UUID Most Significant Bits</title>
+      <link>/serveurs/mysql/uuid-most-significant-bits.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/uuid-most-significant-bits.html</guid>
+      <description>Comment dans une requête MySQL peut on extraire les bits les plus significatif d&amp;rsquo;un UUID. En gros ça correspond en Java à UUID.randomUUID().getMostSignificantBits().
+SELECT -conv(substring_index(uuid(), &amp;#39;-&amp;#39;, 1), 16, 10) Ce qui donne un long !</description>
+    </item>
+    
+    <item>
+      <title>Utiliser DataPump en ligne de commande</title>
+      <link>/serveurs/oracle/utiliser-datapump-en-ligne-de-commande.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/utiliser-datapump-en-ligne-de-commande.html</guid>
+      <description>Depuis la 10g, il y a deux méthodes pour exporter/importer un schéma :
+ Import / Export normaux (exp) DataPump (&amp;gt;=10g uniquement) (expdp) La méthode ~DataPump est plus rapide et plus souple. Préférez donc celle là !  DataPump c:\&amp;gt; expdp system/manager directory=DATA_PUMP_DIR dumpfile=EDGE_SP3_FIX016_AXA.dmp schemas=edgec:\&amp;gt; impdp system/manager directory=DATA_PUMP_DIR dumpfile=EDGE_SP3_FIX016_AXA.dmp schemas=edge L&amp;rsquo;intérêt du ~DataPump est qu&amp;rsquo;il crée les schémas s&amp;rsquo;ils n&amp;rsquo;existent pas, qu&amp;rsquo;il permet de re-mapper les schémas et les tablespaces très facilement et qu&amp;rsquo;il va 3x plus vite que l&amp;rsquo;export normal.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssl on wiki.ght1pc9kc.fr</title>
+    <link>/tags/ssl.html</link>
+    <description>Recent content in Ssl on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ajouter un certificat pour les connexions SSL Java</title>
+      <link>/development/java/ajouter-un-certificat-pour-les-connexions-ssl-java.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/ajouter-un-certificat-pour-les-connexions-ssl-java.html</guid>
+      <description>Symptôme Dans le cas par exemple d&amp;rsquo;une connexion en LDAPS (LDAP via SSL) on a de bonne chance de se prendre ce genre d’erreur :
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:150) at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1584) at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:174) at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:168) at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:848) at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:106) at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:495) at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:433) ...  Note que c’est la même pour les accès à des Web-Service en HTTPS via Axis</description>
+    </item>
+    
+    <item>
+      <title>Hôtes virtuels SSL multiples</title>
+      <link>/serveurs/http/hotes-virtuels-ssl-multiple.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/http/hotes-virtuels-ssl-multiple.html</guid>
+      <description>Alors on trouve sur internet une flopper de tuto pour configurer sous Apache des VirtualHost SSL multiple. On a beau les lire et les re-lire, essayer des centaines de combinaisons pour chaque fichier de configuration, on en vient toujours au même résultat : C&amp;rsquo;est le premier vhost qui est retourné !
+Explication technique Ce que la plus part des tuto ne dit pas c&amp;rsquo;est déjà qu&amp;rsquo;il faut avoir des version d&amp;rsquo;Apache et de OpenSSL très récente pour que ça ai une chance de fonctionné.</description>
+    </item>
+    
+  </channel>
+</rss>

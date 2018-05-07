@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>wiki.ght1pc9kc.fr</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Backup :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/tags/backup.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Backup</h1>
+    
+    
+
+
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+</div>
+
+
+   <article class="post linux">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/linux/administration/installer-backup-sur-jail-bsd.html">Installer backup sur jail BSD</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Une fois la jail créée, pour que les scripts de backup fonctionnent il faut install bash et hubic.py. C&rsquo;est pas toujours intuitif alors voilà ce que j&rsquo;ai fais la dernière fois :
+pkg install bash python2.7 -m ensurepip pip install --upgrade pip wget https://raw.githubusercontent.com/puzzle1536/hubic-wrapper-to-swift/master/requirements.txt pip install -r requirements.txt wget https://raw.githubusercontent.com/puzzle1536/hubic-wrapper-to-swift/master/hubic.py chmod +x hubic.py ln -s /usr/local/bin/python2.7 /usr/bin/python pkg install gnupg En plus de ça, comme expliqué lors de l&rsquo;installation de bash, il faut ajouter un script postinit à FreeNAS pour qu&rsquo;il monte la partition fdescfs avec la commande mount -t fdescfs null /mnt/storage/jails/&lt;nom de la jail&gt;/dev/fd <a class="read-more" href="/linux/administration/installer-backup-sur-jail-bsd.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/linux/">linux</a>
+            
+                <a class="label label-default" href="tags/sysadmin/">sysadmin</a>
+            
+                <a class="label label-default" href="tags/bsd/">bsd</a>
+            
+                <a class="label label-default" href="tags/jail/">jail</a>
+            
+                <a class="label label-default" href="tags/hubic/">hubic</a>
+            
+                <a class="label label-default" href="tags/backup/">backup</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post serveurs">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/serveurs/oracle/utiliser-datapump-en-ligne-de-commande.html">Utiliser DataPump en ligne de commande</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Depuis la 10g, il y a deux méthodes pour exporter/importer un schéma :
+ Import / Export normaux (exp) DataPump (&gt;=10g uniquement) (expdp) La méthode ~DataPump est plus rapide et plus souple. Préférez donc celle là !  DataPump c:\&gt; expdp system/manager directory=DATA_PUMP_DIR dumpfile=EDGE_SP3_FIX016_AXA.dmp schemas=edgec:\&gt; impdp system/manager directory=DATA_PUMP_DIR dumpfile=EDGE_SP3_FIX016_AXA.dmp schemas=edge L&rsquo;intérêt du ~DataPump est qu&rsquo;il crée les schémas s&rsquo;ils n&rsquo;existent pas, qu&rsquo;il permet de re-mapper les schémas et les tablespaces très facilement et qu&rsquo;il va 3x plus vite que l&rsquo;export normal. <a class="read-more" href="/serveurs/oracle/utiliser-datapump-en-ligne-de-commande.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/server/">server</a>
+            
+                <a class="label label-default" href="tags/oracle/">oracle</a>
+            
+                <a class="label label-default" href="tags/database/">database</a>
+            
+                <a class="label label-default" href="tags/datapump/">datapump</a>
+            
+                <a class="label label-default" href="tags/dump/">dump</a>
+            
+                <a class="label label-default" href="tags/backup/">backup</a>
+            
+        
+
+    </footer>
+</article>
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>wiki.ght1pc9kc.fr</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Development :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/tags/development.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Development</h1>
+    
+    
+
+
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/tags/development/page/3.html">&larr; Previous Pages</a>
+	
+	<span class="page-number">Page 4 of 5</span>
+	
+	    <a class="older-posts" href="/tags/development/page/5.html">Next Pages &rarr;</a>
+	
+</nav>
+
+</div>
+
+
+   <article class="post outils">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/outils/docker/registry-docker-derriere-un-nginx.html">Registry Docker derrière un Nginx</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>L&rsquo;idée est de placer un registry Docker derrière un frontal Nginx afin de faire du HTTPS voire de l&rsquo;authentification.
+Le premier truc c&rsquo;est la conf Nginx :
+server { listen 80; listen 443 ssl; server_name docker.livingobjects.com; access_log off; server_tokens off; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; # On commence par dire où se situent nos certificats SSL # On aurait pu les mettre séparément dans chaque &#34;server&#34; en ayant besoin. ssl_certificate /etc/nginx/ssl/docker. <a class="read-more" href="/outils/docker/registry-docker-derriere-un-nginx.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/docker/">docker</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post development">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/development/java/remote-jmx-console.html">Remote JMX Console</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Pour passer une application Java en JMX Remote Console, il faut ajouter des paramètres :
+-Djava.rmi.server.hostname=172.17.10.19 -Dcom.sun.management.jmxremote.port=1088 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false   <a class="read-more" href="/development/java/remote-jmx-console.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/jmx/">jmx</a>
+            
+                <a class="label label-default" href="tags/console/">console</a>
+            
+                <a class="label label-default" href="tags/remote/">remote</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post outils">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/outils/docker/remove-ophans-from-docker-registry.html">Remove ophans from docker registry</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Il est compliqué de nettoyer un registry Docker (avant sa version 2.0 en tout cas). Voici un script qui supprime les images orpheline dans le registry.
+#!/bin/bash  JQPATH=$(which jq) if [ &#34;x$JQPATH&#34; == &#34;x&#34; ]; then echo &#34;Couldn&#39;t find jq executable.&#34; 1&gt;&amp;2 exit 2 fi set -eu shopt -s nullglob readonly base_dir=/data/docker_registry_backup/registry/ readonly output_dir=$(mktemp -d -t trace-images-XXXX) readonly jq=$JQPATH readonly repository_dir=$base_dir/repositories readonly image_dir=$base_dir/images readonly all_images=$output_dir/all readonly used_images=$output_dir/used readonly unused_images=$output_dir/unused function info() { echo -e &#34;\nArtifacts available in $output_dir&#34; } trap info EXIT ERR INT function image_history() { local readonly image_hash=$1 $jq &#39;. <a class="read-more" href="/outils/docker/remove-ophans-from-docker-registry.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/docker/">docker</a>
+            
+                <a class="label label-default" href="tags/cleanup/">cleanup</a>
+            
+                <a class="label label-default" href="tags/registry/">registry</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post development">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/development/java/requete-oracle-avec-variables-liees.html">Requête Oracle avec Variables Liées</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>C&rsquo;est un info qui date mais c&rsquo;est toujours juste.
+C&rsquo;est quoi des Bind Variable déjà ? Dans le processus d&rsquo;exécution d&rsquo;une requête, Oracle effectue plusieurs étapes. Parmi ces étapes, on retrouve le parsing. Durant cette étape, oracle décortique l&rsquo;ordre SQL et choisit quel est le plan d&rsquo;exécution le plus court pour récupérer les données ramenées par la requête.
+Si une requête est exécuté 20 fois de suite, Oracle fait le parsing pour la première requête seulement. <a class="read-more" href="/development/java/requete-oracle-avec-variables-liees.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/oracle/">oracle</a>
+            
+                <a class="label label-default" href="tags/sql/">sql</a>
+            
+                <a class="label label-default" href="tags/database/">database</a>
+            
+                <a class="label label-default" href="tags/mysql/">mysql</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post development">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/development/java/repeat-test-with-junit.html">Répéter un test x fois avec jUnit</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Ajouter la Rule RepeatRule :
+@Rule public RepeatRule repeatRule = new RepeatRule(); Ajouter l&rsquo;annotation @Repeat au test :
+@Repeat(times = 100) Dans IntelliJ, les X exécutions n&rsquo;apparaissent pas, il n&rsquo;y a qu&rsquo;une ligne mais qui a pris plus de temps. <a class="read-more" href="/development/java/repeat-test-with-junit.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/junit/">junit</a>
+            
+                <a class="label label-default" href="tags/test/">test</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post development">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/development/java/stringindexoutofboundsexception-dans-ivy.html">StringIndexOutOfBoundsException dans Ivy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Quand on utilise un serveur Ivy perso en plus d&rsquo;un repo local. Qu&rsquo;une des dépendances est en &ldquo;latest.integration&rdquo; et que le repo distant est accédé en SSH, on peut prendre une erreur ~StringIndexOutOfBoundsException disant qu&rsquo;il y a un problème lors du listing du répertoire.
+Cela vient du SSH. J&rsquo;ai pas le détail mais on changeant dans le ivysettings.xml, au niveau du repo distant, &ldquo;ssh&rdquo; par &ldquo;sftp&rdquo;, ca se met à fonctionner correctement. <a class="read-more" href="/development/java/stringindexoutofboundsexception-dans-ivy.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/ivy/">ivy</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post outils">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/outils/docker/supprimer-les-images-non-tagge.html">Supprimer les images non taggé</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Pour virer toutes les images non taggé :
+docker rmi $(docker images | grep &#39;^&lt;none&gt;&#39; | awk &#39;{print $3}&#39;) Attention si l&rsquo;image est utilisé par un conteneur ça marchera pas.
+A partir de la 1.3.1 :
+docker rmi $(docker images -f &#34;dangling=true&#34; -q) <a class="read-more" href="/outils/docker/supprimer-les-images-non-tagge.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/docker/">docker</a>
+            
+                <a class="label label-default" href="tags/cleanup/">cleanup</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post outils">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/outils/docker/supprimer-les-vieux-conteneurs.html">Supprimer les vieux conteneurs</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Pour supprimer les vieux conteneur de plus d&rsquo;une semaine par exemple :
+docker ps -a | grep &#39;weeks ago&#39; | awk &#39;{print $1}&#39; | xargs docker rm -v  Les conteneurs issue d&rsquo;images non taggé :
+docker ps -a | awk &#39;$2 ~ &#34;[0-9a-f]{12}&#34; {print $&#34;$1&#34;}&#39; docker ps -a | awk &#39;$2 ~ /^[0-9a-f]+$/ {print $1}&#39; | xargs docker rm -v  Et pour virer tous les conteneurs arrété : <a class="read-more" href="/outils/docker/supprimer-les-vieux-conteneurs.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/docker/">docker</a>
+            
+                <a class="label label-default" href="tags/cleanup/">cleanup</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post outils">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/outils/docker/system-error-on-docker-run.html">System error on docker run</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p> Après une mise à jour du système, au démarrage de mon container docker je prend l&rsquo;erreur suivante :
+Error response from daemon: Cannot start container {id}: [8] System error: open /sys/fs/cgroup/cpu,cpuacct/init.scope/system.slice/docker-{id}.scope/cpu.shares: no such file or directory 
+C&rsquo;est apparement lié a un bug Debian : https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=798778
+Il est possible de palier en ajoutant --exec-opt native.cgroupdriver=cgroupfs dans /etc/default/docker.
+Liens  https://stackoverflow.com/questions/32845917/system-error-on-docker-run   <a class="read-more" href="/outils/docker/system-error-on-docker-run.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/docker/">docker</a>
+            
+                <a class="label label-default" href="tags/error/">error</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post development">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/development/java/tester-des-membres-private.html">Tester des membres private</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Un des truc compliqué quand on fait des test unitaire c&rsquo;est de tester les membres private. Un solution pour faire ça :
+/** * Gets the field value from an instance. The field we wish to retrieve is * specified by passing the name. The value will be returned, even if the * field would have private or protected access. */ private Object getField( Object instance, String name ) throws Exception { Class c = instance. <a class="read-more" href="/development/java/tester-des-membres-private.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/test/">test</a>
+            
+                <a class="label label-default" href="tags/reflection/">reflection</a>
+            
+        
+
+    </footer>
+</article>
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/tags/development/page/3.html">&larr; Previous Pages</a>
+	
+	<span class="page-number">Page 4 of 5</span>
+	
+	    <a class="older-posts" href="/tags/development/page/5.html">Next Pages &rarr;</a>
+	
+</nav>
+
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

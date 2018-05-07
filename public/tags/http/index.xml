@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Http on wiki.ght1pc9kc.fr</title>
+    <link>/tags/http.html</link>
+    <description>Recent content in Http on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1s de cache contre le downtime</title>
+      <link>/serveurs/http/1s-de-cache-nginx.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/http/1s-de-cache-nginx.html</guid>
+      <description>Copie depuis https://lord.re/posts/60-cache-proxy-nginx/ de lord@lord.re
+Depuis que mon serveur ne me sert plus de routeur il m’arrive de le couper de temps à autres. Et pourtant mon site reste accessible. J’ai en fait, sur mon routeur, installé un container avec un nginx qui tourne et qui proxy. Les connexions se font donc via le nginx du routeur qui sert de cache quand le vrai serveur ne répond pas. Mais histoire de ne pas avoir de contenu pas à jour mais toujours d’une fraîcheur exemplaire je me contente d’un cache de maximum 1seconde.</description>
+    </item>
+    
+    <item>
+      <title>HTTPS Securisé avec Nginx</title>
+      <link>/serveurs/http/https-securise-avec-nginx.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/http/https-securise-avec-nginx.html</guid>
+      <description>Générer des certificats SSL correctement configuré n&amp;rsquo;est pas aussi facile qu&amp;rsquo;il n&amp;rsquo;y parait !
+Génération des certificats Creation de l&amp;rsquo;autorité de certification (CA) On commence par créer la clé, en 2048 sinon c&amp;rsquo;est pas suffisamment sécurisé :
+openssl genrsa -des3 -out dumydomain-ca.key 2048 Puis on crée le certificat de la CA :
+openssl req -new -x509 -days 3650 -key dumydomain-ca.key -out dumydomain-ca.crt Valable 10 ans.
+Création du certificat pour notre serveur Dans cette procédure, le FDQN doit être exactement le même que le nom de domaine du serveur.</description>
+    </item>
+    
+    <item>
+      <title>Hôtes virtuels SSL multiples</title>
+      <link>/serveurs/http/hotes-virtuels-ssl-multiple.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/http/hotes-virtuels-ssl-multiple.html</guid>
+      <description>Alors on trouve sur internet une flopper de tuto pour configurer sous Apache des VirtualHost SSL multiple. On a beau les lire et les re-lire, essayer des centaines de combinaisons pour chaque fichier de configuration, on en vient toujours au même résultat : C&amp;rsquo;est le premier vhost qui est retourné !
+Explication technique Ce que la plus part des tuto ne dit pas c&amp;rsquo;est déjà qu&amp;rsquo;il faut avoir des version d&amp;rsquo;Apache et de OpenSSL très récente pour que ça ai une chance de fonctionné.</description>
+    </item>
+    
+    <item>
+      <title>Nginx WebDAV et problème de crochets</title>
+      <link>/serveurs/http/nginx-webdav-et-probleme-de-crochets.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/http/nginx-webdav-et-probleme-de-crochets.html</guid>
+      <description>En installant un serveur Webdav sur Nginx j&amp;rsquo;ai eu un problème avec les répertoires contenant des [] dans leur nom. Le répertoire sont toujours vide. Sachant que le Nginx WebDAV n&amp;rsquo;est proxifié par un frontal Nginx lui aussi.
+En regardant bien la doc de proxy_pass on lit que le comportement du Nginx est différent selon que l&amp;rsquo;ont met ou non l&amp;rsquo;URI dans la commande :
+ proxy_pass http://192.168.0.12; proxy_pass http://192.168.0.12/marthym;  Dans le premier cas, nginx transfère la requête telquelle, dans le second, nginx normalise l&amp;rsquo;URI.</description>
+    </item>
+    
+    <item>
+      <title>Optimiser les performances</title>
+      <link>/serveurs/http/optimize-nginx-performances.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/http/optimize-nginx-performances.html</guid>
+      <description>Do not remove {:toc}  Recopie d’un article de Quentin Busuttil sur Optimiser NGINX
+Les workers Concentrons nous d’abord sur worker_processes. Cette directive spécifie le nombre total de workers à créer au démarrage de Nginx. La valeur optimale est d’en avoir un par cpu core. Si vous avez un VPS – lesquels ont souvent un vCPU avec un seul vCore – il arrive souvent que la valeur par défaut soit supérieure au nombre total de cores.</description>
+    </item>
+    
+  </channel>
+</rss>

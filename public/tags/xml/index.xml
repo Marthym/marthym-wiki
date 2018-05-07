@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xml on wiki.ght1pc9kc.fr</title>
+    <link>/tags/xml.html</link>
+    <description>Recent content in Xml on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Formater simplement un XML</title>
+      <link>/linux/shell/formater-simplement-un-xml.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/formater-simplement-un-xml.html</guid>
+      <description>Comme Linux c&amp;rsquo;est trop bien, ya un petite commande très simple qui permet de formater proprement un XML. C&amp;rsquo;est pratique par exemple pour pouvoir l&amp;rsquo;ouvrir dans Eclipse car si le XML est formaté sur une seule ligne Eclipse pète une durite quand on veut l&amp;rsquo;ouvrir &amp;hellip;
+xmllint -format -recover nonformater.xml &amp;gt; formater.</description>
+    </item>
+    
+  </channel>
+</rss>

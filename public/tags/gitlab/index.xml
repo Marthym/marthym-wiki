@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitlab on wiki.ght1pc9kc.fr</title>
+    <link>/tags/gitlab.html</link>
+    <description>Recent content in Gitlab on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accélérer le clonage d’un repo Git</title>
+      <link>/outils/git/speedup-git-clone.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/speedup-git-clone.html</guid>
+      <description>git clone --depth 1 git@gitlab.i-run.fr:irun/.git cd irun-core git fetch --depth 1 origin mabranch:mabranch git diff --name-only master.. | awk -F / &amp;#39;{print $1}&amp;#39; | uniq </description>
+    </item>
+    
+    <item>
+      <title>Changelog depuis milestone gitlab</title>
+      <link>/outils/git/changelog-depuis-milestone-gitlab.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/changelog-depuis-milestone-gitlab.html</guid>
+      <description>En utilisant les Milestones dans gitlab il est possible de générer des fichiers de change log pour une version donnée.
+function changelog { if [ $# -lt 2 ]; then echo -e &amp;#34;USAGE: $0&amp;lt;project&amp;gt; &amp;lt;milestone&amp;gt;&amp;#34; return fi local gitlab=&amp;#34;http://framagit.org/api/v3/&amp;#34; local projectName=${1} local milestone=${2} local projectId=`curl -s -H &amp;#34;PRIVATE-TOKEN: ${GITLAB_PRIVATE_TOKEN}&amp;#34; ${gitlab}projects/search/cosmos | jq -r &amp;#39;.[0].id&amp;#39;` curl -s -H &amp;#34;PRIVATE-TOKEN: ${GITLAB_PRIVATE_TOKEN}&amp;#34; ${gitlab}projects/${projectId}/issues\?milestone\=${milestone}\&amp;amp;state\=closed\&amp;amp;order_by\=updated_at | \  jq -r &amp;#39;.[] | &amp;#34; * #\(.iid): \(.</description>
+    </item>
+    
+  </channel>
+</rss>

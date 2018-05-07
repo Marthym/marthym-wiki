@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Créer une partition chiffré sur une clé USB - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Créer une partition chiffré sur une clé USB :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/linux/divers/creer-une-partition-chiffre-sur-une-cle-usb.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Créer une partition chiffré sur une clé USB</h1>
+    
+    
+
+    
+
+<ul>
+<li>Do not remove this line (it will not be displayed)
+{:toc}</li>
+</ul>
+
+<p>L&rsquo;idée est de créer sur une clé USB une partition chiffré. Mais pas seulement, afin de rendre cette partition lisible sur Windows comme sur
+Linux et de pas avoir un clé vide sous Windows, ce qui semblerait louche, il faut avoir deux partition, une en clair et une en crypté.
+C&rsquo;est pas si simple que ça en a l&rsquo;air.</p>
+
+<p>Ce tuto est plus ou moins un copie des tutos en liens que je met là au cas où le site disparaîtrait.
+J&rsquo;ai quand même modifié quelques truc qui ne fonctionnaient pas à cause de traductions &ldquo;à l&rsquo;arrache&rdquo;.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Au cas où vous perdriez votre clé USB, toutes les données stockées dessus seront perdues et ce qui est plus important,
+elles seront très probablement dans les mains d&rsquo;une autre personne qui aura alors accès à vos informations privées et utiliser ces informations
+si elle le juge approprié. C&rsquo;est l&rsquo;une des craintes de nombreux utilisateurs de clé USB. Une solution qui peut être facilement appliquée, consiste à ne
+pas stocker toute information privée sur une clé USB, mais cela va diminuer l&rsquo;atout principal de votre clé USB à un strict minimum limité à toutes les
+données non-privée depuis qu&rsquo;elles peuvent être presque toujours téléchargées n&rsquo;importe quand et n&rsquo;importe où à partir d&rsquo;Internet. Une autre solution
+est de chiffrer (crypter) votre clé USB, celle-ci sera accessible uniquement aux utilisateurs qui possèdent le mot de passe correct qui permettra de
+déchiffrer les données.</p>
+
+<p>Bien que le cryptage d&rsquo;une clé USB semble être la meilleure solution et la plus facile, il faut indiquer qu&rsquo;elle contient de nombreux inconvénients.
+Un inconvénient est que le décryptage de la clé USB doit être fait en utilisant un système Linux avec la version du noyau 2.6 ou supérieur, qui a un
+module « dm_crypt » chargé dans le noyau en cours d&rsquo;exécution. Il existe quand même un moyen de déchiffrer une clé chiffré comme on va le faire depuis
+Windows grâce à un logiciel gratuit que l&rsquo;on placera sur la partition non crypté de la clé.</p>
+
+<p>NOTE:
+Toutes les données sur votre clé USB seront détruits de manière Sauvegardez votre clé USB avant de continuer.
+Remplacer /dev/sdX avec le nom de fichier de votre périphérique bloc USB.</p>
+
+<p>NOTE: Toutes les manip sont effectuée en super-utilisateur. Vérifiez toutes les commandes à deux fois avant de les valider, elles sont irréversible,
+si vous vous trompé de partition c&rsquo;est mort !</p>
+
+<h2 id="partitionnement-d-une-clé-usb">Partitionnement d&rsquo;une clé USB</h2>
+
+<p><img src="{{ &quot;/assets/img/luks-01.png&quot; | absolute_url }}" alt="Luks" />{: .center-image }</p>
+
+<p>Commençons par savoir sur quel périphérique est votre clé :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mount
+sysfs on /sys type sysfs <span style="color:#f92672">(</span>rw,nosuid,nodev,noexec,relatime<span style="color:#f92672">)</span>
+proc on /proc type proc <span style="color:#f92672">(</span>rw,nosuid,nodev,noexec,relatime<span style="color:#f92672">)</span>
+udev on /dev type devtmpfs <span style="color:#f92672">(</span>rw,relatime,size<span style="color:#f92672">=</span>10240k,nr_inodes<span style="color:#f92672">=</span><span style="color:#ae81ff">1014025</span>,mode<span style="color:#f92672">=</span><span style="color:#ae81ff">755</span><span style="color:#f92672">)</span>
+devpts on /dev/pts type devpts <span style="color:#f92672">(</span>rw,nosuid,noexec,relatime,gid<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,mode<span style="color:#f92672">=</span><span style="color:#ae81ff">620</span>,ptmxmode<span style="color:#f92672">=</span><span style="color:#ae81ff">000</span><span style="color:#f92672">)</span>
+tmpfs on /run type tmpfs <span style="color:#f92672">(</span>rw,nosuid,noexec,relatime,size<span style="color:#f92672">=</span>812588k,mode<span style="color:#f92672">=</span><span style="color:#ae81ff">755</span><span style="color:#f92672">)</span>
+/dev/disk/by-uuid/60b1acc3-2986-4799-b2ac-c6f61f6b3ce2 on / type ext4 <span style="color:#f92672">(</span>rw,relatime,errors<span style="color:#f92672">=</span>remount-ro,user_xattr,barrier<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,data<span style="color:#f92672">=</span>ordered<span style="color:#f92672">)</span>
+tmpfs on /run/lock type tmpfs <span style="color:#f92672">(</span>rw,nosuid,nodev,noexec,relatime,size<span style="color:#f92672">=</span>5120k<span style="color:#f92672">)</span>
+tmpfs on /run/shm type tmpfs <span style="color:#f92672">(</span>rw,nosuid,nodev,noexec,relatime,size<span style="color:#f92672">=</span>3287720k<span style="color:#f92672">)</span>
+/dev/sdc1 on /boot/efi type vfat <span style="color:#f92672">(</span>rw,relatime,fmask<span style="color:#f92672">=</span><span style="color:#ae81ff">0022</span>,dmask<span style="color:#f92672">=</span><span style="color:#ae81ff">0022</span>,codepage<span style="color:#f92672">=</span>cp437,iocharset<span style="color:#f92672">=</span>utf8,shortname<span style="color:#f92672">=</span>mixed,errors<span style="color:#f92672">=</span>remount-ro<span style="color:#f92672">)</span>
+/dev/md0 on /home type ext4 <span style="color:#f92672">(</span>rw,relatime,errors<span style="color:#f92672">=</span>remount-ro,user_xattr,barrier<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,stripe<span style="color:#f92672">=</span><span style="color:#ae81ff">128</span>,data<span style="color:#f92672">=</span>ordered<span style="color:#f92672">)</span>
+rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs <span style="color:#f92672">(</span>rw,relatime<span style="color:#f92672">)</span>
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc <span style="color:#f92672">(</span>rw,nosuid,nodev,noexec,relatime<span style="color:#f92672">)</span>
+fusectl on /sys/fs/fuse/connections type fusectl <span style="color:#f92672">(</span>rw,relatime<span style="color:#f92672">)</span>
+vmware-vmblock on /run/vmblock-fuse type fuse.vmware-vmblock <span style="color:#f92672">(</span>rw,nosuid,nodev,relatime,user_id<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,group_id<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,default_permissions,allow_other<span style="color:#f92672">)</span>
+/dev/sde1 on /media/NOUVEAU NOM type vfat <span style="color:#f92672">(</span>rw,nosuid,nodev,relatime,uid<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>,gid<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>,fmask<span style="color:#f92672">=</span><span style="color:#ae81ff">0022</span>,dmask<span style="color:#f92672">=</span><span style="color:#ae81ff">0077</span>,codepage<span style="color:#f92672">=</span>cp437,iocharset<span style="color:#f92672">=</span>utf8,shortname<span style="color:#f92672">=</span>mixed,showexec,utf8,flush,errors<span style="color:#f92672">=</span>remount-ro,uhelper<span style="color:#f92672">=</span>udisks<span style="color:#f92672">)</span></code></pre></div>
+<p>Ici on voit la clé sur la dernière ligne, en vfat. Notre périphérique est donc <code>/dev/sde</code>.</p>
+
+<p>On peut maintenant partitionner notre clé (as root) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cfdisk /dev/sde</code></pre></div>
+<p>Dans la capture ci-à-droite, on peut voir comment doivent se retrouver les partitions. On en crée 2, la première en principale sera la partition non crypté,
+la deuxième partition logique, sera la partition crypté. Dans ce cas, chaque partition fait 1 Go. Il faut &ldquo;Maximiser&rdquo; les partitions pour que la
+partition prenne réellement 1Go.</p>
+
+<p>Pensez bien à enregistrer les modifications dans la table de partition !
+Déconnectez la clé puis la rebrancher pour être sur que le système a bien pris en compte les nouvelles partitions.</p>
+
+<h2 id="ecrire-des-données-aléatoires">Ecrire des données aléatoires</h2>
+
+<p>Pour éviter des attaques par motifs du chiffrement, il est conseillé d&rsquo;écrire des données aléatoires sur une partition avant de procéder à un chiffrement.
+La commande suivante &ldquo;dd&rdquo; peut être utilisé pour écrire ces données à votre partition, cela peut prendre un certain temps. Celui-ci dépend de l&rsquo;entropie
+générée par votre système.<br/>
+Dans notre cas, on voit que la partition qui va être chiffré est la <code>/dev/sde5</code> :</p>
+
+<pre><code>dd bs=4K if=/dev/urandom of=/dev/sde5
+</code></pre>
+
+<h2 id="chiffrement-de-partition">Chiffrement de partition</h2>
+
+<p>Maintenant il est temps de chiffrer la partition nouvellement créée. À cette fin, nous allons utiliser l&rsquo;outil <strong>cryptsetup</strong>. Si la commande cryptsetup n&rsquo;est pas disponible sur votre système, assurez-vous que le paquet cryptsetup soit installé.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install cryptsetup</code></pre></div>
+<p>La commande suivante va chiffrer <code>/dev/sdX1</code> partitionner avec 256-bit AES XTS algorithme. Cet algorithme est disponible sur n’importe quel noyau
+de version supérieur à 2.6.24.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cryptsetup -h sha256 -c aes-xts-plain -s <span style="color:#ae81ff">256</span> luksFormat /dev/sde5</code></pre></div>
+<pre><code>    ATTENTION!
+    ========
+    Cela va écraser les données sur /dev/sdX1 de façon irrévocable.
+    Etes-vous sûr? (Majuscules Type oui): OUI
+    Enter LUKS passphrase:
+    Vérifiez mot de passe:
+    Command succès.
+</code></pre>
+
+<p>Prenez bien garde à entrer un mot de passe dont vous vous souviendrez, c&rsquo;est pas récupérable si vous l&rsquo;oubliez !</p>
+
+<h2 id="montage-usb-partition-et-le-déchiffrement">Montage USB partition et le déchiffrement</h2>
+
+<p>Dans l&rsquo;étape suivante, nous allons définir le nom de notre partition chiffrée pour être reconnu par le mappeur de périphériques du système.
+Vous pouvez choisir n&rsquo;importe quel nom. Par exemple, nous pouvons utiliser le nom de «private»:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cryptsetup luksOpen /dev/sde5 private
+    Enter LUKS passphrase:
+    sous la touche <span style="color:#ae81ff">0</span> déverrouillé.
+    Command succès.</code></pre></div>
+<p>Après l&rsquo;exécution de cette commande, votre partition chiffrée sera disponible pour votre système, comme <code>/dev/mapper/private</code>, //private// étant le nom que
+vous avez donnez à luksOpen. Nous pouvons maintenant créer le système de fichiers et monter la partition dans /dev/mapper/private :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkfs.ext4 /dev/mapper/private</code></pre></div>
+<h3 id="optionnel">Optionnel</h3>
+
+<p>NOTE: Je laisse cette partie à titre indicatif mais elle n&rsquo;est pas nécessaire, on peut passer direct au grand paragraphe suivant.</p>
+
+<p>Créer un point de montage et monter une partition:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /media/private
+mount /dev/mapper/private /media/private
+chown-R myusername.myusername /media/private</code></pre></div>
+<p>Maintenant, votre partition chiffrée est disponible dans /media/private. Si vous ne souhaitez pas d&rsquo;avoir un accès à la partition cryptée sur votre
+clé USB de plus vous devez d&rsquo;abord le démonter du système, puis utiliser la commande cryptsetup pour fermer la protection connecté.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">umount /media/private
+cryptsetup luksClose /dev/mapper/private</code></pre></div>
+<h2 id="utilisation-de-la-clé">Utilisation de la clé</h2>
+
+<h3 id="linux">Linux</h3>
+
+<p>C&rsquo;est le plus simple sous Linux, la plus part des système récent détectent automatiquement les partitions LUKS et demandent la passphrase au branchement.</p>
+
+<h3 id="windows">Windows</h3>
+
+<p>Sous Windows il ne voit même pas la partition crypté.</p>
+
+<p>La première chose à faire est de formater la partition normale en FAT 32.</p>
+
+<p>Remarque : Si on a une grosse clé et que l&rsquo;on veut des gros fichiers, on peut faire en NTFS ou en
+[[exFAT|<a href="https://mabouali.wordpress.com/2012/10/27/exfat-for-your-usb-flash-drives/]">https://mabouali.wordpress.com/2012/10/27/exfat-for-your-usb-flash-drives/]</a>].</p>
+
+<p>Ensuite, pour pouvoir lire la partition sur Windows, on peut utiliser [[FreeOTFE|<a href="http://www.freeotfe.org/download.html]">http://www.freeotfe.org/download.html]</a>].
+La bonne idée c&rsquo;est d&rsquo;installer la version &ldquo;portable&rdquo; sur la partition non chiffré ce qui permet alors de lire la partition non chiffré.
+Faite quand même attention que le mot de passe ne traîne pas sur la partition non chiffré !!</p>
+
+<h2 id="liens">Liens</h2>
+
+<ul>
+<li>en &rarr; [[<a href="http://www.linuxconfig.org/usb-stick-encryption-using-linux]">http://www.linuxconfig.org/usb-stick-encryption-using-linux]</a>]</li>
+<li>fr &rarr; [[<a href="http://monblog.system-linux.net/blog/2011/03/19/chiffrement-du-systeme-de-fichiers-dune-cle-usb/]">http://monblog.system-linux.net/blog/2011/03/19/chiffrement-du-systeme-de-fichiers-dune-cle-usb/]</a>]</li>
+</ul>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#partitionnement-d-une-clé-usb">Partitionnement d&rsquo;une clé USB</a></li>
+<li><a href="#ecrire-des-données-aléatoires">Ecrire des données aléatoires</a></li>
+<li><a href="#chiffrement-de-partition">Chiffrement de partition</a></li>
+<li><a href="#montage-usb-partition-et-le-déchiffrement">Montage USB partition et le déchiffrement</a>
+<ul>
+<li><a href="#optionnel">Optionnel</a></li>
+</ul></li>
+<li><a href="#utilisation-de-la-clé">Utilisation de la clé</a>
+<ul>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#windows">Windows</a></li>
+</ul></li>
+<li><a href="#liens">Liens</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

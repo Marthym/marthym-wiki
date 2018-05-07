@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on wiki.ght1pc9kc.fr</title>
+    <link>/outils/docker.html</link>
+    <description>Recent content in Docker on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/outils/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accès Docker non root</title>
+      <link>/outils/docker/acces-docker-non-root.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/acces-docker-non-root.html</guid>
+      <description>Normalement tous les accès docker se font en root avec sudo ou autre. Pour utiliser docker en non-root :
+sudo usermod -a -G docker netflow</description>
+    </item>
+    
+    <item>
+      <title>Autoriser l’acces au DISPLAY pour un container specifique</title>
+      <link>/outils/docker/autoriser-lacces-au-display-pour-un-container-specifique.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/autoriser-lacces-au-display-pour-un-container-specifique.html</guid>
+      <description>Avec les nouvelles version du noyau, le DISPLAY est plus verrouillé qu’avant et des problèmes de DISPLAY interviennent lorsque l’on veut accéder à une appli graphique à l’intérieur d’un docker. Pour résoudre ce problème il faut autoriser le DISPLAY pour le container, pour cela :
+{% raw %}xhost +local:`docker inspect --format=&amp;#39;{{ .Config.Hostname }}&amp;#39; $containerId`{% endraw %} L’idéal serait de la mettre ensuite dans le démarrage du système &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Changer le répertoire des images docker</title>
+      <link>/outils/docker/changer-le-repertoire-des-images-docker.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/changer-le-repertoire-des-images-docker.html</guid>
+      <description>Comme j&amp;rsquo;ai deux disques durs et que je voudrais pas charger le SSD pour rien, je voulais changer le répertoire des images.
+Pour ça, dans le fichier /etc/default/docker.io il faut rajouter l&amp;rsquo;option -g dans les options :
+# Use DOCKER_OPTS to modify the daemon startup options. #DOCKER_OPTS=&amp;quot;--dns 8.8.8.8 --dns 8.8.4.4&amp;quot; DOCKER_OPTS=&amp;quot;-g /home/docker&amp;quot;  pensez à créer le nouveau répertoire, voire à y copier le contenu de l&amp;rsquo;ancien répertoire /var/lib/docker</description>
+    </item>
+    
+    <item>
+      <title>Docker failed to create image rootfs</title>
+      <link>/outils/docker/docker--failed-to-create-image-rootfs.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/docker--failed-to-create-image-rootfs.html</guid>
+      <description>En voulant puller une image docker depuis le registry j&amp;rsquo;ai cette erreur quand je suis en device-mapper :
+82f4a6e0947d: Error pulling image (jre7u67) from my-docker-hub/java, Driver devicemapper failed to create image rootfs 511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158: Can&#39;t set task name / dev/mapper/docker-8:2-5637992-pool name /dev/mapper/docker-8:2-5637992-pool 2014/11/25 15:05:47 Error pulling image (jre7u67) from my-docker-hub/java, Driver devicemapper failed to create image rootfs 511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158: Can&#39;t set task name /dev/mapper/docker-8:2-5637992-pool  Pour corriger :
+sudo service docker stop sudo rm -Rf /var/lib/docker sudo service docker start</description>
+    </item>
+    
+    <item>
+      <title>Export Importer une image Docker</title>
+      <link>/outils/docker/export-importer-une-image-docker.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/export-importer-une-image-docker.html</guid>
+      <description>Pour exporter :
+docker save mynewimage &amp;gt; /tmp/mynewimage.tar bzip2 /tmp/mynewimage.tar Pour ré-importer:
+bzip2 -d /tmp/mynewimage.tar.bz2 docker load &amp;lt; /tmp/mynewimage.</description>
+    </item>
+    
+    <item>
+      <title>InetAddress does’nt resolve ip on alpine docker container</title>
+      <link>/outils/docker/inetaddress-doesnt-resolve-ip-on-alpine-docker-container.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/inetaddress-doesnt-resolve-ip-on-alpine-docker-container.html</guid>
+      <description>C&amp;rsquo;est un problème qu&amp;rsquo;on a rencontré quand on a voulu réduire la taille des docker en utilisant l&amp;rsquo;image Alpine comme image de base.
+Symptome Exception in thread &amp;quot;main&amp;quot; java.net.UnknownHostException: mysql: unknown error at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928) at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323) at java.net.InetAddress.getAllByName0(InetAddress.java:1276) at java.net.InetAddress.getAllByName(InetAddress.java:1192) at java.net.InetAddress.getAllByName(InetAddress.java:1126) at java.net.InetAddress.getByName(InetAddress.java:1076) at SomaDBTest.main(SomaDBTest.java:52)  Solution En gros l&amp;rsquo;image Alpine veut par défaut résoudre les noms de machine pas DNS en priorité au lieu d&amp;rsquo;utiliser d&amp;rsquo;abord les fichiers (hosts).</description>
+    </item>
+    
+    <item>
+      <title>Registry Docker derrière un Nginx</title>
+      <link>/outils/docker/registry-docker-derriere-un-nginx.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/registry-docker-derriere-un-nginx.html</guid>
+      <description>L&amp;rsquo;idée est de placer un registry Docker derrière un frontal Nginx afin de faire du HTTPS voire de l&amp;rsquo;authentification.
+Le premier truc c&amp;rsquo;est la conf Nginx :
+server { listen 80; listen 443 ssl; server_name docker.livingobjects.com; access_log off; server_tokens off; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; # On commence par dire où se situent nos certificats SSL # On aurait pu les mettre séparément dans chaque &amp;#34;server&amp;#34; en ayant besoin. ssl_certificate /etc/nginx/ssl/docker.</description>
+    </item>
+    
+    <item>
+      <title>Remove ophans from docker registry</title>
+      <link>/outils/docker/remove-ophans-from-docker-registry.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/remove-ophans-from-docker-registry.html</guid>
+      <description>Il est compliqué de nettoyer un registry Docker (avant sa version 2.0 en tout cas). Voici un script qui supprime les images orpheline dans le registry.
+#!/bin/bash  JQPATH=$(which jq) if [ &amp;#34;x$JQPATH&amp;#34; == &amp;#34;x&amp;#34; ]; then echo &amp;#34;Couldn&amp;#39;t find jq executable.&amp;#34; 1&amp;gt;&amp;amp;2 exit 2 fi set -eu shopt -s nullglob readonly base_dir=/data/docker_registry_backup/registry/ readonly output_dir=$(mktemp -d -t trace-images-XXXX) readonly jq=$JQPATH readonly repository_dir=$base_dir/repositories readonly image_dir=$base_dir/images readonly all_images=$output_dir/all readonly used_images=$output_dir/used readonly unused_images=$output_dir/unused function info() { echo -e &amp;#34;\nArtifacts available in $output_dir&amp;#34; } trap info EXIT ERR INT function image_history() { local readonly image_hash=$1 $jq &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>Supprimer les images non taggé</title>
+      <link>/outils/docker/supprimer-les-images-non-tagge.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/supprimer-les-images-non-tagge.html</guid>
+      <description>Pour virer toutes les images non taggé :
+docker rmi $(docker images | grep &amp;#39;^&amp;lt;none&amp;gt;&amp;#39; | awk &amp;#39;{print $3}&amp;#39;) Attention si l&amp;rsquo;image est utilisé par un conteneur ça marchera pas.
+A partir de la 1.3.1 :
+docker rmi $(docker images -f &amp;#34;dangling=true&amp;#34; -q)</description>
+    </item>
+    
+    <item>
+      <title>Supprimer les vieux conteneurs</title>
+      <link>/outils/docker/supprimer-les-vieux-conteneurs.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/supprimer-les-vieux-conteneurs.html</guid>
+      <description>Pour supprimer les vieux conteneur de plus d&amp;rsquo;une semaine par exemple :
+docker ps -a | grep &amp;#39;weeks ago&amp;#39; | awk &amp;#39;{print $1}&amp;#39; | xargs docker rm -v  Les conteneurs issue d&amp;rsquo;images non taggé :
+docker ps -a | awk &amp;#39;$2 ~ &amp;#34;[0-9a-f]{12}&amp;#34; {print $&amp;#34;$1&amp;#34;}&amp;#39; docker ps -a | awk &amp;#39;$2 ~ /^[0-9a-f]+$/ {print $1}&amp;#39; | xargs docker rm -v  Et pour virer tous les conteneurs arrété :</description>
+    </item>
+    
+    <item>
+      <title>System error on docker run</title>
+      <link>/outils/docker/system-error-on-docker-run.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/system-error-on-docker-run.html</guid>
+      <description> Après une mise à jour du système, au démarrage de mon container docker je prend l&amp;rsquo;erreur suivante :
+Error response from daemon: Cannot start container {id}: [8] System error: open /sys/fs/cgroup/cpu,cpuacct/init.scope/system.slice/docker-{id}.scope/cpu.shares: no such file or directory 
+C&amp;rsquo;est apparement lié a un bug Debian : https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=798778
+Il est possible de palier en ajoutant --exec-opt native.cgroupdriver=cgroupfs dans /etc/default/docker.
+Liens  https://stackoverflow.com/questions/32845917/system-error-on-docker-run  </description>
+    </item>
+    
+    <item>
+      <title>Update toutes les images</title>
+      <link>/outils/docker/update-toutes-les-images.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/update-toutes-les-images.html</guid>
+      <description>Pour mettre à jour toutes les images d&amp;rsquo;un docker en une commande:
+docker images | awk &amp;#39;{print $1}&amp;#39; | xargs -L1 docker pull</description>
+    </item>
+    
+    <item>
+      <title>Weekly cleaner</title>
+      <link>/outils/docker/weekly-cleaner.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/docker/weekly-cleaner.html</guid>
+      <description>A placer dans /etc/cron.weekly/clean-docker + chmod +x ...
+docker rm -v $(docker ps -a -q) docker rmi $(docker images | grep &amp;#39;^&amp;lt;none&amp;gt;&amp;#39; | awk &amp;#39;{print $3}&amp;#39;) docker rmi $(docker images | grep &amp;#39;months ago&amp;#39; | awk &amp;#39;{print $3}&amp;#39;) Ca ve supprimer les images vieilles de plusieurs mois et celle non tagés ainsi que les conteneur associés.</description>
+    </item>
+    
+  </channel>
+</rss>

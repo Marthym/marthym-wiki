@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Junit on wiki.ght1pc9kc.fr</title>
+    <link>/tags/junit.html</link>
+    <description>Recent content in Junit on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/junit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Répéter un test x fois avec jUnit</title>
+      <link>/development/java/repeat-test-with-junit.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/repeat-test-with-junit.html</guid>
+      <description>Ajouter la Rule RepeatRule :
+@Rule public RepeatRule repeatRule = new RepeatRule(); Ajouter l&amp;rsquo;annotation @Repeat au test :
+@Repeat(times = 100) Dans IntelliJ, les X exécutions n&amp;rsquo;apparaissent pas, il n&amp;rsquo;y a qu&amp;rsquo;une ligne mais qui a pris plus de temps.</description>
+    </item>
+    
+  </channel>
+</rss>

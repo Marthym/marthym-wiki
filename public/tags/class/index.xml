@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Class on wiki.ght1pc9kc.fr</title>
+    <link>/tags/class.html</link>
+    <description>Recent content in Class on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/class/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Classes Javascript propres</title>
+      <link>/development/javascript/classes-javascript-propres.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/javascript/classes-javascript-propres.html</guid>
+      <description>Il existe de nombreuses façons de coder en Javascript. La plus fréquente est malheureusement la plus crade : lister ses fonctions les une après les autres&amp;hellip;
+Voici une méthode pour faire ça moins crados, il en existe peut être de meilleures mais celle-ci a le mérite d&amp;rsquo;être très propre et très lisible.
+var monProjet = {}; // On crée une variable globale du nom du projet // Ce tableau permettra de stocker et récupérer facilement les objets créés.</description>
+    </item>
+    
+  </channel>
+</rss>

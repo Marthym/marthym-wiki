@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Git en ligne de commande - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Git en ligne de commande :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/outils/git/git-en-ligne-de-commande.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Git en ligne de commande</h1>
+    
+    
+
+    
+
+<ul>
+<li>Do not remove
+{:toc}</li>
+</ul>
+
+<p>Voici un glossaire des lignes de commandes utile sous GIT :</p>
+
+<h2 id="création-d-un-dépôt">Création d’un dépôt</h2>
+
+<p>créez un nouveau dossier, ouvrez-le et exécutez la commande<br/>
+<code>git init</code> <br/>
+pour créer un nouveau dépôt.</p>
+
+<h2 id="cloner-un-dépôt">Cloner un dépôt</h2>
+
+<p>créez une copie de votre dépôt local en exécutant la commande<br/>
+<code>git clone /path/to/repository</code><br/>
+si vous utilisez un serveur distant, cette commande sera
+<code>git clone username@host:/path/to/repository</code></p>
+
+<h2 id="ajouter-valider">Ajouter &amp; valider</h2>
+
+<p>Vous pouvez proposer un changement (l’ajouter à l’Index) en exécutant les commandes<br/>
+<code>git add &lt;filename&gt;</code><br/>
+<code>git add *</code><br/>
+C’est la première étape dans un workflow git basique. Pour valider ces changements, utilisez<br/>
+<code>git commit -m &quot;Message de validation&quot;</code><br/>
+Le fichier est donc ajouté au HEAD, mais pas encore dans votre dépôt distant.</p>
+
+<h3 id="ajout-partiel-d-un-fichier">Ajout partiel d’un fichier</h3>
+
+<p><code>git add -p &lt;filename&gt;</code></p>
+
+<p>Avec cette commande, git passe chaque block de changement du fichier en revue et demande s’il doit l&rsquo;ajouter. Les options sont :
+  * <code>y</code> Ajoute le bloc pour le prochain commit
+  * <code>n</code> n’ajoute pas pour le prochain commit
+  * <code>q</code> quitte, n’ajoute pas le bloc ni aucun des blocs suivant
+  * <code>a</code> Ajoute le bloc et tous les blocs suivant
+  * <code>d</code> n’ajoute ni ce bloc ni les blocs suivant
+  * <code>g</code> Sélectionne le bloc auquel on veut se rendre
+  * <code>/</code> Cherche un bloc
+  * <code>j</code> Laisser ce bloc comme non décidé et passer au suivant non décidé
+  * <code>J</code> Laisser ce bloc comme non décidé et passer au suivant
+  * <code>k</code> Laisser ce bloc comme non décidé et revenir au bloc non décidé précédent
+  * <code>K</code> Laisser ce bloc comme non décidé et revenir au bloc précédent
+  * <code>s</code> Diviser le bloc courant en plusieurs blocs plus petit
+  * <code>e</code> Éditer manuellement le bloc courant
+  * <code>?</code> Imprimer l’aide</p>
+
+<h2 id="envoyer-des-changements">Envoyer des changements</h2>
+
+<p>Vos changements sont maintenant dans le HEAD de la copie de votre dépôt local. Pour les envoyer à votre dépôt distant,
+exécutez la commande<br/>
+<code>git push origin master</code><br/>
+Remplacez master par la branche dans laquelle vous souhaitez envoyer vos changements.</p>
+
+<p>Si vous n’avez pas cloné votre dépôt existant et voulez le connecter à votre dépôt sur un serveur distant,
+vous devez l’ajouter avec<br/>
+<code>git remote add origin &lt;server&gt;</code><br/>
+Maintenant, vous pouvez envoyer vos changements vers le serveur distant sélectionné</p>
+
+<h2 id="branches">Branches</h2>
+
+<p>Créer une nouvelle branche nommée &ldquo;feature_x&rdquo; et passer dessus pour l’utiliser<br/>
+<code>git checkout -b feature_x</code><br/>
+retourner sur la branche principale<br/>
+<code>git checkout master</code><br/>
+et supprimer la branche<br/>
+<code>git branch -d feature_x</code><br/>
+une branche n&rsquo;est pas disponible pour les autres tant que vous ne l&rsquo;aurez pas envoyée vers votre dépôt distant<br/>
+<code>git push origin &lt;branch&gt;</code></p>
+
+<p>Pour supprimer toutes les références distantes à des branches supprimées :
+<code>git remote prune origin</code></p>
+
+<h3 id="renomer-une-branche">Renomer une branche</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch --move old_name new_name
+git checkout new_name
+git branch --unset-upstream
+git push origin :new_name
+git push --set-upstream origin new_name</code></pre></div>
+<h2 id="mettre-à-jour-fusionner">Mettre à jour &amp; fusionner</h2>
+
+<p>pour mettre à jour votre dépôt local vers les dernières validations, exécutez la commande <code>git pull</code> dans votre espace de travail pour récupérer et fusionner les changements distants.</p>
+
+<p>A noter que par défaut git fait un merge. Mais on peut lui demander de faire un rebase. A peine plus risqué en termes de conflicts, ça permet de garder un historique propre. A partir de la 2.9 il est possible d’utiliser en plus l’autostash <br/>
+<code>git pull --rebase --autostash</code>.</p>
+
+<p>Pour fusionner une autre branche avec la branche active (par exemple master), utilisez <code>git merge &lt;branch&gt;</code>
+dans les deux cas, git tente d&rsquo;auto-fusionner les changements. Malheureusement, ça n’est pas toujours possible et
+résulte par des conflits. Vous devez alors régler ces conflits manuellement en éditant les fichiers indiqués par git.
+Après l&rsquo;avoir fait, vous devez les marquer comme fusionnés avec <code>git add &lt;filename&gt;</code>
+après avoir fusionné les changements, vous pouvez en avoir un aperçu en utilisant <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>.</p>
+
+<h2 id="tags">tags</h2>
+
+<p>il est recommandé de créer des tags pour les releases de programmes. C’est un concept connu, qui existe aussi dans SVN.
+Vous pouvez créer un tag nommé 1.0.0 en exécutant la commande<br/>
+<code>git tag 1.0.0 1b2e1d63ff</code>
+le 1b2e1d63ff désigne les 10 premiers caractères de l&rsquo;identifiant du changement que vous voulez référencer avec ce tag.
+Vous pouvez obtenir cet identifiant avec<br/>
+<code>git log</code><br/>
+vous pouvez utiliser moins de caractères de cet identifiant, il doit juste rester unique.</p>
+
+<h2 id="remplacer-les-changements-locaux">Remplacer les changements locaux</h2>
+
+<p>Dans le cas où vous auriez fait quelque chose de travers (ce qui bien entendu n’arrive jamais ;)
+vous pouvez annuler les changements locaux en utilisant cette commande<br/>
+<code>git checkout -- &lt;filename&gt;</code><br/>
+cela remplacera les changements dans votre arbre de travail avec le dernier contenu du HEAD.
+Les changements déjà ajoutés à l&rsquo;index, aussi bien les nouveaux fichiers, seront gardés.</p>
+
+<p>Si à la place vous voulez supprimer tous les changements et validations locaux, récupérez le dernier historique depuis
+le serveur et pointez la branche principale locale dessus comme ceci<br/>
+<code>git fetch origin</code><br/>
+<code>git reset --hard origin/master</code></p>
+
+<h2 id="comptage-des-commits-par-utilisateur">Comptage des commits par utilisateur</h2>
+
+<p><code>git shortlog -s -n</code></p>
+
+<h2 id="conseils-utiles">Conseils utiles</h2>
+
+<p>utiliser des couleurs dans la sortie de git<br/>
+<code>git config color.ui true</code></p>
+
+<p>afficher le journal sur une seule ligne pour chaque validation<br/>
+<code>git config format.pretty oneline</code></p>
+
+<p>utiliser l&rsquo;ajout interactif
+<code>git add -i</code></p>
+
+<h2 id="liens">Liens</h2>
+
+<ul>
+<li><a href="http://rogerdudler.github.io/git-guide/index.fr.html">http://rogerdudler.github.io/git-guide/index.fr.html</a></li>
+<li><a href="http://book.git-scm.com/">http://book.git-scm.com/</a></li>
+<li><a href="http://progit.org/book/">http://progit.org/book/</a></li>
+<li><a href="http://think-like-a-git.net/">http://think-like-a-git.net/</a></li>
+<li><a href="http://help.github.com/">http://help.github.com/</a>
+<br /></li>
+</ul>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#création-d-un-dépôt">Création d’un dépôt</a></li>
+<li><a href="#cloner-un-dépôt">Cloner un dépôt</a></li>
+<li><a href="#ajouter-valider">Ajouter &amp; valider</a>
+<ul>
+<li><a href="#ajout-partiel-d-un-fichier">Ajout partiel d’un fichier</a></li>
+</ul></li>
+<li><a href="#envoyer-des-changements">Envoyer des changements</a></li>
+<li><a href="#branches">Branches</a>
+<ul>
+<li><a href="#renomer-une-branche">Renomer une branche</a></li>
+</ul></li>
+<li><a href="#mettre-à-jour-fusionner">Mettre à jour &amp; fusionner</a></li>
+<li><a href="#tags">tags</a></li>
+<li><a href="#remplacer-les-changements-locaux">Remplacer les changements locaux</a></li>
+<li><a href="#comptage-des-commits-par-utilisateur">Comptage des commits par utilisateur</a></li>
+<li><a href="#conseils-utiles">Conseils utiles</a></li>
+<li><a href="#liens">Liens</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

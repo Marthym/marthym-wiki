@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Optimiser les performances - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Optimiser les performances :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/serveurs/http/optimize-nginx-performances.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Optimiser les performances</h1>
+    
+    
+
+    
+
+<ul>
+<li>Do not remove
+{:toc}</li>
+</ul>
+
+<p>Recopie d’un article de <em>Quentin Busuttil</em> sur <a href="https://buzut.fr/optimiser-nginx/">Optimiser NGINX</a></p>
+
+<h2 id="les-workers">Les workers</h2>
+
+<p>Concentrons nous d’abord sur worker_processes. Cette directive spécifie le nombre total de workers à créer au démarrage de Nginx. La valeur optimale est d’en avoir un par cpu core. Si vous avez un VPS – lesquels ont souvent un vCPU avec un seul vCore – il arrive souvent que la valeur par défaut soit supérieure au nombre total de cores. Ce n’est pas très grave, néanmoins, les processus supplémentaires vont un peu se tourner les pouces… pas bien utile. Pour définir cette valeur, il nous suffit donc de déterminer le nombre total de cores :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># grep -c ^processor /proc/cpuinfo
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">12</span></code></pre></div>
+<p>Passons maintenant à la directive worker_connections. Elle spécifie combien de connections simultanées chaque worker est en mesure d’établir. Étant donné qu’une connexion nécessite un file descriptor au minimum, une bonne base est d’établir ce nombre en fonction des limites de notre système. Dans le cas de Nginx en reverse proxy, il faut un file descriptor pour la connexion client et un autre vers le serveur proxifié, soit deux par connexion.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ulimit -n
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">1024</span></code></pre></div>
+<p>Gestion du <a href="https://buzut.fr/2016/05/27/optimiser-gestion-ressources-systeme-ulimit/">ulimit</a>.</p>
+
+<p>En dernier lieu, on permet aux workers d’accepter plusieurs nouvelles connexions de manière simultané en activant <a href="http://nginx.org/en/docs/ngx_core_module.html#multi_accept">multi_accept</a>. Cela peut être d’une grande utilité lors de pics de trafic.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">multi_accept on;</code></pre></div>
+<h2 id="les-buffers">Les buffers</h2>
+
+<p>Les buffers permettent à Nginx de travailler en RAM plutôt que sur le disque. Je ne vais pas vous faire un dessin, vous savez bien que les accès disque sont infiniment plus lents que le travail en RAM. On va donc configurer les buffers pour que notre serveur puisse travailler en mémoire autant que faire se peut.</p>
+
+<p>Il y a quatre types de buffers :</p>
+
+<p><strong>client_body_buffer_size</strong>
+Le buffer qui récupère les données clients (typiquement les données POST).</p>
+
+<p><strong>client_header_buffer_size</strong>
+Celui-ci s’occupe également des données du client, mais concerne l’en-tête. Généralement, 1k suffit ici amplement (la valeur par défaut). Qui plus est, dans le cas où cette limite est dépassée, alors c’est la directive large_client_header_buffers qui s’applique.</p>
+
+<p><strong>client_max_body_size</strong>
+La taille maximum des requêtes envoyées par le client. Si vous autorisez des uploads de fichiers, il s’agit d’y penser ici. Si cette limite est dépassée, Nginx retourne une erreur 413.</p>
+
+<p><strong>large_client_header_buffers</strong>
+Taille et nombre maximum que peuvent atteindre les buffers pour les en-têtes. Au delà, une erreur est retournée.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">client_body_buffer_size</span> <span style="color:#e6db74">16K</span>;
+<span style="color:#66d9ef">client_header_buffer_size</span> <span style="color:#ae81ff">1k</span>;
+<span style="color:#66d9ef">client_max_body_size</span> <span style="color:#ae81ff">20m</span>;
+<span style="color:#66d9ef">large_client_header_buffers</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3k</span>;</code></pre></div>
+<h2 id="proxy-buffers">Proxy buffers</h2>
+
+<p>Il existe des buffers spécifiquement dédiés aux proxies. Dans le cas où les buffers sont désactivés, Nginx commence l’envoie des données au client aussitôt qu’il les reçoit du backend serveur. Si le client est rapide, tout est pour le mieux. Cependant, si le client est moins véloce, ce fonctionnement oblige à conserver une connexion ouverte entre Nginx – le serveur de proxy – et le backend serveur ; ce qui peut s’avérer dommageable.</p>
+
+<p>L’activation des buffers permet donc à Nginx de d’abord récupérer l’ensemble des données de la requêtes depuis le backend serveur, de libérer ce dernier, puis de servir les données au client.</p>
+
+<p><strong>proxy_buffering</strong>
+Contrôle l’activation du buffer pour le proxy (activé par défaut).</p>
+
+<p><strong>proxy_buffer_size</strong>
+Définie la taille du buffer pour les en-têtes de la réponse. 8k par défaut sur systèmes 64 bits. On peut ici laisser la valeur par défaut car les en-têtes dépassent rarement 8k.</p>
+
+<p><strong>proxy_buffers</strong>
+Détermine la taille et le nombre des buffers pour le corps de la réponse. Une fois n’est pas coutume, la valeur dépendra grandement de votre application. La valeur par défaut (toujours pour les systèmes 64 bits) est de 8 buffers de 8k. Il s’agit de paramètres s’appliquant par requête. Ainsi, le réglage par défaut permettra de stocker dans les buffers des réponses jusqu’à 64kb. À vous de voir si votre application retourne des résultats plus importants (sachant qu’ensuite les fichiers sont écrits sur le disque).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">proxy_buffering</span> <span style="color:#66d9ef">on</span>;
+<span style="color:#66d9ef">proxy_buffer_size</span> <span style="color:#ae81ff">1k</span>;
+<span style="color:#66d9ef">proxy_buffers</span> <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">4k</span>;</code></pre></div>
+<h2 id="les-timeouts">Les timeouts</h2>
+
+<p><strong>client_body_timeout</strong>
+Ce timeout s’applique au body. Il définit le temps maximum entre deux opérations d’écriture (pas le temps total de transfert donc). Admettons que je veuille transférer de gros fichiers (plusieurs centaines de MB), je pourrais fixer ce timeout à 30s (défaut 60s). Si le client n’envoie aucune donnée dans ce laps de temps, le serveur émet une erreur 408.</p>
+
+<p><strong>client_header_timeout</strong>
+Même logique que la directive précédente mais le timeout s’applique bien ici à la totalité de la transaction. Néanmoins, les en-têtes étant beaucoup plus légères, je me contenterai pour ma part d’établir le timeout à 10s (défaut 60s) pour les headers.</p>
+
+<p><strong>keepalive_timeout</strong>
+Cette directive permet à la fois de spécifier le keepalive timeout mais également le header Keep-Alive: timeout=durée.</p>
+
+<p>Avec des serveurs tels qu’Apache où le serveur conserve un thread par connexion ouverte, de telles connexions impliquent une consommation de mémoire. Cependant, avec des serveurs événementiels comme Nginx, ce coût est relativement faible et il n’est donc pas très impactant en consommation ressources.</p>
+
+<p>L’intérêt du keepalive est d’autant plus grand si vous êtes en https. En effet, à chaque ouverture de connexion, il vous faudra renégocier un <a href="https://fr.wikipedia.org/wiki/Three-way_handshake">Three-way handshake TLS</a>, ce qui prend du temps et demande de la puissance au serveur.</p>
+
+<p><strong>send_timeout</strong>
+C’est en quelque sorte le pendant inverse des body et header timeouts. Ici, le s’agit de définir le temps après lequel le serveur coupe la connexion si le client ne reçoit plus la réponse. Par défaut, 60s.</p>
+
+<p><strong>keepalive_requests</strong>
+Cette directive détermine le nombre de requêtes au bout duquel le connexion sera fermée. La valeur par défaut est à 100, ce qui est assez confortable et il n’est souvent pas nécessaire de modifier cette valeur. Néanmoins, si votre application nécessite le chargement de très nombreuses ressources (&gt; 100), il peut être intéressant d’augmenter cette valeur pour qu’elle soit légèrement supérieur au nombre de ressources à charger.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">client_body_timeout</span> <span style="color:#ae81ff">30</span>;
+<span style="color:#66d9ef">client_header_timeout</span> <span style="color:#ae81ff">10</span>;
+<span style="color:#66d9ef">keepalive_timeout</span> <span style="color:#ae81ff">30</span>;
+<span style="color:#66d9ef">send_timeout</span> <span style="color:#ae81ff">60</span>;
+<span style="color:#66d9ef">keepalive_requests</span> <span style="color:#ae81ff">100</span>;</code></pre></div>
+<h2 id="la-compression">La compression</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">gzip</span> <span style="color:#66d9ef">on</span>;
+<span style="color:#66d9ef">gzip_comp_level</span> <span style="color:#ae81ff">5</span>;
+<span style="color:#66d9ef">gzip_min_length</span> <span style="color:#ae81ff">1000</span>;
+<span style="color:#66d9ef">gzip_proxied</span> <span style="color:#e6db74">any</span>;
+<span style="color:#66d9ef">gzip_types</span>
+        <span style="color:#e6db74">application/atom+xml</span>
+        <span style="color:#e6db74">application/javascript</span>
+        <span style="color:#e6db74">application/json</span>
+        <span style="color:#e6db74">application/ld+json</span>
+        <span style="color:#e6db74">application/manifest+json</span>
+        <span style="color:#e6db74">application/rss+xml</span>
+        <span style="color:#e6db74">application/vnd.geo+json</span>
+        <span style="color:#e6db74">application/vnd.ms-fontobject</span>
+        <span style="color:#e6db74">application/x-font-ttf</span>
+        <span style="color:#e6db74">application/x-web-app-manifest+json</span>
+        <span style="color:#e6db74">application/xhtml+xml</span>
+        <span style="color:#e6db74">application/xml</span>
+        <span style="color:#e6db74">font/opentype</span>
+        <span style="color:#e6db74">image/bmp</span>
+        <span style="color:#e6db74">image/svg+xml</span>
+        <span style="color:#e6db74">image/x-icon</span>
+        <span style="color:#e6db74">text/cache-manifest</span>
+        <span style="color:#e6db74">text/css</span>
+        <span style="color:#e6db74">text/plain</span>
+        <span style="color:#e6db74">text/vcard</span>
+        <span style="color:#e6db74">text/vnd.rim.location.xloc</span>
+        <span style="color:#e6db74">text/vtt</span>
+        <span style="color:#e6db74">text/x-component</span>
+        <span style="color:#e6db74">text/x-cross-domain-policy</span>;</code></pre></div>
+<p>Sachez également que la directive <a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_buffers">gzip_buffers</a> peut s’avérer intéressante. Elle définie le nombre et la taille des buffers alloué à la compression. Par défaut, sur les architectures 64 bits, jusqu’à 16 buffers de 8k sont autorisés.</p>
+
+<p>Tout va ici dépendre de la taille de vos fichiers. Il s’agit, comme expliqué dans <a href="https://forum.nginx.org/read.php?2,239316,239344#msg-239344">ce post</a> d’arbitrer entre le nombre de buffers (gérer de nombreux buffers consomme un peu de CPU) ou attribuer plus d’espace aux buffers (utilise plus d’espace mémoire). Si vous n’avez pas assez d’espace dans les buffers pour contenir l’ensemble de la réponse, Nginx attendra qu’une partie de la réponse soit envoyée au client et utilisera ensuite l’espace libéré.</p>
+
+<p>Enfin, sachez aussi qu’il est possible, avec le module <a href="http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html">gzip static</a>, de pré-compresser des fichiers pour que Nginx puisse les servir sans avoir à les compresser à la volée.</p>
+
+<h2 id="le-cache-statique">Le cache statique</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">location</span> ~<span style="color:#e6db74">*</span> <span style="color:#e6db74">.(jpg|jpeg|png|gif|ico|css|js)</span>$ {
+  <span style="color:#f92672">expires</span> <span style="color:#e6db74">60d</span>;
+}</code></pre></div>
+<h2 id="l-open-file-cache">L’open file cache</h2>
+
+<p>Ce type de cache permet de conserver les métadonnées en mémoire, et donc de limiter l’I/O. Voici un exemple de configuration :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">open_file_cache</span> <span style="color:#e6db74">max=2000</span> <span style="color:#e6db74">inactive=5m</span>;
+<span style="color:#66d9ef">open_file_cache_valid</span> <span style="color:#ae81ff">2m</span>;
+<span style="color:#66d9ef">open_file_cache_min_uses</span> <span style="color:#ae81ff">2</span>;
+<span style="color:#66d9ef">open_file_cache_errors</span> <span style="color:#66d9ef">on</span>;</code></pre></div>
+<p>Cette configuration indique au serveur de mettre en cache 2000 open file descriptors et de les fermer si aucune requête les concernant n’est demandé au bout de 5 minutes. La validité des informations en cache est revérifiée après 2 minutes et un fichier doit être requêté un minimum de deux fois afin d’être valide pour le cache. Enfin, les fichiers d’erreurs sont ici également valables pour le cache.</p>
+
+<h2 id="le-tls">Le TLS</h2>
+
+<p><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">générateur de configuration ssl de Mozilla</a></p>
+
+<p>Le <a href="https://fr.wikipedia.org/wiki/Three-way_handshake">Three-way handshake TLS</a> prend du temps et est couteux en ressources. Activer la réutilisation de connexion SSL permet de limiter les aller/retour (<a href="https://vincent.bernat.im/en/blog/2011-ssl-session-reuse-rfc5077">Speeding up SSL</a>).</p>
+
+<p><strong>ssl_session_cache</strong>
+Il permet de définir si on active le cache on non, de spécifier le type de cache (builtin ou shared) ainsi que la taille de ce dernier. Il est à none par défaut. La doc Nginx établit que 1MB permet de stocker 4000 sessions. À vous de juger combien de à sessions vous estimez devoir faire face et la durée de rétention que vous leur accordez. N’ayez crainte, au pire des cas Nginx invalidera les sessions prématurément, il n’y aura pas d’effusion de sang.</p>
+
+<p><strong>ssl_session_timeout</strong>
+Précise la durée au bout de laquelle la session est invalidée.</p>
+
+<p><strong>ssl_buffer_size</strong>
+Permet de déterminer pour l’envoie des données. Gros débat sur la question de la taille de ce dernier, une fois de plus, tout dépend du type de contenus que vous servez.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">ssl_session_cache</span> <span style="color:#e6db74">shared:SSL:10m</span>;
+<span style="color:#66d9ef">ssl_session_timeout</span> <span style="color:#e6db74">24h</span>;
+<span style="color:#66d9ef">ssl_buffer_size</span> <span style="color:#ae81ff">1400</span>;</code></pre></div>
+<p>En plus des caches, il y a une dernière optimisation qu’il est possible de réaliser, elle a pour doux nom l’OSCP stapling. Lorsqu’un serveur fourni un certificat, le client en vérifie la validité en interrogeant l’autorité émettrice du certificat. Évidemment, cela demande une requête supplémentaire au client. On peut éviter cela en demandant au serveur de joindre directement l’autorité émettrice et d’ainsi « agraffer » (d’où le stampling) la réponse signée et horodatée de l’autorité afin de prouver la validité du certificat.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">ssl_stapling</span> <span style="color:#66d9ef">on</span>;
+<span style="color:#66d9ef">ssl_stapling_verify</span> <span style="color:#66d9ef">on</span>;
+<span style="color:#66d9ef">resolver</span> <span style="color:#ae81ff">8</span><span style="color:#e6db74">.8.8.8</span> <span style="color:#ae81ff">8</span><span style="color:#e6db74">.8.4.4</span> <span style="color:#ae81ff">216</span><span style="color:#e6db74">.146.35.35</span> <span style="color:#ae81ff">216</span><span style="color:#e6db74">.146.36.36</span> <span style="color:#e6db74">valid=60s</span>;
+<span style="color:#66d9ef">resolver_timeout</span> <span style="color:#e6db74">2s</span>;</code></pre></div>
+<h2 id="optimisations-tcp">Optimisations TCP</h2>
+
+<p>On arrive là dans le domaine de l’optimisation de pointe ! Il est possible de spécifier à Nginx la manière dont quelques options de TCP doivent être gérées. De manière synthétique, ces réglages vont nous permettre de :</p>
+
+<ul>
+<li>diminuer la latence de 200ms avant l’envoie des données sur le réseau,</li>
+<li>d’optimiser la copie des données depuis le file descriptors vers le buffer du kernel (ok, c’est compliqué !),</li>
+<li>et de n’attribuer un thread Nginx qu’au dernier moment de la connexion (économie de ressources).</li>
+</ul>
+
+<p>Pour comprendre tout cela dans les détails, vous pouvez vous référer à l’article <a href="https://t37.net/optimisations-nginx-bien-comprendre-sendfile-tcp-nodelay-et-tcp-nopush.html">Optimisations Nginx : bien comprendre sendfile, tcp_nodelay et tcp_nopush</a> ou à <a href="https://vincent.bernat.im/fr/blog/2014-tcp-time-wait-state-linux">TCP TIME-WAIT &amp; les serveurs Linux à fort trafic</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">sendfile</span> <span style="color:#66d9ef">on</span>;
+<span style="color:#66d9ef">tcp_nodelay</span> <span style="color:#66d9ef">on</span>;
+<span style="color:#66d9ef">tcp_nopush</span> <span style="color:#66d9ef">on</span>;</code></pre></div>
+<p>En dernier lieu, nous allons nous pencher sur quelques optimisations qui s’effectuent au niveau du block server, elles se placeront donc en général dans un VHOST.</p>
+
+<p>À partir de là, la connexion est ouverte, et théoriquement, un socket est créé et le processus en écoute sur ce socket est réveillé : attribution de ressources Nginx dans le cas présent. Pour autant, tant qu’aucune vraie requête n’est effectuée, Nginx n’a rien à faire. L’option <a href="https://unix.stackexchange.com/questions/94104/real-world-use-of-tcp-defer-accept">TCP_DEFER_ACCEPT</a> du kernel permet donc de ne réveiller le processus que lors de l’envoie effectif de données. Cette option se traduit dans nginx par deferred.</p>
+
+<p>Dans un autre registre, ce n’est pas tout à fait lié à TCP, mais j’en parle ici quand même, activer le <a href="https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol/2">HTTP/2</a> peut avoir un impact significatif sur les performances.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
+    <span style="color:#75715e"># on active deferred 
+</span><span style="color:#75715e"></span>    <span style="color:#75715e"># pour ipv6 sur le port 80 (http) 
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span> <span style="color:#e6db74">default_server</span> <span style="color:#e6db74">deferred</span>;
+
+    <span style="color:#75715e"># pour ipv4 sur le port 80 (http) 
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span> <span style="color:#e6db74">default_server</span> <span style="color:#e6db74">deferred</span>;
+
+    <span style="color:#75715e"># pour ipv6 sur le port 443 (https) 
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span> <span style="color:#e6db74">deferred</span>;
+
+    <span style="color:#75715e"># pour ipv4 sur le port 443 (https) 
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span> <span style="color:#e6db74">deferred</span>;
+    <span style="color:#f92672">return</span> <span style="color:#ae81ff">444</span>;
+}</code></pre></div>
+<p>Vous noterez que l’on active HTTP/2 seulement pour le TLS. Il est possible de l’activer en HTTP non sécurisé, mais les navigateurs ne le supportent pas.</p>
+
+<p>Vous remarquez aussi peut-être le default_server. Cela indique à Nginx d’utiliser ce VHOST si l’en-tête Host n’est pas passée avec le requête. Dans le cas d’un accès direct via l’ip par exemple. Et en dernier lieu, return 444 signifie que dans ces cas là, la connexion sera réinitialisée puisque si plusieurs sites sont hébergés sur cette même ip:port, en l’absence de Host, il n’est pas possible de savoir lequel on doit servir.</p>
+
+<p>Il y a de nombreuses optimisations potentielles au niveau de la pile TCP/IP, non spécifiques à Nginx, nombre d’entre elles sont détaillées dans cet article sur le <a href="http://kaivanov.blogspot.com.es/2010/09/linux-tcp-tuning.html">TCP Tuning</a>.</p>
+
+<h2 id="la-thread-pool">La thread pool</h2>
+
+<p>Il arrive que certaines opérations bloquantes soient lentes (comme la lecture de fichiers sur le disque). Les requêtes de fichiers de taille importante qui ne tiennent pas en mémoire par exemple, bloqueront un thread de Nginx jusqu’à ce que le disque retourne le fichier en question. Admettons-le, c’est assez dommage. Heureusement, Nginx a une solution pour ça !</p>
+
+<p>Il s’agit de placer cette requête dans une « file d’attente » et de traiter d’autres requêtes en attendant que le disque ait fini son opération de lecture. Ainsi, on ne bloque pas plusieurs requêtes en attendant une I/O pour l’une d’entre elle, on place cette dernière en attente et on utilise le thread ainsi libéré pour servir d’autres requêtes.</p>
+
+<p>Un article sur le blog de Nginx détaille le fonctionnement de la <a href="https://www.nginx.com/blog/thread-pools-boost-performance-9x/">Thread Pools</a> et présente un benchmark où les performances en charge sont multipliées par 9 ! Il faut pour cela utiliser l’option <code>aio</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
+  <span style="color:#f92672">root</span> <span style="color:#e6db74">/var/www</span>;
+  <span style="color:#f92672">aio</span> <span style="color:#e6db74">threads</span>;
+}</code></pre></div>
+<h2 id="liens">Liens</h2>
+
+<ul>
+<li><a href="https://buzut.fr/optimiser-nginx/">Optimiser NGINX</a></li>
+<li><a href="https://buzut.fr/2016/05/27/optimiser-gestion-ressources-systeme-ulimit/">ulimit</a></li>
+<li><a href="http://nginx.org/en/docs/ngx_core_module.html#multi_accept">multi_accept</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Three-way_handshake">Three-way handshake TLS</a></li>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_buffers">gzip_buffers</a></li>
+<li><a href="https://forum.nginx.org/read.php?2,239316,239344#msg-239344">gzip_buffers_explique</a></li>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html">gzip static</a></li>
+<li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">générateur de configuration ssl de Mozilla</a></li>
+<li><a href="https://vincent.bernat.im/en/blog/2011-ssl-session-reuse-rfc5077">Speeding up SSL</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Agrafage_OCSP">OSCP stapling</a></li>
+<li><a href="https://t37.net/optimisations-nginx-bien-comprendre-sendfile-tcp-nodelay-et-tcp-nopush.html">Optimisations Nginx : bien comprendre sendfile, tcp_nodelay et tcp_nopush</a></li>
+<li><a href="https://vincent.bernat.im/fr/blog/2014-tcp-time-wait-state-linux">TCP TIME-WAIT &amp; les serveurs Linux à fort trafic</a></li>
+<li><a href="https://unix.stackexchange.com/questions/94104/real-world-use-of-tcp-defer-accept">TCP_DEFER_ACCEPT</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol/2">HTTP/2</a></li>
+<li><a href="http://kaivanov.blogspot.com.es/2010/09/linux-tcp-tuning.html">TCP Tuning</a></li>
+<li><a href="https://www.nginx.com/blog/thread-pools-boost-performance-9x/">Thread Pools</a></li>
+</ul>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#les-workers">Les workers</a></li>
+<li><a href="#les-buffers">Les buffers</a></li>
+<li><a href="#proxy-buffers">Proxy buffers</a></li>
+<li><a href="#les-timeouts">Les timeouts</a></li>
+<li><a href="#la-compression">La compression</a></li>
+<li><a href="#le-cache-statique">Le cache statique</a></li>
+<li><a href="#l-open-file-cache">L’open file cache</a></li>
+<li><a href="#le-tls">Le TLS</a></li>
+<li><a href="#optimisations-tcp">Optimisations TCP</a></li>
+<li><a href="#la-thread-pool">La thread pool</a></li>
+<li><a href="#liens">Liens</a></li>
+</ul></li>
+</ul>
+</nav>
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

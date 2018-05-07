@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latex on wiki.ght1pc9kc.fr</title>
+    <link>/tags/latex.html</link>
+    <description>Recent content in Latex on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dollar en latex</title>
+      <link>/outils/latex/dollar-en-latex.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/latex/dollar-en-latex.html</guid>
+      <description>Problème de $ en LaTeX, le caractère ne prend pas la police qu’on lui donne.
+Apparement en LaTeX le dollar est codé en dur dans le code de Latex et du coup ne ressort pas toujours correctement.
+https://tug.org/pipermail/xetex/2007-October/007560.html
+You&#39;ll at least need to load the xunicode package for this to work. Hopefully that&#39;s the only problem with your example, although you seen to be using a slightly older version of fontspec.</description>
+    </item>
+    
+    <item>
+      <title>Mettre à jour un package LaTeX</title>
+      <link>/outils/latex/mettre-a-jour-un-package-latex.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/latex/mettre-a-jour-un-package-latex.html</guid>
+      <description>J’avais un problème avec un package latex apparemment trop vieux (tcolorbox) :
+! Package pgfkeys Error: I do not know the key &#39;/tcb/before skip&#39; and I am goin g to ignore it. Perhaps you misspelled it.  Malgrés une install correcte sous Debian (apt install textlive-full). Mais il est possible de mettre à jour les packages textlive unitairement avec tlmgr.
+Cependant j&amp;rsquo;ai quand même pris pas mal d&amp;rsquo;erreur avant de parvenir à la faire fonctionner :</description>
+    </item>
+    
+    <item>
+      <title>Optimizer la taille d’un PDF</title>
+      <link>/outils/latex/optimizer-la-taille-dun-pdf.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/latex/optimizer-la-taille-dun-pdf.html</guid>
+      <description>La génération d&amp;rsquo;un PDF depuis LaTeX c&amp;rsquo;est super mais ça donne des PDF un peu volumineux parfois. Voilà une ligne de commande pour réduire drastiquement la taille des PDF:
+/usr/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -sOutputFile=foo-compressed.pdf foo.pdf Attention, gs dans Prezto c&amp;rsquo;est un alias vers git d&amp;rsquo;où l&amp;rsquo;utilisation du chemin complet.
+On peut ajouter l&amp;rsquo;option -dPDFSETTINGS qui règle la qualité :
+-dPDFSETTINGS=/screen (screen-view-only quality, 72 dpi images) -dPDFSETTINGS=/ebook (low quality, 150 dpi images) -dPDFSETTINGS=/printer (high quality, 300 dpi images) -dPDFSETTINGS=/prepress (high quality, color preserving, 300 dpi imgs) -dPDFSETTINGS=/default (almost identical to /screen)  </description>
+    </item>
+    
+    <item>
+      <title>Visualisation instantané de modifications Latex</title>
+      <link>/outils/latex/visualisation-instantane-de-modifications-latex.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/latex/visualisation-instantane-de-modifications-latex.html</guid>
+      <description>Jusque là j&amp;rsquo;utilisais Gummy comme éditeur LaTeX. Il me permet de voir en direct les modifications que je fais sur le(s) fichier(s). Mais ça rame un peu et surtout quand j&amp;rsquo;utilise XelateX ça fonctionne pas bien, il me faut faire plusieurs modification pour qu&amp;rsquo;il se mette à jour. En plus sur des PDF avec un peu plus d&amp;rsquo;une page c&amp;rsquo;est pas pratique, son éditeur n&amp;rsquo;est pas configurable, &amp;hellip; bref.
+Voilà une solution qui fonctionne bien.</description>
+    </item>
+    
+  </channel>
+</rss>

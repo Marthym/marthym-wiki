@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Locks on wiki.ght1pc9kc.fr</title>
+    <link>/tags/locks.html</link>
+    <description>Recent content in Locks on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/locks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lister les locks sur Oracle</title>
+      <link>/serveurs/oracle/lister-les-locks-sur-oracle.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/lister-les-locks-sur-oracle.html</guid>
+      <description>prompt liste des utilisateurs qui lockent des tables select distinct username,sql_text from v$sqlarea,v$session,v$lock where user#=parsing_user_id and v$lock.sid=v$session.sid and username is not null and users_executing &amp;gt; 0 ;prompt liste des executions sql en cours select distinct username,disk_reads,rows_processed,sql_text from v$sqlarea,v$session where user#=parsing_user_id and username is not null and username not in (&amp;#39;SYS&amp;#39;,&amp;#39;SYSTEM&amp;#39;) and users_executing &amp;gt; 0 ; Plus un script sql pour lister les locks: lock.sql
+{% include_relative .doc/lock.sql %}</description>
+    </item>
+    
+  </channel>
+</rss>

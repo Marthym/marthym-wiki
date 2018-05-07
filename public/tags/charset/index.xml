@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charset on wiki.ght1pc9kc.fr</title>
+    <link>/tags/charset.html</link>
+    <description>Recent content in Charset on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/charset/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Connaître l’encodage de sa base</title>
+      <link>/serveurs/oracle/connaitre-lencodage-de-sa-base.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/connaitre-lencodage-de-sa-base.html</guid>
+      <description>Il peut être utile de vérifier l&amp;rsquo;encodage de sa base Oracle, notamment en cas de problèmes de montage d&amp;rsquo;un dump. Pour cela, il existe un moyen très simple de le faire, à l&amp;rsquo;aide de la requête SQL suivante :
+SELECT value$ FROM sys.props$ WHERE name = &amp;#39;NLS_CHARACTERSET&amp;#39;; On peut également exécuter cette autre requête SQL, qui remonte tous les paramètres de la base :
+SELECT * FROM NLS_DATABASE_PARAMETERS;</description>
+    </item>
+    
+  </channel>
+</rss>

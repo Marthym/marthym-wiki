@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firefox on wiki.ght1pc9kc.fr</title>
+    <link>/tags/firefox.html</link>
+    <description>Recent content in Firefox on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Désactiver le fixup Mozilla</title>
+      <link>/misc/desactiver-le-fixup-mozilla.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/misc/desactiver-le-fixup-mozilla.html</guid>
+      <description>Un truc vraiment pénible dans Firefox, quand on saisie l&amp;rsquo;adresse localhost http://localhost/ et que cette dernière ne répond pas il remplace par http://www.localhost.com/ et chaque fois qu’on veut raffraichir on retape &amp;hellip;
+Pour désactiver ça :
+ about:config Chercher fixup Pour browser.fixup.alternate.enabled mettre false  </description>
+    </item>
+    
+    <item>
+      <title>Firefox CommandLine Options</title>
+      <link>/linux/network/firefox-commandline-options.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/firefox-commandline-options.html</guid>
+      <description>Voici les Paramètres concernant la gestion des profils :
+ -CreateProfile nomduprofil - Vous permet de créer un nouveau profil, mais cela ne le lance pas. -CreateProfile &amp;ldquo;nomduprofil dossier&amp;rdquo; - Même chose, mais cette fois vous spécifiez l&amp;rsquo;emplacement du profil. -ProfileManager, ou -P - Lance Firefox en affichant le gestionnaire de profil. -P &amp;ldquo;nomduprofil&amp;rdquo; - Démarre Firefox directement avec le profil indiqué. -no-remote - Couplé au paramètre -P, celui-ci permet de lancer plusieurs instances du même navigateur avec des profils différents.</description>
+    </item>
+    
+    <item>
+      <title>Last Firefox Version in testing</title>
+      <link>/linux/administration/last-firefox-version-in-testing.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/last-firefox-version-in-testing.html</guid>
+      <description>Depuis un moment iceweasel est remplacé par Firefox ESR sous Debian. Par contre, les depots Debian ont une dixaine de version de retard sur les versions release de Firefox. Du coup voici comment mettre à jour Firfox simplement et de façon fiable à la dernière version en cours :
+Récupération de la clé de dépôt wget -q -O - http://mozilla.debian.net/archive.asc | \  sudo apt-key add - Ajout de mozilla.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outils on wiki.ght1pc9kc.fr</title>
+    <link>/tags/outils.html</link>
+    <description>Recent content in Outils on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/outils/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accélérer le clonage d’un repo Git</title>
+      <link>/outils/git/speedup-git-clone.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/speedup-git-clone.html</guid>
+      <description>git clone --depth 1 git@gitlab.i-run.fr:irun/.git cd irun-core git fetch --depth 1 origin mabranch:mabranch git diff --name-only master.. | awk -F / &amp;#39;{print $1}&amp;#39; | uniq </description>
+    </item>
+    
+    <item>
+      <title>Ajouter la tache SCP a Ant sous Eclipse</title>
+      <link>/outils/eclipse/ajouter-la-tache-scp-a-ant-sous-eclipse.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/eclipse/ajouter-la-tache-scp-a-ant-sous-eclipse.html</guid>
+      <description>Aller à cette adresse pour télécharger le jar : http://www.jcraft.com/jsch/index.html
+Puis coller le jar dans ~/.ant/lib pour linux ou C:\Documents and Settings\&amp;lt;user&amp;gt;\.ant\lib pour Windows
+Relancer Eclipse</description>
+    </item>
+    
+    <item>
+      <title>Ajouter le dictionnaire français</title>
+      <link>/outils/intellij/ajouter-le-dictionnaire-francais.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/intellij/ajouter-le-dictionnaire-francais.html</guid>
+      <description>Oui les commentaires dans le code ça devrait toujours être en anglais&amp;hellip; Mais parfois, on fait aussi de la documentation ou des choses du genre qui peuvent être traduite et dans ce cas on aimerait bien ne pas avoir tout les mots souligné et pourquoi pas un peu de correction. Donc voilà comment ajouter un dictionnaire à IntelliJ en utilisant Aspell :
+aspell --lang fr dump master | aspell --lang fr expand | tr &amp;#39; &amp;#39; &amp;#39;\n&amp;#39; &amp;gt; french.</description>
+    </item>
+    
+    <item>
+      <title>Changelog depuis milestone gitlab</title>
+      <link>/outils/git/changelog-depuis-milestone-gitlab.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/changelog-depuis-milestone-gitlab.html</guid>
+      <description>En utilisant les Milestones dans gitlab il est possible de générer des fichiers de change log pour une version donnée.
+function changelog { if [ $# -lt 2 ]; then echo -e &amp;#34;USAGE: $0&amp;lt;project&amp;gt; &amp;lt;milestone&amp;gt;&amp;#34; return fi local gitlab=&amp;#34;http://framagit.org/api/v3/&amp;#34; local projectName=${1} local milestone=${2} local projectId=`curl -s -H &amp;#34;PRIVATE-TOKEN: ${GITLAB_PRIVATE_TOKEN}&amp;#34; ${gitlab}projects/search/cosmos | jq -r &amp;#39;.[0].id&amp;#39;` curl -s -H &amp;#34;PRIVATE-TOKEN: ${GITLAB_PRIVATE_TOKEN}&amp;#34; ${gitlab}projects/${projectId}/issues\?milestone\=${milestone}\&amp;amp;state\=closed\&amp;amp;order_by\=updated_at | \  jq -r &amp;#39;.[] | &amp;#34; * #\(.iid): \(.</description>
+    </item>
+    
+    <item>
+      <title>Convention de message de commit</title>
+      <link>/outils/git/convention-de-message-de-commit.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/convention-de-message-de-commit.html</guid>
+      <description>The contens of this page are partly based on the angular commit messages document.
+ Objectif Le message de commit est ce qui décrit votre contribution. C&amp;rsquo;est pourquoi le but est de décrire ce que le commit apporte au projet;
+L&amp;rsquo;entête doit être aussi explicite que possible car elle est toujours lu avec les autres message de commit.
+Le corps doit fournir les informations nécessaires pour ceux qui souhaitent comprendre le commit.</description>
+    </item>
+    
+    <item>
+      <title>Crash d’Eclipse</title>
+      <link>/outils/eclipse/crash-d-eclipse.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/eclipse/crash-d-eclipse.html</guid>
+      <description>J&amp;rsquo;ai eu a faire face à un problème avec Eclipse qui, suite à une mise à jour Debian (je pense que c&amp;rsquo;est ça mais sans certitude) s&amp;rsquo;est mis à planter assez facilement et notamment à l&amp;rsquo;affichage des infos-bulles. Après pas mal de recherche il semble que la solution soit de rajouter :
+-Dorg.eclipse.swt.browser.DefaultType=mozilla  Dans le fichier eclipse.ini.</description>
+    </item>
+    
+    <item>
+      <title>Dollar en latex</title>
+      <link>/outils/latex/dollar-en-latex.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/latex/dollar-en-latex.html</guid>
+      <description>Problème de $ en LaTeX, le caractère ne prend pas la police qu’on lui donne.
+Apparement en LaTeX le dollar est codé en dur dans le code de Latex et du coup ne ressort pas toujours correctement.
+https://tug.org/pipermail/xetex/2007-October/007560.html
+You&#39;ll at least need to load the xunicode package for this to work. Hopefully that&#39;s the only problem with your example, although you seen to be using a slightly older version of fontspec.</description>
+    </item>
+    
+    <item>
+      <title>ESXi 4.1 avec VMPlayer</title>
+      <link>/outils/vmware/esxi-4.1-avec-vmplayer.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/esxi-4.1-avec-vmplayer.html</guid>
+      <description>Le serveur ESXi ne dispose pas d&amp;rsquo;accès HTML pour administrer les VMs, donc plus d&amp;rsquo;accès depuis un navigateur. L&amp;rsquo;utilisation des VMs se fait par un client lourd ou en accès console via VMPlayer ou VMRC.
+REMARQUE Apparemment sous Windows ça ne fonctionne pas.
+Ouvrir une Remote Console Là ya pas de feinte dans Firefox, dans tout les cas, il n&amp;rsquo;est pas possible d&amp;rsquo;ouvrir une console depuis le navigateur. Par contre, il est possible de le faire depuis VMPlayer 3.</description>
+    </item>
+    
+    <item>
+      <title>Erreur Cannot connect to VM lors dun debug</title>
+      <link>/outils/eclipse/erreur-cannot-connect-to-vm-lors-dun-debug.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/eclipse/erreur-cannot-connect-to-vm-lors-dun-debug.html</guid>
+      <description>Lors d&amp;rsquo;un lancement en mode débug, Eclipse se connect à la JVM. Pour cela il utilise localhost comme nom de machine sur la VM. Si dans le fichier /etc/hosts, localhost ne pointe pas sur 127.0.0.1 l&amp;rsquo;erreur Connexion à la VM impossible est levée. Il suffit donc de corriger le fichier hosts.</description>
+    </item>
+    
+    <item>
+      <title>Geler l’heure d une VM</title>
+      <link>/outils/vmware/geler-l-heure-d-une-vm.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/geler-l-heure-d-une-vm.html</guid>
+      <description>Chose qui peut être pratique si l&amp;rsquo;on a une VM valable 30 jours ou avec des logiciels valable un certain laps de temps &amp;hellip;
+Dans le fichier .vmx, ajouter les lignes suivantes :
+tools.syncTime = &amp;quot;FALSE&amp;quot; time.synchronize.continue = &amp;quot;FALSE&amp;quot; time.synchronize.restore = &amp;quot;FALSE&amp;quot; time.synchronize.resume.disk = &amp;quot;FALSE&amp;quot; time.synchronize.shrink = &amp;quot;FALSE&amp;quot; time.synchronize.tools.startup = &amp;quot;FALSE&amp;quot; time.synchronize.tools.enable = &amp;quot;FALSE&amp;quot; time.synchronize.resume.host = &amp;quot;FALSE&amp;quot; rtc.startTime = &amp;quot;1342101600&amp;quot;  Attention il se peut que tools.syncTime soit déjà déclaré dans le fichier.</description>
+    </item>
+    
+    <item>
+      <title>Git en ligne de commande</title>
+      <link>/outils/git/git-en-ligne-de-commande.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/git-en-ligne-de-commande.html</guid>
+      <description>Do not remove {:toc}  Voici un glossaire des lignes de commandes utile sous GIT :
+Création d’un dépôt créez un nouveau dossier, ouvrez-le et exécutez la commande git init  pour créer un nouveau dépôt.
+Cloner un dépôt créez une copie de votre dépôt local en exécutant la commande git clone /path/to/repository si vous utilisez un serveur distant, cette commande sera git clone username@host:/path/to/repository
+Ajouter &amp;amp; valider Vous pouvez proposer un changement (l’ajouter à l’Index) en exécutant les commandes git add &amp;lt;filename&amp;gt; git add * C’est la première étape dans un workflow git basique.</description>
+    </item>
+    
+    <item>
+      <title>Git rerere</title>
+      <link>/outils/git/git-rerere.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/git-rerere.html</guid>
+      <description>Avec git, un des truc simpa c&amp;rsquo;est le rebase, seulement voilà, avec des rebases on se retrouve souvent avec des conflits et on en vient vite à passer plus de temps à résoudre les conflits qu&amp;rsquo;a coder.
+Mais il se trouve que Git propose une commande au nom improblable pour préserver notre fragile état mental, la commande rerere.
+Pour activer rerere, la seule chose à faire est de l’indiquer en configuration :</description>
+    </item>
+    
+    <item>
+      <title>Git un modèle de branches efficace</title>
+      <link>/outils/git/git-un-modele-de-branches-efficace.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/git-un-modele-de-branches-efficace.html</guid>
+      <description>La gestion des branches dans Subversion ou CVS n’est pas suffisamment simple et rapide pour encourager les développeurs à s’y frotter, voire les en dissuade
+Partant de ce constat, tous les développeurs restent dans « le trunk », avec tous les inconvénients que cela peut avoir :
+ Mr X commit en deux parties son code, rendant l’espace de quelques instants l’intégralité du projet instable Mr X commit une fonctionnalité en cours de développement, rendant le projet impossible à livrer tant qu’il n’aura pas terminé sa fonctionnalité Mr Y commit lui aussi une fonctionnalité en cours de développement, rendant le projet encore moins possible à livrer tant qu’il n’aura pas terminé sa fonctionnalité.</description>
+    </item>
+    
+    <item>
+      <title>Gollum at startup</title>
+      <link>/outils/gollum-at-startup.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/gollum-at-startup.html</guid>
+      <description>Normalement ici gollum est installé, reste plus qu&amp;rsquo;a le faire démarrer en même temps que la machine. Sur Debian c&amp;rsquo;est systemd le nouveau gestionnaire de service donc voici un script systemd à placer dans : ~/.config/systemd/user/gollum.service
+[Unit] Description=Gollum server After=syslog.target Wants=network-online.target After=network-online.target [Service] Environment=&amp;#34;WIKI_DIR=/home/${USER}/workspace/marthym-wiki&amp;#34; ExecStart=/usr/local/bin/gollum --no-edit --show-all ${WIKI_DIR} ExecStartPost=/usr/bin/git --git-dir=${WIKI_DIR}/.git --work-tree=${WIKI_DIR} pull # Give a reasonable amount of time for the server to start up/shut down TimeoutSec=10 [Install] WantedBy=multi-user.targetsystemctl --user daemon-reload systemctl --user start gollum On note le ExecStartPre qui va permettre de synchroniser le wiki au démarrage.</description>
+    </item>
+    
+    <item>
+      <title>Installer VMWare Tools sur un guest Debian</title>
+      <link>/outils/vmware/installer-vmware-tools-sur-un-guest-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/installer-vmware-tools-sur-un-guest-debian.html</guid>
+      <description>Les VMWare Tools ne sont pas obligatoire sur les guests mais ils permettent de faire pas mal de truc comme gérer proprement la sourie si vous avez une interface graphique, activer les répertoires partagés avec l&amp;rsquo;hôte ou réduire le vmdk de votre VM après y avoir fait le ménage.
+Les étapes suivantes nécessites d&amp;rsquo;être root sur la machine. Pour ça soit
+sudo -i soit
+su - Installation des paquets pré-requis Les VMTools se compilent sur la machine, il faut donc installer au préalables les outils de compil sur la machine :</description>
+    </item>
+    
+    <item>
+      <title>Introduction à GIT</title>
+      <link>/outils/git/introduction-a-git.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/introduction-a-git.html</guid>
+      <description>Je retranscrit ici un article très intéressant trouvé sur internet à propos de GIT.
+Migrer de Subversion (ou CVS) vers Git ne se suffit pas en soit pour profiter de ce qui fait de Git… Git.
+Git connait un succès grandissant pour de nombreuses raisons, dont :
+ La possibilité de travailler hors ligne La possibilité de définir plusieurs dépôts distants Github L’extrême facilité et rapidité avec laquelle il est possible de gérer des branches L’extrême facilité et rapidité avec laquelle il est possible de gérer des branches Les deux derniers points Surtout les trois derniers points  Après quelques rappels indispensables, nous allons nous concentrer sur le système de branches et proposer un modèle « prêt à l’emploi », largement inspiré de A successul Git branch model.</description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>/outils/jekyll.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/jekyll.html</guid>
+      <description>Quelques trucs en vrac sur Jekyll
+You have already activated package version, but your Gemfile requires package oldversion. C’est un message bien reloux, qui m’a bien fait galérer mais en fait c’est rien du tout à régler. Mais sur internet on a droit à tout et n’importe quoi comme réponses.
+Au final, il suffit de virer le Gemfile.lock et voilà c’est réglé !</description>
+    </item>
+    
+    <item>
+      <title>Locking is not possible in the directory ...</title>
+      <link>/outils/eclipse/locking-is-not-possible-in-the-directory-....html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/eclipse/locking-is-not-possible-in-the-directory-....html</guid>
+      <description>En fait c&amp;rsquo;est parce qu&amp;rsquo;Eclipse ne comprends pas qu&amp;rsquo;on est en mode partagé ! Du coup il essaye de verrouiller l&amp;rsquo;appli via le répertoire d&amp;rsquo;install au lieu d&amp;rsquo;allé chercher dans le répertoire de l&amp;rsquo;utilisateur.
+Pour régler ça, il faut que le répertoire d&amp;rsquo;install d&amp;rsquo;Eclipse soit en lecture seule pour les utilisateurs. Du coup il ira chercher dans le répertoire de chaque utilisateur.</description>
+    </item>
+    
+    <item>
+      <title>Logstach config for Metrics</title>
+      <link>/outils/logstach-config-for-metrics.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/logstach-config-for-metrics.html</guid>
+      <description>Un exemple de configuration qui marche avec Metrics
+input { file { path =&amp;gt; &amp;quot;/var/log/lo_docker/*/monitoring.log&amp;quot; sincedb_path =&amp;gt; &amp;quot;/&amp;quot; } } filter { grok { patterns_dir =&amp;gt; &amp;quot;/data/techno/logstash/resources/patterns/&amp;quot; match =&amp;gt; [&amp;quot;message&amp;quot;,&amp;quot;%{NOTSPACE:date}%{SPACE}%{GREEDYDATA:data}&amp;quot;] remove_field =&amp;gt; [ &amp;quot;message&amp;quot; ] } grok { patterns_dir =&amp;gt; &amp;quot;/data/techno/logstash/resources/patterns/&amp;quot; match =&amp;gt; [&amp;quot;path&amp;quot;,&amp;quot;/var/log/lo_docker/%{DATA:module}/monitoring.log&amp;quot;] remove_field =&amp;gt; [ &amp;quot;path&amp;quot; ] } kv { source =&amp;gt; &amp;quot;data&amp;quot; field_split =&amp;gt; &amp;quot;, &amp;quot; remove_field =&amp;gt; [ &amp;quot;data&amp;quot; ] } date { match =&amp;gt; [ &amp;quot;date&amp;quot;, &amp;quot;YYYY-MM-dd&#39;T&#39;HH:mm:ss,SSS&amp;quot; ] remove_field =&amp;gt; [ &amp;quot;date&amp;quot; ] } mutate { convert =&amp;gt; { &amp;quot;count&amp;quot; =&amp;gt; &amp;quot;integer&amp;quot; } convert =&amp;gt; { &amp;quot;min&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;max&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;mean&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;stddev&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;median&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p75&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p95&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p98&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p99&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p999&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;mean_rate&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;m1&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;m5&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;m15&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } } } output { elasticsearch_http { codec =&amp;gt; json_lines host =&amp;gt; &amp;quot;elasticdb&amp;quot; index =&amp;gt; &amp;quot;pmin-%{+YYYY.</description>
+    </item>
+    
+    <item>
+      <title>Meilleures options de JVM pour IntelliJ</title>
+      <link>/outils/intellij/best-jvm-option-for-intellij.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/intellij/best-jvm-option-for-intellij.html</guid>
+      <description>Ajouter le fichier ~/.IntelliJIdea&amp;lt;version&amp;gt;/idea64.vmoptions
+-server -Xms2g -Xmx2g -XX:NewRatio=3 -Xss16m -XX:ReservedCodeCacheSize=240m -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:ConcGCThreads=4 -XX:ReservedCodeCacheSize=240m -XX:+AlwaysPreTouch -XX:+TieredCompilation -XX:+UseCompressedOops -XX:SoftRefLRUPolicyMSPerMB=50 -XX:-OmitStackTraceInFastThrow -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Djsse.enableSNIExtension=false -Dawt.useSystemAAFontSettings=lcd -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine -ea</description>
+    </item>
+    
+    <item>
+      <title>Mettre à jour un package LaTeX</title>
+      <link>/outils/latex/mettre-a-jour-un-package-latex.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/latex/mettre-a-jour-un-package-latex.html</guid>
+      <description>J’avais un problème avec un package latex apparemment trop vieux (tcolorbox) :
+! Package pgfkeys Error: I do not know the key &#39;/tcb/before skip&#39; and I am goin g to ignore it. Perhaps you misspelled it.  Malgrés une install correcte sous Debian (apt install textlive-full). Mais il est possible de mettre à jour les packages textlive unitairement avec tlmgr.
+Cependant j&amp;rsquo;ai quand même pris pas mal d&amp;rsquo;erreur avant de parvenir à la faire fonctionner :</description>
+    </item>
+    
+    <item>
+      <title>Optimisation de PNG</title>
+      <link>/outils/optimisation-de-png.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/optimisation-de-png.html</guid>
+      <description>Dans un site web, ça peut être utile d&amp;rsquo;optimiser ces images PNG pour les réduire. Le PNG étant un format sans perte, cela permet d&amp;rsquo;avoir une bonne qualité à moindre coût.
+Pour cela il y a deux commandes que je ne détaillerais pas :
+pngnq -vf -s1 schedulers.png optipng -o7 schedulers-nq8.png  pngnq est un quantizer, il calcule la palette de couleur la plus restreinte pour l&amp;rsquo;image. optpng lui optimise les images suivant tout un tas de règles.</description>
+    </item>
+    
+    <item>
+      <title>Optimizer la taille d’un PDF</title>
+      <link>/outils/latex/optimizer-la-taille-dun-pdf.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/latex/optimizer-la-taille-dun-pdf.html</guid>
+      <description>La génération d&amp;rsquo;un PDF depuis LaTeX c&amp;rsquo;est super mais ça donne des PDF un peu volumineux parfois. Voilà une ligne de commande pour réduire drastiquement la taille des PDF:
+/usr/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -sOutputFile=foo-compressed.pdf foo.pdf Attention, gs dans Prezto c&amp;rsquo;est un alias vers git d&amp;rsquo;où l&amp;rsquo;utilisation du chemin complet.
+On peut ajouter l&amp;rsquo;option -dPDFSETTINGS qui règle la qualité :
+-dPDFSETTINGS=/screen (screen-view-only quality, 72 dpi images) -dPDFSETTINGS=/ebook (low quality, 150 dpi images) -dPDFSETTINGS=/printer (high quality, 300 dpi images) -dPDFSETTINGS=/prepress (high quality, color preserving, 300 dpi imgs) -dPDFSETTINGS=/default (almost identical to /screen)  </description>
+    </item>
+    
+    <item>
+      <title>Push sur plusieurs repo git</title>
+      <link>/outils/git/push-sur-plusieurs-repo-git.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/push-sur-plusieurs-repo-git.html</guid>
+      <description>Il est possible de pousser (push) des modifs de repo git dans plusieurs repo origin à la fois. Dans le cas où on veut un repo backup ou je sais pas quoi du genre. Pour cela il suffit d&amp;rsquo;ajouter une pushurl avec la commande suivante :
+git remote set-url --add --push origin git://original/repo.git git remote set-url --add --push origin git://another/repo.git Attention, il faut vraiment ajouter les deux url de repos, celle par défaut et l&amp;rsquo;autre.</description>
+    </item>
+    
+    <item>
+      <title>Recompilation VMPlayer sous Linux</title>
+      <link>/outils/vmware/recompilation-vmplayer-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/recompilation-vmplayer-sous-linux.html</guid>
+      <description>Il est arrivé que l&amp;rsquo;outil de re-compilation automatique de VMPlayer ne fonctionne pas bien pour des raisons diverses. Dans ce cas, la seule solution pour savoir ce qui ne fonctionne pas est de lancer la compilation à la main depuis une console root :
+sudo -i cd /usr/bin vmware-modconfig --console --install-all --icon=vmware-player --appname=VMware</description>
+    </item>
+    
+    <item>
+      <title>Redirection de ports avec VMWare Server</title>
+      <link>/outils/vmware/redirection-de-ports-avec-vmware-server.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/redirection-de-ports-avec-vmware-server.html</guid>
+      <description>Il est possible depuis un serveur VMWare de faire de la redirection de port vers les VM invités qui s&amp;rsquo;y trouve pour par exemple rendre une VM accessible en FTP sans pour autant être obligé de la mettre en &amp;ldquo;Bridge&amp;rdquo; et donc de lui donner une adresse réseau.
+Pour cela il faut modifier le fichier : /etc/vmware/vmnet8/nat/nat.conf sur le serveur !
+Dans la section &amp;ldquo;incomingtcp&amp;rdquo; on a les redirections pour le protocole TCP (celui qui nous intéresse pour le FTP ou le SSH.</description>
+    </item>
+    
+    <item>
+      <title>Regrouper des repos git sans perdre l’historique</title>
+      <link>/outils/git/regrouper-des-repos-git-sans-perdre-l-historique.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/regrouper-des-repos-git-sans-perdre-l-historique.html</guid>
+      <description>J’ai eu le cas pour rassembler plusieurs modules dans un même projet et les mettre en tant que sous-modules :
+git remote add other /path/to/XXX git fetch other git checkout -b ZZZ other/master mkdir ZZZ git mv stuff ZZZ/stuff # as necessary git commit -m &amp;#34;Moved stuff to ZZZ&amp;#34; git checkout master git merge ZZZ # should add ZZZ/ to master git commit git remote rm other git branch -d ZZZ # to get rid of the extra branch before pushing git push # if you have a remote, that is</description>
+    </item>
+    
+    <item>
+      <title>Retrouver la configuration réseau VMWare</title>
+      <link>/outils/vmware/retrouver-la-configuration-reseau-vmware.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/retrouver-la-configuration-reseau-vmware.html</guid>
+      <description>Il est possible avec VMPlayer de configurer les interfaces réseaux qu&amp;rsquo;il crée pour le NAT ou le Bridge (ou le Host-Only). Il existe même une interface graphique mais pour une raison inconnu, l&amp;rsquo;accès a cette interface a disparu entre deux versions. Il existe tout de même un moyen de la retrouver.
+Sous Windows Depuis Windows, vous devez ouvrir une fenêtre ligne de commande (cmd) en tant qu&amp;rsquo;administrateur (click droit sur cmd.</description>
+    </item>
+    
+    <item>
+      <title>Stopper une VM sur le serveur en ligne de commande</title>
+      <link>/outils/vmware/stopper-une-vm-sur-le-serveur-en-ligne-de-commande.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/stopper-une-vm-sur-le-serveur-en-ligne-de-commande.html</guid>
+      <description>En tant que root :
+vmrun -T server -h https://localhost:8333/sdk -u root -p &amp;lt;passroot&amp;gt; stop &amp;#34;[standard] Win2003Srv/CameleonEdge.vmx&amp;#34; Note : vmrun permet de faire pas mal de truc sur les VMs d&amp;rsquo;un serveur, vmrun -? donne des exemples.</description>
+    </item>
+    
+    <item>
+      <title>VMTools en ligne de commande</title>
+      <link>/outils/vmware/vmtools-en-ligne-de-commande.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/vmtools-en-ligne-de-commande.html</guid>
+      <description>Pour lister les disques, en tant que root :
+vmware-toolbox-cmd disk list Pour faire un shrink sur un disque :
+vmware-toolbox-cmd disk shrink /</description>
+    </item>
+    
+    <item>
+      <title>Visualisation instantané de modifications Latex</title>
+      <link>/outils/latex/visualisation-instantane-de-modifications-latex.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/latex/visualisation-instantane-de-modifications-latex.html</guid>
+      <description>Jusque là j&amp;rsquo;utilisais Gummy comme éditeur LaTeX. Il me permet de voir en direct les modifications que je fais sur le(s) fichier(s). Mais ça rame un peu et surtout quand j&amp;rsquo;utilise XelateX ça fonctionne pas bien, il me faut faire plusieurs modification pour qu&amp;rsquo;il se mette à jour. En plus sur des PDF avec un peu plus d&amp;rsquo;une page c&amp;rsquo;est pas pratique, son éditeur n&amp;rsquo;est pas configurable, &amp;hellip; bref.
+Voilà une solution qui fonctionne bien.</description>
+    </item>
+    
+    <item>
+      <title>gitflow-breakdown</title>
+      <link>/outils/git/gitflow-breakdown.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/gitflow-breakdown.html</guid>
+      <description>Initialize    gitflow git     git flow init git init    git commit --allow-empty -m &amp;quot;Initial commit&amp;quot;    git checkout -b develop master    Connect to the remote repository    gitflow git     N/A git remote add origin git@github.com:MYACCOUNT/MYREPO    Features Create a feature branch    gitflow git     git flow feature start MYFEATURE git checkout -b feature/MYFEATURE develop    Share a feature branch    gitflow git     git flow feature publish MYFEATURE git checkout feature/MYFEATURE    git push origin feature/MYFEATURE    Get latest for a feature branch    gitflow git     git flow feature pull origin MYFEATURE git checkout feature/MYFEATURE    git pull --rebase origin feature/MYFEATURE    Finalize a feature branch    gitflow git     git flow feature finish MYFEATURE git checkout develop    git merge --no-ff feature/MYFEATURE    git branch -d feature/MYFEATURE    Push the merged feature branch    gitflow git     N/A git push origin develop    git push origin :feature/MYFEATURE (if pushed)    Releases Create a release branch    gitflow git     git flow release start 1.</description>
+    </item>
+    
+    <item>
+      <title>non fast forward updates were rejected</title>
+      <link>/outils/git/non-fast-forward-updates-were-rejected.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/git/non-fast-forward-updates-were-rejected.html</guid>
+      <description>C’est qu’il y a un problème de synchro, s’il est réglé immédiatement c’est pas compliqué. En général c’est provoqué par le plugin EGit qui a du mal à gérer les modification de commit.
+git pull origin develop git push</description>
+    </item>
+    
+  </channel>
+</rss>

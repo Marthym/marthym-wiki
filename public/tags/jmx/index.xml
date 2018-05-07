@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jmx on wiki.ght1pc9kc.fr</title>
+    <link>/tags/jmx.html</link>
+    <description>Recent content in Jmx on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/jmx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Remote JMX Console</title>
+      <link>/development/java/remote-jmx-console.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/remote-jmx-console.html</guid>
+      <description>Pour passer une application Java en JMX Remote Console, il faut ajouter des paramètres :
+-Djava.rmi.server.hostname=172.17.10.19 -Dcom.sun.management.jmxremote.port=1088 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false  </description>
+    </item>
+    
+  </channel>
+</rss>

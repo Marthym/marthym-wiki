@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jinja on wiki.ght1pc9kc.fr</title>
+    <link>/tags/jinja.html</link>
+    <description>Recent content in Jinja on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/jinja/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Template error while templating string: Missing end of comment tag</title>
+      <link>/outils/ansible/template-error-while-templating-string.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/ansible/template-error-while-templating-string.html</guid>
+      <description>C&amp;rsquo;est une erreur qui se produit lorsque l&amp;rsquo;on essaye de templatizer un script bash contenant un calcul de taille de table genre ${#modules[@]}. Jinja le prend pour un commentaire non terminé {# comment #} et ça marche pas.
+Pour corriger : {% raw %}{{ &#39;${#modules[@]}&#39; }}{% endraw %}.</description>
+    </item>
+    
+  </channel>
+</rss>

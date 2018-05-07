@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ivy on wiki.ght1pc9kc.fr</title>
+    <link>/tags/ivy.html</link>
+    <description>Recent content in Ivy on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/ivy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>StringIndexOutOfBoundsException dans Ivy</title>
+      <link>/development/java/stringindexoutofboundsexception-dans-ivy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/stringindexoutofboundsexception-dans-ivy.html</guid>
+      <description>Quand on utilise un serveur Ivy perso en plus d&amp;rsquo;un repo local. Qu&amp;rsquo;une des dépendances est en &amp;ldquo;latest.integration&amp;rdquo; et que le repo distant est accédé en SSH, on peut prendre une erreur ~StringIndexOutOfBoundsException disant qu&amp;rsquo;il y a un problème lors du listing du répertoire.
+Cela vient du SSH. J&amp;rsquo;ai pas le détail mais on changeant dans le ivysettings.xml, au niveau du repo distant, &amp;ldquo;ssh&amp;rdquo; par &amp;ldquo;sftp&amp;rdquo;, ca se met à fonctionner correctement.</description>
+    </item>
+    
+  </channel>
+</rss>

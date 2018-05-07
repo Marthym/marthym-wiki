@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Png on wiki.ght1pc9kc.fr</title>
+    <link>/tags/png.html</link>
+    <description>Recent content in Png on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/png/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Optimisation de PNG</title>
+      <link>/outils/optimisation-de-png.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/optimisation-de-png.html</guid>
+      <description>Dans un site web, ça peut être utile d&amp;rsquo;optimiser ces images PNG pour les réduire. Le PNG étant un format sans perte, cela permet d&amp;rsquo;avoir une bonne qualité à moindre coût.
+Pour cela il y a deux commandes que je ne détaillerais pas :
+pngnq -vf -s1 schedulers.png optipng -o7 schedulers-nq8.png  pngnq est un quantizer, il calcule la palette de couleur la plus restreinte pour l&amp;rsquo;image. optpng lui optimise les images suivant tout un tas de règles.</description>
+    </item>
+    
+  </channel>
+</rss>

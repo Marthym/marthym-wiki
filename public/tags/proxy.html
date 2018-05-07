@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>wiki.ght1pc9kc.fr</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Proxy :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/tags/proxy.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Proxy</h1>
+    
+    
+
+
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+</div>
+
+
+   <article class="post development">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/development/spring/secure-connection-and-reverse-proxy.html">Connection securisé et reverse proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Dans le cadre d’un projet, j’ai une configuration Spring Secure tel que :
+... http.requiresChannel() .antMatchers(&#34;/client/&#34;).requiresSecure() .antMatchers(&#34;/fr/client/&#34;).requiresSecure() .antMatchers(&#34;/es/client/&#34;).requiresSecure() .antMatchers(&#34;/en/client/&#34;).requiresSecure() ... Ce qui provoque un redirect vers https si l’on tente d’accéder à l’une de ces URL en http.
+Le problème est lorsque que je mets un reverse proxy NginX devant, c’est lui qui s’occupe du https, il redirige vers mes routes Spring en http. Spring ne permet de configurer qu’un seul port de serveur qui peut faire http/https. <a class="read-more" href="/development/spring/secure-connection-and-reverse-proxy.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/spring/">spring</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/https/">https</a>
+            
+                <a class="label label-default" href="tags/security/">security</a>
+            
+                <a class="label label-default" href="tags/proxy/">proxy</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post linux">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/linux/divers/squid-storeid-rewrite.html">Squid StoreId rewrite</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Un truc que j&rsquo;ai cherché à faire avec Squid est de mettre en cache les téléchargements que docker fait pour construire ses images afin qu&rsquo;il ne re-télécharge pas systématiquement tout.
+Pas compliqué, il suffit d&rsquo;augmenter la taille max des fichiers a cacher et du répertoire de cache :
+cache_dir ufs /var/spool/squid3 5000 16 256 maximum_object_size 400 MB Mais j&rsquo;ai surtout eu un problème avec le téléchargement des JRE &amp; JDK Oracle. <a class="read-more" href="/linux/divers/squid-storeid-rewrite.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/linux/">linux</a>
+            
+                <a class="label label-default" href="tags/misc/">misc</a>
+            
+                <a class="label label-default" href="tags/squid/">squid</a>
+            
+                <a class="label label-default" href="tags/tools/">tools</a>
+            
+                <a class="label label-default" href="tags/proxy/">proxy</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post linux">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/linux/divers/squid-refresh-pattern.html">Squid refresh pattern</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Dans le cadre de mon serveur proxy pour fichier téléchargés, je suis tombé sur un problème avec neo4j dont les fichiers tar.gz n&rsquo;étaient jamais mis en cache.
+Symptômes Le premier symptôme est que le fichier est systématiquement re-téléchargé.
+Deuxième symptôme, les logs store affichent que le fichier est immédiatement RELEASE et que sa date de péremption est passé.
+Explication En fait, dans l&rsquo;entête de la requête HTTP, il y a une directive <a class="read-more" href="/linux/divers/squid-refresh-pattern.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/linux/">linux</a>
+            
+                <a class="label label-default" href="tags/misc/">misc</a>
+            
+                <a class="label label-default" href="tags/squid/">squid</a>
+            
+                <a class="label label-default" href="tags/tools/">tools</a>
+            
+                <a class="label label-default" href="tags/proxy/">proxy</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post misc">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/misc/upload-file-to-nexus-repository.html">Upload file to Nexus Repository</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Il y a une feature intéressante sur les serveurs Nexus qui semble pas forcément très utilisé. Il est possible de créer une Repository de type site. Ca donne un repo qui héberge des fichiers statique et c&rsquo;est pratique pour stocker par exemeple des applications ou des fichiers que l&rsquo;on recupère souvent mais que l&rsquo;on veut pas télécharger chaque fois depuis internet.
+Pour uploader un fichier on peut utiliser la commande suivante : <a class="read-more" href="/misc/upload-file-to-nexus-repository.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/misc/">misc</a>
+            
+                <a class="label label-default" href="tags/cpl/">cpl</a>
+            
+                <a class="label label-default" href="tags/nexus/">nexus</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/proxy/">proxy</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post linux">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/linux/network/wget-avec-un-proxy.html">WGET avec un proxy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>WGET est un programme en ligne de commande qui permet de télécharger des fichiers depuis le web. Pour une utilisation en entreprise, il se peut qu’un proxy filtre les accès au web.
+## Utiliser WGET avec un proxy simple
+Créer un fichier .wgetrc (n&rsquo;oubliez pas le point devant le fichier) a la racine de votre répertoire personnel avec le contenu suivant :
+http_proxy = http://votre_proxy:port_proxy/ use_proxy = on wait = 15  Vérifiez que ca fonctionne en rapatriant un fichier test : <a class="read-more" href="/linux/network/wget-avec-un-proxy.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/linux/">linux</a>
+            
+                <a class="label label-default" href="tags/network/">network</a>
+            
+                <a class="label label-default" href="tags/proxy/">proxy</a>
+            
+                <a class="label label-default" href="tags/wget/">wget</a>
+            
+        
+
+    </footer>
+</article>
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

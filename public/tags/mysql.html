@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>wiki.ght1pc9kc.fr</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Mysql :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/tags/mysql.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Mysql</h1>
+    
+    
+
+
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+</div>
+
+
+   <article class="post serveurs">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html">Erreur de read-only status avec JDBC</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Symptômes J&rsquo;ai rencontré l&rsquo;erreur suivante :
+java.io.IOException: java.sql.SQLException: Could not retrieve transation read-only status server Caused by: java.sql.SQLException: Could not retrieve transation read-only status server Caused by: java.sql.SQLException: REPLACE INTO `db`.`test_table` (`timestamp`,`database`,`table`,`columns`,`lines`,`before`,`write`,`wait`) VALUES (?,?,?,?,?,?,?,?) ... 4 common frames omitted Caused by: java.sql.SQLException: Could not retrieve transation read-only status server at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:975) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:920) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:951) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:941) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.ConnectionImpl.isReadOnly(ConnectionImpl.java:3955) ~[mysql-connector-java-5. <a class="read-more" href="/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/server/">server</a>
+            
+                <a class="label label-default" href="tags/mysql/">mysql</a>
+            
+                <a class="label label-default" href="tags/database/">database</a>
+            
+                <a class="label label-default" href="tags/jdbc/">jdbc</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post serveurs">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/serveurs/mysql/exporter-importer-une-base-d-un-dump.html">Exporter/Importer une base d’un dump</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Pour exporter en gzip
+mysqldump -u user -p database | gzip &gt; database.sql.gz Pour importer une seule base à partir d&rsquo;un dump complet, il faut entrer la commande suivante :
+mysql -u USERNAME -p --one-database BASE_A_RESTAURER &lt; dumpcomplet.sql Remplacez BASE_A_RESTAURER par le nom de la base de votre choix qui est contenue dans le fichier dumpcomplet.sql.
+La même chose avec un fichier d&rsquo;export compressé en tar.gz
+zcat your_db_dump.sql.tar.gz | mysql -u USERNAME -p BASE_A_RESTAURER <a class="read-more" href="/serveurs/mysql/exporter-importer-une-base-d-un-dump.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/server/">server</a>
+            
+                <a class="label label-default" href="tags/mysql/">mysql</a>
+            
+                <a class="label label-default" href="tags/database/">database</a>
+            
+                <a class="label label-default" href="tags/jdbc/">jdbc</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post development">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/development/java/optimisation-des-statements-batch-mysql.html">Optimisation des statements Batch MySQL</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Par défaut le mode batch du driver JDBC de MySQL n&rsquo;est pas correctement optimisé. Il effectue un aller/retour serveur pour chaque requête au lieu de le faire en une seule fois.
+Pour le rendre plainement opérationnel il faut ajouté l&rsquo;option rewriteBatchedStatements à la connexion JDBC. <a class="read-more" href="/development/java/optimisation-des-statements-batch-mysql.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/sql/">sql</a>
+            
+                <a class="label label-default" href="tags/mysql/">mysql</a>
+            
+                <a class="label label-default" href="tags/database/">database</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post development">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/development/java/requete-oracle-avec-variables-liees.html">Requête Oracle avec Variables Liées</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>C&rsquo;est un info qui date mais c&rsquo;est toujours juste.
+C&rsquo;est quoi des Bind Variable déjà ? Dans le processus d&rsquo;exécution d&rsquo;une requête, Oracle effectue plusieurs étapes. Parmi ces étapes, on retrouve le parsing. Durant cette étape, oracle décortique l&rsquo;ordre SQL et choisit quel est le plan d&rsquo;exécution le plus court pour récupérer les données ramenées par la requête.
+Si une requête est exécuté 20 fois de suite, Oracle fait le parsing pour la première requête seulement. <a class="read-more" href="/development/java/requete-oracle-avec-variables-liees.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/development/">development</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+                <a class="label label-default" href="tags/oracle/">oracle</a>
+            
+                <a class="label label-default" href="tags/sql/">sql</a>
+            
+                <a class="label label-default" href="tags/database/">database</a>
+            
+                <a class="label label-default" href="tags/mysql/">mysql</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post serveurs">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/serveurs/mysql/timezoner-mysql.html">Timezoner MySQL</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Dans le cas d&rsquo;un MySQL sous docker, le server MySQL n&rsquo;est pas Timezoné correctement. Par exemple, quand on lance la requête suivante :
+mysql&gt; SELECT @@global.time_zone, @@session.time_zone; +--------------------+---------------------+ | @@global.time_zone | @@session.time_zone | +--------------------+---------------------+ | SYSTEM | SYSTEM | +--------------------+---------------------+ 1 row in set (0.00 sec) Ce qui signifie que c&rsquo;est la Timezone du système qui est utilisé. Un
+date +%Z CEST nous confirme que nous sommes bien sur Europe/Paris. <a class="read-more" href="/serveurs/mysql/timezoner-mysql.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/server/">server</a>
+            
+                <a class="label label-default" href="tags/mysql/">mysql</a>
+            
+                <a class="label label-default" href="tags/database/">database</a>
+            
+                <a class="label label-default" href="tags/jdbc/">jdbc</a>
+            
+                <a class="label label-default" href="tags/java/">java</a>
+            
+        
+
+    </footer>
+</article>
+
+   <article class="post serveurs">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/serveurs/mysql/uuid-most-significant-bits.html">UUID Most Significant Bits</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Comment dans une requête MySQL peut on extraire les bits les plus significatif d&rsquo;un UUID. En gros ça correspond en Java à UUID.randomUUID().getMostSignificantBits().
+SELECT -conv(substring_index(uuid(), &#39;-&#39;, 1), 16, 10) Ce qui donne un long ! <a class="read-more" href="/serveurs/mysql/uuid-most-significant-bits.html">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="tags/server/">server</a>
+            
+                <a class="label label-default" href="tags/mysql/">mysql</a>
+            
+                <a class="label label-default" href="tags/database/">database</a>
+            
+                <a class="label label-default" href="tags/uuid/">uuid</a>
+            
+        
+
+    </footer>
+</article>
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

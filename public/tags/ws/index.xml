@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ws on wiki.ght1pc9kc.fr</title>
+    <link>/tags/ws.html</link>
+    <description>Recent content in Ws on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/ws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(505) HTTP version not supported en .Net</title>
+      <link>/development/dotnet/505-http-version-not-supported-en-.net.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/dotnet/505-http-version-not-supported-en-.net.html</guid>
+      <description>Lors de l&amp;rsquo;appel d&amp;rsquo;un WS Cameleon depuis .Net on peut tomber sur ce genre de message super explicite ! Pour résoudre le soucis, il faut ajouter les lignes suivante dans le fichier de configuration du WS client :
+&amp;lt;system.net&amp;gt; &amp;lt;settings&amp;gt; &amp;lt;servicePointManager expect100Continue=&amp;#34;false&amp;#34;/&amp;gt; &amp;lt;/settings&amp;gt; &amp;lt;/system.net&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Accès au WS Sécurisé en .Net</title>
+      <link>/development/dotnet/acces-au-ws-securise-en-.net.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/dotnet/acces-au-ws-securise-en-.net.html</guid>
+      <description>Depuis la version 8 (je sais plus quel fix), les services Cameleon sont sécurisé. La difficulté est donc maintenant de les accéder en .Net, c&amp;rsquo;est moins facile qu&amp;rsquo;en Java !
+Avec chaque WS client .Net, il y a un fichier de configuration associé dans lequel on met par exemple le endpoint et ce genre de truc. C&amp;rsquo;est dans ce fichier qu&amp;rsquo;il faut configurer l&amp;rsquo;authentification du WS en ajoutant les lignes :</description>
+    </item>
+    
+    <item>
+      <title>Appeler un Web-Service au travers d’un proxy</title>
+      <link>/development/java/appeler-un-web-service-au-travers-d-un-proxy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/appeler-un-web-service-au-travers-d-un-proxy.html</guid>
+      <description>Pour l&amp;rsquo;instant je n&amp;rsquo;ai pas eu le cas avec Axis 1 donc on verra comment ça marche pour Axis 1, là c&amp;rsquo;est une solution Axis 2.
+Donc depuis le Stub généré par Axis 2, voilà le code :
+Options options = service._getServiceClient().getOptions(); HttpTransportProperties.ProxyProperties pp = new HttpTransportProperties.ProxyProperties(); pp.setProxyName(&amp;#34;proxy.tl.internal&amp;#34;); pp.setProxyPort(3128); options.setProperty(HTTPConstants.PROXY,pp); service étant l&amp;rsquo;instance de la classe Stub.</description>
+    </item>
+    
+    <item>
+      <title>Trucs et Astuce SoapUI</title>
+      <link>/outils/trucs-et-astuce-soapui.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/trucs-et-astuce-soapui.html</guid>
+      <description>SoapUI à 100% de CPU Sous Linux il peut arriver (souvent) que SoapUI monte à 100% de CPU et y reste &amp;hellip;
+En fouillant un peu sur internet, on trouve que ça vient de de JxBrowser et par chance il est possible de le désactiver en modifiant le fichier de lancement .sh :
+#uncomment to disable browser component  JAVA_OPTS=&amp;#34;$JAVA_OPTS-Dsoapui.</description>
+    </item>
+    
+    <item>
+      <title>Web service erreur CS0029, CS0030</title>
+      <link>/development/dotnet/web-service-erreur-cs0029-cs0030.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/dotnet/web-service-erreur-cs0029-cs0030.html</guid>
+      <description>Lors de la création de client ou de serveur WSCart en .Net, on rencontre l&amp;rsquo;erreur CS0029, CS0030. C&amp;rsquo;est du à un problème d&amp;rsquo;interprétation du WSDL par .Net qui gère mal est attributs &amp;ldquo;unbounded&amp;rdquo; sur les type complex. Pour corriger, il faut, dans le fichier .cs généré avec le wsdl.exe de Microsoft, rechercher la chaine [][] et remplacer par []. On va normalement trouver 2 occurrences.
+ http://www.developpez.net/forums/d1101500/dotnet/langages/csharp/web-service-erreur-cs0029-cs0030/  </description>
+    </item>
+    
+  </channel>
+</rss>

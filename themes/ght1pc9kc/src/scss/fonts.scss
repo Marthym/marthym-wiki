@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Novecento Sans Wide';
+    font-weight: 200;
+    src: local('Novecentosanswide UltraLight'), local('Novecentosanswide-UltraLight'), url('../fonts/Novecentosanswide-UltraLight.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-weight: 400;
+    src: local('Cabin Regular'), local('Cabin-Regular'), url('../fonts/Cabin-Regular.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Cabin Italic'), local('Cabin-Italic'), url('../fonts/Cabin-Italic.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-weight: bold;
+    src: local('Cabin Bold'), local('Cabin-Bold'), url('../fonts/Cabin-Bold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Cabin';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Cabin BoldItalic'), local('Cabin-BoldItalic'), url('../fonts/Cabin-BoldItalic.ttf') format('truetype')
+}

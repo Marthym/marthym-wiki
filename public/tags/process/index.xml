@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Process on wiki.ght1pc9kc.fr</title>
+    <link>/tags/process.html</link>
+    <description>Recent content in Process on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/process/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mettre un processus en pause</title>
+      <link>/linux/shell/mettre-un-processus-en-pause.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/shell/mettre-un-processus-en-pause.html</guid>
+      <description>On est en train de compresser un film depuis 45mn et merde on a besoin de compresser un gros fichier pour l&amp;rsquo;envoyer rapidos. Pas de bol si on lance juste la compression du fichier, ça va prendre 20mn au lieu de 10s que ça prendrait normalement. On pourrait stopper la compression du film pour zipper le fichier mais on veut pas perdre les 45mn déjà effectuées &amp;hellip;
+killall -STOP avidemux pour mettre le processus en pause et</description>
+    </item>
+    
+  </channel>
+</rss>

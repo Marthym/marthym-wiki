@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on wiki.ght1pc9kc.fr</title>
+    <link>/development/javascript.html</link>
+    <description>Recent content in Javascript on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/development/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Classes Javascript propres</title>
+      <link>/development/javascript/classes-javascript-propres.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/javascript/classes-javascript-propres.html</guid>
+      <description>Il existe de nombreuses façons de coder en Javascript. La plus fréquente est malheureusement la plus crade : lister ses fonctions les une après les autres&amp;hellip;
+Voici une méthode pour faire ça moins crados, il en existe peut être de meilleures mais celle-ci a le mérite d&amp;rsquo;être très propre et très lisible.
+var monProjet = {}; // On crée une variable globale du nom du projet // Ce tableau permettra de stocker et récupérer facilement les objets créés.</description>
+    </item>
+    
+    <item>
+      <title>Tester un numérique en JavaScript</title>
+      <link>/development/javascript/tester-un-numerique-en-javascript.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/javascript/tester-un-numerique-en-javascript.html</guid>
+      <description>Après des tas et des tas de tests, voici le façon de tester un numérique en [[JavaScript|javascript]] que passe le plus de cas :
+/** * Check if value is numerical or not * @param strString	Value to check * @returns	True if value is numerical, False otherwise */ mgpRemainsDependant.isNumeric = function (strString) { return !isNaN(parseFloat(strString)) &amp;amp;&amp;amp; isFinite(strString); };  Attention tout de même, les nombres en hexa du type 0xFF passent &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Utiliser Firebug (Lite) avec IE</title>
+      <link>/development/javascript/utiliser-firebug-lite-avec-ie.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/javascript/utiliser-firebug-lite-avec-ie.html</guid>
+      <description>Autant avec Firefox le débogage de CSS ne fait pas vraiment peur, autant dés qu&amp;rsquo;on parle de problèmes IE et d&amp;rsquo;autant plus de problème IE6 ou 7, là c&amp;rsquo;est un peu plus flippant.
+Alors il va exister exister une solution : https://getfirebug.com/firebuglite
+C&amp;rsquo;est pas trop compliqué à utiliser, il suffit d&amp;rsquo;inclure le JS présent dans l&amp;rsquo;archive https://getfirebug.com/releases/lite/latest/firebug-lite.tar.tgz à l&amp;rsquo;intérieur de vos composants puis de créer un marque page avec le code suivant à l&amp;rsquo;intérieur :</description>
+    </item>
+    
+    <item>
+      <title>Utiliser Firebug sans planter IE7&amp;8</title>
+      <link>/development/javascript/utiliser-firebug-sans-planter-ie7-8.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/javascript/utiliser-firebug-sans-planter-ie7-8.html</guid>
+      <description>Firebug fournit justement un bout de code pour éviter de planter IE :
+if (!window.console || !console.log || !console.debug) { var names = [&amp;#34;log&amp;#34;, &amp;#34;debug&amp;#34;, &amp;#34;info&amp;#34;, &amp;#34;warn&amp;#34;, &amp;#34;error&amp;#34;, &amp;#34;assert&amp;#34;, &amp;#34;dir&amp;#34;, &amp;#34;dirxml&amp;#34;, &amp;#34;group&amp;#34;, &amp;#34;groupEnd&amp;#34;, &amp;#34;time&amp;#34;, &amp;#34;timeEnd&amp;#34;, &amp;#34;count&amp;#34;, &amp;#34;trace&amp;#34;, &amp;#34;profile&amp;#34;, &amp;#34;profileEnd&amp;#34;]; if (!window.console) window.console = {}; for (var i = 0; i &amp;lt; names.length; ++i) { if (!window.console[names[i]]) window.console[names[i]] = function() {}; } }   http://code.google.com/p/fbug/source/browse/branches/firebug1.5/lite/firebugx.js  </description>
+    </item>
+    
+  </channel>
+</rss>

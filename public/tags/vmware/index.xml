@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vmware on wiki.ght1pc9kc.fr</title>
+    <link>/tags/vmware.html</link>
+    <description>Recent content in Vmware on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configuration réseau sur VM Linux</title>
+      <link>/linux/network/configuration-reseau-sur-vm-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/network/configuration-reseau-sur-vm-linux.html</guid>
+      <description>Lors de la manipulation de VM on peut avoir besoin de changer l&amp;rsquo;adresse IP ou de mettre la VM en DHCP, ce tuto explique comment faire.
+Toutes les commandes se tapent connecté root :
+$ sudo -i Interface réseau Les interfaces réseau se configurent dans le fichier /etc/network/interfaces, c&amp;rsquo;est là que l&amp;rsquo;on décide si le réseau est en DHCP ou en statique.
+La VM par défaut est configuré en mode DHCP, on va donc voir comment la mettre en statique.</description>
+    </item>
+    
+    <item>
+      <title>ESXi 4.1 avec VMPlayer</title>
+      <link>/outils/vmware/esxi-4.1-avec-vmplayer.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/esxi-4.1-avec-vmplayer.html</guid>
+      <description>Le serveur ESXi ne dispose pas d&amp;rsquo;accès HTML pour administrer les VMs, donc plus d&amp;rsquo;accès depuis un navigateur. L&amp;rsquo;utilisation des VMs se fait par un client lourd ou en accès console via VMPlayer ou VMRC.
+REMARQUE Apparemment sous Windows ça ne fonctionne pas.
+Ouvrir une Remote Console Là ya pas de feinte dans Firefox, dans tout les cas, il n&amp;rsquo;est pas possible d&amp;rsquo;ouvrir une console depuis le navigateur. Par contre, il est possible de le faire depuis VMPlayer 3.</description>
+    </item>
+    
+    <item>
+      <title>Geler l’heure d une VM</title>
+      <link>/outils/vmware/geler-l-heure-d-une-vm.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/geler-l-heure-d-une-vm.html</guid>
+      <description>Chose qui peut être pratique si l&amp;rsquo;on a une VM valable 30 jours ou avec des logiciels valable un certain laps de temps &amp;hellip;
+Dans le fichier .vmx, ajouter les lignes suivantes :
+tools.syncTime = &amp;quot;FALSE&amp;quot; time.synchronize.continue = &amp;quot;FALSE&amp;quot; time.synchronize.restore = &amp;quot;FALSE&amp;quot; time.synchronize.resume.disk = &amp;quot;FALSE&amp;quot; time.synchronize.shrink = &amp;quot;FALSE&amp;quot; time.synchronize.tools.startup = &amp;quot;FALSE&amp;quot; time.synchronize.tools.enable = &amp;quot;FALSE&amp;quot; time.synchronize.resume.host = &amp;quot;FALSE&amp;quot; rtc.startTime = &amp;quot;1342101600&amp;quot;  Attention il se peut que tools.syncTime soit déjà déclaré dans le fichier.</description>
+    </item>
+    
+    <item>
+      <title>Installer VMWare Tools sur un guest Debian</title>
+      <link>/outils/vmware/installer-vmware-tools-sur-un-guest-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/installer-vmware-tools-sur-un-guest-debian.html</guid>
+      <description>Les VMWare Tools ne sont pas obligatoire sur les guests mais ils permettent de faire pas mal de truc comme gérer proprement la sourie si vous avez une interface graphique, activer les répertoires partagés avec l&amp;rsquo;hôte ou réduire le vmdk de votre VM après y avoir fait le ménage.
+Les étapes suivantes nécessites d&amp;rsquo;être root sur la machine. Pour ça soit
+sudo -i soit
+su - Installation des paquets pré-requis Les VMTools se compilent sur la machine, il faut donc installer au préalables les outils de compil sur la machine :</description>
+    </item>
+    
+    <item>
+      <title>Missing LSB tags and overrides</title>
+      <link>/linux/administration/missing-lsb-tags-and-overrides.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/missing-lsb-tags-and-overrides.html</guid>
+      <description>Symptômes On a ce genre de chose après une installation de paquets et les paquets ne sont pas configuré correctement :
+Paramétrage de kerneloops-daemon (0.12+git20090217-3) ... insserv: warning: script &#39;K01vmware&#39; missing LSB tags and overrides insserv: warning: script &#39;S50vmware-USBArbitrator&#39; missing LSB tags and overrides insserv: warning: script &#39;vmware&#39; missing LSB tags and overrides insserv: warning: script &#39;vmware-USBArbitrator&#39; missing LSB tags and overrides insserv: There is a loop at service minissdpd if started insserv: Starting vmware-USBArbitrator depends on minissdpd and therefore on system facility `$all&#39; which can not be true!</description>
+    </item>
+    
+    <item>
+      <title>Recompilation VMPlayer sous Linux</title>
+      <link>/outils/vmware/recompilation-vmplayer-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/recompilation-vmplayer-sous-linux.html</guid>
+      <description>Il est arrivé que l&amp;rsquo;outil de re-compilation automatique de VMPlayer ne fonctionne pas bien pour des raisons diverses. Dans ce cas, la seule solution pour savoir ce qui ne fonctionne pas est de lancer la compilation à la main depuis une console root :
+sudo -i cd /usr/bin vmware-modconfig --console --install-all --icon=vmware-player --appname=VMware</description>
+    </item>
+    
+    <item>
+      <title>Redirection de ports avec VMWare Server</title>
+      <link>/outils/vmware/redirection-de-ports-avec-vmware-server.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/redirection-de-ports-avec-vmware-server.html</guid>
+      <description>Il est possible depuis un serveur VMWare de faire de la redirection de port vers les VM invités qui s&amp;rsquo;y trouve pour par exemple rendre une VM accessible en FTP sans pour autant être obligé de la mettre en &amp;ldquo;Bridge&amp;rdquo; et donc de lui donner une adresse réseau.
+Pour cela il faut modifier le fichier : /etc/vmware/vmnet8/nat/nat.conf sur le serveur !
+Dans la section &amp;ldquo;incomingtcp&amp;rdquo; on a les redirections pour le protocole TCP (celui qui nous intéresse pour le FTP ou le SSH.</description>
+    </item>
+    
+    <item>
+      <title>Retrouver la configuration réseau VMWare</title>
+      <link>/outils/vmware/retrouver-la-configuration-reseau-vmware.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/retrouver-la-configuration-reseau-vmware.html</guid>
+      <description>Il est possible avec VMPlayer de configurer les interfaces réseaux qu&amp;rsquo;il crée pour le NAT ou le Bridge (ou le Host-Only). Il existe même une interface graphique mais pour une raison inconnu, l&amp;rsquo;accès a cette interface a disparu entre deux versions. Il existe tout de même un moyen de la retrouver.
+Sous Windows Depuis Windows, vous devez ouvrir une fenêtre ligne de commande (cmd) en tant qu&amp;rsquo;administrateur (click droit sur cmd.</description>
+    </item>
+    
+    <item>
+      <title>Stopper une VM sur le serveur en ligne de commande</title>
+      <link>/outils/vmware/stopper-une-vm-sur-le-serveur-en-ligne-de-commande.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/stopper-une-vm-sur-le-serveur-en-ligne-de-commande.html</guid>
+      <description>En tant que root :
+vmrun -T server -h https://localhost:8333/sdk -u root -p &amp;lt;passroot&amp;gt; stop &amp;#34;[standard] Win2003Srv/CameleonEdge.vmx&amp;#34; Note : vmrun permet de faire pas mal de truc sur les VMs d&amp;rsquo;un serveur, vmrun -? donne des exemples.</description>
+    </item>
+    
+    <item>
+      <title>VMTools en ligne de commande</title>
+      <link>/outils/vmware/vmtools-en-ligne-de-commande.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/vmtools-en-ligne-de-commande.html</guid>
+      <description>Pour lister les disques, en tant que root :
+vmware-toolbox-cmd disk list Pour faire un shrink sur un disque :
+vmware-toolbox-cmd disk shrink /</description>
+    </item>
+    
+  </channel>
+</rss>

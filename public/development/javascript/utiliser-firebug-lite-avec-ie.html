@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Utiliser Firebug (Lite) avec IE - wiki.ght1pc9kc.fr
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.2" />
+<title>Utiliser Firebug (Lite) avec IE :: wiki.ght1pc9kc.fr</title>
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "";
+</script>
+  </head>
+  <body data-url="/development/javascript/utiliser-firebug-lite-avec-ie.html">
+
+    <header>
+  
+  <div class="logo">
+	<a class="baselink" href="">
+	    <img src="/images/logo.png" alt="wiki.ght1pc9kc.fr"/> wiki.ght1pc9kc.fr
+	</a>
+</div>
+<span class="spacer">&nbsp;</span>
+<div class="navbar-right">
+    <form class="navbar-form navbar-left" action="/search.html" method="get">
+       <input id="search-box" name="query" placeholder="Search..." autocomplete="off" spellcheck="false" dir="auto" type="text">
+    </form>
+</div>
+</header>
+<article>
+  <aside class="menu">
+    <div class="list-group">
+        <a href="/cuisine.html" class="list-group-item list-group-item-action active">Cuisine</a>
+    </div>
+    <div class="list-group">
+        <a href="/misc.html" class="list-group-item list-group-item-action active">Divers</a>
+    </div>
+    <div class="list-group">
+        <a href="/development.html" class="list-group-item list-group-item-action active">Développement</a>
+        <a href="/development/dotnet.html" class="list-group-item list-group-item-action ">.Net</a>
+        <a href="/development/gwt.html" class="list-group-item list-group-item-action ">GWT</a>
+        <a href="/development/java.html" class="list-group-item list-group-item-action ">Java</a>
+        <a href="/development/javascript.html" class="list-group-item list-group-item-action ">Javascript</a>
+        <a href="/development/spring.html" class="list-group-item list-group-item-action ">Spring</a>
+    </div>
+    <div class="list-group">
+        <a href="/linux.html" class="list-group-item list-group-item-action active">Linux</a>
+        <a href="/linux/administration.html" class="list-group-item list-group-item-action ">Administration</a>
+        <a href="/linux/divers.html" class="list-group-item list-group-item-action ">Divers</a>
+        <a href="/linux/gnomeshell.html" class="list-group-item list-group-item-action ">GnomeShell</a>
+        <a href="/linux/network.html" class="list-group-item list-group-item-action ">Réseau</a>
+        <a href="/linux/shell.html" class="list-group-item list-group-item-action ">Shell</a>
+    </div>
+    <div class="list-group">
+        <a href="/outils.html" class="list-group-item list-group-item-action active">Outils</a>
+        <a href="/outils/ansible.html" class="list-group-item list-group-item-action ">Ansible</a>
+        <a href="/outils/docker.html" class="list-group-item list-group-item-action ">Docker</a>
+        <a href="/outils/eclipse.html" class="list-group-item list-group-item-action ">Eclipse</a>
+        <a href="/outils/git.html" class="list-group-item list-group-item-action ">Git</a>
+        <a href="/outils/intellij.html" class="list-group-item list-group-item-action ">IntelliJ</a>
+        <a href="/outils/latex.html" class="list-group-item list-group-item-action ">LaTeX</a>
+        <a href="/outils/vmware.html" class="list-group-item list-group-item-action ">VMWare</a>
+    </div>
+    <div class="list-group">
+        <a href="/serveurs.html" class="list-group-item list-group-item-action active">Serveur</a>
+        <a href="/serveurs/http.html" class="list-group-item list-group-item-action ">HTTP</a>
+        <a href="/serveurs/jboss.html" class="list-group-item list-group-item-action ">JBoss</a>
+        <a href="/serveurs/mysql.html" class="list-group-item list-group-item-action ">MySQL</a>
+        <a href="/serveurs/neo4j.html" class="list-group-item list-group-item-action ">Neo4J</a>
+        <a href="/serveurs/oracle.html" class="list-group-item list-group-item-action ">Oracle</a>
+        <a href="/serveurs/teradata.html" class="list-group-item list-group-item-action ">TeraData</a>
+    </div>
+
+
+  </aside>
+  <section class="page">
+
+    <h1>Utiliser Firebug (Lite) avec IE</h1>
+    
+    
+
+    <p>Autant avec Firefox le débogage de CSS ne fait pas vraiment peur, autant dés qu&rsquo;on parle de problèmes IE et d&rsquo;autant
+plus de problème IE6 ou 7, là c&rsquo;est un peu plus flippant.</p>
+
+<p>Alors il va exister exister une solution : <a href="https://getfirebug.com/firebuglite">https://getfirebug.com/firebuglite</a></p>
+
+<p>C&rsquo;est pas trop compliqué à utiliser, il suffit d&rsquo;inclure le JS présent dans l&rsquo;archive
+ <a href="https://getfirebug.com/releases/lite/latest/firebug-lite.tar.tgz">https://getfirebug.com/releases/lite/latest/firebug-lite.tar.tgz</a> à l&rsquo;intérieur de vos composants puis de créer un
+ marque page avec le code suivant à l&rsquo;intérieur :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">F</span>,<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">r</span>,<span style="color:#a6e22e">e</span>,<span style="color:#a6e22e">b</span>,<span style="color:#a6e22e">u</span>,<span style="color:#a6e22e">g</span>,<span style="color:#a6e22e">L</span>,<span style="color:#a6e22e">I</span>,<span style="color:#a6e22e">T</span>,<span style="color:#a6e22e">E</span>){<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">getElementById</span>(<span style="color:#a6e22e">b</span>))<span style="color:#66d9ef">return</span>;<span style="color:#a6e22e">E</span><span style="color:#f92672">=</span><span style="color:#a6e22e">F</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;NS&#39;</span>]<span style="color:#f92672">&amp;&amp;</span><span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">namespaceURI</span>;<span style="color:#a6e22e">E</span><span style="color:#f92672">=</span><span style="color:#a6e22e">E</span><span style="color:#f92672">?</span><span style="color:#a6e22e">F</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;NS&#39;</span>](<span style="color:#a6e22e">E</span>,<span style="color:#e6db74">&#39;script&#39;</span>)<span style="color:#f92672">:</span><span style="color:#a6e22e">F</span>[<span style="color:#a6e22e">i</span>](<span style="color:#e6db74">&#39;script&#39;</span>);<span style="color:#a6e22e">E</span>[<span style="color:#a6e22e">r</span>](<span style="color:#e6db74">&#39;id&#39;</span>,<span style="color:#a6e22e">b</span>);<span style="color:#a6e22e">E</span>[<span style="color:#a6e22e">r</span>](<span style="color:#e6db74">&#39;src&#39;</span>,<span style="color:#a6e22e">I</span><span style="color:#f92672">+</span><span style="color:#a6e22e">g</span><span style="color:#f92672">+</span><span style="color:#a6e22e">T</span>);<span style="color:#a6e22e">E</span>[<span style="color:#a6e22e">r</span>](<span style="color:#a6e22e">b</span>,<span style="color:#a6e22e">u</span>);(<span style="color:#a6e22e">F</span>[<span style="color:#a6e22e">e</span>](<span style="color:#e6db74">&#39;head&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">||</span><span style="color:#a6e22e">F</span>[<span style="color:#a6e22e">e</span>](<span style="color:#e6db74">&#39;body&#39;</span>)[<span style="color:#ae81ff">0</span>]).<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">E</span>);<span style="color:#a6e22e">E</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span><span style="color:#f92672">%</span><span style="color:#ae81ff">20</span><span style="color:#a6e22e">Image</span>;<span style="color:#a6e22e">E</span>[<span style="color:#a6e22e">r</span>](<span style="color:#e6db74">&#39;src&#39;</span>,<span style="color:#a6e22e">I</span><span style="color:#f92672">+</span><span style="color:#a6e22e">L</span>);})(document,<span style="color:#e6db74">&#39;createElement&#39;</span>,<span style="color:#e6db74">&#39;setAttribute&#39;</span>,<span style="color:#e6db74">&#39;getElementsByTagName&#39;</span>,<span style="color:#e6db74">&#39;FirebugLite&#39;</span>,<span style="color:#e6db74">&#39;4&#39;</span>,<span style="color:#e6db74">&#39;firebug-lite-debug.js&#39;</span>,<span style="color:#e6db74">&#39;releases/lite/debug/skin/xp/sprite.png&#39;</span>,<span style="color:#e6db74">&#39;https://getfirebug.com/&#39;</span>,<span style="color:#e6db74">&#39;#startOpened&#39;</span>);
+</code></pre></div>
+<p>Après, sous IE vous chargez le composant, puis quand vous voulez ouvrir Firebug, vous clickez sur le marque page.
+Et hop firefox apparaît.</p>
+
+<p>Bon, c&rsquo;est une version &ldquo;Lite&rdquo; donc faut pas s&rsquo;attendre à des trucs magiques mais bon &hellip; c&rsquo;est quand même pratique.</p>
+
+
+
+    
+    
+  </section>
+
+  
+      <aside class="toc">
+        
+      </aside>
+  
+
+</article>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+
+
+    
+    
+
+    
+  </body>
+</html>

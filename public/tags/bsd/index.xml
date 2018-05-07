@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bsd on wiki.ght1pc9kc.fr</title>
+    <link>/tags/bsd.html</link>
+    <description>Recent content in Bsd on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/bsd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installer backup sur jail BSD</title>
+      <link>/linux/administration/installer-backup-sur-jail-bsd.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/installer-backup-sur-jail-bsd.html</guid>
+      <description>Une fois la jail créée, pour que les scripts de backup fonctionnent il faut install bash et hubic.py. C&amp;rsquo;est pas toujours intuitif alors voilà ce que j&amp;rsquo;ai fais la dernière fois :
+pkg install bash python2.7 -m ensurepip pip install --upgrade pip wget https://raw.githubusercontent.com/puzzle1536/hubic-wrapper-to-swift/master/requirements.txt pip install -r requirements.txt wget https://raw.githubusercontent.com/puzzle1536/hubic-wrapper-to-swift/master/hubic.py chmod +x hubic.py ln -s /usr/local/bin/python2.7 /usr/bin/python pkg install gnupg En plus de ça, comme expliqué lors de l&amp;rsquo;installation de bash, il faut ajouter un script postinit à FreeNAS pour qu&amp;rsquo;il monte la partition fdescfs avec la commande mount -t fdescfs null /mnt/storage/jails/&amp;lt;nom de la jail&amp;gt;/dev/fd</description>
+    </item>
+    
+  </channel>
+</rss>

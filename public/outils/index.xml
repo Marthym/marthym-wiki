@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outils on wiki.ght1pc9kc.fr</title>
+    <link>/outils.html</link>
+    <description>Recent content in Outils on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/outils/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gollum at startup</title>
+      <link>/outils/gollum-at-startup.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/gollum-at-startup.html</guid>
+      <description>Normalement ici gollum est installé, reste plus qu&amp;rsquo;a le faire démarrer en même temps que la machine. Sur Debian c&amp;rsquo;est systemd le nouveau gestionnaire de service donc voici un script systemd à placer dans : ~/.config/systemd/user/gollum.service
+[Unit] Description=Gollum server After=syslog.target Wants=network-online.target After=network-online.target [Service] Environment=&amp;#34;WIKI_DIR=/home/${USER}/workspace/marthym-wiki&amp;#34; ExecStart=/usr/local/bin/gollum --no-edit --show-all ${WIKI_DIR} ExecStartPost=/usr/bin/git --git-dir=${WIKI_DIR}/.git --work-tree=${WIKI_DIR} pull # Give a reasonable amount of time for the server to start up/shut down TimeoutSec=10 [Install] WantedBy=multi-user.targetsystemctl --user daemon-reload systemctl --user start gollum On note le ExecStartPre qui va permettre de synchroniser le wiki au démarrage.</description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>/outils/jekyll.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/jekyll.html</guid>
+      <description>Quelques trucs en vrac sur Jekyll
+You have already activated package version, but your Gemfile requires package oldversion. C’est un message bien reloux, qui m’a bien fait galérer mais en fait c’est rien du tout à régler. Mais sur internet on a droit à tout et n’importe quoi comme réponses.
+Au final, il suffit de virer le Gemfile.lock et voilà c’est réglé !</description>
+    </item>
+    
+    <item>
+      <title>Logstach config for Metrics</title>
+      <link>/outils/logstach-config-for-metrics.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/logstach-config-for-metrics.html</guid>
+      <description>Un exemple de configuration qui marche avec Metrics
+input { file { path =&amp;gt; &amp;quot;/var/log/lo_docker/*/monitoring.log&amp;quot; sincedb_path =&amp;gt; &amp;quot;/&amp;quot; } } filter { grok { patterns_dir =&amp;gt; &amp;quot;/data/techno/logstash/resources/patterns/&amp;quot; match =&amp;gt; [&amp;quot;message&amp;quot;,&amp;quot;%{NOTSPACE:date}%{SPACE}%{GREEDYDATA:data}&amp;quot;] remove_field =&amp;gt; [ &amp;quot;message&amp;quot; ] } grok { patterns_dir =&amp;gt; &amp;quot;/data/techno/logstash/resources/patterns/&amp;quot; match =&amp;gt; [&amp;quot;path&amp;quot;,&amp;quot;/var/log/lo_docker/%{DATA:module}/monitoring.log&amp;quot;] remove_field =&amp;gt; [ &amp;quot;path&amp;quot; ] } kv { source =&amp;gt; &amp;quot;data&amp;quot; field_split =&amp;gt; &amp;quot;, &amp;quot; remove_field =&amp;gt; [ &amp;quot;data&amp;quot; ] } date { match =&amp;gt; [ &amp;quot;date&amp;quot;, &amp;quot;YYYY-MM-dd&#39;T&#39;HH:mm:ss,SSS&amp;quot; ] remove_field =&amp;gt; [ &amp;quot;date&amp;quot; ] } mutate { convert =&amp;gt; { &amp;quot;count&amp;quot; =&amp;gt; &amp;quot;integer&amp;quot; } convert =&amp;gt; { &amp;quot;min&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;max&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;mean&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;stddev&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;median&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p75&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p95&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p98&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p99&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;p999&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;mean_rate&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;m1&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;m5&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } convert =&amp;gt; { &amp;quot;m15&amp;quot; =&amp;gt; &amp;quot;float&amp;quot; } } } output { elasticsearch_http { codec =&amp;gt; json_lines host =&amp;gt; &amp;quot;elasticdb&amp;quot; index =&amp;gt; &amp;quot;pmin-%{+YYYY.</description>
+    </item>
+    
+    <item>
+      <title>Optimisation de PNG</title>
+      <link>/outils/optimisation-de-png.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/optimisation-de-png.html</guid>
+      <description>Dans un site web, ça peut être utile d&amp;rsquo;optimiser ces images PNG pour les réduire. Le PNG étant un format sans perte, cela permet d&amp;rsquo;avoir une bonne qualité à moindre coût.
+Pour cela il y a deux commandes que je ne détaillerais pas :
+pngnq -vf -s1 schedulers.png optipng -o7 schedulers-nq8.png  pngnq est un quantizer, il calcule la palette de couleur la plus restreinte pour l&amp;rsquo;image. optpng lui optimise les images suivant tout un tas de règles.</description>
+    </item>
+    
+    <item>
+      <title>Rafraichir un repo git dans Redmine</title>
+      <link>/outils/refresh-redmine-repo.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/refresh-redmine-repo.html</guid>
+      <description>En fait, il n&amp;rsquo;y a rien d&amp;rsquo;automatique.
+Il faut commencer par cloner le repo sur le serveur remine. Ensuite on active la fonctionnalité Dépôt pour le projet et on ajoute le repo (en précisant le chemin physique). Attention c’est le chemin du répertoire .git qu’il faut renseigner, Ex /var/lib/git/longback/cosmos/.git sinon ça fonctionne pas.
+Ce n’est pas fini, il car le repo ne se pull pas automatiquement. Pour cela, dans /etc/cron.d on ajoute le fichier suivant :</description>
+    </item>
+    
+    <item>
+      <title>Trucs et Astuce SoapUI</title>
+      <link>/outils/trucs-et-astuce-soapui.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/trucs-et-astuce-soapui.html</guid>
+      <description>SoapUI à 100% de CPU Sous Linux il peut arriver (souvent) que SoapUI monte à 100% de CPU et y reste &amp;hellip;
+En fouillant un peu sur internet, on trouve que ça vient de de JxBrowser et par chance il est possible de le désactiver en modifiant le fichier de lancement .sh :
+#uncomment to disable browser component  JAVA_OPTS=&amp;#34;$JAVA_OPTS-Dsoapui.</description>
+    </item>
+    
+  </channel>
+</rss>

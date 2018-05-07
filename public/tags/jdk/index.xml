@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jdk on wiki.ght1pc9kc.fr</title>
+    <link>/tags/jdk.html</link>
+    <description>Recent content in Jdk on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/jdk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Où télécharger les JDK ?</title>
+      <link>/development/java/ou-telecharger-les-jdk.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/ou-telecharger-les-jdk.html</guid>
+      <description>http://www.oracle.com/technetwork/java/archive-139210.html
+Vous aurez besoin d&amp;rsquo;un login oracle !</description>
+    </item>
+    
+  </channel>
+</rss>

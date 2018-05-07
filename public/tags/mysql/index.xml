@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on wiki.ght1pc9kc.fr</title>
+    <link>/tags/mysql.html</link>
+    <description>Recent content in Mysql on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Erreur de read-only status avec JDBC</title>
+      <link>/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html</guid>
+      <description>Symptômes J&amp;rsquo;ai rencontré l&amp;rsquo;erreur suivante :
+java.io.IOException: java.sql.SQLException: Could not retrieve transation read-only status server Caused by: java.sql.SQLException: Could not retrieve transation read-only status server Caused by: java.sql.SQLException: REPLACE INTO `db`.`test_table` (`timestamp`,`database`,`table`,`columns`,`lines`,`before`,`write`,`wait`) VALUES (?,?,?,?,?,?,?,?) ... 4 common frames omitted Caused by: java.sql.SQLException: Could not retrieve transation read-only status server at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:975) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:920) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:951) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:941) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.ConnectionImpl.isReadOnly(ConnectionImpl.java:3955) ~[mysql-connector-java-5.</description>
+    </item>
+    
+    <item>
+      <title>Exporter/Importer une base d’un dump</title>
+      <link>/serveurs/mysql/exporter-importer-une-base-d-un-dump.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/exporter-importer-une-base-d-un-dump.html</guid>
+      <description>Pour exporter en gzip
+mysqldump -u user -p database | gzip &amp;gt; database.sql.gz Pour importer une seule base à partir d&amp;rsquo;un dump complet, il faut entrer la commande suivante :
+mysql -u USERNAME -p --one-database BASE_A_RESTAURER &amp;lt; dumpcomplet.sql Remplacez BASE_A_RESTAURER par le nom de la base de votre choix qui est contenue dans le fichier dumpcomplet.sql.
+La même chose avec un fichier d&amp;rsquo;export compressé en tar.gz
+zcat your_db_dump.sql.tar.gz | mysql -u USERNAME -p BASE_A_RESTAURER</description>
+    </item>
+    
+    <item>
+      <title>Optimisation des statements Batch MySQL</title>
+      <link>/development/java/optimisation-des-statements-batch-mysql.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/optimisation-des-statements-batch-mysql.html</guid>
+      <description>Par défaut le mode batch du driver JDBC de MySQL n&amp;rsquo;est pas correctement optimisé. Il effectue un aller/retour serveur pour chaque requête au lieu de le faire en une seule fois.
+Pour le rendre plainement opérationnel il faut ajouté l&amp;rsquo;option rewriteBatchedStatements à la connexion JDBC.</description>
+    </item>
+    
+    <item>
+      <title>Requête Oracle avec Variables Liées</title>
+      <link>/development/java/requete-oracle-avec-variables-liees.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/requete-oracle-avec-variables-liees.html</guid>
+      <description>C&amp;rsquo;est un info qui date mais c&amp;rsquo;est toujours juste.
+C&amp;rsquo;est quoi des Bind Variable déjà ? Dans le processus d&amp;rsquo;exécution d&amp;rsquo;une requête, Oracle effectue plusieurs étapes. Parmi ces étapes, on retrouve le parsing. Durant cette étape, oracle décortique l&amp;rsquo;ordre SQL et choisit quel est le plan d&amp;rsquo;exécution le plus court pour récupérer les données ramenées par la requête.
+Si une requête est exécuté 20 fois de suite, Oracle fait le parsing pour la première requête seulement.</description>
+    </item>
+    
+    <item>
+      <title>Timezoner MySQL</title>
+      <link>/serveurs/mysql/timezoner-mysql.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/timezoner-mysql.html</guid>
+      <description>Dans le cas d&amp;rsquo;un MySQL sous docker, le server MySQL n&amp;rsquo;est pas Timezoné correctement. Par exemple, quand on lance la requête suivante :
+mysql&amp;gt; SELECT @@global.time_zone, @@session.time_zone; +--------------------+---------------------+ | @@global.time_zone | @@session.time_zone | +--------------------+---------------------+ | SYSTEM | SYSTEM | +--------------------+---------------------+ 1 row in set (0.00 sec) Ce qui signifie que c&amp;rsquo;est la Timezone du système qui est utilisé. Un
+date +%Z CEST nous confirme que nous sommes bien sur Europe/Paris.</description>
+    </item>
+    
+    <item>
+      <title>UUID Most Significant Bits</title>
+      <link>/serveurs/mysql/uuid-most-significant-bits.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/uuid-most-significant-bits.html</guid>
+      <description>Comment dans une requête MySQL peut on extraire les bits les plus significatif d&amp;rsquo;un UUID. En gros ça correspond en Java à UUID.randomUUID().getMostSignificantBits().
+SELECT -conv(substring_index(uuid(), &amp;#39;-&amp;#39;, 1), 16, 10) Ce qui donne un long !</description>
+    </item>
+    
+  </channel>
+</rss>

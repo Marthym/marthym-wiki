@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian on wiki.ght1pc9kc.fr</title>
+    <link>/tags/debian.html</link>
+    <description>Recent content in Debian on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Activer SUDO sur Debian</title>
+      <link>/linux/administration/activer-sudo-sur-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/activer-sudo-sur-debian.html</guid>
+      <description>Pour des raisons pratique et de sécurité, il peut être intéressant d&amp;rsquo;activer SUDO. Sur les Ubuntu c&amp;rsquo;est le cas par défaut, pas sur les Debian. Voilà la marche à suivre pour le faire.
+Activation de SUDO Se connecter en administrateur $ su - Installer le paquet # apt-get install sudo Ajouter l&amp;rsquo;utilisateur administrateur aux sudoers Sudo autorise des utilisateurs normaux, comme celui qui est créé lors de l&amp;rsquo;installation, à se connecter en tant que super utilisateur.</description>
+    </item>
+    
+    <item>
+      <title>Afficher la date du jour dans le bandeau</title>
+      <link>/linux/gnomeshell/afficher-la-date-du-jour-dans-le-bandeau.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/afficher-la-date-du-jour-dans-le-bandeau.html</guid>
+      <description>gsettings set org.gnome.shell.clock show-date true</description>
+    </item>
+    
+    <item>
+      <title>Creer une clé USB d’install Debian</title>
+      <link>/linux/divers/creer-une-cle-usb-dinstall-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/divers/creer-une-cle-usb-dinstall-debian.html</guid>
+      <description>C&amp;rsquo;est pas bien compliqué mais on cherche longtemps la bonne méthode dans la multitude de conneries du web.
+Déjà, oublier l&amp;rsquo;idée de faire ça avec Windows, c&amp;rsquo;est de la merde et ça marche pas à moitié !
+Ensuite, et c&amp;rsquo;est d&amp;rsquo;autant plus valable avec les PC de dernière génération et leur boot UEFI, prendre un image Debian &amp;ldquo;testing&amp;rdquo; plutôt qu&amp;rsquo;une stable. La stable ne possède pas les fichier nécessaire pour l&amp;rsquo;EFI alors qu&amp;rsquo;avec l&amp;rsquo;ISO testing ça se fait tout seul.</description>
+    </item>
+    
+    <item>
+      <title>Documents recents dans gnome-shell</title>
+      <link>/linux/gnomeshell/documents-recents-dans-gnome-shell.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/documents-recents-dans-gnome-shell.html</guid>
+      <description>Pour les dernières versions de gnome, on peut retrouver le fichier d&amp;rsquo;historique à l&amp;rsquo;emplacement suivant: ~/.local/share/recently-used.xbel, pour les versions antérieures il se trouve à ~/.recently-used.xbel.
+Effacer l&amp;rsquo;intégralité du fichier Dans un terminal, taper :
+cat /dev/null &amp;gt; ~/.local/share/recently-used.xbel Puis relancer gnome-shell (Alt+F2, puis r)
+Passer en mode &amp;ldquo;privé&amp;rdquo; Pour désactiver l&amp;rsquo;enregistrement des documents récents: Dans un terminal, taper :
+sudo chattr +i ~/.local/share/recently-used.xbel Pour réactiver l&amp;rsquo;enregistrement des documents récents: Dans un terminal, taper :</description>
+    </item>
+    
+    <item>
+      <title>Fusionner les icones d’application dans le dock</title>
+      <link>/linux/gnomeshell/join-application-icon-in-dock.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/join-application-icon-in-dock.html</guid>
+      <description>Il y a un truc vraiment pénible avec GnomeShell et le Dock, c&amp;rsquo;est quand une application apparaît plusieurs fois. Pour une raison X ou Y, le raccourcis d&amp;rsquo;une application n&amp;rsquo;est plus regroupé avec ses instances dans le dock ce qui fait que l&amp;rsquo;on a rapidement tendance à ouvrir de nouvelle applications a chaque fois qu&amp;rsquo;on veut accédé à l&amp;rsquo;application.
+C&amp;rsquo;est du à la WM_CLASS de l&amp;rsquo;application qui n&amp;rsquo;est pas configuré correctement dans le raccourcis bureau.</description>
+    </item>
+    
+    <item>
+      <title>Installer Java Sun JDK sous Debian</title>
+      <link>/development/java/installer-java-sun-jdk-sous-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/installer-java-sun-jdk-sous-debian.html</guid>
+      <description>C&amp;rsquo;est très simple mais faut avoir les bons dépôt activé.
+Vérifier la liste de ces dépôts Éditer le fichier /etc/apt/sources.list et faites en sorte qu&amp;rsquo;il ressemble à ça :
+# deb cdrom:[Debian GNU/Linux testing _Wheezy_ - Official Snapshot i386 CD Binary-1 20111205-04:44]/ wheezy main deb http://ftp.fr.debian.org/debian/ testing main contrib non-free deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free deb http://security.debian.org/ testing/updates main contrib non-free deb-src http://security.debian.org/ testing/updates main contrib non-free deb http://ftp.</description>
+    </item>
+    
+    <item>
+      <title>Installer VMWare Tools sur un guest Debian</title>
+      <link>/outils/vmware/installer-vmware-tools-sur-un-guest-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/outils/vmware/installer-vmware-tools-sur-un-guest-debian.html</guid>
+      <description>Les VMWare Tools ne sont pas obligatoire sur les guests mais ils permettent de faire pas mal de truc comme gérer proprement la sourie si vous avez une interface graphique, activer les répertoires partagés avec l&amp;rsquo;hôte ou réduire le vmdk de votre VM après y avoir fait le ménage.
+Les étapes suivantes nécessites d&amp;rsquo;être root sur la machine. Pour ça soit
+sudo -i soit
+su - Installation des paquets pré-requis Les VMTools se compilent sur la machine, il faut donc installer au préalables les outils de compil sur la machine :</description>
+    </item>
+    
+    <item>
+      <title>Nettoyer les fichiers de configuration</title>
+      <link>/linux/administration/nettoyer-les-fichiers-de-configuration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/nettoyer-les-fichiers-de-configuration.html</guid>
+      <description>Au fil des mises à jours d&amp;rsquo;une Debian, il arrive que des fichiers de configuration ne soient pas bien nettoyé. Il est parfois difficile dans les deb de supprimer des fichiers. Voilà comment trouver ces fichiers obsolète et les supprimer.
+Procédure standard dpkg-query -W -f=&amp;#39;${Conffiles}\n&amp;#39; | grep &amp;#39;obsolete$&amp;#39; /etc/apparmor.d/abstractions/evince ae2a1e8cf5a7577239e89435a6ceb469 obsolete /etc/apparmor.d/tunables/ntpd 5519e4c01535818cb26f2ef9e527f191 obsolete /etc/apparmor.d/usr.bin.evince 08a12a7e468e1a70a86555e0070a7167 obsolete /etc/apparmor.d/usr.sbin.ntpd a00aa055d1a5feff414bacc89b8c9f6e obsolete /etc/bash_completion.d/initramfs-tools 7eeb7184772f3658e7cf446945c096b1 obsolete /etc/bash_completion.d/insserv 32975fe14795d6fce1408d5fd22747fd obsolete /etc/dbus-1/system.d/com.redhat.NewPrinterNotification.conf 8df3896101328880517f530c11fff877 obsolete /etc/dbus-1/system.</description>
+    </item>
+    
+    <item>
+      <title>Nettoyer sa Debian</title>
+      <link>/linux/administration/nettoyer-sa-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/nettoyer-sa-debian.html</guid>
+      <description>Même si ce n&amp;rsquo;est pas dans les proportion de Windows, un Linux a tendance à accumuler des reliquats de vieux paquets et du cache pas vraiment utile qui à la longue pèsent lourd sur l&amp;rsquo;espace disque (ça ne ralenti pas le système pour autant).
+Localepurge C&amp;rsquo;est la première chose à faire, &amp;ldquo;localepurge&amp;rdquo; est un outil qui à chaque install de paquet ou de mise à jour, va faire le ménage dans les langues installé.</description>
+    </item>
+    
+    <item>
+      <title>Screencast avec gnome-shell</title>
+      <link>/linux/gnomeshell/screencast-avec-gnome-shell.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/screencast-avec-gnome-shell.html</guid>
+      <description>Un truc très sympa, Gnome-Shell intégre un outils de screencast. En effet, il suffit de faire Ctrl + Shift + Alt + R pour démarrer et arréter l&amp;rsquo;enregistrement. A la fin de l&amp;rsquo;enregistrement, le fichier résultat est déposé dans le répertoire Vidéos de l&amp;rsquo;utilisateur. Le format d&amp;rsquo;enregistrement est WebM.
+Par défaut, la durée maximum d&amp;rsquo;enregistrement est de 30s, au dela l&amp;rsquo;enregistrement s&amp;rsquo;arrête de lui même. Pour changer cette durée max, il est possible de mettre à jour les settings :</description>
+    </item>
+    
+    <item>
+      <title>apt-get Encountered a section with no Package header</title>
+      <link>/linux/administration/apt-get--encountered-a-section-with-no-package--header.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/apt-get--encountered-a-section-with-no-package--header.html</guid>
+      <description>Un beau matin alors que je veux mettre a jour ma debian, je me retrouve avec le message d&amp;rsquo;erreur suivant :
+W: Impossible de récupérer copy:/var/lib/apt/lists/partial/... Encountered a section with no Package: header  C&amp;rsquo;est un problème bien foireux dont j&amp;rsquo;ai eu du mal à me sortir ! En fait ya eu un bug un moment donné et du coup sur les machines qui n&amp;rsquo;ont pas été mise à jour régulièrement on trouve ce message.</description>
+    </item>
+    
+    <item>
+      <title>gnome-shell segfault at 84 ip libcogl.so.12.1.1</title>
+      <link>/linux/gnomeshell/gnome-shell-segfault-at-84-ip-libcogl.so.12.1.1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/gnomeshell/gnome-shell-segfault-at-84-ip-libcogl.so.12.1.1.html</guid>
+      <description> Symptome GnomeShell ne se lance pas, un message &amp;ldquo;Oh no! Something has gone wrong&amp;rdquo; à la place. Et dans les logs :
+hp kernel: [34946.429046] gnome-shell[10202]: segfault at 84 ip 00007ffa2ae877b9 sp 00007fff2bc5c7d0 error 4 in libcogl.so.12.1.1[7ffa2ae3e000+97000]  Remède sudo apt-get install --reinstall libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-common Liens  http://forums.debian.net/viewtopic.php?f=5&amp;amp;t=78716&amp;amp;p=523535&amp;amp;hilit=libcogl#p523535  </description>
+    </item>
+    
+  </channel>
+</rss>

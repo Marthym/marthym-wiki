@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Service on wiki.ght1pc9kc.fr</title>
+    <link>/tags/service.html</link>
+    <description>Recent content in Service on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/service/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Demarrage de JBoss en service</title>
+      <link>/linux/administration/demarrage-de-jboss-en-service.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/demarrage-de-jboss-en-service.html</guid>
+      <description>Ce qui est pas si évident que ça a faire sous Linux. C&amp;rsquo;est utile si on n&amp;rsquo;a pas accès à la console de la machine ou pour que le JBoss se lance tout seul au démarrage.
+Script init.d Il faut commencé par créer un script d&amp;rsquo;init. Pour cela on peut se servir de celui se trouvant à la fin de la page.
+Attention de bien penser à changer la variable &amp;ldquo;CAMELEON_DIR&amp;rdquo; avec le bon chemin d&amp;rsquo;installation de JBoss.</description>
+    </item>
+    
+    <item>
+      <title>Démarrage/Arrêt automatique d’Oracle sous Linux</title>
+      <link>/serveurs/oracle/demarrage-arret-automatique-doracle-sous-linux.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/demarrage-arret-automatique-doracle-sous-linux.html</guid>
+      <description>Modifier le fichier /etc/oratab (ou /var/opt/oracle selon install) Ajouter &amp;lt;SID&amp;gt;:&amp;lt;ORACLE_HOME&amp;gt;:Y le &amp;ldquo;Y&amp;rdquo; indiquant si la base doit être ou non démarré par &amp;ldquo;dbstart&amp;rdquo; et &amp;ldquo;dbshut&amp;rdquo;.
+Créer le script &amp;ldquo;/etc/init.d/dboracle&amp;rdquo; contenant :
+#!/bin/bash  #  # chkconfig: 35 99 10  # description: Starts and stops Oracle processes  #  # Set ORA_HOME to be equivalent to the $ORACLE_HOME  # from which you wish to execute dbstart and dbshut;  #  # Set ORA_OWNER to the user id of the owner of the # Oracle database in ORA_HOME.</description>
+    </item>
+    
+    <item>
+      <title>Missing LSB tags and overrides</title>
+      <link>/linux/administration/missing-lsb-tags-and-overrides.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux/administration/missing-lsb-tags-and-overrides.html</guid>
+      <description>Symptômes On a ce genre de chose après une installation de paquets et les paquets ne sont pas configuré correctement :
+Paramétrage de kerneloops-daemon (0.12+git20090217-3) ... insserv: warning: script &#39;K01vmware&#39; missing LSB tags and overrides insserv: warning: script &#39;S50vmware-USBArbitrator&#39; missing LSB tags and overrides insserv: warning: script &#39;vmware&#39; missing LSB tags and overrides insserv: warning: script &#39;vmware-USBArbitrator&#39; missing LSB tags and overrides insserv: There is a loop at service minissdpd if started insserv: Starting vmware-USBArbitrator depends on minissdpd and therefore on system facility `$all&#39; which can not be true!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tunning on wiki.ght1pc9kc.fr</title>
+    <link>/tags/tunning.html</link>
+    <description>Recent content in Tunning on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/tunning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tracer une requête Oracle</title>
+      <link>/serveurs/oracle/tracer-une-requete-oracle.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/oracle/tracer-une-requete-oracle.html</guid>
+      <description>Il arrive qu&amp;rsquo;une partie de l&amp;rsquo;appli (voire toute l&amp;rsquo;appli) rame particulièrement. Selon la version d&amp;rsquo;Oracle, il est plus ou moins facile de tracer une requête. Dans tout les cas, il peut arrivé qu&amp;rsquo;on est besoin d&amp;rsquo;un maximum d&amp;rsquo;info.
+Oracle 10g et Entreprise Manager Sur un serveur 10g, le plus simple est d&amp;rsquo;ouvrir l&amp;rsquo;entreprise manager et de cliquer sur l&amp;rsquo;onglet performances. De là, sous le graphique, un lien &amp;ldquo;Sessions les plus consommatrices&amp;hellip;&amp;rdquo; qui permet de visualiser les requêtes et les sessions les plus gourmandes.</description>
+    </item>
+    
+  </channel>
+</rss>

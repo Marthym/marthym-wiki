@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on wiki.ght1pc9kc.fr</title>
+    <link>/tags/java.html</link>
+    <description>Recent content in Java on wiki.ght1pc9kc.fr</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accès JNDI de JBoss</title>
+      <link>/development/java/acces-jndi-de-jboss.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/acces-jndi-de-jboss.html</guid>
+      <description>Pour accéder au composants EJB déployé sous JBoss, voici un exemple de code. Il récupère le ~CorbasManager mais ça marche avec tout les EJB déployé.
+// Get initial context of JNDI tree Hashtable&amp;lt;String, String&amp;gt; w_param = new Hashtable&amp;lt;String, String&amp;gt;(); w_param.put(javax.naming.Context.INITIAL_CONTEXT_FACTORY,&amp;#34;org.jnp.interfaces.NamingContextFactory&amp;#34;); w_param.put(javax.naming.Context.PROVIDER_URL, &amp;#34;jnp://192.168.168.128:1099/&amp;#34;); javax.naming.Context ctx = new javax.naming.InitialContext(w_param); // Get advanced pricing EJB home Object obj = ctx.lookup(&amp;#34;cic.CICCorbaManagerEJBHome&amp;#34;); cic.CICCorbaManagerEJBHome w_corbasHome = (cic.CICCorbaManagerEJBHome)javax.rmi.PortableRemoteObject.narrow(obj,cic.CICCorbaManagerEJBHome.class); // Create a new advanced pricing session cic.CICCorbaManagerEJB w_corbasManager = w_corbasHome.</description>
+    </item>
+    
+    <item>
+      <title>Accéder un membre classe private</title>
+      <link>/development/java/acceder-un-membre-classe-private.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/acceder-un-membre-classe-private.html</guid>
+      <description>Pour des raison de test, on peut avoir besoin d&amp;rsquo;accéder des membres de classe privé pour tester leur contenu. Il est possible de faire ça sans forcément ajouter des accesseurs &amp;ldquo;juste pour les tests&amp;rdquo; sur le classe testé.
+public static &amp;lt;T&amp;gt; Object getPrivateMember(T testObject, String fieldName) { try { Field field = testObject.getClass().getDeclaredField(fieldName); field.setAccessible(true); return field.get(testObject); } catch (Exception e) { throw new RuntimeException(e); } } Et à l’usage :</description>
+    </item>
+    
+    <item>
+      <title>Ajouter un certificat pour les connexions SSL Java</title>
+      <link>/development/java/ajouter-un-certificat-pour-les-connexions-ssl-java.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/ajouter-un-certificat-pour-les-connexions-ssl-java.html</guid>
+      <description>Symptôme Dans le cas par exemple d&amp;rsquo;une connexion en LDAPS (LDAP via SSL) on a de bonne chance de se prendre ce genre d’erreur :
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:150) at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1584) at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:174) at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:168) at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:848) at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:106) at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:495) at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:433) ...  Note que c’est la même pour les accès à des Web-Service en HTTPS via Axis</description>
+    </item>
+    
+    <item>
+      <title>Ajouter une Police de caractère à Java</title>
+      <link>/development/java/ajouter-une-police-de-caractere-a-java.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/ajouter-une-police-de-caractere-a-java.html</guid>
+      <description>La question se pose notement pour Jasper quand il faut lui rajouter des fonts.
+Sous Linux, il faut mettre le fichier TTF dans le répertoire : /usr/lib/jvm/java-6-sun/jre/lib/fonts ou créer un lien dans ce répertoire vers le TTF.</description>
+    </item>
+    
+    <item>
+      <title>Appeler un Web-Service au travers d’un proxy</title>
+      <link>/development/java/appeler-un-web-service-au-travers-d-un-proxy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/appeler-un-web-service-au-travers-d-un-proxy.html</guid>
+      <description>Pour l&amp;rsquo;instant je n&amp;rsquo;ai pas eu le cas avec Axis 1 donc on verra comment ça marche pour Axis 1, là c&amp;rsquo;est une solution Axis 2.
+Donc depuis le Stub généré par Axis 2, voilà le code :
+Options options = service._getServiceClient().getOptions(); HttpTransportProperties.ProxyProperties pp = new HttpTransportProperties.ProxyProperties(); pp.setProxyName(&amp;#34;proxy.tl.internal&amp;#34;); pp.setProxyPort(3128); options.setProperty(HTTPConstants.PROXY,pp); service étant l&amp;rsquo;instance de la classe Stub.</description>
+    </item>
+    
+    <item>
+      <title>Concepts intéressants en Java</title>
+      <link>/development/java/concepts-interessant-en-java-7.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/concepts-interessant-en-java-7.html</guid>
+      <description>Java 9 Jigsaw Java 8 Dépendence des packages L&amp;rsquo;outil jdeps permet de visualiser les dépendances inter-package d&amp;rsquo;un jar. L&amp;rsquo;option -jdkinternal permet de mettre en évidence l&amp;rsquo;utilisation d&amp;rsquo;API interne à Java.
+Concaténation de chaine L&amp;rsquo;utilisation d&amp;rsquo;un StringBuilder n&amp;rsquo;est utile que dans le cas d&amp;rsquo;une boucle. En dehors de ça, le + aura plus de chance d&amp;rsquo;être optimisé correctement par le JIT.
+ArrayList vs LinkedList Avec les CPU ressant, les ArrayList ont des perf meilleure que les LinkedList.</description>
+    </item>
+    
+    <item>
+      <title>Configuration Log4j</title>
+      <link>/development/java/configuration-log4j.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/configuration-log4j.html</guid>
+      <description>Voilà un log4j.properties qui va bien :
+log4j.rootLogger = INFO, console log4j.logger.com.livingobjects.pmin = DEBUG log4j.appender.console=org.apache.log4j.ConsoleAppender log4j.appender.console.layout=org.apache.log4j.PatternLayout log4j.appender.console.layout.conversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %t %C{1}:%L - %m%n log4j.appender.METRICS=org.apache.log4j.ConsoleAppender log4j.appender.METRICS.layout=org.apache.log4j.PatternLayout log4j.appender.METRICS.layout.conversionPattern=%d{yyyy-MM-dd HH:mm:ss} %p - %m%n log4j.logger.com.livingobjects.pmin.cdr.metrics = INFO, METRICS log4j.additivity.com.livingobjects.pmin.cdr.metrics = false</description>
+    </item>
+    
+    <item>
+      <title>Connection securisé et reverse proxy</title>
+      <link>/development/spring/secure-connection-and-reverse-proxy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/spring/secure-connection-and-reverse-proxy.html</guid>
+      <description>Dans le cadre d’un projet, j’ai une configuration Spring Secure tel que :
+... http.requiresChannel() .antMatchers(&amp;#34;/client/&amp;#34;).requiresSecure() .antMatchers(&amp;#34;/fr/client/&amp;#34;).requiresSecure() .antMatchers(&amp;#34;/es/client/&amp;#34;).requiresSecure() .antMatchers(&amp;#34;/en/client/&amp;#34;).requiresSecure() ... Ce qui provoque un redirect vers https si l’on tente d’accéder à l’une de ces URL en http.
+Le problème est lorsque que je mets un reverse proxy NginX devant, c’est lui qui s’occupe du https, il redirige vers mes routes Spring en http. Spring ne permet de configurer qu’un seul port de serveur qui peut faire http/https.</description>
+    </item>
+    
+    <item>
+      <title>Connexion LDAP Exchange</title>
+      <link>/development/java/connexion-ldap-exchange.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/connexion-ldap-exchange.html</guid>
+      <description>L&amp;rsquo;idée est d&amp;rsquo;expliquer comment, depuis Java, se connecter à un serveur LDAP. Mais pas n&amp;rsquo;importe lequel, un serveur LDAP Exchange. Ben oui, Microsoft à beau se standardisé un minimum, de là à faire tout comme les autres, faudrait pas pousser !
+Implémentation via JNDI Plusieurs type d&amp;rsquo;implémentation existent pour se connecter à un serveur LDAP. La plus utilisé et la plus &amp;ldquo;standard&amp;rdquo; est de se connecter en utilisant les interfaces JNDI.</description>
+    </item>
+    
+    <item>
+      <title>Convertir un date entre Timezone avec Jodatime</title>
+      <link>/development/java/convertir-un-date-entre-timezone-avec-jodatime.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/convertir-un-date-entre-timezone-avec-jodatime.html</guid>
+      <description>DateTime initialTime = new DateTime(timestamp.getTime()) .withZoneRetainFields(vpnNeType.getTimeZone().get()) .withZone(targetTimeZone); dataDate = initialTime.toLocalDateTime().toDate(); Le new Datetime() crée un object Datetime à partir d&amp;rsquo;un timestamp mais en partant du principe que la TZ est la default. withZoneRetainFields change la TZ sans changer la date, withZone change la TZ et converti la date. .toLocalDateTime().toDate() re-converti en date en tenant compte de la TZ.</description>
+    </item>
+    
+    <item>
+      <title>Erreur de read-only status avec JDBC</title>
+      <link>/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/erreur-de-read-only-status-avec-jdbc.html</guid>
+      <description>Symptômes J&amp;rsquo;ai rencontré l&amp;rsquo;erreur suivante :
+java.io.IOException: java.sql.SQLException: Could not retrieve transation read-only status server Caused by: java.sql.SQLException: Could not retrieve transation read-only status server Caused by: java.sql.SQLException: REPLACE INTO `db`.`test_table` (`timestamp`,`database`,`table`,`columns`,`lines`,`before`,`write`,`wait`) VALUES (?,?,?,?,?,?,?,?) ... 4 common frames omitted Caused by: java.sql.SQLException: Could not retrieve transation read-only status server at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:975) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:920) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:951) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:941) ~[mysql-connector-java-5.1.28.jar:na] at com.mysql.jdbc.ConnectionImpl.isReadOnly(ConnectionImpl.java:3955) ~[mysql-connector-java-5.</description>
+    </item>
+    
+    <item>
+      <title>Exporter/Importer une base d’un dump</title>
+      <link>/serveurs/mysql/exporter-importer-une-base-d-un-dump.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/exporter-importer-une-base-d-un-dump.html</guid>
+      <description>Pour exporter en gzip
+mysqldump -u user -p database | gzip &amp;gt; database.sql.gz Pour importer une seule base à partir d&amp;rsquo;un dump complet, il faut entrer la commande suivante :
+mysql -u USERNAME -p --one-database BASE_A_RESTAURER &amp;lt; dumpcomplet.sql Remplacez BASE_A_RESTAURER par le nom de la base de votre choix qui est contenue dans le fichier dumpcomplet.sql.
+La même chose avec un fichier d&amp;rsquo;export compressé en tar.gz
+zcat your_db_dump.sql.tar.gz | mysql -u USERNAME -p BASE_A_RESTAURER</description>
+    </item>
+    
+    <item>
+      <title>Installer Java Sun JDK sous Debian</title>
+      <link>/development/java/installer-java-sun-jdk-sous-debian.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/installer-java-sun-jdk-sous-debian.html</guid>
+      <description>C&amp;rsquo;est très simple mais faut avoir les bons dépôt activé.
+Vérifier la liste de ces dépôts Éditer le fichier /etc/apt/sources.list et faites en sorte qu&amp;rsquo;il ressemble à ça :
+# deb cdrom:[Debian GNU/Linux testing _Wheezy_ - Official Snapshot i386 CD Binary-1 20111205-04:44]/ wheezy main deb http://ftp.fr.debian.org/debian/ testing main contrib non-free deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free deb http://security.debian.org/ testing/updates main contrib non-free deb-src http://security.debian.org/ testing/updates main contrib non-free deb http://ftp.</description>
+    </item>
+    
+    <item>
+      <title>Lancer Neo4j Impermanent Database &#43; REST Server sur un port aléatoire</title>
+      <link>/development/java/start-neo4j-impermanent-database-&#43;-rest-server-on-random-port-for-test.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/start-neo4j-impermanent-database-&#43;-rest-server-on-random-port-for-test.html</guid>
+      <description>Pour des tests par exemple, vu que la licence Neo4j ne permet que l&amp;rsquo;utilisation des API REST, on peut avoir besoin lors de test de lancer un server éphémaire sur lequel brancher les jeux de test. Cela se fait en deux étapes : * Lancement du serveur neo4j * Lancement de la surcouche REST
+db = new TestGraphDatabaseFactory().newImpermanentDatabase(); boolean available = db.isAvailable(5000); assert available; int start = -1; Random random = new Random(); while (start !</description>
+    </item>
+    
+    <item>
+      <title>Maven Release Plugin</title>
+      <link>/development/java/maven-release-plugin.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/maven-release-plugin.html</guid>
+      <description>Quelques explications sur le fonctionnement du Maven Release Plugin utilisé pour l’automatisation des releases.
+parent Déjà la première chose est de configurer les différents plugins de release dans le parent.
+&amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-release-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.5.3&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;versions-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.5&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-javadoc-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skip&amp;gt;true&amp;lt;/skip&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt;  Maven Release Plugin Le Maven Release Plugin est le plugin qui va faire le gros du travail, Mettre à jour le pom avec les bons numéros de version, faire les commit et poser les tags.</description>
+    </item>
+    
+    <item>
+      <title>Maven: Exemple de settings.xml</title>
+      <link>/development/java/maven-exemple-de-settings.xml.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/maven-exemple-de-settings.xml.html</guid>
+      <description>A placer dans ~/.m2/settings.xml
+&amp;lt;settings&amp;gt; &amp;lt;mirrors&amp;gt; &amp;lt;!-- Ajout du repos Nexus local --&amp;gt; &amp;lt;mirror&amp;gt; &amp;lt;!--This sends everything else to /public --&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;mirrorOf&amp;gt;*&amp;lt;/mirrorOf&amp;gt; &amp;lt;url&amp;gt;http://nexus.mydomain.org/nexus/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;/mirror&amp;gt; &amp;lt;/mirrors&amp;gt; &amp;lt;profiles&amp;gt; &amp;lt;profile&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;repositories&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;url&amp;gt;http://nexus.mydomain.org/nexus/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;url&amp;gt;http://nexus.mydomain.org/nexus/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;/pluginRepositories&amp;gt; &amp;lt;/profile&amp;gt; &amp;lt;profile&amp;gt;&amp;lt;!-- Ajout des infos pour sonar --&amp;gt; &amp;lt;id&amp;gt;sonar&amp;lt;/id&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;!-- SONAR--&amp;gt; &amp;lt;sonar.jdbc.url&amp;gt;jdbc:mysql://mysql.mydomain.org:3306/_sonar?useUnicode=true&amp;amp;amp;characterEncoding=utf8&amp;lt;/sonar.jdbc.url&amp;gt; &amp;lt;sonar.jdbc.username&amp;gt;sonar&amp;lt;/sonar.jdbc.username&amp;gt; &amp;lt;sonar.jdbc.password&amp;gt;sonar&amp;lt;/sonar.jdbc.password&amp;gt; &amp;lt;sonar.host.url&amp;gt;http://mysql.mydomain.org:9090&amp;lt;/sonar.host.url&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;/profile&amp;gt; &amp;lt;/profiles&amp;gt; &amp;lt;servers&amp;gt; &amp;lt;server&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;username&amp;gt;deployment&amp;lt;/username&amp;gt; &amp;lt;password&amp;gt;deploy&amp;lt;/password&amp;gt; &amp;lt;/server&amp;gt; &amp;lt;/servers&amp;gt; &amp;lt;activeProfiles&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Mode debug sur Tomcat</title>
+      <link>/development/java/mode-debug-tomcat.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/mode-debug-tomcat.html</guid>
+      <description>Comme pour [[jboss]], il est possible de démarrer Tomcat en mode debug pour pouvoir s&amp;rsquo;y connecter ensuite via [[Eclipse|eclipse]], il s&amp;rsquo;agit du mode JPDA :
+catalina.sh jpda run Tomcat ecoute alors sur le port 8000.</description>
+    </item>
+    
+    <item>
+      <title>Optimisation des statements Batch MySQL</title>
+      <link>/development/java/optimisation-des-statements-batch-mysql.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/optimisation-des-statements-batch-mysql.html</guid>
+      <description>Par défaut le mode batch du driver JDBC de MySQL n&amp;rsquo;est pas correctement optimisé. Il effectue un aller/retour serveur pour chaque requête au lieu de le faire en une seule fois.
+Pour le rendre plainement opérationnel il faut ajouté l&amp;rsquo;option rewriteBatchedStatements à la connexion JDBC.</description>
+    </item>
+    
+    <item>
+      <title>Où télécharger les JDK ?</title>
+      <link>/development/java/ou-telecharger-les-jdk.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/ou-telecharger-les-jdk.html</guid>
+      <description>http://www.oracle.com/technetwork/java/archive-139210.html
+Vous aurez besoin d&amp;rsquo;un login oracle !</description>
+    </item>
+    
+    <item>
+      <title>Remote JMX Console</title>
+      <link>/development/java/remote-jmx-console.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/remote-jmx-console.html</guid>
+      <description>Pour passer une application Java en JMX Remote Console, il faut ajouter des paramètres :
+-Djava.rmi.server.hostname=172.17.10.19 -Dcom.sun.management.jmxremote.port=1088 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false  </description>
+    </item>
+    
+    <item>
+      <title>Requête Oracle avec Variables Liées</title>
+      <link>/development/java/requete-oracle-avec-variables-liees.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/requete-oracle-avec-variables-liees.html</guid>
+      <description>C&amp;rsquo;est un info qui date mais c&amp;rsquo;est toujours juste.
+C&amp;rsquo;est quoi des Bind Variable déjà ? Dans le processus d&amp;rsquo;exécution d&amp;rsquo;une requête, Oracle effectue plusieurs étapes. Parmi ces étapes, on retrouve le parsing. Durant cette étape, oracle décortique l&amp;rsquo;ordre SQL et choisit quel est le plan d&amp;rsquo;exécution le plus court pour récupérer les données ramenées par la requête.
+Si une requête est exécuté 20 fois de suite, Oracle fait le parsing pour la première requête seulement.</description>
+    </item>
+    
+    <item>
+      <title>Répéter un test x fois avec jUnit</title>
+      <link>/development/java/repeat-test-with-junit.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/repeat-test-with-junit.html</guid>
+      <description>Ajouter la Rule RepeatRule :
+@Rule public RepeatRule repeatRule = new RepeatRule(); Ajouter l&amp;rsquo;annotation @Repeat au test :
+@Repeat(times = 100) Dans IntelliJ, les X exécutions n&amp;rsquo;apparaissent pas, il n&amp;rsquo;y a qu&amp;rsquo;une ligne mais qui a pris plus de temps.</description>
+    </item>
+    
+    <item>
+      <title>StringIndexOutOfBoundsException dans Ivy</title>
+      <link>/development/java/stringindexoutofboundsexception-dans-ivy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/stringindexoutofboundsexception-dans-ivy.html</guid>
+      <description>Quand on utilise un serveur Ivy perso en plus d&amp;rsquo;un repo local. Qu&amp;rsquo;une des dépendances est en &amp;ldquo;latest.integration&amp;rdquo; et que le repo distant est accédé en SSH, on peut prendre une erreur ~StringIndexOutOfBoundsException disant qu&amp;rsquo;il y a un problème lors du listing du répertoire.
+Cela vient du SSH. J&amp;rsquo;ai pas le détail mais on changeant dans le ivysettings.xml, au niveau du repo distant, &amp;ldquo;ssh&amp;rdquo; par &amp;ldquo;sftp&amp;rdquo;, ca se met à fonctionner correctement.</description>
+    </item>
+    
+    <item>
+      <title>Tester des membres private</title>
+      <link>/development/java/tester-des-membres-private.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/tester-des-membres-private.html</guid>
+      <description>Un des truc compliqué quand on fait des test unitaire c&amp;rsquo;est de tester les membres private. Un solution pour faire ça :
+/** * Gets the field value from an instance. The field we wish to retrieve is * specified by passing the name. The value will be returned, even if the * field would have private or protected access. */ private Object getField( Object instance, String name ) throws Exception { Class c = instance.</description>
+    </item>
+    
+    <item>
+      <title>Timezoner MySQL</title>
+      <link>/serveurs/mysql/timezoner-mysql.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/serveurs/mysql/timezoner-mysql.html</guid>
+      <description>Dans le cas d&amp;rsquo;un MySQL sous docker, le server MySQL n&amp;rsquo;est pas Timezoné correctement. Par exemple, quand on lance la requête suivante :
+mysql&amp;gt; SELECT @@global.time_zone, @@session.time_zone; +--------------------+---------------------+ | @@global.time_zone | @@session.time_zone | +--------------------+---------------------+ | SYSTEM | SYSTEM | +--------------------+---------------------+ 1 row in set (0.00 sec) Ce qui signifie que c&amp;rsquo;est la Timezone du système qui est utilisé. Un
+date +%Z CEST nous confirme que nous sommes bien sur Europe/Paris.</description>
+    </item>
+    
+    <item>
+      <title>Transformer une URL java en chemin complet</title>
+      <link>/development/java/transformer-une-url-java-en-chemin-complet.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/transformer-une-url-java-en-chemin-complet.html</guid>
+      <description>// w_fileURL est l&amp;#39;URL d&amp;#39;un fichier sur le serveur String w_realPath = request.getSession().getServletContext().getRealPath(&amp;#34;/&amp;#34;); String w_filePath = w_fileURL.replaceFirst(getSettings(request).getCodeBase(), &amp;#34;&amp;#34;); w_filePath = w_realPath+w_filePath.replaceAll(&amp;#34;[/\\\\]+&amp;#34;, &amp;#34;\\&amp;#34; + File.separator); Bien-sur ça marche si l&amp;rsquo;URL est l&amp;rsquo;URL d&amp;rsquo;un fichier sur le serveur ou la servlet s&amp;rsquo;exécute. Dans le cas présent, c&amp;rsquo;est le fichier d&amp;rsquo;un OMM.</description>
+    </item>
+    
+    <item>
+      <title>Télécharger Java en une ligne</title>
+      <link>/development/java/telecharger-java-en-une-ligne.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/telecharger-java-en-une-ligne.html</guid>
+      <description>Pour télécharger java en une ligne de commande avec wget :
+wget --no-check-certificate --no-cookies - --header &amp;#34;Cookie: oraclelicense=accept-securebackup-cookie&amp;#34; http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz Changer pour le JDK que l&amp;rsquo;on veut.</description>
+    </item>
+    
+    <item>
+      <title>Upload file to Nexus Repository</title>
+      <link>/misc/upload-file-to-nexus-repository.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/misc/upload-file-to-nexus-repository.html</guid>
+      <description>Il y a une feature intéressante sur les serveurs Nexus qui semble pas forcément très utilisé. Il est possible de créer une Repository de type site. Ca donne un repo qui héberge des fichiers statique et c&amp;rsquo;est pratique pour stocker par exemeple des applications ou des fichiers que l&amp;rsquo;on recupère souvent mais que l&amp;rsquo;on veut pas télécharger chaque fois depuis internet.
+Pour uploader un fichier on peut utiliser la commande suivante :</description>
+    </item>
+    
+    <item>
+      <title>Visitor vs. InstanceOf</title>
+      <link>/development/java/visitor-vs-instanceof.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/visitor-vs-instanceof.html</guid>
+      <description>public abstract class PartialKPIResolution { public final String aggregation; public PartialKPIResolution(String aggregation) { this.aggregation = aggregation; } public static PartialFlatKPIResolution flat(String aggregation, ImmutableMap&amp;lt;RealmAttribute, PartialFlatRealmKPIResolution&amp;gt; byRealm) { return new PartialFlatKPIResolution(aggregation, byRealm); } public static PartialSyntheticKPIResolution synthetic(Formula syntheticFormula, ApplicationPhase applicationPhase, String aggregation, ImmutableMap&amp;lt;String, String&amp;gt; columnAggregations, ImmutableMap&amp;lt;String, PartialFlatRealmKPIResolution&amp;gt; columns) { return new PartialSyntheticKPIResolution(syntheticFormula, applicationPhase, aggregation, columnAggregations, columns); } public abstract &amp;lt;R&amp;gt; R visit(Visitor&amp;lt;R&amp;gt; visitor); public interface Visitor&amp;lt;R&amp;gt; { R visitFlat(PartialFlatKPIResolution resolution); R visitSynthetic(PartialSyntheticKPIResolution resolution); } }public class PartialFlatKPIResolution extends PartialKPIResolution { public final ImmutableMap&amp;lt;RealmAttribute, PartialFlatRealmKPIResolution&amp;gt; byRealm; public PartialFlatKPIResolution(String aggregation, ImmutableMap&amp;lt;RealmAttribute, PartialFlatRealmKPIResolution&amp;gt; byRealm) { super(aggregation); this.</description>
+    </item>
+    
+    <item>
+      <title>Xmx &amp; Xms par defaut</title>
+      <link>/development/java/valeur-memoire-java-par-defaut.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/development/java/valeur-memoire-java-par-defaut.html</guid>
+      <description>Linux java -XX:+PrintFlagsFinal -version 2&amp;gt;&amp;amp;1 | grep -i -E &amp;#39;heapsize|permsize|version&amp;#39; Windows java -XX:+PrintFlagsFinal -version 2&amp;gt;&amp;amp;1 | findstr /I &amp;#34;heapsize permsize version&amp;#34; Selon le système, les valeurs par défaut peuvent être différente avec les options -client et -server. Pour connaitre les valeurs par defaut il faut dans ce cas ajouter l&amp;rsquo;option pour avoir les valeurs correspondante.</description>
+    </item>
+    
+  </channel>
+</rss>

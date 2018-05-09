@@ -7,6 +7,8 @@ tags: [development, java, reflection]
 Pour des raison de test, on peut avoir besoin d'accéder des membres de classe privé pour tester leur contenu. 
 Il est possible de faire ça sans forcément ajouter des accesseurs "juste pour les tests" sur le classe testé.
 
+<!-- more -->
+
 ``` java
 public static <T> Object getPrivateMember(T testObject, String fieldName) {
 	try {

@@ -21,10 +21,10 @@ C’est là que Git intervient en proposant une gestion des branches simple et r
 ## Git, peux-tu faire quelque chose pour nous ?
 
 Oui, il le peut, en nous permettant de respecter ce schéma facilement:
-![Branching 01]({{ "/assets/img/brancheGit01.png" | absolute_url }}){: .center-image}
+![Branching 01](img/brancheGit01.png#center)
 
 ## Le master
-![Branching 02]({{ "/assets/img/brancheGit02.png" | absolute_url }}){: .right-image}
+![Branching 02](img/brancheGit02.png#right)
 
 Le master correspond à la version de production : Personne ne travaille directement sur la production mais il est 
 possible, en permanence, de créer une branche à partir du master (pour des corrections de bug urgents par exemple).
@@ -48,6 +48,7 @@ Lorsque nous voulons créer une nouvelle fonctionnalité dans notre projet, nous
 de cette fonctionnalité en partant de la branche develop (qui est la branche la plus récente).
 
 Cette branche restera ouverte tant que la fonctionnalité ne sera pas terminée.
+
 ### Création de la branche
 
 ``` sh
@@ -144,7 +145,7 @@ git branch -d release-x.y
 
 ## Corrections de bugs en production
 
-![Branching 03]({{ "/assets/img/brancheGit03.png" | absolute_url }}){: .right-image}
+![Branching 03](img/brancheGit03.png#right)
 
 _Branche réalisée à partir de : master
 La branche sera réintroduite dans : master et develop_
@@ -158,7 +159,7 @@ Cette branche permet d’isoler le correctif de production du cycle de développ
 branche develop).
 
 Une fois le correctif appliqué, il sera intégré au master et à la branche develop.
-<br/>{: .clearfix}
+<br class="clearfix"/>
 
 ## Création de la branche correctif (hotfix)
 

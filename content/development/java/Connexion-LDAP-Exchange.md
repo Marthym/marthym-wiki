@@ -8,6 +8,8 @@ L'idée est d'expliquer comment, depuis Java, se connecter à un serveur LDAP. M
 LDAP Exchange. Ben oui, Microsoft à beau se standardisé un minimum, de là à faire tout comme les autres, faudrait pas
 pousser !
 
+<!-- more -->
+
 ## Implémentation via JNDI
 Plusieurs type d'implémentation existent pour se connecter à un serveur LDAP. La plus utilisé et la plus "standard" est
 de se connecter en utilisant les interfaces JNDI. C'est donc là dessus qu'on va se pencher.

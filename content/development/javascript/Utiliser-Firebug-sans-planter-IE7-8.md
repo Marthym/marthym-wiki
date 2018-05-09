@@ -19,4 +19,4 @@ if (!window.console || !console.log || !console.debug) {
 }
 ```
 
- * http://code.google.com/p/fbug/source/browse/branches/firebug1.5/lite/firebugx.js
+ * <http://code.google.com/p/fbug/source/browse/branches/firebug1.5/lite/firebugx.js>

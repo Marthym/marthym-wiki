@@ -3,14 +3,14 @@ title: "Créer une partition chiffré sur une clé USB"
 category: Linux
 subcategory: Divers
 tags: [linux, misc, usb, security]
+toc: true
 ---
-
-* Do not remove this line (it will not be displayed)
-{:toc}
 
 L'idée est de créer sur une clé USB une partition chiffré. Mais pas seulement, afin de rendre cette partition lisible sur Windows comme sur 
 Linux et de pas avoir un clé vide sous Windows, ce qui semblerait louche, il faut avoir deux partition, une en clair et une en crypté. 
 C'est pas si simple que ça en a l'air.
+
+<!-- more -->
 
 Ce tuto est plus ou moins un copie des tutos en liens que je met là au cas où le site disparaîtrait. 
 J'ai quand même modifié quelques truc qui ne fonctionnaient pas à cause de traductions "à l'arrache".
@@ -37,7 +37,7 @@ NOTE: Toutes les manip sont effectuée en super-utilisateur. Vérifiez toutes le
 si vous vous trompé de partition c'est mort !
 
 ## Partitionnement d'une clé USB
-![Luks]({{ "/assets/img/luks-01.png" | absolute_url }}){: .center-image }
+![Luks](.doc/luks-01.png){: .center-image }
 
 
 Commençons par savoir sur quel périphérique est votre clé :
@@ -100,7 +100,7 @@ de version supérieur à 2.6.24.
 cryptsetup -h sha256 -c aes-xts-plain -s 256 luksFormat /dev/sde5
 ```
 
-~~~
+```
     ATTENTION!
     ========
     Cela va écraser les données sur /dev/sdX1 de façon irrévocable.
@@ -108,7 +108,7 @@ cryptsetup -h sha256 -c aes-xts-plain -s 256 luksFormat /dev/sde5
     Enter LUKS passphrase:
     Vérifiez mot de passe:
     Command succès.
-~~~
+```
 
 Prenez bien garde à entrer un mot de passe dont vous vous souviendrez, c'est pas récupérable si vous l'oubliez !
 
@@ -159,12 +159,12 @@ Sous Windows il ne voit même pas la partition crypté.
 La première chose à faire est de formater la partition normale en FAT 32. 
 
 Remarque : Si on a une grosse clé et que l'on veut des gros fichiers, on peut faire en NTFS ou en 
-[[exFAT|https://mabouali.wordpress.com/2012/10/27/exfat-for-your-usb-flash-drives/]].
+[exFAT](https://mabouali.wordpress.com/2012/10/27/exfat-for-your-usb-flash-drives/).
 
 Ensuite, pour pouvoir lire la partition sur Windows, on peut utiliser [[FreeOTFE|http://www.freeotfe.org/download.html]]. 
 La bonne idée c'est d'installer la version "portable" sur la partition non chiffré ce qui permet alors de lire la partition non chiffré. 
 Faite quand même attention que le mot de passe ne traîne pas sur la partition non chiffré !!
 
 ## Liens
-  * en &rarr; [[http://www.linuxconfig.org/usb-stick-encryption-using-linux]]
-  * fr &rarr; [[http://monblog.system-linux.net/blog/2011/03/19/chiffrement-du-systeme-de-fichiers-dune-cle-usb/]]
+  * en &rarr; <http://www.linuxconfig.org/usb-stick-encryption-using-linux>
+  * fr &rarr; <http://monblog.system-linux.net/blog/2011/03/19/chiffrement-du-systeme-de-fichiers-dune-cle-usb/>

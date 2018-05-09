@@ -8,7 +8,7 @@ tags: [development, java, ssl, crypto, security]
 ## Symptôme
 Dans le cas par exemple d'une connexion en LDAPS (LDAP via SSL) on a de bonne chance de se prendre ce genre d’erreur :
 
-~~~
+```
 javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
     at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:150)
     at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1584)
@@ -19,7 +19,7 @@ javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: 
     at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:495)
     at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:433)
     ...
-~~~
+```
 
 _Note que c’est la même pour les accès à des Web-Service en HTTPS via Axis_
 
@@ -44,14 +44,14 @@ keytool -importcert -keystore "/usr/lib/jvm/java-6-sun/jre/lib/security/jssecace
 _Attention le chemin de le JRE est pas toujours le même ! Sous linux pour le connaître facilement taper:_
 
 ``` sh
-update-alternatives --list java</code>
+update-alternatives --list java
 ```
 
 C'est évident mais on sait jamais, s'il y a plusieurs JRE sur le serveur, il faut exécuter sur celle qu'utilise JBoss !!
 
 La commande keytool devrait donner un truc du genre, le mot de passe est **changeit**
 
-~~~
+```
 Tapez le mot de passe du Keystore :  
 Ressaisissez le nouveau mot de passe : 
 Propriétaire : CN=A10.blabla.test, L=PARIS, C=FR
@@ -65,7 +65,7 @@ Empreintes du certificat :
 	 Version : 4
 Faire confiance à ce certificat ? [non] :  oui
 Certificat ajouté au Keystore
-~~~
+```
 
 Après les appels https sur le serveur dont vous venez d'enregistrer le certificat devrait passer tout seul :p
 
@@ -91,8 +91,6 @@ On redémarre le JBoss et hop ça fonctionne normalement !
 ## Liens
 Par ordre d'intérêt :
 
-  * http://blogs.sun.com/andreas/entry/no_more_unable_to_find
-  * http://www.google.com/support/forum/p/Google%20Apps/thread?tid=0b9d3f130628f63b&hl=en
-  * http://www.forumeasy.com/forums/archive/ldappro/200707/p118350434574.html
-
-<!-- --- tags: crypto, java, security -->
+  * <http://blogs.sun.com/andreas/entry/no_more_unable_to_find>
+  * <http://www.google.com/support/forum/p/Google%20Apps/thread?tid=0b9d3f130628f63b&hl=en>
+  * <http://www.forumeasy.com/forums/archive/ldappro/200707/p118350434574.html>

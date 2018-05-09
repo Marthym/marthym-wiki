@@ -4,17 +4,17 @@ category: Développement
 subcategory: Java
 tags: [development, java, oracle, sql, database, mysql]
 ---
-C'est un info qui date mais c'est toujours juste.
+C’est un info qui date mais c’est toujours juste.
 
-## C'est quoi des Bind Variable déjà ?
-Dans le processus d'exécution d'une requête, Oracle effectue plusieurs étapes. Parmi ces étapes, on retrouve le parsing. 
-Durant cette étape, oracle décortique l'ordre SQL et choisit quel est le plan d'exécution le plus court pour récupérer 
+## C’est quoi des Bind Variable déjà ?
+Dans le processus d’exécution d’une requête, Oracle effectue plusieurs étapes. Parmi ces étapes, on retrouve le parsing. 
+Durant cette étape, oracle décortique l’ordre SQL et choisit quel est le plan d’exécution le plus court pour récupérer 
 les données ramenées par la requête.
 
 Si une requête est exécuté 20 fois de suite, Oracle fait le parsing pour la première requête seulement. 
 Il se ressert des infos de parsing obtenu pour la première requête pour exécuter les autres.
 
-La où les BV interviennent c'est pour déterminer si une requête et une autre sont identique ou non et si du coup elle 
+La où les BV interviennent c’est pour déterminer si une requête et une autre sont identique ou non et si du coup elle 
 partage ou non les même infos de parsing. Par exemple :
 
 ``` sql
@@ -46,7 +46,7 @@ Concrètement dans le code Java, ça veut dire quoi ? Ca veut dire qu'on évite 
 
 ``` java
 String requete = "select colonne from table_toto where autre_colonne = '"+valeur+"'"
-``` 
+```
 
 On utilisera plutôt les `PreparedStatement` :
 

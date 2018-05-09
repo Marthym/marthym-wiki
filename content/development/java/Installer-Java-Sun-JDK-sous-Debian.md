@@ -6,10 +6,12 @@ tags: [development, java, debian]
 ---
 C'est très simple mais faut avoir les bons dépôt activé.
 
+<!-- more -->
+
 ## Vérifier la liste de ces dépôts
 Éditer le fichier `/etc/apt/sources.list` et faites en sorte qu'il ressemble à ça :
 
-~~~
+``` conf
 # deb cdrom:[Debian GNU/Linux testing _Wheezy_ - Official Snapshot i386 CD Binary-1 20111205-04:44]/ wheezy main
 
 deb http://ftp.fr.debian.org/debian/ testing main contrib non-free
@@ -23,7 +25,7 @@ deb-src http://ftp.fr.debian.org/debian/ stable main contrib non-free
 
 deb http://security.debian.org/ stable/updates main contrib non-free
 deb-src http://security.debian.org/ stable/updates main contrib non-free
-~~~
+```
 
 Ce qui est important c'est d'avoir ''contrib non-free'' dans ses dépôts car le Java Sun se trouve dans les ''non-free'',
 sinon c'est |OpenJDK qui est dans les ''main'' mais qui peut poser des soucis.
@@ -41,4 +43,5 @@ Note que si vous n'avez besoin que de JRE la procédure est la même mais le paq
 il n'est donc pas nécessaire d'installer les deux.
 
 ## Installer l'alternative
-[[include:../linux/Comment installer une alternative]]
+[Comment installer une alternative]({{% relref "/linux/administration/Comment-installer-une-alternative" %}})
+

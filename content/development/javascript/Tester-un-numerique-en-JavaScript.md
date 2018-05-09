@@ -4,7 +4,7 @@ category: Développement
 subcategory: JavaScript
 tags: [development, javascript, type]
 ---
-Après des tas et des tas de tests, voici le façon de tester un numérique en [[JavaScript|javascript]] que passe le plus de cas :
+Après des tas et des tas de tests, voici le façon de tester un numérique en [JavaScript] que passe le plus de cas :
 
 ``` js
 /**
@@ -20,4 +20,6 @@ mgpRemainsDependant.isNumeric = function (strString) {
 Attention tout de même, les nombres en hexa du type 0xFF passent ...
 
 ## Liens
- * http://dl.dropbox.com/u/35146/js/tests/isNumber.html
+ * <http://dl.dropbox.com/u/35146/js/tests/isNumber.html>
+
+[JavaScript]: {{% relref "development/javascript" %}}

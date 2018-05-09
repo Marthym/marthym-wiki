@@ -50,12 +50,10 @@ article section.page {
     }
 
     table {
-        width: 100%;
         margin-bottom: 2em;
-
         border-collapse: collapse;
         border-spacing: 0;
-        border: 1px solid #e6e6e6;
+        border: 1px solid $color-primary-light;
 
         th, td {
             padding: .25rem .75rem
@@ -67,17 +65,15 @@ article section.page {
             vertical-align: middle;
             text-align: center;
             font-weight: 800;
-            background: #f6f6f6;
-            color: black;
-            border-bottom: 2px solid #e5e5e5;
+            background: $color-primary-light;
+            color: $color-primary;
+            border-bottom: 2px solid $color-primary;
         }
 
         td {
             padding: 0.5rem;
             vertical-align: middle;
-            border-bottom: 1px solid #e5e5e5;
-            border: 1px solid #e6e6e6;
-            color: #323232;
+            border: 1px solid $color-primary-light;
         }
 
         td:first-child {
@@ -91,7 +87,7 @@ article section.page {
     img {
         border: 0;
         max-width: 100%;
-        margin: 3rem auto;
+        margin: 1rem auto;
         display: block;
         text-align: center;
 
@@ -117,7 +113,17 @@ article section.page {
         }
     }
 
-
+    img[src$='#right'] {
+        float: right;
+        margin: 0.7rem;
+    }
+    img[src$='#left'] {
+        float: left;
+        margin: 0.7rem;
+    }
+    .clearfix {
+        clear: both;
+    }
 
     code {
         font-family: monospace;

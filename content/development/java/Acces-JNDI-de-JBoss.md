@@ -7,6 +7,8 @@ tags: [development, java, jndi, jboss]
 Pour accéder au composants EJB déployé sous JBoss, voici un exemple de code. Il récupère le ~CorbasManager mais ça 
 marche avec tout les EJB déployé.
 
+<!-- more -->
+
 ``` java
 // Get initial context of JNDI tree
 Hashtable<String, String> w_param = new Hashtable<String, String>();

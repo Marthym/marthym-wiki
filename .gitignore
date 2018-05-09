@@ -6,6 +6,7 @@ _site
 vendor/bundle
 _config_local.yml
 **/node_modules
+public
 themes/ght1pc9kc/static/css/style.css
 themes/ght1pc9kc/static/js/lunr.js
 themes/ght1pc9kc/static/js/*.js.map

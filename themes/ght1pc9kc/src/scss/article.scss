@@ -35,6 +35,20 @@ article section.page {
         margin-top: 3rem;
     } 
 
+    a {
+        background-color: $color-secondary;
+        background: linear-gradient(180deg,$color-secondary,$color-secondary) no-repeat 0 1.02rem;
+        transition: background-position-y .15s ease-out;
+
+        &:hover{
+            background-position-y: 0;
+        }
+    }
+
+    .children-li a {
+        background: none;
+    }
+
     table {
         width: 100%;
         margin-bottom: 2em;
@@ -106,13 +120,14 @@ article section.page {
 
 
     code {
-        font-family: 'RobotoMono', monospace
+        font-family: monospace;
     }
 
     p>code,
     li code,
     table code {
-        padding: 0 .25rem
+        padding: 0 .25rem;
+        background-color: $color-primary-light;
     }
 
     pre {

@@ -32,6 +32,7 @@ Le fichier est donc ajouté au HEAD, mais pas encore dans votre dépôt distant.
 `git add -p <filename>`
 
 Avec cette commande, git passe chaque block de changement du fichier en revue et demande s’il doit l'ajouter. Les options sont :
+
   * `y` Ajoute le bloc pour le prochain commit
   * `n` n’ajoute pas pour le prochain commit
   * `q` quitte, n’ajoute pas le bloc ni aucun des blocs suivant

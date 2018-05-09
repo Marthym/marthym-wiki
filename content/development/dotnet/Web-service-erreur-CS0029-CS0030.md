@@ -10,4 +10,4 @@ problème d'interprétation du WSDL par .Net qui gère mal est attributs "unboun
 il faut, dans le fichier .cs généré avec le wsdl.exe de Microsoft, rechercher la chaine `[][]` et remplacer par `[]`. 
 On va normalement trouver 2 occurrences.
 
- * http://www.developpez.net/forums/d1101500/dotnet/langages/csharp/web-service-erreur-cs0029-cs0030/
+ * <http://www.developpez.net/forums/d1101500/dotnet/langages/csharp/web-service-erreur-cs0029-cs0030/>

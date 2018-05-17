@@ -11,7 +11,7 @@
                 var titlePreview = item.title;
 
 
-                appendString += '<a href="' + item.url + '" class="list-group-item"><h4 class="list-group-item-heading">' + titlePreview + '</h4>';
+                appendString += '<a href="' + item.uri + '" class="list-group-item"><h4 class="list-group-item-heading">' + titlePreview + '</h4>';
                 appendString += '<p class="list-group-item-text"><em>' + contentPreview + '</em></p></a>';
             }
 

@@ -13,6 +13,8 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
   *Très technique, peu applicable mais super intéressant*
 * Architechture - [Être architecte logiciel en 2018 — Arnauld Loyer & Cyrille Martraire](https://www.youtube.com/watch?v=1igv2rHGKfo) *2h40m* \\
   *Conf intéressante, duo sympa, attention à pas entrer dans le purisme*
+* Architechture - [De la grosse application spaghetti aux micro services — N. Helleringer & P. Grimaud](https://www.youtube.com/watch?v=jbBdYrlpgh8&t=5s) *45m* \\
+  *Rapide survol d’un découpage d’application legacy, un bon aperçu mais ils ne font que survoler les problèmes qu’ils ont eu*
 
 ## Chaos Ingeneering
 

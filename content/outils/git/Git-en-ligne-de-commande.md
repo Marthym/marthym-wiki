@@ -2,10 +2,9 @@
 title: "Git en ligne de commande"
 category: Outils
 subcategory: Git
+toc: true
 tags: [outils, git]
 ---
-* Do not remove
-{:toc}
 
 Voici un glossaire des lignes de commandes utile sous GIT :
 
@@ -77,7 +76,7 @@ Pour supprimer toutes les références distantes à des branches supprimées :
 git branch --move old_name new_name
 git checkout new_name
 git branch --unset-upstream
-git push origin :new_name
+git push origin :old_name
 git push --set-upstream origin new_name
 ```
 

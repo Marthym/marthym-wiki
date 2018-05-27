@@ -9,12 +9,16 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
 
 * Nouveautés - [Après Java 8, Java 9 et 10 — JM. Doudou](https://www.youtube.com/watch?v=dYubeLiObqY) *45mn* \\
   *Toujours bon a savoir pour resté informer*
+* Architecture - [Architecture hexagonale pour les nuls — Y. Chéné)(https://www.youtube.com/watch?v=Hi5aDfRe-aE) *30mn* \\
+  *Survol des bases de cette archi mais très intéressant*
 * Perf/JIT - [Java lang invoke — Rémi Forax](https://www.youtube.com/watch?v=z5UkoLaW6ME) *45mn* \\
   *Très technique, peu applicable mais super intéressant*
 * Architechture - [Être architecte logiciel en 2018 — Arnauld Loyer & Cyrille Martraire](https://www.youtube.com/watch?v=1igv2rHGKfo) *2h40m* \\
   *Conf intéressante, duo sympa, attention à pas entrer dans le purisme*
 * Architechture - [De la grosse application spaghetti aux micro services — N. Helleringer & P. Grimaud](https://www.youtube.com/watch?v=jbBdYrlpgh8&t=5s) *45m* \\
   *Rapide survol d’un découpage d’application legacy, un bon aperçu mais ils ne font que survoler les problèmes qu’ils ont eu*
+* Système - [SystemD pro level — P.A. Grégoire & Q. Adam](https://www.youtube.com/watch?v=v-jdlc5YdDc) *2h20m* \\
+  *Très bon talk sur SystemD, des bases à la pratique, mais déjà vu l’an dernier*
 
 ## Chaos Ingeneering
 
@@ -32,6 +36,8 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
 * Voir `@Secure` ce qu’on peut en faire
 * Désactiver le monitoring par défaut si on veut pas l’utiliser (MicroMeter)
 * Spring embarque un client Consul
+* gRPC: Protocole de communication binaire inter-service à base de HTTP/2.0 + protobuff 
+  * <https://github.com/LogNet/grpc-spring-boot-starter>
 
 ## Maven
 
@@ -81,3 +87,17 @@ Meilleur support de Docker. Ajout d’une option par défaut sous Linux `-XX-Use
 * Commencer un développement avec un Monolite Modulaire (Micro-Service Ready) plutôt que direct un Micro-Service mal découpé.
 * Archi Decision Record: Concerver toutes les décisions, par exemple des fichiers .md dans un répertoire.\\
   <https://github.com/joelparkerhenderson/architecture_decision_record#how-to-start-using-adrs-with-tools>
+* Architecture Hexagonale
+  * Pas de code d’infra dans le domain
+  * Les Service comme l’API ne doivent avoir aucune dépendance lourde
+  * Les classe de @Service de spring sont des coquilles vident qui étedent les Service du domaine
+  * <http://blog.xebia.fr/2016/03/16/perennisez-votre-metier-avec-larchitecture-hexagonale/>
+
+## Système
+
+* Il est possible de créer des Unit SystemD de type `Path` qui exécute quelque chose dés qu’un fichier est modifié
+* Pour chaque utilisateur il y a un deamond SystemD qui lance gère les process dans le contexte de l’utilisateur
+* Les Units `Timer` peuvent remplacer cron.
+* il est possible de faire des snapshot SystemD pour sauver une configuration de services.
+* systemd-nspawn permet de poper un systemd secondaire à l’intérieur d’un container permettant d’avoir un gestion de process propre dans le container
+* `systemd-analyze blame` pour connaitre les temps de démarrage des service

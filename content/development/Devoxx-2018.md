@@ -34,7 +34,7 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
 
 * Spring Boot Activator ?
 * AuthenticationManager doit être créé à la main
-* Voir `@Secure` ce qu’on peut en faire
+* Voir `@Secured` ce qu’on peut en faire
 * Désactiver le monitoring par défaut si on veut pas l’utiliser (MicroMeter)
 * Spring embarque un client Consul
 * gRPC: Protocole de communication binaire inter-service à base de HTTP/2.0 + protobuff 

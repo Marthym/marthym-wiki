@@ -6,6 +6,7 @@ tags: [outils, git]
 ---
 Je retranscrit ici un article très intéressant trouvé sur internet à propos de GIT.
 
+<!-- more -->
 ----
 
 Migrer de Subversion (ou CVS) vers Git ne se suffit pas en soit pour profiter de ce qui fait de Git… Git.

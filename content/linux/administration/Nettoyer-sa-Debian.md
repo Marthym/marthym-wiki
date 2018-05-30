@@ -113,7 +113,8 @@ Explication de la commande :
 * **awk ‘{print $2}’** : filtre l’affichage de la sortie de la commande précédente
 
 ### Trouver les gros fichiers
-[[include:../shell/Trouver les gros fichiers]]
+
+* [Trouver les gros fichiers]({{% relref "linux/shell/Trouver-les-gros-fichiers" %}})
 
 ## Liens
   * http://forum.ovh.com/showthread.php?t=27814

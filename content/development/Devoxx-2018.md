@@ -20,17 +20,28 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
   *Rapide survol d’un découpage d’application legacy, un bon aperçu mais ils ne font que survoler les problèmes qu’ils ont eu*
 * Système - [SystemD pro level — P.A. Grégoire & Q. Adam](https://www.youtube.com/watch?v=v-jdlc5YdDc) *2h20m* \\
   *Très bon talk sur SystemD, des bases à la pratique, mais déjà vu l’an dernier*
+* Front - [Angular et performances — C. Balit & W. Chegham](https://www.youtube.com/watch?v=ZxZQv5wopOs) *45m* \\
+  *C’est les base mais pour les non initiés c’est intéressant*
+* Culture - [L’ordinateur quantique](https://www.youtube.com/watch?v=ciM6xK05t2o) *20m* \\
+  *Vulgarisation sur l’ordi quantique*
 
-## Chaos Ingeneering
+## Front
 
-* VRK: Equivalent Gatling
-* Pumba / TC (Traffic Control: Met de la latence dans le réseau
-
-## Tests
+### Tests
 
 * Cypress: Test end to end (vs Selenium)
 
-## Spring Boot
+
+### Angular
+
+* `source-map-explorer` est un outil qui permet de voir l’impact des dépendances sur la taille du code
+* Bazel un outil de build qui sera utilisé pour la prochaine version de angular (on peut faire du Java)
+* Le Server Side Render est géré par Angular Universal
+* Pour améliorer les perf on peut géré le changeDetection (pushStrategie) par composant attention à faire attention a ce que l’on fait, on peut facilement tout casser
+
+## Back
+
+### Spring Boot
 
 * Spring Boot Activator ?
 * AuthenticationManager doit être créé à la main
@@ -40,14 +51,11 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
 * gRPC: Protocole de communication binaire inter-service à base de HTTP/2.0 + protobuff 
   * <https://github.com/LogNet/grpc-spring-boot-starter>
 
-## Maven
+### Maven
 
 * Regarder le Maven Docker Plugin par Fabric8
 
-## Mesure et Metriques
-* Prometheus: Pull de métriques, en Go, compatible Grafana, pas de trace log, fourni les metrique système, Alerte
-
-## Migrations Java 9, 10, ...
+### Migrations Java 9, 10, ...
 
 La nouvelle politique de mise à jour choisie par Oracle impose de se poser la question de la migration. Une nouvelle version tout les 6 mois et un support gratuit beacoup plus court.
 
@@ -64,7 +72,7 @@ La nouvelle politique de mise à jour choisie par Oracle impose de se poser la q
 * Plus de dépendances cycliques
 * `jax-b` & `jax-ws` n'est plus résolut -> utiliser une dépendance externe. Retiré en Java 11.
 
-## Java 10
+### Java 10
 
 La plus grosse nouveauté c’est l’utilisation de `var` pour l’inférence de type. Ca n’est pas du JS, ça ne fait qu’inférer le type, ças ne veut pas dire que l’on peut y mettre n’importe quoi après.
 
@@ -72,12 +80,33 @@ C’est pratique pour éviter d’écrire des wagons de `<>`. Par contre pas d�
 
 Meilleur support de Docker. Ajout d’une option par défaut sous Linux `-XX-UseContainerSupport` qui ajuste les paramêtres de la JVM aux informations du container (cgroup, CPU, ...).
 
-## Bon à savoir !!
+### Bon à savoir !!
 
 * La lecture d’un champ `volatile` par la JVM impose que toutes les lectures de champ suivantes soient faite depuis la RAM, jusqu`à ce que les registres soient vidé. Ce qui veut dire que celà imposé une remonté des dites variables dans la RAM pour pouvoir les lire. Ca peut induire de problèmes de perf.
 * java.lang.invoke = appel de method en reflection pour les vresion 8, 9, 10
 
-## Architechture
+## Système
+
+### Mesure et Metriques
+* Prometheus: Pull de métriques, en Go, compatible Grafana, pas de trace log, fourni les metrique système, Alerte
+
+### SystemD
+
+* Il est possible de créer des Unit SystemD de type `Path` qui exécute quelque chose dés qu’un fichier est modifié
+* Pour chaque utilisateur il y a un deamond SystemD qui lance gère les process dans le contexte de l’utilisateur
+* Les Units `Timer` peuvent remplacer cron.
+* il est possible de faire des snapshot SystemD pour sauver une configuration de services.
+* systemd-nspawn permet de poper un systemd secondaire à l’intérieur d’un container permettant d’avoir un gestion de process propre dans le container
+* `systemd-analyze blame` pour connaitre les temps de démarrage des service
+
+## Divers
+
+### Chaos Ingeneering
+
+* VRK: Equivalent Gatling
+* Pumba / TC (Traffic Control: Met de la latence dans le réseau
+
+### Architechture
 
 * Préférer le Domain Driven Dev, un découpage par fonctionalité. La même entité de base peut être des entités différentes dans des modules application différents
 * Le DDD implique beaucoup de mapper entre les Entité des différents domaines
@@ -93,12 +122,3 @@ Meilleur support de Docker. Ajout d’une option par défaut sous Linux `-XX-Use
   * Les Service comme l’API ne doivent avoir aucune dépendance lourde
   * Les classe de @Service de spring sont des coquilles vident qui étedent les Service du domaine
   * <http://blog.xebia.fr/2016/03/16/perennisez-votre-metier-avec-larchitecture-hexagonale/>
-
-## Système
-
-* Il est possible de créer des Unit SystemD de type `Path` qui exécute quelque chose dés qu’un fichier est modifié
-* Pour chaque utilisateur il y a un deamond SystemD qui lance gère les process dans le contexte de l’utilisateur
-* Les Units `Timer` peuvent remplacer cron.
-* il est possible de faire des snapshot SystemD pour sauver une configuration de services.
-* systemd-nspawn permet de poper un systemd secondaire à l’intérieur d’un container permettant d’avoir un gestion de process propre dans le container
-* `systemd-analyze blame` pour connaitre les temps de démarrage des service

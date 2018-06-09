@@ -24,6 +24,8 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
   *C’est les base mais pour les non initiés c’est intéressant*
 * Culture - [L’ordinateur quantique](https://www.youtube.com/watch?v=ciM6xK05t2o) *20m* \\
   *Vulgarisation sur l’ordi quantique*
+* Système - [Gagner des super pouvoirs avec le terminal — S. Ehret](https://www.youtube.com/watch?v=mxRpBHar_BQ)
+* Culture - [On n’est pas chez Google ici !](https://www.youtube.com/watch?v=LeONtn2ECxo)
 
 ## Front
 
@@ -84,10 +86,12 @@ Meilleur support de Docker. Ajout d’une option par défaut sous Linux `-XX-Use
 
 * La lecture d’un champ `volatile` par la JVM impose que toutes les lectures de champ suivantes soient faite depuis la RAM, jusqu`à ce que les registres soient vidé. Ce qui veut dire que celà imposé une remonté des dites variables dans la RAM pour pouvoir les lire. Ca peut induire de problèmes de perf.
 * java.lang.invoke = appel de method en reflection pour les vresion 8, 9, 10
+* Dans l’industrie, certaine migration à Maven on pris 1 an pour être acceptées.
 
 ## Système
 
 ### Mesure et Metriques
+
 * Prometheus: Pull de métriques, en Go, compatible Grafana, pas de trace log, fourni les metrique système, Alerte
 
 ### SystemD
@@ -98,6 +102,12 @@ Meilleur support de Docker. Ajout d’une option par défaut sous Linux `-XX-Use
 * il est possible de faire des snapshot SystemD pour sauver une configuration de services.
 * systemd-nspawn permet de poper un systemd secondaire à l’intérieur d’un container permettant d’avoir un gestion de process propre dans le container
 * `systemd-analyze blame` pour connaitre les temps de démarrage des service
+
+### Terminal
+
+* tig: Un git graphique en terminal... <https://jonas.github.io/tig/>
+* thefuck: <https://github.com/nvbn/thefuck>
+* mpd / ncmpcpp: Lecteur de zic <https://github.com/MusicPlayerDaemon/MPD> et son client pour terminal <https://rybczak.net/ncmpcpp/>
 
 ## Divers
 

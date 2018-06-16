@@ -26,6 +26,8 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
   *Vulgarisation sur l’ordi quantique*
 * Système - [Gagner des super pouvoirs avec le terminal — S. Ehret](https://www.youtube.com/watch?v=mxRpBHar_BQ)
 * Culture - [On n’est pas chez Google ici !](https://www.youtube.com/watch?v=LeONtn2ECxo)
+* Web - [RetourAuxSources Les cookies HTTP — H. Sablonnière](https://www.youtube.com/watch?v=KL9MR721c4w) *47m* \\
+  *Retour sur le fonctionnement des cookies et les problèmes que ça engendre)
 
 ## Front
 

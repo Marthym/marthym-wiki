@@ -10,6 +10,8 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
 
 * Nouveautés - [Après Java 8, Java 9 et 10 — JM. Doudou](https://www.youtube.com/watch?v=dYubeLiObqY) *45mn* \\
   *Toujours bon a savoir pour resté informer*
+* Spring - [Applications Web avec Spring Boot 2.0 — S. Nicoll](https://www.youtube.com/watch?v=Cf_PMzQBhog) *47mn* \\
+  *Les nouveauté de Spring Boot 2.0, Reactor, Actuator, ...*
 * Architecture - [Architecture hexagonale pour les nuls — Y. Chéné)(https://www.youtube.com/watch?v=Hi5aDfRe-aE) *30mn* \\
   *Survol des bases de cette archi mais très intéressant*
 * Perf/JIT - [Java lang invoke — Rémi Forax](https://www.youtube.com/watch?v=z5UkoLaW6ME) *45mn* \\
@@ -54,6 +56,8 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
 * Spring embarque un client Consul
 * gRPC: Protocole de communication binaire inter-service à base de HTTP/2.0 + protobuff 
   * <https://github.com/LogNet/grpc-spring-boot-starter>
+* Tailable Cursors avec MongoDB. Les données sont envoyé au travers d’un Flux dés qu’elles arrivent sur Mongo
+* Spring Boot Actuator a été grandement remanié pour la v2.0. C’est le handpoint des infos interne de Spring.
 
 ### Maven
 
@@ -89,6 +93,8 @@ Meilleur support de Docker. Ajout d’une option par défaut sous Linux `-XX-Use
 * La lecture d’un champ `volatile` par la JVM impose que toutes les lectures de champ suivantes soient faite depuis la RAM, jusqu`à ce que les registres soient vidé. Ce qui veut dire que celà imposé une remonté des dites variables dans la RAM pour pouvoir les lire. Ca peut induire de problèmes de perf.
 * java.lang.invoke = appel de method en reflection pour les vresion 8, 9, 10
 * Dans l’industrie, certaine migration à Maven on pris 1 an pour être acceptées.
+* Complexité Cognitive vs Complexité Cyclomatique
+* Lire "Coder Proprement (Clean code) de Robert C. Martin"
 
 ## Système
 

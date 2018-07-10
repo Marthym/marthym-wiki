@@ -36,6 +36,7 @@ lui fourni et passe par défaut en UTC. La solution pour être certain de sa Tim
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
 ```
 qui va mettre à jour la table de zonage de MySQL
+
 * Dans MySQL:
 
 ``` sql

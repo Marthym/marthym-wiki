@@ -12,7 +12,7 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
   *Toujours bon a savoir pour resté informer*
 * Spring - [Applications Web avec Spring Boot 2.0 — S. Nicoll](https://www.youtube.com/watch?v=Cf_PMzQBhog) *47mn* \\
   *Les nouveauté de Spring Boot 2.0, Reactor, Actuator, ...*
-* Architecture - [Architecture hexagonale pour les nuls — Y. Chéné)(https://www.youtube.com/watch?v=Hi5aDfRe-aE) *30mn* \\
+* Architecture - [Architecture hexagonale pour les nuls — Y. Chéné](https://www.youtube.com/watch?v=Hi5aDfRe-aE) *30mn* \\
   *Survol des bases de cette archi mais très intéressant*
 * Perf/JIT - [Java lang invoke — Rémi Forax](https://www.youtube.com/watch?v=z5UkoLaW6ME) *45mn* \\
   *Très technique, peu applicable mais super intéressant*
@@ -36,6 +36,7 @@ Toutes les vidéos sont visionnable sur le [Youtube de Devoxx](https://www.youtu
 ### Tests
 
 * Cypress: Test end to end (vs Selenium)
+* [Karate](https://github.com/intuit/karate): Test d’API REST, basé sur [Cucumber](https://cucumber.io/)
 
 
 ### Angular

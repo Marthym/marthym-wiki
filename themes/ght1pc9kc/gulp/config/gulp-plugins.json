@@ -19,17 +19,6 @@
     "threshold": "1kb",
     "level": 9
   },
-  "jshintOptions": {
-    "node": true,
-    "globals": {
-      "app": false,
-      "angular": false,
-      "$": false,
-      "_": false,
-      "moment": false,
-      "window": false
-    }
-  },
   "revOptions" : {
   }
 }

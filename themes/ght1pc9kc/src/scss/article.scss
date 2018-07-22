@@ -35,7 +35,6 @@ article section.page {
     } 
 
     a {
-        background-color: $color-secondary;
         background: linear-gradient(180deg,$color-secondary,$color-secondary) no-repeat 0 1.02rem;
         transition: background-position-y .15s ease-out;
 

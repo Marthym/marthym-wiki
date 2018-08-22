@@ -102,6 +102,13 @@ Vous pouvez obtenir cet identifiant avec<br/>
 `git log`<br/>
 vous pouvez utiliser moins de caractères de cet identifiant, il doit juste rester unique.
 
+## Logs
+
+### Rechercher un commit qui supprime une ligne
+
+```bash
+git log -S chaine_supprimée chemin/du/fichier.txt
+```
 
 ## Remplacer les changements locaux
 Dans le cas où vous auriez fait quelque chose de travers (ce qui bien entendu n’arrive jamais ;) 

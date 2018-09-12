@@ -80,6 +80,17 @@ git push origin :old_name
 git push --set-upstream origin new_name
 ```
 
+### Purger les branches locales
+
+Après un peu d’utilisation de git, si on a l’habitude de checkout beaucoup de branches, on se retrouve avec un stock important de branche mortes, supprimé du remote mais toujours présente en local. Voilà une commande pour les purger. Ca ne supprime que les branches déjà mergé et qui trackent une branche remote disparue.
+
+```bash
+LANG=en_US git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d
+```
+
+Note que si on enlève la dernière partie, ça ne fait que les lister.
+
+Le `LANG=en_US` permet d’éviter les problèmes de changement de traduction.
 
 ## Mettre à jour & fusionner
 pour mettre à jour votre dépôt local vers les dernières validations, exécutez la commande `git pull` dans votre espace de travail pour récupérer et fusionner les changements distants. 

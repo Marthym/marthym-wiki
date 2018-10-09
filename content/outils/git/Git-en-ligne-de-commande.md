@@ -92,6 +92,20 @@ Note que si on enlève la dernière partie, ça ne fait que les lister.
 
 Le `LANG=en_US` permet d’éviter les problèmes de changement de traduction.
 
+### Extraire une branche dans un autre répertoire
+
+C’est la magie `git worktree`. La branche est extraite dans un nouveau répertoire, tous les commits sur cette branch sont instantanément visible dans le repo principal.
+
+```bash
+git worktree add <chemin> <ref/branche/commit/tag>
+```
+
+et pour supprimer
+
+```bash
+git worktree add <chemin>
+```
+
 ## Mettre à jour & fusionner
 pour mettre à jour votre dépôt local vers les dernières validations, exécutez la commande `git pull` dans votre espace de travail pour récupérer et fusionner les changements distants. 
 

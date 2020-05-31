@@ -5,7 +5,7 @@ subcategory: Administration
 tags: [linux, sysadmin, systemd, dns]
 ---
 
-Dans ses dernières versions systemd embarque un resolver de dns. Malheureusement il est pas encore tout à fait sec et il peut y avoir des raté. Pour évité d’essuyer les platres, il est possible de réactiver l’ancien celui de NetworkManager.
+Dans ses dernières versions systemd embarque un resolver de dns. Malheureusement il est pas encore tout à fait sec et il peut y avoir des ratés. Pour évité d’essuyer les platres, il est possible de réactiver l’ancien celui de NetworkManager.
 
 <!-- more -->
 

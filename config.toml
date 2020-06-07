@@ -11,4 +11,5 @@ home = [ "HTML", "RSS", "JSON"]
 [params]
 disableHomeIcon = true
 
-
+[markup.goldmark.renderer]
+unsafe= true

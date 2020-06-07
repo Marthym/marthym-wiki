@@ -1,7 +1,7 @@
 ---
 title: "Installer backup sur jail BSD"
 category: Linux
-subcategory: Administration
+subcategory: FreeNAS
 tags: [linux, sysadmin, bsd, jail, hubic, backup]
 ---
 Une fois la jail créée, pour que les scripts de backup fonctionnent il faut install bash et hubic.py. C'est pas toujours intuitif alors voilà ce que j'ai fais la dernière fois :

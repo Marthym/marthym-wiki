@@ -1,18 +1,41 @@
-image: marthym/hugulp:1.0.1
+---
+stages:
+  - build:theme
+  - build
+  - deploy
 
-before_script:
-  - cd "${CI_PROJECT_DIR}/themes/ght1pc9kc" && npm install --unsafe-perm
+build:theme:
+  stage: build:theme
+  image: node:12.13.1-slim
+  script:
+    - cd "${CI_PROJECT_DIR}/themes/ght1pc9kc"
+    - npm install --unsafe-perm
+    - node_modules/gulp/bin/gulp.js prod
+  cache:
+    untracked: true
+  artifacts:
+    paths:
+      - ${CI_PROJECT_DIR}/themes/ght1pc9kc
+
+build:pages:
+  stage: build
+  image: monachus/hugo:v0.72.0
+  dependencies:
+    - build:theme
+  script:
+    - hugo
+  artifacts:
+    paths:
+      - public
 
 pages:
   stage: deploy
-  cache:
-    untracked: true
+  dependencies:
+    - build:pages
   script:
-  - cd "${CI_PROJECT_DIR}/themes/ght1pc9kc" && gulp prod
-  - cd "${CI_PROJECT_DIR}" && hugo
-  - find public -type f -iregex '.*\.\(htm\|html\|txt\|text\|js\|css\|json\)$' -execdir gzip -f --keep {} \;
+    - find public -type f -iregex '.*\.\(htm\|html\|txt\|text\|js\|css\|json\)$' -execdir gzip -f --keep {} \;
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master

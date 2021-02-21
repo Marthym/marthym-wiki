@@ -25,6 +25,6 @@ origin  git@another.org:another/myproject.git (push)
 origin  git@git.original.com:original/myproject.git (push)
 ```
 
-## Liens
+### Liens
 
-* <https://stackoverflow.com/questions/14290113/git-pushing-code-to-two-remotes>
+* https://stackoverflow.com/questions/14290113/git-pushing-code-to-two-remotes

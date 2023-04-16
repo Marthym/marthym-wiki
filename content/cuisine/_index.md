@@ -6,4 +6,4 @@ description: Quelques recettes de cuisine
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

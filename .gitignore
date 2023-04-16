@@ -11,3 +11,4 @@ themes/ght1pc9kc/static/css/style.css
 themes/ght1pc9kc/static/js/lunr.js
 themes/ght1pc9kc/static/js/*.js.map
 themes/ght1pc9kc/static/js/search.js
+*.lock

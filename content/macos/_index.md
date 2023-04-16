@@ -6,4 +6,4 @@ description: L'autre système
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

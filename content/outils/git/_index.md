@@ -6,4 +6,4 @@ description: Si vous ne devez maitriser qu’un seul des outils c’est celui l�
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

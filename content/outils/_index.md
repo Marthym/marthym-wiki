@@ -6,4 +6,4 @@ description: Les outils pour le dev, Git, Ansible, Docker, ...
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

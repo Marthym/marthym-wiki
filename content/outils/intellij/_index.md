@@ -6,4 +6,4 @@ description: Marre d’Eclipde ?
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

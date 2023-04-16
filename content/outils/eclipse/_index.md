@@ -6,4 +6,4 @@ description: L’EDI Java, rien à voir avec la lune
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

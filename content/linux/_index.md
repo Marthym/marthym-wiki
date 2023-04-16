@@ -6,4 +6,4 @@ description: Le seul le vrai l’unique système
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

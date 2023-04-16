@@ -6,4 +6,4 @@ description: Google Web Toolkit
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

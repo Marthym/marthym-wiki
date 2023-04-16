@@ -6,4 +6,4 @@ description: Tout pour le dev, Java, javascript, ...
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

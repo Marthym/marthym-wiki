@@ -6,4 +6,4 @@ description: Le réseau sous MacOS
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

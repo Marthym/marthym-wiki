@@ -6,4 +6,4 @@ description: Dévelopement .Net
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

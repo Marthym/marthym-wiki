@@ -6,4 +6,4 @@ description: Un peu tout et n’importe quoi
 ---
 <!--more-->
 
-{{% children depth="2" %}}
+{{% children depth="2" /%}}

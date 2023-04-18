@@ -100,3 +100,72 @@ tags: [development, java, devoxx]
   * error: 4xx
   * info: 3xx
   * debug: 2xx
+
+## Hidden security features of the JVM - everything you didn’t know and more
+
+* Sealed les jar pour plus de sécurité
+* La serialization est le point d'attaque principal, il permet d'injecter n'importe quoi dans la JVM
+* https://bomdoctor.sonatype.com
+
+## Loi de Conway
+
+* L'organisation conditionne la structure du produit [wikipedia](https://fr.wikipedia.org/wiki/Loi_de_Conway)
+* Explorer l'[Event Storming](https://jordanchapuy.com/posts/2021/10/une-introduction-a-levent-storming/) 
+  et la [context map](https://github.com/ddd-crew/context-mapping)
+
+## Nouveautées Java 19 / 20
+
+* [Record pattern avec destructuration](https://openjdk.org/jeps/405)
+* Valable aussi dans les boucles depuis la 20
+* Panama
+  * [Foreign Function](https://openjdk.org/jeps/434) = accès à la mémoire Offheap et appel de fonction externe
+  * Vector pour les calculs Vectoriel SIMD sur les cpu RISK
+* Loom
+  * Thread Virtuels
+  * Structured Concurrency = Remplace les Future avec des Thread Virtuel
+  * Scope Value = Remplace les ThreadLocal pour les Thread Virtuel
+
+## Docker vs Jib vs Pack
+
+* Compression de binaire avec [UPX](https://upx.github.io/)
+* Spring boot à un [profil native](https://docs.spring.io/spring-boot/docs/current/reference/html/native-image.html)
+* [CNB](https://buildpacks.io/) avec pack pour images natives
+* plugin maven packito-buildpack
+* [Termgraph](https://github.com/mkaz/termgraph) pour les grap dans le terminal
+
+## PostgreSQL
+
+* Génération de données
+* Partionning de tables par list ou hash
+* Postgres Anonymizer = extension pour anonymizer les données en live par utilisateur
+* Row level security
+* Capaciter à monter un fichier en table et de l'intéroger comme une table avec les foreign wrapper
+* Stockage Json (attention de respecter les bonnes pratiques)
+  * Capacité d'interooger des sous-éléments
+  * Capacité de sauver des sous-éléments
+
+## Terraform
+
+* tfstate est ce qui a été fait et permet de gérer la suppression des ressources
+* Il présente un risque de désynchronisation
+* Azure Policy pour appliquer des règles de sécu sur certaines resources
+* Drftctl permet de contrôler les dérives du tfstate
+* Terraform state rm et import pour remettre à jour le tfstate
+* La création de modules permet de forcer les conventions et les valeurs par défaut
+* Attention refactor un module présente un risque de casser le tfstate si les noms changent
+* Terraform n'est pas fait pour remplir les resouces mais pour les déployer
+
+## Divers
+
+* [Pirsch Analytics](https://pirsch.io/)
+* [Crowdin](https://crowdin.com/) est une plateform de localization collaborative gratuite pour l'open source
+* [Ant design](https://ant.design/) Alibaba est un framework front
+* Tech radar
+* [OctoDNS](https://github.com/octodns/octodns)
+  * octodns-dump pour recupérer
+  * gestion des dns par repo git
+  * octodns-validate pour valider la syntaxe
+* [R2DevOps](https://r2devops.io/) et gitlab [tobecontinuous](https://to-be-continuous.gitlab.io/doc/)
+* [gitlab-cli](https://gitlab.com/gitlab-org/cli) pour gitlab en ligne de commande
+* [gitlab-ci local](https://github.com/firecow/gitlab-ci-local) pour les pipelines en local
+* 

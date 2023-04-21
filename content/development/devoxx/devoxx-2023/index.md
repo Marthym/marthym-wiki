@@ -168,4 +168,4 @@ tags: [development, java, devoxx]
 * [R2DevOps](https://r2devops.io/) et gitlab [tobecontinuous](https://to-be-continuous.gitlab.io/doc/)
 * [gitlab-cli](https://gitlab.com/gitlab-org/cli) pour gitlab en ligne de commande
 * [gitlab-ci local](https://github.com/firecow/gitlab-ci-local) pour les pipelines en local
-* 
+* [Spring 3 Observability](https://spring.io/blog/2022/10/12/observability-with-spring-boot-3)

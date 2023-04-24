@@ -51,17 +51,10 @@ zone "example.org." {
 
 On redémarre Bind9 et c’est terminé. Il n’y a rien de plus. On redémarre et ça fonctionne.
 
-On peut serrer la vis un peu en ajoutant des restrictions sur l’IP qui a le droit d’utiliser la clé :
-
-```conf
-server 192.168.1.172 {
-    keys {example.org};
-};
-```
-
-On peut aussi limiter un peu plus les droits au niveau du `allow-update` :
+On peut aussi ouvrir un peu en autorisant le réseau local au niveau de `allow-update` :
 
 ```shell
+# Autorise le réseau local et la clé
 allow-update { !{ !localnets; any; }; key example.org ;};
 ```
 
@@ -76,3 +69,17 @@ Via une commande `dig` vous pouvez demander au serveur DNS d’exporter une zone
 ```shell
 dig –y hmac-sha256:example.org:zvILnd5/3wGl4kWlBBrxApdtmclR5A4Ar3VSH1IR8mQ= @192.168.1.172 AXFR example.org.
 ```
+
+## Remarques
+
+Pour dire à un serveur bind qu’il doit utiliser une clé particulière pour contacter un autre serveur, la configuration suivante est nécessaire :
+
+```conf
+server 192.168.1.172 {
+    keys {example.org};
+};
+```
+
+## Liens
+
+* https://bind9.readthedocs.io/en/v9_18_4/chapter6.html#tsig

@@ -45,3 +45,10 @@ Pour le ssh
 
 * `-T` on forward l'agent
 * `-o Compression=no` on ne compresse pas
+
+### Config sudo
+Le problème est que si vous avez mis un mot de passe sur le sudo de la machine d'en face, ça complique les choses. Le plus simple est de supprimer le password pour la commande rsync seulement. Pour ça il suffit de mettre un fichier `99-rsync-nopwd` dans `/etc/sudoers.d` avec la ligne :
+
+```
+obiwan ALL = (root) NOPASSWD: /usr/bin/rsync
+```

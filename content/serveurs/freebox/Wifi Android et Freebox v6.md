@@ -1,5 +1,5 @@
 ---
-title: "Wifi Android et Frrebox v6"
+title: "Wifi Android et Freebox v6"
 category: Freebox
 tags: [freebox, free, wifi, android, google]
 ---

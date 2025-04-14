@@ -30,3 +30,7 @@ cscli decisions add --ip X.X.X.X
 cscli decisions add --ip X.X.X.X --duration 24h
 sudo cscli dashboard setup --listen 0.0.0.0
 ```
+
+## Liens
+  * https://www.it-connect.fr/comment-proteger-son-serveur-linux-des-attaques-avec-crowdsec/
+  * https://discourse.crowdsec.net/t/iptables-bouncer-and-other-rule-precedence/798

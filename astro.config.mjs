@@ -7,6 +7,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'wiki.ght1pc9kc.fr',
+            logo: {
+                src: './src/assets/logo.png',
+            },
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
@@ -20,7 +23,7 @@ export default defineConfig({
 					autogenerate: { directory: 'linux' },
 				},
 				{
-					label: 'macos',
+					label: 'MacOS',
                     collapsed: true,
 					autogenerate: { directory: 'macos' },
 				},

@@ -4,7 +4,7 @@ category: Développement
 subcategory: Java
 tags: [development, java, linux]
 ---
-La question se pose notement pour Jasper quand il faut lui rajouter des fonts.
+La question se pose notamment pour Jasper quand il faut lui rajouter des fonts.
 
 Sous Linux, il faut mettre le fichier TTF dans le répertoire : 
 `/usr/lib/jvm/java-6-sun/jre/lib/fonts`

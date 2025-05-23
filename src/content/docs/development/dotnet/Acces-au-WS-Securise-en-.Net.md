@@ -3,6 +3,10 @@ title: "Accès au WS Sécurisé en .Net"
 category: Développement
 subcategory: DotNet
 tags: [development, dotnet, .net, security, ws]
+sidebar:
+  badge:
+    text: old
+    variant: caution
 ---
 
 Depuis la version 8 (je sais plus quel fix), les services Cameleon sont sécurisé. La difficulté est donc maintenant de 

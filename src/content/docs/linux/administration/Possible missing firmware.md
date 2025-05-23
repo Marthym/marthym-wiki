@@ -19,7 +19,7 @@ W: Possible missing firmware /lib/firmware/nvidia/gp104/sec2/sig.bin for module 
 
 Il manque un package a installer
 
-```
+```shell
 apt install firmware-misc-nonfree
 ```
 

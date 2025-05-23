@@ -4,7 +4,7 @@ category: Linux
 subcategory: Administration
 tags: [linux, sysadmin, cleanup, debian, purge]
 ---
-Même si ce n'est pas dans les proportion de Windows, un Linux a tendance à accumuler des reliquats de vieux paquets et du cache pas vraiment
+Même si ce n'est pas dans les proportions de Windows, un Linux a tendance à accumuler des reliquats de vieux paquets et du cache pas vraiment
 utile qui à la longue pèsent lourd sur l'espace disque (ça ne ralenti pas le système pour autant).
 
 ## Localepurge

@@ -4,6 +4,9 @@ category: Développement
 subcategory: Java
 tags: [development, java, download]
 ---
+:::caution[Obsolète]
+:::
+
 Pour télécharger java en une ligne de commande avec `wget` :
 
 ``` sh

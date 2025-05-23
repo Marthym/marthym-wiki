@@ -4,6 +4,8 @@ category: Développement
 subcategory: Java
 tags: [development, java, ivy]
 ---
+:::caution[Obsolète]
+:::
 Quand on utilise un serveur Ivy perso en plus d'un repo local. Qu'une des dépendances est en "latest.integration" et 
 que le repo distant est accédé en SSH, on peut prendre une erreur `StringIndexOutOfBoundsException` disant qu'il y a 
 un problème lors du listing du répertoire.

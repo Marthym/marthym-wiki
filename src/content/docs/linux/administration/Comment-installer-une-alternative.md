@@ -4,6 +4,11 @@ category: Linux
 subcategory: Administration
 tags: [linux, sysadmin]
 ---
+
+:::note
+Cela fonctionne toujours mais des solutions comme [ASDF](https://asdf-vm.com/) sont plus adaptées
+:::
+
 Sous Debian il y a un outil pas mal qui permet de switcher entre plusieurs versions 
 d'un même exécutable, c'est `update-alternatives`. Pour installer une nouvelle alternative, 
 de java par exemple :

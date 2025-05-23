@@ -4,6 +4,9 @@ category: Développement
 subcategory: JavaScript
 tags: [development, javascript, class]
 ---
+:::caution[Obsolète]
+:::
+
 Il existe de nombreuses façons de coder en Javascript. La plus fréquente est malheureusement la plus crade : lister ses 
 fonctions les une après les autres...
 

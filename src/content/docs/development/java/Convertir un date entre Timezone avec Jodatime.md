@@ -5,6 +5,9 @@ subcategory: Java
 tags: [development, java, date, timezone]
 ---
 
+:::caution[Obsolète]
+:::
+
 ``` java
 DateTime initialTime = new DateTime(timestamp.getTime())
         .withZoneRetainFields(vpnNeType.getTimeZone().get())

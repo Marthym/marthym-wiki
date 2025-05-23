@@ -1,16 +1,30 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightThemeNova from 'starlight-theme-nova';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://wiki.ght1pc9kc.fr',
 	integrations: [
 		starlight({
 			title: 'wiki.ght1pc9kc.fr',
             logo: {
                 src: './src/assets/logo.png',
             },
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+            favicon: './src/assets/logo.png',
+            head: [
+                // Add ICO favicon fallback for Safari.
+                {
+                tag: 'link',
+                attrs: {
+                    rel: 'icon',
+                    href: './src/assets/logo.png',
+                    sizes: '32x32',
+                },
+                },
+            ],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Marthym' }],
 			sidebar: [
 				{
 					label: 'Développement',
@@ -48,6 +62,7 @@ export default defineConfig({
 					autogenerate: { directory: 'cuisine' },
 				},
 			],
+            plugins: [starlightThemeNova()], 
 		}),
 	],
 });

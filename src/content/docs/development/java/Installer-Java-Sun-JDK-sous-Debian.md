@@ -3,7 +3,12 @@ title: "Installer Java Sun JDK sous Debian"
 category: Développement
 subcategory: Java
 tags: [development, java, debian]
+lastUpdate: 2025-05-23
 ---
+:::caution[Obsolète]
+Utiliser plutôt [ASDF](https://asdf-vm.com/)
+:::
+
 C'est très simple mais faut avoir les bons dépôt activé.
 
 <!-- more -->
@@ -43,5 +48,5 @@ Note que si vous n'avez besoin que de JRE la procédure est la même mais le paq
 il n'est donc pas nécessaire d'installer les deux.
 
 ## Installer l'alternative
-[Comment installer une alternative]({{% relref "/linux/administration/Comment-installer-une-alternative" %}})
+[Comment installer une alternative](/linux/administration/comment-installer-une-alternative/)
 

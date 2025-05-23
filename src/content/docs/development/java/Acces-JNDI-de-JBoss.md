@@ -4,8 +4,8 @@ category: Développement
 subcategory: Java
 tags: [development, java, jndi, jboss]
 ---
-Pour accéder au composants EJB déployé sous JBoss, voici un exemple de code. Il récupère le ~CorbasManager mais ça 
-marche avec tout les EJB déployé.
+Pour accéder aux composants EJB déployés sous JBoss, voici un exemple de code. Il récupère le `CorbasManager` mais ça 
+marche avec tout les EJB déployés.
 
 <!-- more -->
 

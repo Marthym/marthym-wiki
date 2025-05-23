@@ -21,6 +21,11 @@ $ su -
 ```
 
 ### Ajouter l'utilisateur administrateur aux sudoers
+
+:::note
+dans les versions récentes de Debian, on n’utilisera plutôt le répertoire `/etc/sudoers.d/` pour customiser la configuration de sudo.
+:::
+
 Sudo autorise des utilisateurs normaux, comme celui qui est créé lors de l'installation, 
 à se connecter en tant que super utilisateur. Pour avoir ce privilège, un utilisateur 
 standard doit être placé dans le group sudo.

@@ -4,6 +4,9 @@ category: Linux
 subcategory: Divers
 tags: [linux, misc, vpn, bash]
 ---
+:::caution[Obsolète]
+:::
+
 Sous Linux il n'existe pas de client VPN Cisco officiel mais Rackspace préconise l'utilisation de VPNC qui fonctionne très bien.
 
 ## Installation du package

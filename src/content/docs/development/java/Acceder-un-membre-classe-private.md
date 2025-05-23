@@ -4,7 +4,7 @@ category: Développement
 subcategory: Java
 tags: [development, java, reflection]
 ---
-Pour des raison de test, on peut avoir besoin d'accéder des membres de classe privé pour tester leur contenu. 
+Pour des raisons de test, on peut avoir besoin d'accéder des membres de classe privé pour tester leur contenu. 
 Il est possible de faire ça sans forcément ajouter des accesseurs "juste pour les tests" sur le classe testé.
 
 <!-- more -->

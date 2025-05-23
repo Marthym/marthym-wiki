@@ -1,5 +1,5 @@
 ---
-title: "Visitor vs. InstanceOf"
+title: "Pattern Visitor vs. InstanceOf"
 category: Développement
 subcategory: Java
 tags: [development, java, code, visitor]

@@ -4,7 +4,14 @@ category: Développement
 subcategory: Java
 tags: [development, java, test, reflection]
 ---
-Un des truc compliqué quand on fait des test unitaire c'est de tester les membres private. Un solution pour faire ça :
+:::caution[Obsolète]
+A ne surtout pas faire !
+On ne teste pas les valeurs de membres privés. 
+
+Si vous avez besoin de faire ça c'est que vos classes sont mal structurées.
+:::
+
+Un des trucs compliqué quand on fait des tests unitaires c'est de tester les membres private. Une solution pour faire ça :
 
 ``` java
 /**

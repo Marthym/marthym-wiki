@@ -2,8 +2,9 @@
 title: "Hack CSS"
 category: Développement
 tags: [development, css, hack, front]
-weight: -1
 ---
+:::caution[Obsolète]
+:::
 Pour ceux que le savent pas, un hack CSS consiste à exploiter un bug ou plutôt un manque fonctionnel afin d'écrire un 
 seul et unique fichier CSS compatible avec un maximum de navigateur. Par exemple, un hack très répandu mais qui ne 
 fonctionne plus maintenant était la directive `!IMPORTANT` dans les propriétés CSS.

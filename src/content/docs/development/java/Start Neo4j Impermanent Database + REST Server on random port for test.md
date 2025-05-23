@@ -4,8 +4,10 @@ category: Développement
 subcategory: Java
 tags: [development, java, neo4j, database, test]
 ---
+:::caution[Obsolète]
+:::
 Pour des tests par exemple, vu que la licence Neo4j ne permet que l'utilisation des API REST, on peut avoir besoin
-lors de test de lancer un server éphémaire sur lequel brancher les jeux de test. Cela se fait en deux étapes :
+lors de test de lancer un server éphémère sur lequel brancher les jeux de test. Cela se fait en deux étapes :
  * Lancement du serveur neo4j
  * Lancement de la surcouche REST
 

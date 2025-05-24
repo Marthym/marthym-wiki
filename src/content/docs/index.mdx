@@ -1,0 +1,40 @@
+---
+title: Wiki Technique
+author: Marthym
+tableOfContents: false
+---
+import { LinkCard } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+
+Ce wiki est un reccueil de notes personnelles dont certaines date de mes débuts. La véracité et l’exactitude de ce que vous allez trouver ici n’est donc absoluement pas garanti.
+
+<CardGrid stagger>
+    <LinkCard
+        title="Développement"
+        href="/development/"
+        description="Tout pour le dev, Java, javascript, ..." />
+    <LinkCard
+        title="Linux"
+        href="/linux/"
+        description="Le seul le vrai l’unique système" />
+    <LinkCard
+        title="MacOS"
+        href="/macos/"
+        description="L'autre système" />
+    <LinkCard
+        title="Divers"
+        href="/misc/"
+        description="Un peu tout et n’importe quoi" />
+    <LinkCard
+        title="Outils"
+        href="/outils/"
+        description="Les outils pour le dev, Git, Ansible, Docker, ..." />
+    <LinkCard
+        title="Serveurs"
+        href="/serveurs/"
+        description="Les serveurs dans l’ensemble, HTTP, Base de données, ..." />
+    <LinkCard
+        title="Cuisine"
+        href="/cuisine/"
+        description="Quelques recettes de cuisine" />
+</CardGrid>

@@ -1,8 +1,13 @@
 node_modules:
 	npm ci
 
-serve: node_modules
+install: node_modules
+
+serve: install
 	npm run dev
+
+build: install
+	npm run build
 
 clean:
 	rm -rf node_modules .astro

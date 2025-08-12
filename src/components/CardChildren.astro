@@ -1,0 +1,49 @@
+---
+import {getCollection} from "astro:content";
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props {
+  dir?: string;
+  recurse?: string;
+}
+
+const { dir, recurse } = Astro.props;
+const {slug} = Astro.params;
+const compstring = (slug !== undefined) ? slug : '';
+
+const recurseComp: string = (recurse !== undefined) ? recurse : 'false';
+
+console.debug('==> compstring', compstring)
+
+const allPages = await getCollection('docs', p => p.id.startsWith(compstring) && p.id.split('/').length === compstring.split('/').length + 1);
+
+console.log(`found ${allPages.length} starting with ${compstring}`)
+
+let searchPages = allPages.filter((p) => {
+  //using undefined because I do not know how to get the actual locale for the browser reliably.
+  const compstring = (slug !== undefined) ? slug : '';
+  console.log(`title -> `, p.id)
+  return p.id.startsWith(compstring) && p.id.split('/').length === compstring.split('/').length + 1;
+})
+
+searchPages = searchPages.sort((a,b) => {
+  if(a.data.sidebar.order && b.data.sidebar.order) {
+    return a.data.sidebar.order - b.data.sidebar.order;
+  } else if (a.data.sidebar.order) {
+    return 0 - a.data.sidebar.order;
+  } else if (b.data.sidebar.order) {
+    return b.data.sidebar.order - 0
+  } else {
+    return (a.data.title.localeCompare(b.data.title, undefined, {sensitivity: 'base'}))
+  }
+})
+
+const count = searchPages.length
+const test = ["one", "two", "three"]
+---
+<CardGrid stagger>
+  { searchPages.map((p) => (
+    <LinkCard href={'/'.concat(p.id).concat('/')} title={p.data.title} description={p.data.description}/>
+  ))}
+</CardGrid>

@@ -87,6 +87,17 @@ tags: [leasure, painting, figurines]
 ## 🦴 Os / Ivoires
 
 
+## 🌫️ Washs & Shade
+
+| Ref.    | Nom                |
+| ------- | ------------------ |
+| 73.201  | Wash Black         |
+| 73.207  | Wash Blue          |
+| Citadel | Biel-Tan Green     |
+| Citadel | Athonian Camoshade |
+| Citadel | Agrax Earthshade   |
+| Citadel | Nuln Oil           |
+
 ## ⚙️ Métalliques
 
 | Ref.   | Nom                                |
@@ -105,6 +116,13 @@ tags: [leasure, painting, figurines]
 | 70.596 | Glaze Medium              |
 | 72.651 | Matt Polyurethane Varnish |
 | 69.701 | Gloss Varnish             |
-| 73.201 | Wash Black                |
-| 73.207 | Wash Blue                 |
 | 72.609 | Rust FX                   |
+
+## 🌍 Pigments (Weathering)
+
+| Ref.   | Nom                |
+| ------ | ------------------ |
+| 73.110 | Burnt Umber        |
+| 73.115 | Natural Iron Oxide |
+| 73.103 | Dark Yellow Ochre  |
+| 73.121 | Desert Dust        |

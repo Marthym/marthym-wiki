@@ -13,7 +13,6 @@ tags: [leasure, painting, figurines]
 | 72.051 | Black          |
 | 70.995 | German Grey    |
 | 72.155 | Carbon Grey    |
-| 72.145 | Dirty Grey     |
 | 70.993 | White Grey     |
 | 72.047 | Wolf Grey      |
 | 70.907 | Pale Grey Blue |
@@ -29,17 +28,16 @@ tags: [leasure, painting, figurines]
 
 ## 🟢 Verts
 
-| Ref.   | Nom                |
-| ------ | ------------------ |
-| 72.028 | Dark Green         |
-| 72.025 | Foul Green         |
-| 72.086 | Olive Green        |
-| 72.095 | Heavy Green        |
-| 72.085 | Yellow Olive (Ink) |
-| 72.067 | Cayman Green       |
-| 72.030 | Goblin Green       |
-| 72.031 | Camouflage Green   |
-| 72.032 | Scorpy Green       |
+| Ref.   | Nom               |
+| ------ | ----------------- |
+| 72.145 | Dirty Grey        |
+| 72.064 | Cayman Green      |
+| 72.031 | Camouflage Green  |
+| 72.029 | Sick Green        |
+| 72.030 | Goblin Green      |
+| 72.032 | Scorpy Green      |
+| 72.025 | Foul Green        |
+| 72.104 | Fluorescent Green |
 
 
 ## 🔴 Rouges
@@ -58,6 +56,7 @@ tags: [leasure, painting, figurines]
 | ------ | ------------------ |
 | 72.008 | Orange Fire        |
 | 72.005 | Moon Yellow        |
+| 72.085 | Yellow Olive (Ink) |
 | 72.003 | Pale Yellow        |
 | 72.152 | Heavy Orange       |
 | 72.156 | Fluorescent Orange |
@@ -81,7 +80,7 @@ tags: [leasure, painting, figurines]
 | Ref.   | Nom          |
 | ------ | ------------ |
 | 72.115 | Grunge Brown |
-| 72.104 | Elf Skintone |
+
 
 
 ## 🦴 Os / Ivoires

@@ -69,7 +69,6 @@ tags: [leasure, painting, figurines]
 | 72.045 | Charred Brown            |
 | 72.043 | Beasty Brown             |
 | 72.043 | Beasty Brown             |
-| 70.596 | German Camo Medium Brown |
 | 72.062 | Earth                    |
 | 72.063 | Desert Yellow            |
 | 72.066 | Tan                      |

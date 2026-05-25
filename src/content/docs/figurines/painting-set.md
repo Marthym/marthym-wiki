@@ -48,6 +48,7 @@ tags: [leasure, painting, figurines]
 | 72.012 | Scarlet Red |
 | 72.010 | Bloody Red  |
 | 72.010 | Bloody Red  |
+| 72.086 | Red (Ink)   |
 
 
 ## 🟠 Oranges & Jaunes

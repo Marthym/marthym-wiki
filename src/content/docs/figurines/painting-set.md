@@ -47,7 +47,6 @@ tags: [leasure, painting, figurines]
 | 72.011 | Gory Red    |
 | 72.012 | Scarlet Red |
 | 72.010 | Bloody Red  |
-| 72.010 | Bloody Red  |
 | 72.086 | Red (Ink)   |
 
 
@@ -67,7 +66,6 @@ tags: [leasure, painting, figurines]
 | Ref.   | Nom                      |
 | ------ | ------------------------ |
 | 72.045 | Charred Brown            |
-| 72.043 | Beasty Brown             |
 | 72.043 | Beasty Brown             |
 | 72.062 | Earth                    |
 | 72.063 | Desert Yellow            |

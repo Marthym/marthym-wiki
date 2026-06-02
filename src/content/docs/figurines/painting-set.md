@@ -17,14 +17,20 @@ tags: [leasure, painting, figurines]
 | 72.047 | Wolf Grey      |
 | 70.907 | Pale Grey Blue |
 | 72.001 | Dead White     |
+| 72.101 | Off-White      |
+| 72.034 | Bone White     |
+
 
 ## 🔵 Bleus
 
 | Ref.   | Nom           |
 | ------ | ------------- |
-| 72.020 | Imperial Blue |
+| 72.095 | Glacier Blue  |
 | 72.023 | Electric Blue |
-
+| 72.024 | Turquoise     |
+| 72.021 | Magic Blue    |
+| 72.020 | Imperial Blue |
+| 70.898 | Dark Sea Blue |
 
 ## 🟢 Verts
 
@@ -42,12 +48,14 @@ tags: [leasure, painting, figurines]
 
 ## 🔴 Rouges
 
-| Ref.   | Nom         |
-| ------ | ----------- |
-| 72.011 | Gory Red    |
-| 72.012 | Scarlet Red |
-| 72.010 | Bloody Red  |
-| 72.086 | Red (Ink)   |
+| Ref.   | Nom            |
+| ------ | -------------- |
+| 72.011 | Gory Red       |
+| 72.012 | Scarlet Red    |
+| 72.010 | Bloody Red     |
+| 72.086 | Red (Ink)      |
+| 72.115 | Grunge Brown   |
+| 72.014 | Warlord Purple |
 
 
 ## 🟠 Oranges & Jaunes
@@ -56,6 +64,7 @@ tags: [leasure, painting, figurines]
 | ------ | ------------------ |
 | 72.008 | Orange Fire        |
 | 72.005 | Moon Yellow        |
+| 72.006 | Sun Yellow         |
 | 72.085 | Yellow Olive (Ink) |
 | 72.003 | Pale Yellow        |
 | 72.152 | Heavy Orange       |
@@ -69,15 +78,22 @@ tags: [leasure, painting, figurines]
 | 72.043 | Beasty Brown             |
 | 72.062 | Earth                    |
 | 72.063 | Desert Yellow            |
-| 72.066 | Tan                      |
 | 72.061 | Khaki                    |
 
 
 ## 👤 Chairs
 
-| Ref.   | Nom          |
-| ------ | ------------ |
-| 72.115 | Grunge Brown |
+| Ref.   | Nom            |
+| ------ | -------------- |
+| 72.098 | Elfic Flesh    |
+| 72.003 | Pale Flesh     |
+| 72.099 | Skin Tone      |
+| 72.004 | Elf Skin Tone  |
+| 72.100 | Rosy Flesh     |
+| 72.107 | Athena Skin    |
+| 72.071 | Barbarian SKin |
+| 72.066 | Tan            |
+| 72.108 | Succubus Skin  |
 
 
 

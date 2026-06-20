@@ -102,14 +102,17 @@ tags: [leasure, painting, figurines]
 
 ## 🌫️ Washs & Shade
 
-| Ref.    | Nom                |
-| ------- | ------------------ |
-| 73.201  | Wash Black         |
-| 73.207  | Wash Blue          |
-| Citadel | Biel-Tan Green     |
-| Citadel | Athonian Camoshade |
-| Citadel | Agrax Earthshade   |
-| Citadel | Nuln Oil           |
+| Ref.    | Nom                 |
+| ------- | ------------------- |
+| 73.201  | Wash Black          |
+| 73.207  | Wash Blue           |
+| Citadel | Athonian Camoshade  |
+| Citadel | Agrax Earthshade    |
+| Citadel | Biel-Tan Green      |
+| Citadel | Druchii Violet      |
+| Citadel | Nuln Oil            |
+| Citadel | Reikland Fleshshade |
+| Citadel | Soulblight Grey     |
 
 ## ⚙️ Métalliques
 

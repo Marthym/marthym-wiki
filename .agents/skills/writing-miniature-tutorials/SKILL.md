@@ -12,10 +12,29 @@ Créer une page Markdown exploitable avec le matériel réel de l'utilisateur. T
 1. Se placer à la racine qui contient `src/content/docs/figurines/painting-set.md`. Arrêter si ce fichier manque.
 2. Obtenir le nom du projet et celui de la figurine. Ce sont les seules informations bloquantes. Déduire le style, la difficulté et le socle de la demande; annoncer les hypothèses utiles.
 3. Lire le painting set au moment de la demande. Relever chaque couple référence/nom exact sans recopier cette liste dans le skill.
-4. Lire les pages `.md` du projet dans `src/content/docs/figurines/<projet>/`. Conserver ses métaux, cuirs, socles et techniques lorsqu'ils existent. Introduire de petites variations de teinte entre figurines sans casser l'harmonie du projet.
-5. Concevoir une palette fondée sur les valeurs, la température, la saturation et la relation dominante/accent. Favoriser des contrastes lisibles à distance de jeu et un rendu plus saturé que réaliste, sauf demande contraire.
+4. Lire les pages `.md` du projet dans `src/content/docs/figurines/<projet>/`, puis choisir le degré de cohérence adapté.
+5. Concevoir la palette avec les règles de théorie des couleurs ci-dessous.
 6. Créer `src/content/docs/figurines/<projet>/<figurine-en-kebab-case>.md`. Employer des minuscules ASCII et des tirets pour le projet et le fichier.
 7. Valider la page, corriger les erreurs, puis lancer le build.
+
+## Théorie des couleurs
+
+- Définir une couleur dominante, une couleur secondaire et une ou deux couleurs d'accent.
+- Construire d'abord le contraste de valeur : les ombres, tons moyens et éclaircissements doivent rester distincts à distance de jeu.
+- Utiliser la température et la saturation pour séparer les zones proches. Réserver les couleurs les plus saturées aux points focaux.
+- Choisir une harmonie adaptée au sujet : analogue pour l'unité, complémentaire pour un accent fort, ou chaude/froide pour séparer les matériaux. Ne pas imposer une formule si le schéma demandé fonctionne autrement.
+- Vérifier les mélanges réels avec le painting set. Éviter les mélanges complémentaires excessifs qui produisent une teinte terne, sauf pour neutraliser volontairement une ombre.
+- Expliquer brièvement les choix utiles dans le tutoriel par leur effet visuel, sans ajouter un cours théorique séparé.
+
+## Cohérence du projet
+
+Donner priorité au schéma demandé par l'utilisateur, puis choisir l'un de ces modes d'après les pages existantes :
+
+- **Schéma commun :** conserver la même palette et introduire de légères variations de mélanges, d'usure ou d'accents.
+- **Palettes variées :** autoriser des schémas différents tout en conservant quelques marqueurs communs, comme les métaux, les cuirs, le traitement des ombres ou les socles.
+- **Thème commun :** laisser chaque figurine avoir son propre schéma tout en partageant une ambiance, une température, un niveau de saturation ou une histoire visuelle.
+
+Ne pas figer un projet à partir d'une seule page. Conserver seulement les marqueurs pertinents pour la nouvelle figurine et laisser varier le reste. En l'absence d'indication claire, adopter le mode le moins contraignant compatible avec les tutoriels existants.
 
 ## Produits et mélanges
 
@@ -38,7 +57,17 @@ Diluer avec 1 part d'eau et appliquer deux couches fines, en laissant sécher ch
 
 ## Format de la page
 
-Commencer par un frontmatter avec `title` et `description`, puis ce résumé avant le premier chapitre :
+Commencer par ce frontmatter, avec des valeurs non vides entre guillemets doubles :
+
+```markdown
+---
+title: "Nom de la figurine"
+description: "Résumé du schéma de peinture et du résultat recherché."
+tags: [leasure, painting, figurines, tuto]
+---
+```
+
+Ne pas ajouter de titre Markdown de niveau 1 : Starlight affiche déjà le `title`. Placer ensuite ce résumé avant le premier chapitre :
 
 ```markdown
 - **Style recherché :** ...
@@ -65,6 +94,14 @@ Dans chaque chapitre :
 - éviter de revenir plusieurs fois sur une même zone;
 - ajouter au bon endroit les conseils de geste, charge du pinceau, dilution, séchage et correction des erreurs;
 - couvrir toutes les zones visibles de la figurine et terminer les finitions avant le socle.
+
+## Compatibilité Astro et Starlight
+
+- Créer une page `.md`, pas `.mdx`.
+- Employer du Markdown standard. Ne placer aucun `import`, `export`, composant Astro ou composant JSX dans la page.
+- Fermer le frontmatter avec `---` avant le contenu et conserver les champs `title`, `description` et `tags` du modèle ci-dessus.
+- Utiliser des chemins relatifs valides pour les liens et les images. Enregistrer les images du tutoriel sous `src/assets/figurines/<projet>/`.
+- Ne pas considérer la page comme terminée tant que le validateur Node et `npm run build` n'ont pas réussi. Le build Astro constitue la validation définitive du rendu CMS.
 
 ## Illustration finale
 

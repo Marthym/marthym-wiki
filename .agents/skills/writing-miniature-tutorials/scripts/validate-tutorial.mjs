@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { extname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REQUIRED_HEADINGS = [
@@ -32,12 +32,41 @@ export function parsePaintingSet(markdown) {
     return products;
 }
 
-export function validateTutorial(markdown, products) {
+function hasQuotedFrontmatterField(frontmatter, field) {
+    const match = frontmatter.match(new RegExp(`^${field}\\s*:\\s*("(?:[^"\\\\]|\\\\.)*")\\s*$`, 'm'));
+    if (!match) return false;
+
+    try {
+        return JSON.parse(match[1]).trim().length > 0;
+    } catch {
+        return false;
+    }
+}
+
+export function validateTutorial(markdown, products, tutorialPath = 'tutorial.md') {
     const errors = [];
     const frontmatter = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/);
 
-    if (!frontmatter || !/^title\s*:\s*\S.+$/m.test(frontmatter[1])) {
-        errors.push('Le frontmatter doit contenir un title.');
+    if (!frontmatter || !hasQuotedFrontmatterField(frontmatter[1], 'title')) {
+        errors.push('Le frontmatter doit contenir un title non vide entre guillemets doubles.');
+    }
+    if (!frontmatter || !hasQuotedFrontmatterField(frontmatter[1], 'description')) {
+        errors.push('Le frontmatter doit contenir une description non vide entre guillemets doubles.');
+    }
+    if (!frontmatter || !/^tags\s*:\s*\[\s*leasure\s*,\s*painting\s*,\s*figurines\s*,\s*tuto\s*\]\s*$/m.test(frontmatter[1])) {
+        errors.push('Le frontmatter doit contenir tags: [leasure, painting, figurines, tuto].');
+    }
+    if (extname(tutorialPath) !== '.md') {
+        errors.push('Le tutoriel doit être une page .md.');
+    }
+
+    const pageBody = frontmatter ? markdown.slice(frontmatter[0].length) : markdown;
+    const bodyWithoutCodeBlocks = pageBody.replace(/```[\s\S]*?```/g, '');
+    if (/^(?:import|export)\s/m.test(bodyWithoutCodeBlocks) || /<\/?[A-Z][A-Za-z0-9.]*(?:\s|\/?>)/m.test(bodyWithoutCodeBlocks)) {
+        errors.push('Une page .md ne doit contenir ni import, ni export, ni composant MDX.');
+    }
+    if (/^#\s+/m.test(bodyWithoutCodeBlocks)) {
+        errors.push('Ne pas ajouter de titre de niveau 1 : Starlight affiche déjà le title du frontmatter.');
     }
 
     const headings = [...markdown.matchAll(/^##\s+(.+)$/gm)].map((match) => match[1].trim());
@@ -89,7 +118,7 @@ function main() {
     }
 
     const products = parsePaintingSet(readFileSync(paintingSetPath, 'utf8'));
-    const errors = validateTutorial(readFileSync(tutorialPath, 'utf8'), products);
+    const errors = validateTutorial(readFileSync(tutorialPath, 'utf8'), products, tutorialPath);
 
     if (errors.length) {
         for (const error of errors) console.error(`- ${error}`);

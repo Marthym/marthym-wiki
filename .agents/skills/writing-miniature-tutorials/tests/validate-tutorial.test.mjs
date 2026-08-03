@@ -12,10 +12,10 @@ const paintingSet = `
 `;
 
 const validTutorial = `---
-title: Armure noire
+title: "Armure noire"
+description: "Tutoriel pour peindre une armure noire contrastée."
+tags: [leasure, painting, figurines, tuto]
 ---
-
-# Armure noire
 
 - **Style recherché :** jeu contrasté
 - **Couleurs dominantes :** noir et gris
@@ -72,4 +72,21 @@ test('refuse une structure de chapitres différente', () => {
     const tutorial = validTutorial.replace('## 4. Finitions', '## 4. Détails');
 
     assert.match(validateTutorial(tutorial, paints).join('\n'), /chapitres/);
+});
+
+test('refuse une page incompatible avec Astro et Starlight', () => {
+    const paints = parsePaintingSet(paintingSet);
+    const invalidFrontmatter = validTutorial.replace(
+        'description: "Tutoriel pour peindre une armure noire contrastée."',
+        'description: Tutoriel: armure noire',
+    );
+    const missingTags = validTutorial.replace('tags: [leasure, painting, figurines, tuto]\n', '');
+    const mdxContent = `${validTutorial}\nimport Card from './Card.astro';\n<Card />\n`;
+    const duplicateTitle = validTutorial.replace('---\n\n- **Style', '---\n\n# Armure noire\n\n- **Style');
+
+    assert.match(validateTutorial(invalidFrontmatter, paints).join('\n'), /description/);
+    assert.match(validateTutorial(missingTags, paints).join('\n'), /tags/);
+    assert.match(validateTutorial(mdxContent, paints).join('\n'), /MDX/);
+    assert.match(validateTutorial(duplicateTitle, paints).join('\n'), /niveau 1/);
+    assert.match(validateTutorial(validTutorial, paints, 'armure-noire.mdx').join('\n'), /\.md/);
 });

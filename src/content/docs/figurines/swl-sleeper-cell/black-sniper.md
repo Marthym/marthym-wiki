@@ -675,3 +675,5 @@ Je ferais :
 C'est cette hiérarchie, davantage que la simple triade orange/bleu/vert, qui donnera à la figurine un rendu **flashy mais harmonieux**.
 
 Si tu veux, je peux maintenant te faire un **plan de peinture optimisé zone par zone dans l'ordre exact où je peindrais la figurine**, pour éviter au maximum les retouches et les débordements.
+
+![Référence de peinture du black sniper, vues de face et de dos](../../../../assets/figurines/swl-sleeper-cell/black-sniper-reference.jpg)

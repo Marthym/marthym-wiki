@@ -417,4 +417,7 @@ Coller quelques petites touffes en restant sobre, comme sur le reste de l'escoua
 
 ### Résultat attendu
 
+![Référence de peinture du sullustan, vues de face et de dos](../../../../assets/figurines/swl-sleeper-cell/sullustan-reference.jpg)
+
+
 Le regard sera naturellement attiré vers le visage grâce aux **lunettes turquoise**, tandis que le **manteau vert olive** donnera une identité forte au personnage. Les touches de **violet** de l'écharpe et les **cuirs brun chaud** apportent juste assez de contraste pour rendre la figurine plus héroïque que le schéma officiel, sans rompre l'harmonie avec une force Sleeper Cell. Ce niveau de contraste est particulièrement adapté à une figurine Star Wars Legion, où les modèles sont observés à environ 60–100 cm sur la table de jeu.

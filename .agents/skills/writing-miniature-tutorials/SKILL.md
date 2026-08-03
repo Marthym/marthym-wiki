@@ -10,12 +10,13 @@ Créer une page Markdown exploitable avec le matériel réel de l'utilisateur. T
 ## Workflow
 
 1. Se placer à la racine qui contient `src/content/docs/figurines/painting-set.md`. Arrêter si ce fichier manque.
-2. Obtenir le nom du projet et celui de la figurine. Ce sont les seules informations bloquantes. Déduire le style, la difficulté et le socle de la demande; annoncer les hypothèses utiles.
+2. Obtenir le nom du projet et celui de la figurine. Déduire le style, la difficulté et le socle de la demande; annoncer les hypothèses utiles.
 3. Lire le painting set au moment de la demande. Relever chaque couple référence/nom exact sans recopier cette liste dans le skill.
 4. Lire les pages `.md` du projet dans `src/content/docs/figurines/<projet>/`, puis choisir le degré de cohérence adapté.
-5. Concevoir la palette avec les règles de théorie des couleurs ci-dessous.
-6. Créer `src/content/docs/figurines/<projet>/<figurine-en-kebab-case>.md`. Employer des minuscules ASCII et des tirets pour le projet et le fichier.
-7. Valider la page, corriger les erreurs, puis lancer le build.
+5. Concevoir exactement trois schémas avec les règles de théorie des couleurs ci-dessous.
+6. Afficher leur aperçu ANSI, recommander un schéma et attendre le choix de l'utilisateur. Si l'utilisateur délègue explicitement le choix, retenir la recommandation.
+7. Créer ensuite `src/content/docs/figurines/<projet>/<figurine-en-kebab-case>.md`. Employer des minuscules ASCII et des tirets pour le projet et le fichier.
+8. Valider la page, corriger les erreurs, puis lancer le build.
 
 ## Théorie des couleurs
 
@@ -25,6 +26,31 @@ Créer une page Markdown exploitable avec le matériel réel de l'utilisateur. T
 - Choisir une harmonie adaptée au sujet : analogue pour l'unité, complémentaire pour un accent fort, ou chaude/froide pour séparer les matériaux. Ne pas imposer une formule si le schéma demandé fonctionne autrement.
 - Vérifier les mélanges réels avec le painting set. Éviter les mélanges complémentaires excessifs qui produisent une teinte terne, sauf pour neutraliser volontairement une ombre.
 - Expliquer brièvement les choix utiles dans le tutoriel par leur effet visuel, sans ajouter un cours théorique séparé.
+
+## Choix du schéma
+
+Avant de créer la page ou l'illustration, proposer trois schémas distincts et réalisables avec le painting set. Pour chacun, fournir :
+
+- un nom court;
+- une couleur dominante;
+- une couleur secondaire;
+- une couleur d'accent;
+- une phrase décrivant l'ambiance et le contraste.
+
+Écrire les produits avec leur nomenclature complète. Si une couleur repose sur un mélange, donner ses proportions dès cette étape.
+
+Estimer une valeur RGB `#RRGGBB` pour la dominante, la secondaire et l'accent de chaque schéma. Ces valeurs servent uniquement à l'aperçu écran et ne remplacent pas les références de peinture. Exécuter le renderer avec trois groupes de quatre arguments :
+
+```bash
+node .agents/skills/writing-miniature-tutorials/scripts/render-color-schemes.mjs \
+  "Nom 1" "#dominante" "#secondaire" "#accent" \
+  "Nom 2" "#dominante" "#secondaire" "#accent" \
+  "Nom 3" "#dominante" "#secondaire" "#accent"
+```
+
+Le cercle ANSI marque la dominante (`D`), la secondaire (`S`) et l'accent (`A`). Après chaque aperçu, afficher aussi les trois produits en texte pour les terminaux qui ne restituent pas les couleurs. Préciser que le rendu RGB reste approximatif.
+
+Terminer par `### Recommandation`, choisir un seul schéma et justifier ce choix par la théorie des couleurs, la lisibilité et la cohérence du projet. Attendre ensuite le choix de l'utilisateur. Ne créer aucun fichier de tutoriel et aucune illustration avant ce choix.
 
 ## Cohérence du projet
 

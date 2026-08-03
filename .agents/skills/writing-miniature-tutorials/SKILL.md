@@ -113,7 +113,8 @@ Avec des photos, **REQUIRED SUB-SKILL:** utiliser `imagegen` et :
 - produire une seule image montrant la même figurine en pied, de face et de dos, côte à côte;
 - reproduire le schéma, les matériaux et le socle décrits dans la page;
 - utiliser un éclairage neutre, un fond gris clair, sans texte ni filigrane;
-- enregistrer l'image dans `src/assets/figurines/<projet>/<slug>-reference.png` sans écraser un fichier existant;
+- convertir la sortie du générateur avec `sharp` en JPEG progressif de qualité 88;
+- enregistrer l'image dans `src/assets/figurines/<projet>/<slug>-reference.jpg` sans écraser un fichier existant;
 - ajouter l'image à la fin du chapitre `5. Socle` avec un chemin Markdown relatif.
 
 ## Vérification

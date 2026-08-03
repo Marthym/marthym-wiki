@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tutoriels peinture figurines"
+  short_description: "Rédige des tutoriels avec l'inventaire du wiki"
+  default_prompt: "Utilise $writing-miniature-tutorials pour créer un tutoriel de peinture pour ma figurine."

@@ -66,7 +66,6 @@ tags: [leasure, painting, figurines]
 | 72.005 | Moon Yellow        |
 | 72.006 | Sun Yellow         |
 | 72.085 | Yellow Olive (Ink) |
-| 72.003 | Pale Yellow        |
 | 72.152 | Heavy Orange       |
 | 72.156 | Fluorescent Orange |
 

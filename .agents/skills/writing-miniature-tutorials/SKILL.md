@@ -10,13 +10,14 @@ Créer une page Markdown exploitable avec le matériel réel de l'utilisateur. T
 ## Workflow
 
 1. Se placer à la racine qui contient `src/content/docs/figurines/painting-set.md`. Arrêter si ce fichier manque.
-2. Obtenir le nom du projet et celui de la figurine. Déduire le style, la difficulté et le socle de la demande; annoncer les hypothèses utiles.
+2. Obtenir le nom du projet, déduire le nom du tuto selon la demande, si aucun information n'est donnée sur le style, le déduire des autres tuto du projet.
 3. Lire le painting set au moment de la demande. Relever chaque couple référence/nom exact sans recopier cette liste dans le skill.
 4. Lire les pages `.md` du projet dans `src/content/docs/figurines/<projet>/`, puis choisir le degré de cohérence adapté.
 5. Concevoir exactement trois schémas avec les règles de théorie des couleurs ci-dessous.
 6. Afficher leur aperçu ANSI, recommander un schéma et attendre le choix de l'utilisateur. Si l'utilisateur délègue explicitement le choix, retenir la recommandation.
-7. Créer ensuite `src/content/docs/figurines/<projet>/<figurine-en-kebab-case>.md`. Employer des minuscules ASCII et des tirets pour le projet et le fichier.
-8. Valider la page, corriger les erreurs, puis lancer le build.
+7. Dès le schéma choisi, générer son illustration de rendu avant toute rédaction, la présenter à l'utilisateur et attendre sa revalidation explicite. Si l'utilisateur change d'avis, ajuster le schéma, régénérer l'illustration et la faire revalider.
+8. Après validation du rendu seulement, créer `src/content/docs/figurines/<projet>/<figurine-en-kebab-case>.md`. Employer des minuscules ASCII et des tirets pour le projet et le fichier.
+9. Valider la page, corriger les erreurs, puis lancer le build.
 
 ## Théorie des couleurs
 
@@ -50,7 +51,7 @@ node .agents/skills/writing-miniature-tutorials/scripts/render-color-schemes.mjs
 
 Le cercle ANSI marque la dominante (`D`), la secondaire (`S`) et l'accent (`A`). Après chaque aperçu, afficher aussi les trois produits en texte pour les terminaux qui ne restituent pas les couleurs. Préciser que le rendu RGB reste approximatif.
 
-Terminer par `### Recommandation`, choisir un seul schéma et justifier ce choix par la théorie des couleurs, la lisibilité et la cohérence du projet. Attendre ensuite le choix de l'utilisateur. Ne créer aucun fichier de tutoriel et aucune illustration avant ce choix.
+Terminer par `### Recommandation`, choisir un seul schéma et justifier ce choix par la théorie des couleurs, la lisibilité et la cohérence du projet. Attendre ensuite le choix de l'utilisateur. Ne créer aucun fichier de tutoriel et aucune illustration avant ce choix. Une fois le choix reçu, appliquer immédiatement le workflow d'illustration et de revalidation ci-dessous; ne pas commencer à rédiger la page entre-temps.
 
 ## Cohérence du projet
 
@@ -68,17 +69,17 @@ Ne pas figer un projet à partir d'une seule page. Conserver seulement les marqu
 - Autoriser l'eau et les outils usuels comme le pinceau ou la palette; ne pas les traiter comme des produits de l'inventaire.
 - Écrire chaque produit, à chaque occurrence, sous la forme `**72.031 Camouflage Green**`. Ne jamais abréger le nom ni omettre la référence.
 - Créer une teinte absente uniquement par un mélange de produits disponibles. Dire clairement lorsqu'aucun mélange satisfaisant n'est possible.
-- Détailler chaque mélange avec des proportions en parts, une ligne par composant. Préciser la dilution, le nombre de couches et le séchage lorsqu'ils influencent le résultat.
+- Pour chaque mélange, écrire les proportions en parts directement dans la liste placée sous le titre de niveau 3, une ligne par composant. Ne pas répéter ensuite les composants ni leurs proportions dans les détails. Préciser seulement la dilution, le nombre de couches et le séchage lorsqu'ils influencent le résultat.
 
-Format d'un mélange :
+Format d'une étape avec mélange :
 
 ```markdown
-**Mélange (2:1)**
+### Vêtement vert
 
 - 2 parts de **72.031 Camouflage Green**
 - 1 part de **72.029 Sick Green**
 
-Diluer avec 1 part d'eau et appliquer deux couches fines, en laissant sécher chaque couche.
+Mélange les deux peintures, dilue avec 1 part d'eau et applique deux couches fines en laissant sécher chaque couche.
 ```
 
 ## Format de la page
@@ -116,6 +117,9 @@ Utiliser exactement ces titres de niveau 2, dans cet ordre :
 Dans chaque chapitre :
 
 - regrouper les étapes par couleur avec des titres de niveau 3;
+- commencer chaque étape, immédiatement après son titre de niveau 3, par la liste des produits employés, sans titre ni texte d'introduction comme `Pots utilisés`; placer ensuite seulement les détails de l'étape;
+- faire apparaître chaque produit une seule fois dans cette liste avec sa nomenclature complète; pour un mélange, préfixer chaque composant par sa quantité en parts directement dans la liste; ne pas répéter plus bas la recette du mélange
+- immediatement après la liste indiquer la dilution si elle n'est pas standard
 - traiter les grandes zones avant les détails;
 - éviter de revenir plusieurs fois sur une même zone;
 - ajouter au bon endroit les conseils de geste, charge du pinceau, dilution, séchage et correction des erreurs;
@@ -129,19 +133,24 @@ Dans chaque chapitre :
 - Utiliser des chemins relatifs valides pour les liens et les images. Enregistrer les images du tutoriel sous `src/assets/figurines/<projet>/`.
 - Ne pas considérer la page comme terminée tant que le validateur Node et `npm run build` n'ont pas réussi. Le build Astro constitue la validation définitive du rendu CMS.
 
-## Illustration finale
+## Illustration de validation
 
-Générer une illustration seulement si l'utilisateur fournit des photos de référence de la figurine. Sans photo, ne créer ni image ni emplacement vide et signaler l'omission dans la réponse finale.
+L'illustration est la première production après le choix du schéma. Elle sert à faire valider le résultat visuel avant d'investir du temps dans la rédaction du tutoriel.
+
+Des photos de référence de la figurine sont indispensables. Sans photo, ne créer ni image, ni page, ni emplacement vide : demander les photos et attendre avant de poursuivre.
 
 Avec des photos, **REQUIRED SUB-SKILL:** utiliser `imagegen` et :
 
 - employer les photos comme références de la sculpture et de l'équipement;
 - produire une seule image montrant la même figurine en pied, de face et de dos, côte à côte;
-- reproduire le schéma, les matériaux et le socle décrits dans la page;
+- reproduire le schéma, les matériaux et le socle prévus;
 - utiliser un éclairage neutre, un fond gris clair, sans texte ni filigrane;
 - convertir la sortie du générateur avec `sharp` en JPEG progressif de qualité 88;
 - enregistrer l'image dans `src/assets/figurines/<projet>/<slug>-reference.jpg` sans écraser un fichier existant;
-- ajouter l'image à la fin du chapitre `5. Socle` avec un chemin Markdown relatif.
+- présenter l'image à l'utilisateur et lui demander de confirmer explicitement le schéma;
+- si l'utilisateur demande un changement, mettre à jour le schéma, produire une nouvelle image sans écraser la précédente et recommencer cette validation;
+- ne rédiger le tutoriel qu'après cette confirmation;
+- ajouter ensuite l'image validée à la fin du chapitre `5. Socle` avec un chemin Markdown relatif.
 
 ## Vérification
 
